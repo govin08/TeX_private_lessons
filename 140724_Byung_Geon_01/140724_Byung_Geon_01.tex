@@ -1,0 +1,264 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,mdframed,kotex,paralist}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\intt}{\ensuremath{\int_a^b}}
+\newcommand{\inttt}{\ensuremath{\int_\alpha^\beta}}
+\newcommand{\dx}{\ensuremath{\,dx}}
+\newcommand{\dt}{\ensuremath{\,dt}}
+\newcommand{\delx}{\ensuremath{\Delta x}}
+%\usepackage{tabto}
+%\TabPositions{0.33\textwidth,0.66\textwidth}
+
+\begin{document}
+\title{병건, 적분단원 개념정리}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+
+\newpage
+
+
+%새 節
+\section{부정적분}
+
+\subsection{부정적분}
+\bd
+\item[정의)]
+\(F'(x)=f(x)\)이면 \(F(x)\)는 \(f(x)\)의 부정적분이다.
+\item[구하는 방법)]
+역미분.
+\item[기호)]
+\(\int f(x)\,dx=F(x)+C\).
+\item[용어)]
+피적분함수, 적분변수, 적분상수.
+\item[성질)]
+부정적분은 선형적(linear)이다; 임의의 두 함수 \(f\), \(g\)와 임의의 두 실수 \(p\), \(q\)에 대해, \[\int(pf(x)+qg(x))\,dx=p\int f(x)\,dx+q\int g(x)\,dx.\]
+특히,
+\begin{enumerate}[(1)]\tightlist
+\item
+\(\int(f(x)+g(x))\,dx=\int f(x)\,dx+\int g(x)\,dx\).
+\item
+\(\int(f(x)-g(x))\,dx=\int f(x)\,dx-\int g(x)\,dx\).
+\item
+\(\int(kf(x))\,dx=k\int f(x)\,dx\).
+\end{enumerate}
+\item[증명)]
+(1)과 (3)을 증명한 후 조합하면 된다.
+\ed
+
+\subsection{치환적분법}
+\bd
+\item[정리)]
+\(x\)를 미분가능한 함수 \(g(t)\)로 치환하면 \(\int f(x)\,dx=\int f(g(t))g'(t)\,dt\)이다.
+\item[증명)]
+\(F'(x)=f(x)\)라고 하면 합성함수의 미분법(연쇄법칙)에 의해%\footnote{RHS : Right hand side, 우변, LHS=좌변}
+\[
+\int f(g(t))g'(t)\,dt=\int\frac d{dt}F(g(t))\,dt=F(g(t))+C=F(x)+C=\int f(x)\,dx.
+\]
+혹은,
+\[
+\int f(g(t))g'(t)\,dt=\int f(x)\frac{\dx}{\dt}\,dt=\int f(x)\,dx
+\]
+와 같이 생각할 수도 있다.
+\item[예시)]
+\(\int\frac{f'(x)}{f(x)}\,dx=\ln{|f(x)|}+C\).
+\ed
+
+\subsection{부분적분법}
+\bd
+\item[정리)]
+\(f(x)\)와 \(g(x)\)가 모두 미분가능하면, \(\int f(x)g'(x)\,dx=f(x)g(x)-\int f'(x)g(x)\,dx\).
+\item[증명)]
+곱의 미분법과 부분적분의 성질 (2)에 의해
+\(\int f(x)g'(x)\,dx+\int f'(x)g(x)\,dx=f(x)g(x)\).
+\ed
+
+
+%새 節
+\section{정적분}
+\subsection{구분구적법}
+\bd
+\item[정의)]
+평면 혹은 공간의 일정한 영역을 직사각형, 직육면체 등으로 일정하게 잘라 해당 영역의 넓이, 부피 따위를 어림하는 방법. 극한을 사용.
+\ed
+\subsection{정적분}
+\bd
+\item[정의)]
+\(f(x)\)는 \([a,b]\)에서 정의된 연속 함수라고 하자.\\
+\(f(x)\ge0\)일 때, \(\intt f(x)\,dx\)는 ``\(x=a\)'',~``\(x=b\)'',~``\(y=0\)'',~``\(y=f(x)\)''로 둘러싸인 영역의 넓이이다.
+구분구적법을 이용하면,
+\[
+\intt f(x)\,dx
+=
+\lim_{n\to\infty}\sum_{k=1}^nf(x_k)\delx
+=
+\lim_{n\to\infty}\sum_{k=1}^nf\left(a+\frac{b-a}nk\right)\frac{b-a}n.
+\]
+\(f(x)<0\)일 때,
+\[\intt f(x)\,dx=-\intt(-f)(x)\,dx.\]
+\(f(x)\)가 \([a,b]\) 내에서 양의 값과 음의 값을 모두 가지면, 구간을 나눠서 정적분을 정의하면 된다.
+예를 들어
+\([a,m]\)에서 \(f(x)\ge0\)이고 \((m,c]\)에서 \(f(x)<0\)이면,
+\[\intt f(x)\,dx=\int_a^mf(x)\,dx+\int_m^bf(x)\,dx.\]
+\item[용어)]
+위끝, 아래끝.
+\item[참고)]
+정적분은 고정된 실수이므로 적분변수는 의미를 가지지 않는다(dummy variable);
+\[\intt f(x)\,dx=\intt f(t)\,dt=\intt f(s)\,ds=\cdots.\]
+\item[정리) 미적분의 기본정리 (1)]
+\([a,b]\)에서 \(f(x)\)가 연속일 때 \(a\le x\le b\)에 대해,
+\[\frac d{dx}\int_a^xf(t)\,dt=f(x).\]
+\item[증명)]
+\(S(x)=\int_a^xf(t)\dt\)라고 하자.
+\(S(x)\)의 미분을 생각하기 위해 \(x\)의 증분인 \(\delx\)와 \(S\)의 증분인 \(\Delta S=S(x+\delx)-S(x)\)를 고려하자.
+\begin{enumerate}[(a)]
+\item
+\(f(x)\ge0\)일 때\\ 
+\(\delx>0\)이면 연속함수 \(f(x)\)는 구간 \([x, x+\delx]\)에서 최대값 \(M\)과 최소값 \(m\)을 갖는다.
+따라서
+\[m\delx\le S(x+\delx)-S(x)=\int_{x}^{x+\delx}f(t)\dt\le M\delx.\]
+각변을 \(\delx\)로 나누고 \delx를 \(0\)으로 보내는 극한을 취하면 \(m\)과 \(M\)은 모두 \(f(x)\)로 수렴하므로
+\[f(x)=m\le\lim_{\delx\to0+}\frac{S(x+\delx)-S(x)}\delx\le M=f(x).\]
+따라서
+\[\lim_{\delx\to0+}\frac{S(x+\delx)-S(x)}\delx=f(x).\]
+\par
+\delx<0이면 마찬가지로 \([x+\delx,x]\)에서
+\[m(-\delx)\le -S(x+\delx)+S(x)\le M(-\delx).\]
+같은 논리에 의해
+\[\lim_{\delx\to0-}\frac{S(x+\delx)-S(x)}\delx=f(x).\]
+따라서 \(\frac d{dx}\int_a^xf(t)\,dt=S'(x)=f(x).\)
+\item
+\(f(x)<0\)일 때\\
+\((-f)(x)=-f(x)\)로 정의된 함수 \(-f\)는 \((-f)(x)\ge0\)를 만족하므로 (a)에 의해,
+\[\frac d{dx}\int_a^x(-f)(t)\,dt=(-f)(x).\]
+따라서
+\[\frac d{dx}\int_a^xf(t)\,dt=-\frac d{dx}\int_a^x(-f)(t)\,dt=-(-f)(x)=f(x).\]
+\item
+\(f(x)\)가 어떤 구간에서는 양수를, 어떤 구간에서는 음수를 취할 때, 구간을 나누어 생각하면 같은 결과를 얻을 수 있다.
+\end{enumerate}
+\item[미적분의 기본정리 (2)]
+\([a,b]\)에서 \(f(x)\)가 연속이고 \(F'(x)=f(x)\)라고 하면,
+\[\intt f(x)\dx=\left[F(x)\right]_a^b=F(b)-F(a).\]
+\item[증명)]
+미적분의 기본정리 (1)에 의해,
+\[\int_a^xf(t)\dt=F(x)+C.\]
+\(x=a\)를 대입하면 \(C=-F(a)\)를 얻고, 다시 \(x=b\)를 대입하면
+\[
+\intt f(x)\dx=F(b)-F(a).
+\]
+\item[기호)]
+정적분을 나타낼 때, 경우에 따라 다양한 기호들 중 하나를 선택해서 사용하면 된다;
+\begin{align*}
+&\left[F(x)\right]_a^b
+=\left.F(x)\right]_a^b
+=\left.F(x)\right|_a^b\\
+=&\left[F(x)\right]_{x=a}^{x=b}
+=\left.F(x)\right]_{x=a}^{x=b}
+=\left.F(x)\right|_{x=a}^{x=b}.
+\end{align*}
+\ed
+
+\subsection{정적분의 계산}
+\bd
+\item[성질)]
+부정적분과 마찬가지로 정적분도 선형적(linear)이다;
+임의의 두 함수 \(f\), \(g\)와 임의의 두 실수 \(p\), \(q\)에 대해, \[\intt(pf(x)+qg(x))\,dx=p\intt f(x)\,dx+q\intt g(x)\,dx.\]
+특히,
+\begin{enumerate}[(1)]\tightlist
+\item
+\(\intt(f(x)+g(x))\,dx=\intt f(x)\,dx+\intt g(x)\,dx\).
+\item
+\(\intt(f(x)-g(x))\,dx=\intt f(x)\,dx-\intt g(x)\,dx\).
+\item
+\(\intt(kf(x))\,dx=k\intt f(x)\,dx\).
+\end{enumerate}
+\item[증명)]
+(1)과 (3)을 증명한 후 조합하면 된다.
+\item[성질)]
+임의의 세 실수 \(a\), \(b\), \(c\)에 대해,
+\[
+\int_a^bf(x)\dx+\int_b^cf(x)\dx=\int_a^cf(x)\dx.
+\]
+\item[증명)]
+\(f(x)\)의 한 부정적분 \(F(x)\)에 대해
+\[좌변=[F(b)-F(a)]+[F(c)-F(b)]=F(c)-F(a)=우변.\]
+\ed
+
+\subsection{치환적분법과 부분적분법}
+\bd
+\item[치환적분법)]
+\([a,b]\)에서 연속인 함수 \(f(x)\)에 대해 미분가능한 함수 \(g(t)\)의 도함수 \(g'(t)\)가 구간 \([\alpha,\beta]\)에서 연속이고 \(a=g(\alpha)\), \(b=g(\beta)\)일 때,
+\[\intt f(x)\,dx=\inttt f(g(t))g'(t)\,dt\]
+\item[증명)]
+\(F'(x)=f(x)\)이면,
+\begin{align*}
+\inttt f(g(t))g'(t)\,dt
+&=\inttt\frac d{dt}F(g(t))\dt\\
+&=\left[F(g(t))\right]_{t=\alpha}^{t=\beta}=\left[F(x)\right]_{x=a}^{x=b}
+=\intt f(x)\,dx.
+\end{align*}
+\item[부분적분법)]
+두 함수 \(f(x)\), \(g(x)\)가 미분가능하고, \(f'(x)\), \(g'(x)\)가 연속이면,
+\[\intt f(x)g'(x)\dx=[f(x)g(x)]_a^b-\intt f'(x)g(x)\dx.\]
+\item[증명)]
+부정적분의 부분적분법 식을 적용해 곱의 미분법 식을 정적분하면 된다.
+\ed
+
+\newpage
+%새 節
+\section*{미분이 포함된 간단한 방정식}
+다음에서 \(f(x)\)는 미분가능한 함수, \(a\), \(b\)는 실수, \(g(x)\), \(h(x)\)는 연속함수이다.
+\begin{enumerate}[(1)]
+\item
+\(f'(x)=af(x)\)\\
+\(f(x)\neq0\)인 \(x\)에 대해 \(\frac{f'(x)}{f(x)}=a\)이고, 양변을 적분하면
+\(\ln\left|f(x)\right|=ax+C\).
+따라서 \(f(x)=\pm e^{ax+C}=Ae^{ax}(A\neq0)\).
+\(f(x)\)의 연속성에 의해, 모든 \(x\)에 대해 \(f(x)=0\)이거나 모든 \(x\)에 대해 \(f(x)=Ae^{ax}(A\neq0)\)이다.
+정리하면,
+\[f(x)=Ae^{ax},\]
+\(A\)는 임의의 실수.
+\item
+\(f'(x)=af(x)+b(a\neq0)\)\\
+\(f(x)\neq-\frac ba\)인 \(x\)에 대해 \(\frac{f'(x)}{f(x)+\frac ba}=a\)이고, 양변을 적분하면 \(\ln|f(x)+\frac ba|=ax+C\).
+따라서 \(f(x)+\frac ba=\pm e^{ax+C}=Ae^{ax}(A\neq0)\).
+\(f(x)+\frac ba\)의 연속성에 의해, 모든 \(x\)에 대해 \(f(x)+\frac ba=0\)이거나 모든 \(x\)에 대해 \(f(x)+\frac ba=Ae^{ax}(A\neq0)\)이다.
+정리하면,
+\[f(x)=Ae^{ax}-\frac ba,\]
+\(A\)는 임의의 실수.
+\item
+\(f'(x)+g(x)f(x)=h(x)\).(적분인자integrating factor를 곱하는 방법)\\
+양변에 \(k(x)\)를 곱했을 때 좌변이 \((f(x)k(x))'\)와 같게 되도록 \(k(x)\)를 찾으면, 즉,
+\[f'(x)k(x)+g(x)f(x)k(x)=f'(x)k(x)+f(x)k'(x)\]
+에서
+\[g(x)k(x)=k'(x).\]
+가 성립해야 하므로 양변을 \(k(x)\)로 나누고 적분하면
+\[\ln|k(x)|=\int g(x)\dx.\]
+\(g(x)\)의 한 부정적분을 \(G(x)\)라고 하면
+\[\ln|k(x)|=G(x)+C.\]
+\(C=0\), \(k(x)>0\)이라고 가정하면
+\[k(x)=e^{G(x)}.\tag{\(\ast\)}\]
+로 택할 수 있다.
+한편, 원래 식은
+\[(f(x)k(x))'=h(x)k(x)\]
+이었으므로 양변을 적분하면
+\[f(x)k(x)=\int h(x)k(x)\dx+C',\]
+\(C'\)는 임의의 실수.
+\((\ast)\)를 넣어 정리하면 \(k(x)\neq0\)이므로,
+\[f(x)=\frac1{k(x)}\left[\int h(x)k(x)\dx+C'\right]=e^{-G(x)}\left[\int h(x)k(x)\dx+C'\right].\]
+
+\subsection*{예제1 :~\(f'(x)+xf(x)=x\)}
+\(f'(x)k(x)+xf(x)k(x)=(xk(x))'\)가 되는 \(k(x)\)를 찾으면
+\[xk(x)=k'(x)\]
+에서
+\[\ln|k(x)|=\frac12x^2+C.\]
+\(k(x)>0\), \(C=0\)을 가정하면
+\[k(x)=e^{\frac12x^2}.\]
+이제 원래 식인 \((f(x)k(x))'=xk(x)=xe^{\frac12x^2}\)에서
+\[f(x)k(x)=\int xe^{\frac12x^2}\dx=e^{\frac12x^2}+C',\]
+이므로 (\(C'\)는 임의의 실수)
+\[f(x)=\frac1{k(x)}\left[e^{\frac12x^2}+C'\right]=e^{-\frac12x^2}\left[e^{\frac12x^2}+C'\right]=1+C'e^{-\frac12x^2}.\]
+\end{enumerate}
+\end{document}

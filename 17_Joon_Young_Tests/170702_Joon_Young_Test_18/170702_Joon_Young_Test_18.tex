@@ -1,0 +1,131 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{graphicx}
+
+%\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\prob[1]
+{\vs\bigskip\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{40pt}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE준영, 미니테스트 18
+\end{center}
+\begin{flushright}
+날짜 : 2017년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%
+\prob{}
+다음 물음에 답하여라
+\begin{enumerate}[(1)]
+\item
+실수 전체의 집합에서 정의된 함수 \(f(x)=x(x^2-ax+a)\)가 증가함수가 되도록 실수 \(a\)의 범위를 구하여라.
+\item
+함수 \(f(x)=x^3-3x^2+ax+1\)이 구간 \((0,3)\)에서 감소함수이기 위한 실수 \(a\)의 값의 범위를 구하여라.
+\end{enumerate}
+
+%
+\prob{}
+다음 물음에 답하여라
+\begin{enumerate}[(1)]
+\item
+함수 \(f(x)=x^3+ax^2+bx+c\)가 \(x=1\), \(x=3\)에서 극값을 갖고 그 중 극솟값이 \(-6\)일 때, 이 함수의 극댓값을 구하여라.
+\item
+함수 \(f(x)=x^3+ax^2-24x+b\)는 \(x=c\)에서 극솟값 \(2\)를 갖고 \(x=-4\)에서 극댓값 \(d\)를 갖는다.
+이때 상수 \(a\), \(b\), \(c\), \(d\)의 값을 각각 구하여라.
+\end{enumerate}
+
+%
+\prob{}
+다음 물음에 답하여라
+\begin{enumerate}[(1)]
+\item
+삼차함수 \(f(x)=ax^3+6x^2+(15-3a)x+1\)이 극값을 가질 때, 실수 \(a\)의 범위를 구하여라.
+\item
+함수 \(f(x)=x^3+kx^2-3kx+2\)가 극값을 갖지 않도록 하는 실수 \(k\)의 값의 범위를 구하여라.
+\end{enumerate}
+
+%
+\prob{}
+사차함수 \(f(x)=x^4-4x^3+2ax^2\)에 대하여 다음을 구하여라.
+\begin{enumerate}[(1)]
+\item
+\(f(x)\)가 극댓값을 갖기 위한 실수 \(a\)의 값의 범위
+\item
+\(f(x)\)가 극값을 하나만 갖기 위한 실수 \(a\)의 값의 범위
+\end{enumerate}
+
+%
+\prob{}
+방정식 \(x^3-3x^2+2=0\)의 서로 다른 실근의 개수를 구하여라.
+
+%
+\prob{}
+방정식 \(x^3+3x^2-9x+k=0\)에 대하여 다음을 구하여라.
+\begin{enumerate}[(1)]
+\item
+서로 다른 세 개의 실근을 갖도록 하는 실수 \(k\)의 값의 범위
+\item
+오직 하나의 실근을 가질 때, 실수 \(k\)의 값의 범위
+\end{enumerate}
+
+%
+\prob{}
+다음 물음에 답하여라.
+\begin{enumerate}[(1)]
+\item
+모든 실수 \(x\)에 대하여 부등식 \(x^4-4a^3x+48>0\)이 항상 성립하도록 하는 실수 \(a\)의 값의 범위를 구하여라.
+\item
+\(x>0\)일 때, 부등식 \(x^3-3x^2+a\ge0\)이 항상 성립하도록 하는 실수 \(a\)의 값의 범위를 구하여라.
+\end{enumerate}
+
+%
+\prob{}
+지면으로부터 25\,m 위치에서 처음 속도 20\,m/초로 똑바로 위로 던진 돌의 \(t\)초 후의 높이를 \(s\) m라 하면 \\\(s=25+20t-5t^2\)인 관계가 성립한다.
+다음 물음에 답하여라.
+\begin{enumerate}[(1)]
+\item
+던진 후 \(3\)초 후의 속도와 가속도를 각각 구하여라.
+\item
+이 돌이 최고 높이에 도달하는 것은 몇 초 후인지 구하여라.
+\item
+이 돌이 땅에 떨어질 때의 속도를 구하여라.
+\item
+이 돌이 최고 높이에 도달할 때까지의 평균 속도를 구하여라.
+\end{enumerate}
+\end{document}

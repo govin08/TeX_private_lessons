@@ -1,0 +1,432 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist,tabu}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,40mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{\displaystyle#1}}
+\tab\ding{173}\:\:{\ensuremath{\displaystyle#2}}
+\tab\ding{174}\:\:{\ensuremath{\displaystyle#3}}
+\tab\ding{175}\:\:{\ensuremath{\displaystyle#4}}
+\tab\ding{176}\:\:{\ensuremath{\displaystyle#5}}}
+
+\usepackage{graphicx}
+
+%\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+\counterwithout{subsection}{section}
+
+%%% Commands
+\newcommand\prob[1]
+{\vs\bigskip\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{25pt}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE종현, 추가과제 07
+\end{center}
+\begin{flushright}
+날짜 : 2017년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%%
+\subsection{집합(1)}
+\vspace{-30pt}
+% 집합 1-1
+\prob{}
+다음 중 집합인 것은?
+\par\bigskip
+\noindent\ding{172}\:\:{작은 자연수들의 모임}
+\par\noindent\ding{173}\:\:{어려운 수학 문제들의 모임}
+\par\noindent\ding{174}\:\:{방정식 \(x^2=1\)의 해들의 모임}
+\par\noindent\ding{175}\:\:{수학 성적이 우수한 학생들의 모임}
+\par\noindent\ding{176}\:\:{양의 약수의 개수가 많은 자연수들의 모임}
+
+% 집합 1-2
+\prob{}
+다음 집합 중 나머지 넷과 \underline{다른} 하나는?
+\par\bigskip
+\noindent\ding{172}\:{\(\{x\:|\:x=y-1,\: y\text{는 짝수인 자연수}\}\)}
+\par\noindent\ding{173}\:{\(\{x\:|\:x\text{는 16과 서로소인 자연수}\}\)}
+\par\noindent\ding{174}\:{\(\{x\:|\:x\text{는 2로 나눈 나머지가 1인 자연수}\}\)}
+\par\noindent\ding{175}\:{\(\{x\:|\:x=2y+1,\: y\text{는 자연수}\}\)}
+\par\noindent\ding{176}\:{\(\{x\:|\:x=ab,\:a,b\text{는 홀수인 자연수}\}\)}
+
+% 집합 1-3
+\prob{}
+세 집합
+\vspace{-20pt}
+\begin{align*}
+A&=\{1,2,3\}\\
+B&=\{x\:|\:x\text{는 20의 양의 약수}\}\\
+C&=\{x\:|\:x^2-x+2=0,\:x\text{는 실수}\}
+\end{align*}
+에 대하여 \(n(A)+n(B)+n(C)\)의 값은?
+\tabb89{10}{11}{12}
+
+% 집합 1-4
+\prob{}
+두 집합 \(A\), \(B\)에 대하여 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+\begin{mdframed}[frametitle=<보기>]
+ㄱ. \(A=\{0,1\}\)이면 \(n(A)=1\)이다.\\
+ㄴ. \(n(A)=0\)이면 \(A=\varnothing\)\\
+ㄷ. \(n(A)=n(B)\)이면 \(A=B\)이다.
+\end{mdframed}
+\par\bigskip
+\tabb{\text{ㄱ}}{\textㄴ}{\text{ㄱ, ㄴ}}{\text{ㄱ, ㄷ}}{\text{ㄴ, ㄷ}}
+
+% 집합 1-5
+\prob{}
+\(10\) 이하의 자연수 \(k\)에 대하여 두 집합 \(A\), \(B\)가
+\begin{align*}
+A&=\{2k-1,2k+1,2k+3\},\\
+B&=\{x\:|\:k\le x\le21-k\}
+\end{align*}
+일 때, \(A\subset B\)가 되도록 하는 \(k\)의 개수는?
+\tabb34567
+
+% 집합 1-6
+\prob{}
+세 집합
+\vspace{-20pt}
+\begin{align*}
+A&=\{-1,0,1\}\\
+B&=\{x\:|\:x=a+b,\:a\in A,\:b\in A\},\\
+C&=\{x\:|\:x=b-a,\:a\in A,\:b\in B\}
+\end{align*}
+의 포함관계를 바르게 나타낸 것은?
+\tabb
+{A\subset B\subset C}
+{A\subset C\subset B}
+{B\subset A\subset C}
+{B\subset C\subset A}
+{C\subset A\subset B}
+
+% 집합 1-7
+\prob{}
+두 양수 \(a\), \(b\)에 대하여 두 집합
+\[A=\{1,2a-b,b\},\quad B=\{2,4,a-b\}\]
+가 \(A=B\)를 만족시킬 때, \(ab\)의 값은?
+\tabb2468{16}
+
+% 집합 1-8
+\prob{}
+두 집합
+\vspace{-20pt}
+\begin{align*}
+A&=\{x\:|\:x\text{는 10 이하의 소수}\}\\
+B&=\{x\:|\:x\text{는 10 이하의 자연수}\}
+\end{align*}
+에 대하여 \(A\subset X\subset B\)를 만족시키는 집합 \(X\)의 개수는?
+\tabb{16}{32}{64}{128}{256}
+
+% 집합 1-9
+\prob{}
+10 이하의 자연수 \(k\)에 대하여 집합
+\vspace{-10pt}
+\begin{align*}
+X	&=\{x\:|\:x\text{는 10 이하의 자연수}\}\\
+A_k	&=\{x\:|\:x\text{는 \(k\)의 양의 약수}\}
+\end{align*}
+라고 하자.
+집합 \(A_k\)를 포함하는 집합 \(X\)의 부분집합의 개수가 \(256\)이 되도록 하는 모든 \(k\)의 값의 합은?
+\tabb{15}{17}{19}{21}{23}
+
+%%
+\subsection{집합(2)}
+\vspace{-30pt}
+
+% 집합 2-1
+\prob{}
+세 집합
+\begin{align*}
+A&=\{2,4,6,8,10\},\\
+B&=\{x\:|\:x\text{는 30의 양의 약수}\},\\
+C&=\{x\:|\:x\text{는 6과 서로소인 자연수}\}
+\end{align*}
+에 대하여 집합 \((A\cup B)\cap C\)의 모든 원소의 합은?
+\tabb56789
+
+% 집합 2-2
+\prob{}
+자연수 \(k\)에 대하여 집합 \(A_k\)가
+\[A_k=\{x\:|\:x\text{는 \(k\)의 배수인 자연수}\}\]
+일 때, 다음 중 옳지 \underline{않은} 것은?
+\tabb
+{A_2\cap A_4=A_4}
+{A_4\cap A_6=A_{12}}
+{A_2\cup A_3=A_6}
+{A_6\subset A_2\cap A_3}
+{A_4\subset A_2\cup A_6}
+
+% 집합 2-3
+\prob{}
+집합 \(A\), \(B\), \(C\), \(D\)가 다음과 같을 때, 서로소인 집합은?
+\begin{mdframed}[frametitle=<보기>]
+\(A=\{x\:|\:\text{는 15 이하의 자연수}\}\)\\
+\(B=\{x\:|\:\text{는 15의 양의 약수}\}\)\\
+\(C=\{x\:|\:\text{는 15 이하의 소수}\}\)\\
+\(D=\{x\:|\:\text{는 15 이하의 짝수}\}\)
+\end{mdframed}
+\par\bigskip
+\tabb
+{\text{\(A\)와 \(B\)}}
+{\text{\(A\)와 \(C\)}}
+{\text{\(B\)와 \(C\)}}
+{\text{\(B\)와 \(D\)}}
+{\text{\(C\)와 \(D\)}}
+
+% 집합 2-4
+\prob{}
+전체집합 \(U=\{x\:|\:x\text{는 10보다 작은 자연수}\}\)의 두 부분집합
+\[A=\{3,6,9\},\quad B=\{x\:|\:x\text{는 10보다 작은 짝수}\}\]
+에 대하여 집합 \(A^c-B^c\)의 원소의 개수는?
+\tabb12345
+
+\clearpage
+% 집합 2-5
+\prob{}
+전체집합 \(U=\{1,2,3,4,5,6,7,8\}\)의 두 부분집합 \(A\), \(B\)에 대하여
+\[A\cup B=\{1,2,3,4,5\},\quad A\cap B^c=\{1,2\}\]
+일 때 집합 \((A-B)\cup(A^c-B)\)의 모든 원소의 합은?
+\tabb{20}{22}{24}{26}{28}
+
+% 집합 2-6
+\prob{}
+전체집합 \(U\)의 두 부분집합 \(X\), \(Y\)에 대하여 기호 \(\ominus\)를 \(X\ominus Y=X^c-Y^c\)으로 정의할 때, 전체집합 \(U\)의 두 부분집합 \(A\), \(B\)에 대하여 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+\begin{mdframed}[frametitle=<보기>]
+ㄱ. \(A\ominus B=B\ominus A\)\\
+ㄴ. \(A\ominus B=\varnothing\)이면 \(A\cap B=B\)이다.\\
+ㄷ. \(A\ominus B=B\)이면 \(A\cap B=\varnothing\)이다.
+\end{mdframed}
+\par\bigskip
+\tabb{\text{ㄱ}}{\textㄴ}{\text{ㄷ}}{\text{ㄱ, ㄴ}}{\text{ㄴ, ㄷ}}
+
+% 집합 2-7
+\prob{}
+전체집합 \(U=\{x\:|\:x\text{는 자연수}\}\)의 두 부분집합
+\begin{align*}
+A&=\{x\:|\:x=3k+1,\:k\text{는 자연수}\},\\
+B&=\{x\:|\:x=2k-1,\:k\text{는 자연수}\}
+\end{align*}
+에 대하여 집합 \(A\cap(A-B)^c\)의 원소의 최솟값은?
+\tabb34567
+
+% 집합 2-8
+\prob{}
+전체집합 \(U=\{x\:|\:x\text{는 20 이하의 자연수}\}\)의 두 부분집합 \(A\), \(B\)에 대하여 \(n(A)=8\), \(n(B^c)=12\), \(n(A^c\cup B^c)=16\)일 때, \(n(A\cup B)\)의 값은?
+\tabb468{10}{12}
+
+% 집합 2-9
+\prob{}
+\(30\)명의 학생으로 이루어진 어느 학급의 국어, 수학 방과후학교 수강현황을 조사하였더니 방과후학교에 참여하지 않는 학생이 5명, 국어를 수강하는 학생은 12명, 수학을 수강하는 학생은 15명이었다.
+국어와 수학을 모두 수강하는 학생은 몇 명인가?
+\tabb2468{10}
+
+%%
+\subsection{명제(1)}
+\vspace{-30pt}
+
+% 명제 3-1
+\prob{}
+전체집합이 \(U=\{x\:|\:x\text{는 10 이하의 자연수}\}\)일 때, 두 조건 \(p\), \(q\)를 각각
+\[p : 3<x\le 7,\quad q : x\text{는 30의 양의 약수}\]
+라고 하자.
+두 조건 `\(p\) 그리고 \(q\)', `\(p\) 또는 \(\sim q\)'의 진리집합을 각각 \(X\), \(Y\)라고 할 때, \(X\cup Y\)의 원소의 개수는?
+\tabb45678
+
+% 명제 3-2
+\prob{}
+전체집합이 \(U=\{x\:|\:x\text{는 자연수}\}\)일 때, 세 조건 \(p\), \(q\), \(r\)의 진리집합이 각각
+\begin{align*}
+P&=\{1,4,8\},\qquad Q=\{x\:|\:x\text{는 16의 약수}\}\\
+R&=\{x\:|\:x\text{는 16 이하의 소수}\}
+\end{align*}
+이다.
+<보기>의 명제 중 반드시 참인 것만을 있는 대로 고르시오.
+\begin{mdframed}[frametitle=<보기>]
+ㄱ. \(p\to q\)\qquad\qquad\qquad\qquad
+ㄴ. \(p\to\sim r\)\qquad\qquad\qquad\qquad
+ㄷ. \(r\to\sim q\)
+\end{mdframed}
+\par\bigskip
+\tabb{\text{ㄱ}}{\textㄴ}{\text{ㄱ, ㄴ}}{\text{ㄱ, ㄷ}}{\text{ㄴ, ㄷ}}
+
+% 명제 3-3
+\prob{}
+세 조건
+\[p : a-1\le x\le 4,\quad q:-4\le x\le a^2,\quad r:x\le-a+8\]
+에 대하여 두 명제 \(p\to q\), \(p\to r\)이 모두 참이 되도록 하는 실수 \(a\)의 최댓값 \(M\)과 최솟값 \(m\)의 곱 \(Mm\)의 값은?
+\tabb{-15}{-12}{-9}{-6}{-3}
+
+% 명제 3-4
+\prob{}
+세 조건 \(p\), \(q\), \(r\)의 진리집합을 \(P\), \(Q\), \(R\)이라고 할 때, \(P\subset Q\), \(Q\cap R=\varnothing\)이 성립한다.
+대우가 참인 명제를 <보기>에서 있는 대로 고른 것은?
+\begin{mdframed}[frametitle=<보기>]
+ㄱ. \(p\to q\)\qquad\qquad\qquad\qquad
+ㄴ. \(p\to\sim r\)\qquad\qquad\qquad\qquad
+ㄷ. \(r\to\sim q\)
+\end{mdframed}
+\par\bigskip
+\tabb{\text{ㄱ}}{\textㄷ}{\text{ㄱ, ㄴ}}{\text{ㄴ, ㄷ}}{\text{ㄱ, ㄴ, ㄷ}}
+
+\clearpage
+% 명제 3-5
+\prob{}
+세 조건 \(p\), \(q\), \(r\)의 진리집합을 각각 \(P\), \(Q\), \(R\)이라고 할 때, 명제 `\(p\) 그리고 \(q\)이면 \(\sim r\)이다.'가 거짓임을 보이기 위한 반례 \(x\)에 대한 명제 중 참인 것은?
+\par\bigskip
+\noindent\ding{172}		\:{\(x\in R\)이고 \(x\in(P\cup Q)^c\)이다.}
+\par\noindent\ding{173}	\:{\(x\in R\)이고 \(x\in(P\cap Q)^c\)이다.}
+\par\noindent\ding{174}	\:{\(x\in R\)이고 \(x\in P\cap Q\)이다.}
+\par\noindent\ding{175}	\:{\(x\in R^c\)이고 \(x\in P\cup Q\)이다.}
+\par\noindent\ding{176}	\:{\(x\in R^c\)이고 \(x\in P\cup Q\)이다.}
+
+% 명제 3-6
+\prob{}
+다음은 자연수 \(a\), \(b\)에 대하여 명제 `\(ab\)가 짝수이면 \(a\) 또는 \(b\)는 짝수이다.'를 증명하는 과정이다.
+\begin{mdframed}
+주어진 명제의 대우인 `\(a\)와 \(b\)가 모두 홀수이면 \(ab\)는 홀수이다.'를 증명하면 된다.
+\(a\), \(b\)가 모두 홀수이므로 자연수 \(m\), \(n\)에 대하여 \(a=\fbox{(가)}\), \(b=2n-1\)로 놓으면 \(ab=\fbox{(나)}+1\)이므로 \(ab\)는 홀수이다.
+\end{mdframed}
+위의 (가), (나)에 알맞은 것을 순서대로 나열한 것은?
+\par\bigskip
+\noindent\ding{172}		\:{\(2m-1\), \(mn-m-n\)}
+\par\noindent\ding{173}	\:{\(2m-1\), \(2mn-m-n\)}
+\par\noindent\ding{174}	\:{\(2m-1\), \(2(2mn-m-n)\)}
+\par\noindent\ding{175}	\:{\(2m+1\), \(2mn+m+n\)}
+\par\noindent\ding{176}	\:{\(2m+1\), \(2(2mn+m+n)\)}
+
+% 명제 3-7
+\prob{}
+다음은 \(\sqrt2\)가 무리수임을 증명하는 과정이다.
+\begin{mdframed}
+\(\sqrt2\)가 무리수가 아니라고 가정하면 서로소인 두 자연수 \(p\), \(q\)에 대하여 \fbox{(가)}이다.
+양변을 제곱하여 정리하면 \(2p^2=q^2\)이다.
+\(q^2\)이 \fbox{(나)}이므로 \(q\)는 \fbox{(나)}이다.
+그러므로 자연수 \(k\)에 대하여 \(2p^2=4k^2\)이다.
+\(p^2=2k^2\)에서 \(p^2\)은 \fbox{(나)}이므로 \(p\)도 \fbox{(나)}이다.
+이것은 \fbox{(다)}라는 가정에 모순이다.
+따라서 \(\sqrt2\)는 유리수가 아니다.
+즉 \(\sqrt 2\)는 무리수이다.
+\end{mdframed}
+위의 (가), (나)에 알맞은 것을 순서대로 나열한 것은?
+\par\bigskip
+\noindent\ding{172}		\:{\(\sqrt2=\frac qp\),	2의 배수,	`\(p\), \(q\)가 소수'}
+\par\noindent\ding{173}	\:{\(\sqrt2=\frac qp\),	2의 배수,	`\(p\), \(q\)가 서로소'}
+\par\noindent\ding{174}	\:{\(\sqrt2=\frac qp\),	4의 배수,	`\(p\), \(q\)가 서로소'}
+\par\noindent\ding{175}	\:{\(\sqrt2=pq\),			4의 배수,	`\(p\), \(q\)가 소수'}
+\par\noindent\ding{176}	\:{\(\sqrt2=pq\),			2의 배수,	`\(p\), \(q\)가 서로소'}
+
+\clearpage
+%%
+\subsection{명제(2)}
+\vspace{-30pt}
+
+% 명제 4-1
+\prob{}
+두 조건 \(p\), \(q\)에 대하여 \(p\)는 \(q\)이기 위한 필요조건이지만 충분조건이 아닌 것만을 <보기>에서 모두 고른 것은? (단, \(x\), \(y\)는 실수이다.)
+\begin{mdframed}[frametitle=<보기>]
+ㄱ. \(p:xy>0\)\\
+\phantom{ㄱ. }\(q:x>0,\:y>0\)\\
+ㄴ. \(p:x^2+y^2=0\)\\
+\phantom{ㄴ. }\(q:xy=0\)\\
+ㄷ. \(p:x^2\ge y^2\)\\
+\phantom{ㄷ. }\(q:|x|-|y|=\big||x|-|y|\big|\)
+\end{mdframed}
+\par\bigskip
+\tabb{\text{ㄱ}}{\textㄷ}{\text{ㄱ, ㄴ}}{\text{ㄱ, ㄷ}}{\text{ㄴ, ㄷ}}
+
+% 명제 4-2
+\prob{}
+전체집합 \(U\)에 대하여 세 조건 \(p\), \(q\), \(r\)의 진리집합을 각각 \(P\), \(Q\), \(R\)이라고 하자.
+\(p\)는 \(q\)이기 위한 충분조건이고, \(\sim r\)은 \(q\)이기 위한 필요조건일 때, 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+(단, \(P\), \(Q\), \(R\)은 모두 공집합이 아니다.
+\begin{mdframed}[frametitle=<보기>]
+ㄱ. \(P\subset Q\)\qquad\qquad\qquad\qquad
+ㄴ. \(P\subset R\)\qquad\qquad\qquad\qquad
+ㄷ. \(R\subset P^c\)
+\end{mdframed}
+\par\bigskip
+\tabb{\text{ㄱ}}{\textㄷ}{\text{ㄱ, ㄴ}}{\text{ㄱ, ㄷ}}{\text{ㄴ, ㄷ}}
+
+% 명제 4-3
+\prob{}
+두 조건
+\[p:a-3\le x\le a^2+1,\qquad q:2a-1\le x\le 3a+5\]
+에 대하여 \(p\)는 \(q\)이기 위한 필요조건이 되도록 하는 정수 \(a\)의 개수는?
+(단, \(-6<a<0\))
+\tabb12345
+
+% 명제 4-4
+\prob{}
+다음은 두 실수 \(a\), \(b\)에 대하여 부등식
+\[2a^2+3b^2\ge 4ab\]
+가 성립함을 증명하는 과정이다.
+\begin{mdframed}
+\(2a^2+3b^2-4ab=\fbox{(가)}+b^2\)\\
+\(a\), \(b\)는 실수이므로 \(\fbox{(가)}\ge0,\:b^2\ge0\)이다.\\
+따라서 \(2a^2+3b^2-4ab\ge0\)이다.\\
+(단, 등호는 \fbox{(나)}일 때 성립한다.)
+\end{mdframed}
+위의 (가), (나)에 알맞은 것을 순서대로 나열한 것은?
+\par\bigskip
+\noindent\ding{172}		\:{\(2(a-b)^2\),			\(a=b=0\)}
+\par\noindent\ding{173}	\:{\(2(a-b)^2\),			\(a=b\)}
+\par\noindent\ding{174}	\:{\((2a-b)^2\),			\(a=b\)}
+\par\noindent\ding{175}	\:{\(\frac12(2a-b)^2\),	\(a=b=0\)}
+\par\noindent\ding{176}	\:{\(\frac12(2a-b)^2\),	\(a=b\)}
+
+% 명제 4-5
+\prob{}
+다음은 두실수 \(a\), \(b\)에 대하여 부등식
+\[2a^2+b^2+1\ge2a(b+1)\]
+이 성립함을 증명하는 과정이다.
+\begin{mdframed}
+\(2a^2+b^2+1-2ab-2a=(a-b)^2+\fbox{(가)}\)\\
+\((a-b)^2\ge0,\quad\fbox{(가)}\ge0\)이므로\\
+\((a-b)^2+\fbox{(가)}\ge0\)이다.\\
+따라서 \(2a^2+b^2+1\ge2a(b+1)\)이다.\\
+(단, 등호는 \(a=\fbox{(나)}\), \(b=\fbox{(다)}\)일 때 성립한다.)
+\end{mdframed}
+(가)에 알맞은 식을 \(f(a)\)라고 하고, (나), (다)에 알맞은 수를 각각 \(\alpha\), \(\beta\)라고 할 때, \(f(2)+\alpha+\beta\)의 값은?
+\par\bigskip
+\tabb12345
+
+% 명제 4-6
+\prob{}
+\(a>0\), \(b>0\)일 때, \((2a+b)\left(\frac1{2a}+\frac1b\right)\)의 최솟값은?
+\tabb{\frac{\sqrt2}2}{\sqrt2}2{2\sqrt2}4
+
+% 명제 4-7
+\prob{}
+\(x>-1\)일 때, \(\displaystyle4x+1+\frac4{x+1}\)의 최솟값을 구하시오.
+\tabb12345
+
+% 명제 4-8
+\prob{}
+세 실수 \(x\), \(y\), \(z\)에 대하여, \(x^2+y^2+z^2=2\)일 때, \(3x+4y+5z\)의 최댓값을 \(M\), 최솟값을 \(m\)이라고 한다.
+\(M-m\)의 값은?
+\tabb8{12}{16}{20}{24}
+\end{document}

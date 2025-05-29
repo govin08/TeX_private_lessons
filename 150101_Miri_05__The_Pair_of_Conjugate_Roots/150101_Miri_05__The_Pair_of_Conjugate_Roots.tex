@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,mathrsfs,mdframed,url}
+
+%%%
+\begin{document}
+
+\title{미리 : 05 삼차방정식의 켤레근}
+\author{}
+\date{\today}
+\maketitle
+
+\noindent
+\begin{mdframed}[frametitle={개념원리 수1, p170}]
+(1) 계수가 유리수인 삼차방정식의 한 근이 \(p+q\sqrt m\)이면 켤레무리수 \(p-q\sqrt m\)도 근이다.
+(단 \(p\), \(q\), \(m\)은 유리수, \(\sqrt m\)은 무리수)
+\\
+(2) 계수가 실수인 삼차방정식의 한 근이 \(p+qi\)이면 켤레복소수 \(p-qi\)도 근이다.
+(단 \(p\), \(q\), \(m\)은 실수)
+\end{mdframed}
+
+\begin{proof}
+계산의 편의를 위해
+\[x^3+ax^2+bx+c=0\tag{a}\]
+꼴의 삼차방정식만을 생각하자.
+최고차항의 계수(\(\neq0\))가 1이 아닐 경우, 양번을 최고차항의 계수로 나누어 (a)의 꼴로 바꿀 수 있다.
+
+(1) 가정에 의해 \(a\), \(b\), \(c\)는 유리수이다.
+(a)의 한 근이 \(p+q\sqrt m\)이면
+\[
+(p+q\sqrt m)^3+a(p+q\sqrt m)^2+b(p+q\sqrt m)+c=0
+\]
+이다.
+이를 전개하면
+\[
+(p^3+3pq^2m+ap^2+aq^2m+bp+c)+(3p^2q+q^3m+2apq+bq)\sqrt m=0
+\]
+이다.
+괄호안의 수들이 모두 유리수이므로
+\[
+p^3+3pq^2m+ap^2+aq^2m+bp+c=0,\quad 3p^2q+q^3m+2apq+bq=0
+\]
+이다.
+
+이제 (a)에 \(x=p-q\sqrt m\)을 대입하면
+\begin{align*}
+&(p-q\sqrt m)^3+a(p-q\sqrt m)^2+b(p-q\sqrt m)+c\\
+=&(p^3+3pq^2m+ap^2+aq^2m+bp+c)-(3p^2q+q^3m+2apq+bq)\sqrt m\\
+=&0
+\end{align*}
+이다.
+따라서 \(p-q\sqrt m\)은 (a)의 근이다.
+
+(2) 가정에 의해 \(a\), \(b\), \(c\)는 실수이다.
+(a)의 한 근이 \(p+qi\)이면
+\[
+(p+qi)^3+a(p+qi)^2+b(p+qi)+c=0
+\]
+이다.
+이를 전개하면
+\[
+(p^3-3pq^2+ap^2-aq^2+bp+c)+(3p^2q-q^3+2apq+bq)i=0
+\]
+이다.
+괄호안의 수들이 모두 실수이므로
+\[
+p^3-3pq^2+ap^2-aq^2+bp+c=0,\quad 3p^2q-q^3+2apq+bq=0
+\]
+이다.
+
+이제 (a)에 \(x=p-qi\)을 대입하면
+\begin{align*}
+&(p-qi)^3+a(p-qi)^2+b(p-qi)+c\\
+=&(p^3-3pq^2+ap^2-aq^2+bp+c)-(3p^2q-q^3+2apq+bq)i\\
+=&0
+\end{align*}
+이다.
+따라서 \(p-qi\)은 (a)의 근이다.
+\end{proof}
+
+\begin{mdframed}%[frametitle={Complex Conjugate Root Theorem}}]
+일반적으로 계수가 실수인 \(n\)차 다항식 \(P(x)\)에 대해 복소수 \(z\)가 \(P(x)=0\)의 근이면 켤레복소수 \(\bar z\)도 \(P(x)=0\)의 근이다.
+\end{mdframed}
+
+\begin{proof}
+\(P(x)\)를
+\[
+P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0
+\]
+로 놓자(\(a_1\), \(\cdots\), \(a_n\)은 실수).
+가정에 의해 \(P(z)=0\)이다.
+그러면 켤레복소수의 성질에 의해
+\begin{align*}
+P(\bar z)
+&=a_n\bar z^n+a_{n-1}\bar z^{n-1}+\cdots+a_1\bar z+a_0\\
+&=a_n\overline{z^n}+a_{n-1}\overline{z^{n-1}}+\cdots+a_1\bar z+a_0\\
+&=\overline{a_nz^n}+\overline{a_{n-1}z^{n-1}}+\cdots+\overline{a_1z}+\overline{a_0}\\
+&=\overline{a_nz^n+a_{n-1}z^{n-1}+\cdots+a_1z+a_0}\\
+&=\overline{P(z)}=\bar0=0
+\end{align*}
+이다.
+따라서 \(\bar z\)는 \(P(x)=0\)의 근이다.
+\end{proof}
+
+
+\end{document}

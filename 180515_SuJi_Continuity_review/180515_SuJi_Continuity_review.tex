@@ -1,0 +1,161 @@
+\documentclass[a4paper,twocolumn]{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,graphicx,mdframed}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,10mm,*,10mm,*}
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\title{수지 : 함수의 연속 복습}
+\date{\today}
+\author{}
+%%%%
+\begin{document}
+\maketitle
+
+%
+\begin{mdframed}[frametitle=함수의 극한]
+극한값 \(\displaystyle\lim_{x\to a}f(x)\)가 존재한다.\\[2em]
+\(\displaystyle\iff\lim_{x\to a-}f(x)=\lim_{x\to a+}f(x)\)\\
+\begin{enumerate}[(1)]
+\item
+좌극한값 \(\displaystyle\lim_{x\to a-}f(x)\)가 존재한다.
+\item
+우극한값 \(\displaystyle\lim_{x\to a+}f(x)\)가 존재한다.
+\item
+좌극한값과 우극한값이 같다.
+\end{enumerate}
+\end{mdframed}
+
+%
+\begin{mdframed}[frametitle=함수의 연속]
+\(f(x)\)가 \(x=a\)에서 연속이다.\\[2em]
+\(\displaystyle\lim_{x\to a}f(x)=f(a)\)\\
+\begin{enumerate}[(1)]
+\item
+함숫값 \(f(a)\)가 존재한다.
+\item
+극한값 \(\displaystyle\iff\lim_{x\to a}f(x)\)가 존재한다.
+\item
+함숫값과 극한값이 같다.
+\end{enumerate}
+\end{mdframed}
+\newpage
+
+%
+\exam{\(f(x)=x^2-1\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{enumerate}[(1)]
+\item
+좌극한값 \(\displaystyle\lim_{x\to2-}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+우극한값 \(\displaystyle\lim_{x\to2+}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+\(\displaystyle\lim_{x\to2}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+\(f(2)\)의 값은 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \(\pb{3}\)이다.
+\item
+\(f(x)\)는 \(x=2\)에서 연속 / 연속이 아니다.
+\end{enumerate}
+\newpage
+
+%
+\exam{\(f(x)=[x]\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{enumerate}[(1)]
+\item
+좌극한값 \(\displaystyle\lim_{x\to2-}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+우극한값 \(\displaystyle\lim_{x\to2+}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+\(\displaystyle\lim_{x\to2}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+\(f(2)\)의 값은 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \(\pb{3}\)이다.
+\item
+\(f(x)\)는 \(x=2\)에서 연속 / 연속이 아니다.
+\end{enumerate}
+\newpage
+
+%
+\exam{\(f(x)=|x-2|\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{enumerate}[(1)]
+\item
+좌극한값 \(\displaystyle\lim_{x\to2-}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+우극한값 \(\displaystyle\lim_{x\to2+}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+\(\displaystyle\lim_{x\to2}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+\(f(2)\)의 값은 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \(\pb{3}\)이다.
+\item
+\(f(x)\)는 \(x=2\)에서 연속 / 연속이 아니다.
+\end{enumerate}
+\newpage
+
+%
+\exam{\(f(x)=\frac{x-2}{|x-2|}\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{enumerate}[(1)]
+\item
+좌극한값 \(\displaystyle\lim_{x\to2-}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+우극한값 \(\displaystyle\lim_{x\to2+}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+\(\displaystyle\lim_{x\to2}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+\(f(2)\)의 값은 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \(\pb{3}\)이다.
+\item
+\(f(x)\)는 \(x=2\)에서 연속 / 연속이 아니다.
+\end{enumerate}
+\newpage
+
+%
+\prob{\(f(x)=\frac{x^2-3x+2}{x-2}\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{enumerate}[(1)]
+\item
+좌극한값 \(\displaystyle\lim_{x\to2-}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+우극한값 \(\displaystyle\lim_{x\to2+}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+\(\displaystyle\lim_{x\to2}f(x)\)가 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \pb{3}이다.
+\item
+\(f(2)\)의 값은 존재한다 / 존재하지 않는다.\\
+존재한다면 그 값은 \(\pb{3}\)이다.
+\item
+\(f(x)\)는 \(x=2\)에서 연속 / 연속이 아니다.
+\end{enumerate}
+\newpage
+
+\end{document}

@@ -1,0 +1,15 @@
+\contentsline {section}{차\nobreakspace {}례}{1}{section*.1}
+\contentsline {section}{\numberline {1}다항식}{2}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}다항식}{2}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}다항식의 덧셈, 뺄셈}{4}{subsection.0.1.2}
+\contentsline {section}{\numberline {2}다항식의 나눗셈}{5}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}정수의 나눗셈}{5}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}다항식의 나눗셈}{7}{subsection.0.2.2}
+\contentsline {subsection}{\numberline {2.3}조립제법}{9}{subsection.0.2.3}
+\contentsline {section}{\numberline {3}다항식의 곱셈}{10}{section.0.3}
+\contentsline {section}{\numberline {4}인수분해}{14}{section.0.4}
+\contentsline {section}{\numberline {5}항등식과 미정계수법}{17}{section.0.5}
+\contentsline {subsection}{\numberline {5.1}항등식}{17}{subsection.0.5.1}
+\contentsline {subsection}{\numberline {5.2}미정계수법}{21}{subsection.0.5.2}
+\contentsline {subsection}{\numberline {5.3}나머지정리와 인수정리}{22}{subsection.0.5.3}
+\contentsline {chapter}{\numberline {*}답}{27}{section*.3}

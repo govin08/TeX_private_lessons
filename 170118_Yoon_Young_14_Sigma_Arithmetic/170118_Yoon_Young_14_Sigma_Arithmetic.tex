@@ -1,0 +1,105 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig,tabu}
+
+\usepackage[skipabove=10pt,skipbelow=10pt,innertopmargin=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand\summ[3]{\ensuremath{\displaystyle\sum_{#1=#2}^{#3}}}
+
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textwidth}\end{mdframed}}
+\newcommand{\ans}{
+{\par\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}\par}\bigskip\bigskip}
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\ba{\,|\,}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+\counterwithout{subsection}{section}
+
+\newenvironment{talign}
+ {\let\displaystyle\textstyle\align}
+ {\endalign}
+\newenvironment{talign*}
+ {\let\displaystyle\textstyle\csname align*\endcsname}
+ {\endalign}
+
+\let\emph\textsf
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+%\usepackage{fapapersize}
+%\usefapapersize{210mm,297mm,45mm,45mm,15mm,15mm}
+%%%
+
+\begin{document}
+
+\title{윤영 : 14 수열의 합 계산 연습}
+\author{}
+\date{\today}
+\maketitle
+
+\prob{}
+다음 합을 구하여라.
+\begin{enumerate}
+\item
+\(\summ k1n(2k-1)\)
+\item
+\(\summ k1nk(k+1)\)
+\item
+\(\summ k1n(k+1)^2\)
+\item
+\(\summ k1nk(k+1)(k-1)\)
+\end{enumerate}
+%{\par\raggedleft\textbf{답 : } (1) \(n^2\), (2) \(\frac{n(n+1)(n+3)}3\), 
+%(3) \(\frac16n(2n^2+9n+13)\), (4) \(\frac14n(n-1)(n+1)(n+2)\)
+%}\bigskip\bigskip
+
+
+\prob{}
+다음 수열의 첫째항부터 제 \(n\)항까지의 합을 구하여라.
+\begin{enumerate}
+\item
+\(2\cdot3\), \(3\cdot4\), \(4\cdot5\), \(\cdots\), \((n+1)(n+2)\), \(\cdots\)
+\item
+\(1^2\), \(3^2\), \(5^2\), \(\cdots\), \((2n-1)^2\), \(\cdots\)
+\end{enumerate}
+\blfootnote{\par
+문제 1 : (1) \(n^2\), (2) \(\frac{n(n+1)(n+2)}3\), (3) \(\frac16n(2n^2+9n+13)\), (4) \(\frac14n(n-1)(n+1)(n+2)\)
+
+문제 2 : (1) \(\frac13n(n^2+6n+11)\), (2) \(\frac13n(2n+1)(2n-1)\)
+}
+
+\thispagestyle{empty}
+\end{document}

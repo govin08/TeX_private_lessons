@@ -1,0 +1,341 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig}
+
+\usepackage[skipabove=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\ans}{
+{\par
+\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}
+\par}\bigskip\bigskip}
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\summ[4]{\ensuremath{\displaystyle\sum_{#1=#2}^{#3}#4}}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+%%%%
+\begin{document}
+
+\title{규현 : 06 수열(3)}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+
+%%
+\section{합의 기호 \(\Sigma\)}
+\begin{mdframed}[innertopmargin=-5pt]
+%
+\defi{합의 기호 \(\Sigma\)}
+수열 \(\{a_n\}\)의 첫째항부터 제 \(n\)항까지의 합 \(a_1+a_2+\cdots+a_n\)은 합의 기호 \(\Sigma\)를 통해 다음과 같이 나타낸다.
+
+\[a_1+a_2+\cdots+a_n=\summ k1n{a_k}\]
+이때 \(\summ k1n{a_k}\)는 \(a_k\)의 \(k\)에 \(1\), \(2\), \(3\), \(\cdots\), \(n\)을 차례로 대입하여 얻은 항 \(a_1\), \(a_2\), \(a_3\), \(\cdots\), \(a_n\)의 합을 뜻한다.
+\end{mdframed}
+
+%
+\exam{}
+\begin{enumerate}
+\item
+\summ k1{10}{(2k-1)}은 \(2k-1\)의 \(k\)에 \(1\), \(2\), \(3\), \(\cdots\), \(n\)을 차례로 대입하여 얻은 항의 합이므로
+\[\summ k1{10}{(2k-1)}=1+3+5+\cdots+19\]
+\item
+\(2+4+8+\cdots+2^{10}\)은 수열의 제 \(i\)항 \(2^i\)의 \(i\)에 \(1\), \(2\), \(3\), \(\cdots\), \(10\)을 차례로 대입하여 얻은 항을 모두 더한 것이므로 기호 \(\Sigma\)를 사용하여 나타내면,
+\[2+4+8+\cdots+2^{10}=\summ i1{10}2^i\]
+\end{enumerate}
+
+%
+\prob{}
+다음을 합의 기호 \(\Sigma\)를 사용하지 않은 합의 꼴로 나타내어라.
+\begin{enumerate}
+\item
+\(\summ k1{10}{2k}=2+4+6+8+\cdots+20\)
+\item
+\(\summ k17{3^k}=\)
+\item
+\(\summ k38{\sqrt k}=\)
+\item
+\(\summ m15{\frac1{2m+1}}=\)
+\end{enumerate}
+
+%
+\prob{}
+다음을 합의 기호 \(\Sigma\)를 사용하여 나타내시오.
+\begin{enumerate}
+\item
+\(4+7+10+\cdots+31=\summ k1{10}(3k+1)\)
+\item
+\(2+2^2+2^3+\cdots+2^8=\)
+\item
+\(1+\frac12+\frac13+\frac14+\cdots+\frac1{15}=\)
+\item
+\(1^2+2^2+3^2+4^2+\cdots+n^2=\)
+\item
+\(\frac1{1\cdot2}+\frac1{2\cdot3}+\frac1{3\cdot4}+\frac1{4\cdot5}
++\cdots+\frac1{15\cdot16}=\)
+\end{enumerate}
+
+%
+\prob{}\label{property_example}
+다음을 계산하시오.
+\begin{enumerate}
+\item
+\(\summ k1{10}(4k+2)
+=6+10+14+18+\cdots+42
+=\frac{10(6+42)}2=240\)
+\item
+\(\summ n1{10}n=\)
+\item
+\(\summ j1{10}2^j=\)
+\end{enumerate}
+
+%%
+\section{수열의 성질}
+
+%
+\prob{}
+다음 계산을 해보자.
+
+\par\smallskip\noindent
+(1)
+\(\summ k13{2^k}=\)
+\tabto{0.5\textwidth}
+(2)
+\(\summ k13{k}=\)
+\par\smallskip\noindent
+(3)
+\(\summ k13{(2^k+k)}=\)
+\tabto{0.5\textwidth}
+(4)
+\(\summ k13{(2^k-k)}=\)
+\par\smallskip\noindent
+(5)
+\(\summ k13{2^k\times k}=\)
+\tabto{0.5\textwidth}
+(6)
+\(\summ k13{\frac{2^k}k}=\)
+\par\smallskip\noindent
+(7)
+\(\summ k13{(3\cdot2^k)}=\)
+
+%
+\prob{}
+빈칸에 \(=\) 또는 \(\neq\)를 넣으시오.
+\begin{align*}
+\summ k13{(2^k+k)}		\quad&\pb{=}\quad\summ k13{2^k}+\summ k13{k}\\
+\summ k13{(2^k-k)}		\quad&\pb{=}\quad\summ k13{2^k}-\summ k13{k}\\
+\summ k13{2^k\times k}	\quad&\pb{=}\quad\summ k13{2^k}\times\summ k13{k}\\
+\summ k13{\frac{2^k}k}	\quad&\pb{=}\quad\frac{\summ k13{2^k}}{\summ k13{k}}\\
+%\summ k13{\frac{2^k}k}	&\neq\left(\summ k13{2^k}\right)/\left(\summ k13{k}\right)\\
+\summ k13{3\cdot2^k}	\quad&\pb{=}\quad3\summ k13{2^k}
+\end{align*}
+
+\begin{mdframed}[innertopmargin=-5pt]
+%
+\theo{수열의 기본성질}\label{sequence_property}
+수열 \(\{a_n\}\)과 \(\{b_n\}\), 실수 \(c\)에 대해 다음이 성립한다.
+\begin{enumerate}[label=(\emph{\alph*})]
+\item
+\(\summ k1n{(a_k+b_k)}=\summ k1n{a_k}+\summ k1n{b_k}\)
+\item
+\(\summ k1n{(a_k-b_k)}=\summ k1n{a_k}-\summ k1n{b_k}\)
+\item
+\(\summ k1n{ca_k}=c\summ k1n{a_k}\)
+\item
+\(\summ k1nc=cn\)
+\end{enumerate}
+\end{mdframed}
+
+\bigskip
+또 다음은 성립하지 않는다.
+\begin{mdframed}
+\begin{enumerate}[label=(\emph{\alph*})]
+\item
+\(\summ k1n{a_kb_k}\neq\summ k1n{a_k}\times\summ k1n{b_k}\)
+\item
+\(\summ k1n{\frac{a_k}{b_k}}\neq\frac{\summ k1n{a_k}}{\summ k1n{b_k}}\)
+\end{enumerate}
+\end{mdframed}
+
+
+
+%%
+\section{자연수의 거듭제곱의 합}
+%
+\begin{mdframed}[innertopmargin=-5pt]
+\theo{}\label{sequence_formula}
+\begin{enumerate}[label=(\emph{\alph*})]
+\item
+\(\summ k1nk=\frac{n(n+1)}2\)
+\item
+\(\summ k1n{k^2}=\frac{n(n+1)(2n+1)}6\)
+\item
+\(\summ k1n{k^3}=\left\{\frac{n(n+1)}2\right\}^2\)
+\end{enumerate}
+\end{mdframed}
+\proo
+\begin{enumerate}
+\item
+등차수열의 합 공식을 이용하면
+\[\summ k1nk=1+2+3+\cdots+n=\frac{n(a+l)}2=\frac{n(n+1)}2\]
+\item
+식 \((k+1)^3-k^3=3k^2+3k+1\)에 \(k\)대신 \(1\), \(2\), \(\cdots\), \(n\)을 차례로 대입하고
+\begin{align*}
+2^3-1^3&=3\cdot1^2+3\cdot1+1\\
+3^3-2^3&=3\cdot2^2+3\cdot2+1\\
+4^3-3^3&=3\cdot3^2+3\cdot3+1\\
+&\vdots\\
+(n+1)^3-n^3&=3\cdot n^2+3\cdot n+1
+\end{align*}
+이것들을 모두 더하면,
+\begin{align*}
+(n+1)^3-1^3=&3(1^2+2^2+3^2+\cdots+n^2)+3(1+2+3+\cdots+n)\\
+&+(1+1+1+\cdots+1)\\
+n^3+3n^2+3n=&3\summ k1n{k^2}+3\summ k1n{k}+\summ k1n1\\
+n^3+3n^2+3n=&3\summ k1n{k^2}+3\cdot\frac{n(n+1)}2+n
+\end{align*}
+이다.
+이것을 정리하면
+\[\summ k1n{k^2}=\frac{n(n+1)(2n+1)}6\]
+이 된다.
+\item
+(생략, (2)와 같은 방법을 적용하면 된다.)
+\end{enumerate}
+
+%
+\prob{}
+다음을 구하여라.
+\begin{enumerate}
+\item
+\(1+2+3+\cdots+10=\frac{10\times11}2=55\)
+\item
+\(1^2+2^2+3^2+\cdots+10^2=\)
+\item
+\(1^3+2^3+3^3+\cdots+10^3=\)
+\end{enumerate}
+
+%
+\prob{}
+\begin{enumerate}
+\item
+\(2^2+4^2+6^2+\cdots+14^2=\summ k17{(2k)^2}=\summ k174k^2=4\summ k17k^2\\\)
+\(=4\times\frac{7\times8\times15}6=560\)
+\item
+\(1+3+5+7+9+\cdots+19=\)
+\item
+\(2^3+4^3+6^3+\cdots+12^3=\)
+\end{enumerate}
+
+
+%%
+\section*{답}
+\begin{minipage}{0.49\textwidth}
+%
+\an{3}
+\begin{enumerate}[topsep=0pt]
+\item[(2)]
+\(3+3^2+3^3+\cdots+3^7\)
+\item[(3)]
+\(\sqrt1+\sqrt2+\sqrt3+\cdots+\sqrt8\)
+\item[(4)]
+\(\frac13+\frac15+\frac17+\frac19+\frac1{11}\)
+\end{enumerate}
+
+%
+\an{4}
+\begin{enumerate}[topsep=0pt]
+\item[(2)]
+\summ k18{2^k}
+\item[(3)]
+\summ k1{15}{\frac1k}
+\item[(4)]
+\summ k1n{k^2}
+\item[(5)]
+\summ k1{15}{\frac1{k(k+1)}}
+\end{enumerate}
+
+%
+\an{5}
+\begin{enumerate}[topsep=0pt]
+\item[(2)]
+\(55\)
+\item[(3)]
+\(2046\)
+\end{enumerate}
+\end{minipage}
+%%%
+\begin{minipage}{0.49\textwidth}
+
+%
+\an{6}
+\begin{enumerate}[topsep=0pt]
+\item
+\(14\)
+\item
+\(6\)
+\item
+\(20\)
+\item
+\(8\)
+\item
+\(34\)
+\item
+\(\frac{20}3\)
+\item
+\(42\)
+\end{enumerate}
+
+%
+\an{7}
+\(=\), \(=\), \(=\), \(\neq\). \(\neq\)
+
+%
+\an{10}
+\begin{enumerate}
+\item[(2)]
+\(385\)
+\item[(3)]
+\(3025\)
+\end{enumerate}
+
+%
+\an{11}
+\begin{enumerate}
+\item[(2)]
+\(100\)
+\item[(3)]
+\(3528\)
+\end{enumerate}
+
+\end{minipage}
+\end{document}

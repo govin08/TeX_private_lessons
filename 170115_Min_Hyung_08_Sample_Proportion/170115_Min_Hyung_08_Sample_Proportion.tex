@@ -1,0 +1,105 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig,tabu}
+
+\usepackage[skipabove=10pt,skipbelow=10pt,innertopmargin=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textwidth}\end{mdframed}}
+\newcommand{\ans}{
+{\par\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}\par}\bigskip\bigskip}
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\ba{\,|\,}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+\counterwithout{subsection}{section}
+
+\newenvironment{talign}
+ {\let\displaystyle\textstyle\align}
+ {\endalign}
+\newenvironment{talign*}
+ {\let\displaystyle\textstyle\csname align*\endcsname}
+ {\endalign}
+
+\let\emph\textsf
+
+%\usepackage{fapapersize}
+%\usefapapersize{210mm,297mm,45mm,45mm,15mm,15mm}
+%%%
+
+\begin{document}
+
+\title{민형 : 08 모비율과 표본비율}
+\author{}
+\date{\today}
+\maketitle
+
+어느 고등학교의 학생 \(1000\)명 중 축구를 좋아하는 학생이 \(900\)명이라고 한다.
+\begin{enumerate}
+\item
+이 고등학교 학생들 중 축구를 좋아하는 학생의 비율을 \(p\)라고 할 때, \(p\)의 값은
+\[p=\frac{900}{1000}=0.9\]
+\item
+이 고등학교의 학생들 중 \(100\)명을 임의추출했을 때, \(100\)명 중 축구를 좋아하는 학생의 수를 \(X\)라고 하자.
+%이때 확률질량함수는
+%
+%\begin{tabu}{|X[c,3]|X[c,2]|X[c,2]|X[c,2]|X[c,2]|}
+%\hline
+%\(X\) 		&\(0\)	&\(1\)	&\(\cdots\)	&\(100\)\\
+%\hline
+%\(P(X=x)\)	&		&		&			&\\
+%\hline
+%\end{tabu}
+%이다.
+
+각각의 학생이 축구를 좋아할 확률이 \(0.9\)이므로 \(X\)는 이항분포
+\[B(100,0.9)\]
+\vspace{-23pt}\tabto{0.8\textwidth}\(=B(n,p)\)\\
+를 따른다.
+따라서
+\[E(X)=100\times0.9=90\]
+\vspace{-24pt}\tabto{0.8\textwidth}\(=np\)
+\[V(X)=100\times0.9\times0.1=9\]
+\vspace{-31pt}\tabto{0.8\textwidth}\(=npq\)\\
+%\[N(\phantom{90},\phantom{3^2})\]
+이다.
+
+\(100\)명 중 축구를 좋아하는 학생의 비율을 \(\hat p\)라고 하면
+\[\hat p=\frac X{100}\]
+\vspace{-28pt}\tabto{0.8\textwidth}\(=\frac Xn\)\\
+이고 따라서
+\[E(\hat p)=E\left(\frac X{100}\right)=\frac1{100}E(X)=0.9\]
+\vspace{-25pt}\tabto{0.8\textwidth}\(=p\)\\
+\[V(\hat p)=V\left(\frac X{100}\right)=\frac1{10000}V(X)=0.0009\]
+\vspace{-25pt}\tabto{0.8\textwidth}\(=\frac{pq}n\)\\
+\end{enumerate}
+
+\thispagestyle{empty}
+\end{document}

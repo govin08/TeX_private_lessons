@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{kotex}
+\usepackage{forest}
+\usetikzlibrary{shapes.geometric,arrows.meta,calc}
+\begin{document}
+\begin{forest}
+  for tree={grow'=east,calign = first,
+    %font=\sffamily\bfseries,
+    child anchor=west,
+    l sep=10mm,
+    s sep=5mm,
+    anchor=east,
+    align=center,draw,
+    child anchor=parent,
+    parent anchor=children,
+    where level={1}{rounded corners}{},
+    where level={2}{rounded corners}{},
+    where level={3}{rounded corners}{},
+    edge+={rounded corners=5pt, -{Stealth[length=10pt]}, line width=1pt},
+  },
+[{$ax+by+c=0$}\\
+{$a'x+b'y+c'=0$},
+  [{$\displaystyle\frac{a}{b}=\frac{a'}{b'}$}
+    [{$\displaystyle\frac{b}{b'}=\frac{c}{c'}$}
+      [일치,tier=word]
+    ]
+    [{$\displaystyle\frac{b}{b'}\ne\frac{c}{c'}$},
+    edge path={\noexpand\path[\forestoption{edge}] (!u.parent anchor) --+(5mm,0)
+    |-(.child anchor)\forestoption{edge label};}
+     [평행,tier=word]]
+    ]
+  [{$\displaystyle\frac{a}{b}\ne\frac{a'}{b'}$},
+    edge path={\noexpand\path[\forestoption{edge}] (!u.parent anchor) --+(5mm,0)
+    |-(.child anchor)\forestoption{edge label};}
+    [{한 점에서 만남},tier=word,rounded corners=0pt]
+  ]
+]
+\end{forest}
+\end{document}

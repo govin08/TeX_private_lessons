@@ -1,0 +1,174 @@
+\documentclass[a4paper,twocolumn]{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,graphicx}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,10mm,*,10mm,*}
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\title{수지 : 함수의 극한 복습}
+\date{\today}
+\author{}
+%%%%
+\begin{document}
+\maketitle
+
+%
+\exam{\(y=x^2-4\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to1}(x^2-4)=\\
+\lim_{x\to0}(x^2-4)=\\
+\lim_{x\to\infty}(x^2-4)=\\
+\lim_{x\to-\infty}(x^2-4)=
+\end{gather*}
+\newpage
+
+%
+\prob{\(y=-x^2+4\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to1}(-x^2+4)=\\
+\lim_{x\to2}(-x^2+4)=\\
+\lim_{x\to\infty}(-x^2+4)=\\
+\lim_{x\to-\infty}(-x^2+4)=
+\end{gather*}
+\newpage
+
+%
+\exam{\(y=\sqrt x\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to4}\sqrt x=\\
+\lim_{x\to3}\sqrt x=\\
+\lim_{x\to\infty}\sqrt x=
+\end{gather*}
+
+%
+\prob{\(y=-\sqrt x\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to1}(-\sqrt x)=\\
+\lim_{x\to3}(-\sqrt x)=\\
+\lim_{x\to\infty}(-\sqrt x)=
+\end{gather*}
+\newpage
+
+%
+\exam{\(y=\frac{2x+1}{x-1}\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to2}\frac{2x+1}{x-1}=\\
+\lim_{x\to\infty}\frac{2x+1}{x-1}=\\
+\lim_{x\to-\infty}\frac{2x+1}{x-1}=\\
+\lim_{x\to1+}\frac{2x+1}{x-1}=\\
+\lim_{x\to1-}\frac{2x+1}{x-1}=
+\end{gather*}
+
+%
+\prob{\(y=\frac{2x-3}{x-2}\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to1}\frac{2x-3}{x-2}=\\
+\lim_{x\to\infty}\frac{2x-3}{x-2}=\\
+\lim_{x\to-\infty}\frac{2x-3}{x-2}=\\
+\lim_{x\to2+}\frac{2x-3}{x-2}=\\
+\lim_{x\to2-}\frac{2x-3}{x-2}=
+\end{gather*}
+\newpage
+
+%
+\exam{\(y=[x]\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to\frac32}[x]=\\
+\lim_{x\to1+}[x]=\\
+\lim_{x\to1-}[x]=\\
+\lim_{x\to-1+}[x]=\\
+\lim_{x\to-1-}[x]=
+\end{gather*}
+
+%
+\prob{\(y=x-[x]\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to\frac32}(x-[x])=\\
+\lim_{x\to1+}(x-[x])=\\
+\lim_{x\to1-}(x-[x])=\\
+\lim_{x\to-1+}(x-[x])=\\
+\lim_{x\to-1-}(x-[x])=
+\end{gather*}
+\newpage
+
+%
+\exam{\(y=|x-2|\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to1}|x-2|=\\
+\lim_{x\to2}|x-2|=\\
+\lim_{x\to3}|x-2|=\\
+\lim_{x\to\infty}|x-2|=\\
+\lim_{x\to-\infty}|x-2|=
+\end{gather*}
+
+%
+\prob{\(y=|2x+2|\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to-1}|2x+2|=\\
+\lim_{x\to2}|2x+2|=\\
+\lim_{x\to\infty}|2x+2|=\\
+\lim_{x\to-\infty}|2x+2|=
+\end{gather*}
+\newpage
+
+%
+\exam{\(y=\frac{x-2}{|x-2|}\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to1}\frac{x-2}{|x-2|}=\\
+\lim_{x\to3}\frac{x-2}{|x-2|}=\\
+\lim_{x\to2+}\frac{x-2}{|x-2|}=\\
+\lim_{x\to2-}\frac{x-2}{|x-2|}=
+\end{gather*}
+
+%
+\prob{\(y=\frac x{|x|}\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to-2}\frac x{|x|}=\\
+\lim_{x\to3}\frac x{|x|}=\\
+\lim_{x\to0+}\frac x{|x|}=\\
+\lim_{x\to0-}\frac x{|x|}=
+\end{gather*}
+\newpage
+
+%
+\exam{\(y=\frac{x^2+x-2}{x-1}\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to0}\frac{x^2+x-2}{x-1}=\\
+\lim_{x\to2}\frac{x^2+x-2}{x-1}=\\
+\lim_{x\to1+}\frac{x^2+x-2}{x-1}=\\
+\lim_{x\to1-}\frac{x^2+x-2}{x-1}=
+\end{gather*}
+
+%
+\prob{\(y=\frac{x^2-3x+2}{x-2}\)}
+{\centering\includegraphics[width=0.4\textwidth]{55}}
+\begin{gather*}
+\lim_{x\to1}\frac{x^2-3x+2}{x-2}=\\
+\lim_{x\to3}\frac{x^2-3x+2}{x-2}=\\
+\lim_{x\to2+}\frac{x^2-3x+2}{x-2}=\\
+\lim_{x\to2-}\frac{x^2-3x+2}{x-2}=
+\end{gather*}
+
+\end{document}

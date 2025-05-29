@@ -1,0 +1,600 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig,graphicx}
+
+\usepackage[skipabove=10pt,innertopmargin=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}\tab\ding{176}\:\:{\ensuremath{#5}}}
+\newcommand\tabfive[5]{\par\medskip\noindent\ding{172}\:\:{\ensuremath{#1}}\\
+\ding{173}\:\:{\ensuremath{#2}}\\\ding{174}\:\:{\ensuremath{#3}}\\
+\ding{175}\:\:{\ensuremath{#4}}\\\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\ans}{
+{\par
+\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}
+\par}\bigskip\bigskip}
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textheight}\end{mdframed}}
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+\newcommand\ba{\,|\,}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\renewcommand{\arraystretch}{1.5}
+
+\let\emph\textsf
+%%%%
+\begin{document}
+
+\title{윤영 : 09 명제(2)}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+\section{여러 가지 증명 방법}
+어떤 명제를 증명하는 방법에는 여러 가지가 있다.
+%
+\subsection{직접 증명법}
+가장 많이 쓰이는 것은 \emph{직접 증명법}으로, `가정에서 출발하여 추론을 거쳐 결론에 도달하는 방법'이다.
+
+예전에 했었던 다음 증명에서, 
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c|p{0.8\textwidth}}
+\hline
+정리	&두 직선이 한 점에서 만날 때, 맞꼭지각의 크기는 서로 같다.\\\hline
+가정	&	두 직선이 한 점에서 만난다.\\\hline
+결론	&	맞꼭지각의 크기는 서로 같다.\\\hline
+증명 &
+\kswrapfig[Pos=r,Width=3cm]{opposite_angle}{
+오른쪽 그림과 같이 직선 \(AC\)와 \(BD\)가 한 점 \(O\)에서 만날 때, \(\angle AOC\)는 평각이므로
+\[\angle AOB+\angle BOC=180^\circ\tag{1}\]
+또 \(\angle BOD\)는 평각이므로
+\[\angle BOC+\angle COD=180^\circ\tag{2}\]
+(1), (2)에서
+\[\angle AOB+\angle BOC=\angle BOC+\angle COD\]
+따라서 \(\angle AOB=\angle COD\)이다.
+}\\\hline
+\end{tabular}
+\end{figure}
+\par\noindent
+먼저 `두 직선이 한 점에서 만난다'는 것을 가정하고, 여러 과정을 거쳐 `맞꼭지각의 크기가 서로 같다'라는 결론에 도달해 증명을 완성했었다.
+
+%
+\subsection{간접 증명법}
+그 외에는 \emph{간접 증명법}을 사용할 수 있는데, 여기에는 \emph{대우를 이용한 증명법}과 \emph{귀류법}이 있다.
+
+%
+\subsubsection{대우를 이용한 증명법}
+\[P\subset Q\iff Q^c\subset P^c\]
+이므로, 주어진 명제(\(p\to q\))\가 참이면 대우(\(\sim q\to\sim p\))도 참이다.
+따라서 명제 \(p\to q\)를 증명할 때, 대우인 \(\sim q\to\sim p\)가 참이라는 것을 증명해도 된다.
+
+%
+\exam{}
+명제 `자연수 \(n\)에 대하여 \(n^2\)이 짝수이면 \(n\)도 짝수이다.'가 참임을 대우를 이용하여 증명하여라.
+\begin{mdframed}
+대우 : 자연수 \(n\)에 대하여 \(n\)이 홀수이면 \(n^2\)도 홀수이다.
+\par\medskip\noindent
+\(n\)이 홀수임을 가정하면 \(n\)을 \(n=2k-1\) (\(k\)는 자연수)로 나타낼 수 있으므로,
+\[n^2=(2k-1)^2=4k^2-4k+1=2\cdot(2k^2-2k)+1\]
+여기서 \(2k^2-2k\)\이 자연수이므로 \(n^2\)도 홀수이다.
+%따라서 주어진 명제의 대우가 참이므로 주어진 명제도 참이다.
+\end{mdframed}
+
+%
+\prob{}
+명제 `두 자연수 \(m\), \(n\)에 대하여 \(mn\)이 짝수이면 \(m\) 또는 \(n\)이 짝수이다.'가 참임을 대우를 이용하여 증명하여라.
+\procedure{0.38}
+
+%
+\subsubsection{귀류법}
+\begin{align*}
+P\subset Q
+&\iff P-Q=\varnothing\\
+&\iff P\cap Q^c=\varnothing
+\end{align*}
+이다.
+따라서 \(p\to q\)가 참임을 보일 때, `결론을 부정하여(\(Q^c\)) 가정(\(P\))에 모순(\(\varnothing\))됨을 보이는 방법'을 사용해도 된다.
+
+%
+\exam{}
+\(\sqrt2\)가 무리수임을 증명하여라.
+\begin{mdframed}
+이 명제를 \(p\to q\)꼴로 바꾸면
+\begin{center}
+\(x=\sqrt2\)이면 \(x\)는 무리수이다.
+\end{center}
+\noindent
+이다.
+결론을 부정하여 \(x\)가 무리수가 아니라고 가정하면, \(x\)는 유리수이다.
+따라서 \(x\)를 \(x=\frac nm\) (\(m\), \(n\)은 서로소인 자연수)로 나타낼 수 있다.
+즉 \[\sqrt2=\frac nm\]이다.
+이 식의 양변을 제곱하여 정리하면
+\[2m^2=n^2\]
+여기서 \(n^2\)은 짝수이므로 \(n\)도 짝수이다.
+그러므로 \(n=2k\) (\(k\)는 자연수)라고 하고 위 식에 대입해 정리하면
+\[m^2=2k^2\]
+이다.
+이번에도 \(m^2\)이 짝수이고, 따라서 \(m\)도 짝수이다.
+그러면 \(m\)과 \(n\)이 모두 짝수이며, 이것은 아까 \(m\), \(n\)이 서로소라는 가정에 모순이다.
+
+따라서 \(\sqrt2\)는 무리수이다.
+\end{mdframed}
+
+\clearpage
+%
+\prob{}
+명제 `\(\sqrt2\)가 무리수이면 \(1+\sqrt2\)가 무리수이다.'를 증명하여라.
+\procedure{0.8}
+
+%%
+\section{필요조건, 충분조건}
+
+%
+\defi{필요조건, 충분조건}
+명제 \(p\to q\)가 참일 때, 
+\begin{mdframed}[skipabove=5pt,skipbelow=5pt,leftmargin=140pt,rightmargin=140pt]
+\[p\Rightarrow q\]
+\end{mdframed}
+와 같이 나타낸다.
+이때
+\begin{mdframed}[skipabove=5pt,skipbelow=5pt,leftmargin=90pt,rightmargin=90pt]
+\begin{center}
+\(p\)는 \(q\)이기 위한 \emph{충분조건},\\
+\(q\)는 \(p\)이기 위한 \emph{필요조건}
+\end{center}
+\end{mdframed}
+라고 말한다.
+또한 \(p\Rightarrow q\)이고 \(q\Rightarrow p\)이면, 이것을 기호로 
+\begin{mdframed}[skipabove=5pt,skipbelow=5pt,leftmargin=140pt,rightmargin=140pt]
+\[p\iff q\]
+\end{mdframed}
+와 같이 나타내고
+\begin{mdframed}[skipabove=5pt,skipbelow=5pt,leftmargin=90pt,rightmargin=90pt]
+\begin{center}
+\(p\)는 \(q\)이기 위한 \emph{필요충분조건}
+\end{center}
+\end{mdframed}
+라고 말한다.
+
+%
+\exam{}
+두 조건 \(p\), \(q\)가 다음과 같을 때, \(p\)는 \(q\)이기 위한 무슨 조건인지 말하여라.
+
+\vspace{-10pt}
+\begin{enumerate}[itemsep=0pt]
+\item
+\(p:x=2\),		\tabto{0.49\textwidth}\(q:x^2-x-2=0\)
+\item
+\(p:3x-1<2x+3\),	\tabto{0.49\textwidth}\(q:2x-3<1\)
+\item
+\(p:x+2=1\),		\tabto{0.49\textwidth}\(q:x^2+2x+1=0\)
+\end{enumerate}
+\begin{mdframed}[skipabove=0pt]
+\(p\)의 진리집합을 \(P\), \(q\)의 진리집합을 \(Q\)라고 하자.
+\begin{enumerate}
+\item
+\(P=\{2\}\), \(Q=\{-1,2\}\)에서 \(P\subset Q\)이므로 \(p\Rightarrow q\)이다.\\
+따라서 \(p\)는 \(q\)이기 위한 충분조건이다.
+\item
+\(P=\{x\ba x<4\}\), \(Q=\{x\ba x<2\}\)에서 \(Q\subset P\)이므로 \(q\Rightarrow p\)이다.\\
+따라서 \(p\)는 \(q\)이기 위한 필요조건이다.
+\item
+\(P=\{-1\}\), \(Q=\{-1\}\)에서 \(P=Q\)이므로 \(p\Leftrightarrow q\)이다.\\
+따라서 \(p\)는 \(q\)이기 위한 필요충분조건이다.
+\end{enumerate}
+\end{mdframed}
+{\par\raggedleft\textbf{답 : (1) 충분조건, (2) 필요조건, (3) 필요충분조건}\par}\bigskip
+
+%
+\prob{}
+두 조건 \(p\), \(q\)가 다음과 같을 때, \(p\)는 \(q\)이기 위한 무슨 조건인지 말하여라.
+\begin{enumerate}
+\item
+\(p:x=1\)이고 \(y=1\),
+\tabto{0.49\textwidth}
+\(q:x+y=2\)
+\item
+\(p\) : `\(x\)는 \(3\)의 배수이다.',
+\tabto{0.49\textwidth}
+\(q\) : `\(x\)는 \(6\)의 배수이다.'
+\item
+\(p\) :`\(\triangle ABC\)가 이등변삼각형이다.',
+\tabto{0.49\textwidth}
+\(q\):`\(\triangle ABC\)의 두 변의 길이가 같다.'
+\end{enumerate}
+%\procedure{0.3}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\qquad\qquad\qquad
+(2)\:\:\qquad\qquad\qquad
+(3)\:\:\qquad\qquad\qquad\qquad}\par}\bigskip
+\vspace{0.2\textheight}
+
+%
+\prob{}
+두 실수 \(x\), \(y\)에 대하여 다음 빈 칸에 `필요', `충분', `필요충분' 중 알맞은 것을 구하여라.
+\begin{enumerate}
+\item
+\(x^2=y^2\)은 \(x=y\)이기 위한 \pb{필요충분}조건이다.
+\item
+\(x=2+\sqrt3\), \(y=2-\sqrt3\)은 \(x+y=4\)이기 위한 \pb{필요충분}조건이다.
+\item
+\(x^2-3x=0\)은 \(x=0\) 또는 \(x=3\)이기 위한 \pb{필요충분}조건이다.
+\end{enumerate}
+
+\section{절대부등식}
+
+\begin{mdframed}[skipbelow=40pt]
+%
+\defi{절대부등식}
+부등식 \((x-1)^2\ge0\), \(x^2+1>0\), \(|x-1|+1>0\)은 모두 \(x\)에 어떤 실수를 대입해도 항상 성립한다.
+이와 같이 문자에 어떤 실수를 대입해도 항상 성립하는 부등식을 \emph{절대부등식}이라고 한다.
+\end{mdframed}
+
+%
+\prob{}
+다음 부등식 중 절대부등식인 것을 골라라.
+\tabfive
+{x+1>0}
+{x^2+1>0}
+{x^3+1>0}
+{x^2-2x+1>0}
+{x^2-2x-3>0}
+
+\vspace{0.1\textheight}
+부등식을 증명할 때, 다음과 같은 기본 성질을 자주 이용한다.
+\begin{mdframed}
+%
+\defi{부등식의 기본 성질}
+실수 \(a\), \(b\)에 대하여
+\begin{enumerate}
+\item
+\(a>b\iff a-b>0\)
+\item
+\(a^2\ge0\), \(a^2+b^2\ge0\)
+\item
+\(a^2+b^2=0\iff a=0,\:\:b=0\)
+\item
+\(|a|^2=a^2\),\:\:\(|ab|=|a||b|\)
+\item
+\(a>0\), \(b>0\)일 때, \(a>b\iff a^2>b^2\)
+\end{enumerate}
+\end{mdframed}
+
+\clearpage
+%
+\exam{}
+\(a\), \(b\)가 실수일 때, 부등식 \(a^2+b^2\ge ab\)를 증명하여라.
+\begin{mdframed}
+\(a^2+b^2-ab\ge0\)임을 보이면 된다.
+\begin{align*}
+a^2-ab+b^2
+&=a^2-ab+\frac14b^2+\frac34b^2\\
+&=(a-\frac12b)^2+\frac34b^2\\
+&\ge0
+\end{align*}
+따라서 주어진 부등식이 증명되었다.
+여기서 등호가 성립하는 경우는 \(a-\frac12b=0\), \(b=0\)일 때이다.
+즉 \(a=0\), \(b=0\)일 때이다.
+\end{mdframed}
+
+%
+\prob{}
+\(a\), \(b\)가 실수일 때, 다음 부등식을 증명하여라.
+\par\noindent
+(1)\:\:\(a^2-2ab+2b^2\ge0\),
+\tabto{0.49\textwidth}
+(2)\:\:\(a^2+4ab+6b^2\ge0\)
+\procedure{0.5}
+
+\clearpage
+%
+\exam{}\label{t_ineq}
+\(a\), \(b\)가 실수일 때, 다음  부등식 \(|a|+|b|\ge|a+b|\)를 증명하여라.
+\begin{mdframed}
+\(|a|+|b|\ge0\), \(|a+b|\ge0\)이므로 \((|a|+|b|)^2\ge(|a+b|)^2\)을 증명하면 되고, 이것은 다시,  \((|a|+|b|)^2-(|a+b|)^2\ge0\)을 증명하면 된다.
+\begin{align*}
+(|a|+|b|)^2-(|a+b|)^2
+&=(|a|^2+2|a||b|+|b|^2)-(a+b)^2\\
+&=(a^2+2|ab|+b^2)-(a^2+2ab+b^2)\\
+&=2(|ab|-ab)\\
+&\ge0
+\end{align*}
+여기서 등호가 성립하는 경우는 \(|ab|-ab=0\)일 때이다.
+즉 \(ab\ge0\)일 때이다.
+\end{mdframed}
+
+%
+\prob{}
+\(a\), \(b\)가 실수일 때, \(|a|-|b|\le|a-b|\)\를 증명하여라.
+\procedure{0.45}
+
+\clearpage
+%
+\exam{}\label{arithmetic_geometric}
+\(a,b>0\)일 때, 부등식 \(\frac{a+b}2\ge\sqrt{ab}\)를 증명하여라.
+\begin{mdframed}
+\(a+b\ge2\sqrt{ab}\)를 증명하면 된다.
+이때 \(a+b>0\), \(2\sqrt{ab}>0\)이므로 양변을 제곱한
+\[(a+b)^2\ge\left(2\sqrt{ab}\right)^2\]
+를 증명해도 된다.
+\begin{align*}
+(a+b)^2-\left(2\sqrt{ab}\right)^2
+&=(a^2+2ab+b^2)-4ab\\
+&=a^2-2ab+b^2\\
+&=(a-b)^2\\
+&\ge0
+\end{align*}
+따라서 주어진 부등식이 증명되었다.
+여기서 등호가 성립하는 경우는 \(a-b=0\)일 때이다.
+즉 \(a=b\)일 때이다.
+\end{mdframed}
+
+%
+\prob{}\label{geometric_harmonic}
+\(a,b>0\)일 때, 부등식 \(\sqrt{ab}\ge\frac{2ab}{a+b}\)를 증명하여라.
+\procedure{0.4}
+
+\clearpage
+\begin{mdframed}
+%
+\defi{산술평균, 기하평균, 조화평균}
+예제 \ref{arithmetic_geometric}와 문제 \ref{geometric_harmonic}에 나타난 세 값을 각각 \emph{산술평균}, \emph{기하평균}, \emph{조화평균}이라고 부른다.
+\[산술평균=\frac{a+b}2,\quad기하평균=\sqrt{ab},\quad조화평균=\frac{2ab}{a+b}\]
+\end{mdframed}
+
+%
+\exam{}
+\(a=2\), \(b=8\)이라고 하자.
+\begin{enumerate}
+\item
+산술평균은 우리가 흔히 쓰는 `평균'의 의미이다. \(2\)와 \(8\)의 중간에 위치해 있는 값인 \(\frac{2+8}2=5\)를 뜻한다.
+\item
+기하평균은 `곱셈을 기준으로 한 평균'이다.
+\(a=2^1\)이고 \(b=2^3\)이므로, 평균을 \(2^2=4\)로 정하겠다는 뜻이다.
+%위의 식으로 계산을 해봐도 \(\sqrt{2\times8}=4\)가 나온다.
+\item
+조화평균은 `역수를 기준으로 한 평균'이다.
+\(2\)의 역수는 \(\frac12\)이고, \(8\)의 역수는 \(\frac18\)이므로, 두 수의 (산술)평균을 구하면 \(\frac{\frac12+\frac18}2=\frac5{16}\)이 된다.
+여기에 다시 역수를 취한 \(\frac{16}5=3.2\)가 두 수의 조화평균이다.
+\end{enumerate}
+예제 \ref{arithmetic_geometric}와 문제 \ref{geometric_harmonic}에 의하면 산술평균이 가장 크고, 조화평균이 가장 작다.
+\begin{mdframed}[skipabove=0pt,skipbelow=10pt,leftmargin=100pt,rightmargin=100pt]
+\[\frac{a+b}2\ge\sqrt{ab}\ge\frac{2ab}{a+b}\]
+\end{mdframed}
+\(2\)와 \(8\)의 경우에도 \(5\ge4\ge3.2\)이다.
+
+%
+\exam{}
+\(a=1\), \(b=9\)일 때, 산술평균과 기하평균, 조화평균을 구하여라.
+\begin{mdframed}[skipabove=5pt]
+\vspace{0.17\textheight}
+\end{mdframed}
+{\par\raggedleft\textbf{답 :
+산술평균\(=(\quad\qquad)\),\quad
+기하평균\(=(\quad\qquad)\),\quad
+조화평균\(=(\quad\qquad)\)}\par}\bigskip
+
+\clearpage
+\vspace{20pt}
+예시 \ref{arithmetic_geometric}를 변형한 다음 식은 자주 쓰이는 부등식이다.
+\begin{mdframed}
+%
+\theo{산술-기하 부등식}
+\(a>0\), \(b>0\)이면
+\[a+b\ge2\sqrt{ab}.\]
+(단 등호는 \(a=b\)일 때 성립한다.)
+\end{mdframed}
+
+%
+\exam{}
+\(x>0\)일 때, 산술-기하 부등식을 이용하여 \(\frac{x^2+4x+9}x\ge10\)을 증명하여라.
+\begin{mdframed}
+\(x>0\), \(\frac9x>0\)이므로 
+\begin{align*}
+\frac{x^2+4x+9}x
+&=x+4+\frac9x\\
+&=\left(x+\frac9x\right)+4\\
+&\ge2\sqrt{x\times\frac9x}+4\\
+&=2\sqrt9+4=10
+\end{align*}
+%주어진 식의 좌변을 통분하면 \(x+4+\frac9x\)이다.
+%\(x>0\), \(\frac1x>0\)이므로 산술-기하 부등식을 사용하면
+%\[
+%x+\frac9x\ge2\sqrt{x\times\frac9x}=2\sqrt9=6
+%\]
+%따라서 \(x+4+\frac9x\ge6+4=10\)이고, 주어진 부등식이 증명되었다.
+여기서 등호가 성립하는 경우는 \(x=\frac9x\)일 때이다.
+즉  \(x=3\)일 때이다.
+\end{mdframed}
+
+%
+\prob{}
+\(a,b>0\)일 때, 다음 부등식을 증명하여라.
+\par\noindent
+(1)\:\:\(a+\frac1a\ge2\),
+\tabto{0.49\textwidth}
+(2)\:\:\(\frac ab+\frac ba\ge2\)
+\procedure{0.2}
+
+\clearpage
+%
+\exam{코시-슈바르츠 부등식}\label{CS}
+\(a\), \(b\), \(x\), \(y\)가 실수일 때, 다음 부등식을 증명하여라
+\[(a^2+b^2)(x^2+y^2)\ge(ax+by)^2\]
+
+\begin{mdframed}[skipabove=0pt]
+\((a^2+b^2)(x^2+y^2)-(ax+by)^2\ge0\)을 증명하면 된다.
+\begin{align*}
+&(a^2+b^2)(x^2+y^2)-(ax+by)^2\\
+=&(a^2x^2+a^2y^2+b^2x^2+b^2y^2)-(a^2x^2+2abxy+b^2y^2)\\
+=&a^2y^2-2abxy+b^2x^2\\
+=&(ay)^2-2(ay)(bx)+(bx)^2\\
+=&(ay-bx)^2\\
+\ge&0
+\end{align*}
+따라서 주어진 부등식이 증명되었다.
+여기서 등호가 성립하는 경우는 \(ay-bx=0\)일 때이다.
+즉 \(a:b=x:y\)일 때이다.
+\end{mdframed}
+
+%
+\prob{}
+\(a\), \(b\), \(c\)가 실수일 때, 다음 부등식을 증명하여라.
+\[a^2+b^2+c^2\ge ab+bc+ca\]
+\begin{mdframed}[skipabove=0pt]
+\vspace{0.3\textheight}
+\end{mdframed}
+
+%%
+\section*{답}
+
+%
+\an{2}
+대우 : 두 자연수 \(m\), \(n\)에 대하여 \(m\)과 \(n\)이 모두 홀수이면 \(mn\)이 홀수이다.
+\par\medskip\noindent
+\(m\)과 \(n\)이 홀수임을 가정하면 \(m\)과 \(n\)을 각각 \(m=2k-1\), \(n=2l-1\)(\(k\), \(l\)\은 자연수)로 나타낼 수 있으므로
+\[mn=(2k-1)(2l-1)=4kl-2k-2l+1=2(2kl-k-l)+1\]
+여기서 \(2kl-k-l\)이 자연수이므로 \(mn\)도 홀수이다.
+
+%
+\an{4}
+결론을 부정해 \(1+\sqrt2\)가 유리수라고 가정하자.
+두 유리수 사이의 차는 유리수이다.
+따라서 \(1\)도 유리수이므로
+\[(1+\sqrt2)-1=\sqrt2\]
+도 유리수이다.
+이것은 가정과 모순이다.
+
+따라서 \(1+\sqrt2\)는 무리수이다.
+
+%
+\an{7}
+(1)\:\:충분조건
+\tabto{0.33\textwidth}
+(2)\:\:필요조건
+\tabto{0.66\textwidth}
+(3)\:\:필요충분조건
+
+%
+\an{8}
+(1)\:\:필요
+\tabto{0.33\textwidth}
+(2)\:\:충분
+\tabto{0.66\textwidth}
+(3)\:\:필요충분
+
+%
+\an{10}
+\ding{173}
+
+%
+\an{13}
+\begin{enumerate}
+\item
+\[a^2-2ab+2b^2=(a-b)^2+b^2\ge0\]
+(단 등호는 \(a-b=0\), \(b=0\)일 때, 즉 \(a=0\), \(b=0\)일 때 성립)
+\item
+\[a^2+4ab+6b^2=(a+2b)^2+2b^2\ge0\]
+(단 등호는 \(a+2b=0\), \(b=0\)일 때, 즉 \(a=0\), \(b=0\)일 때 성립)
+\end{enumerate}
+
+%
+\an{15}
+\begin{enumerate}[label=(\roman*)]
+\item
+\(|a|-|b|\ge0\)인 경우\\
+\(\left(|a|-|b|\right)^2\le\left(|a-b|\right)^2\)를 증명하면 된다.
+다시 말해, \(\left(|a-b|\right)^2-\left(|a|-|b|\right)^2\ge0\)을 증명하면 된다.
+\begin{align*}
+\left(|a-b|\right)^2-\left(|a|-|b|\right)^2
+&=(a-b)^2-\left(|a|^2-2|a||b|+|b|^2\right)\\
+&=(a^2-2ab+b^2)-(a^2-2|ab|+b^2)\\
+&=2\left(|ab|-ab\right)\\
+&\ge0
+\end{align*}
+\item
+\(|a|-|b|<0\)인 경우\\
+\(0\le|a-b|\)이므로
+\[|a|-|b|<0\le|a-b|\]
+\end{enumerate}
+(i), (ii)로부터
+\[|a|-|b|\le|a-b|\]
+(단, 등호는 \(|ab|=ab\)일 때, 즉 \(ab\ge0\)일 때 성립)
+
+\vspace{40pt}
+\textbf{(다른방법)}
+예시 \ref{t_ineq}의 부등식에 \(a\) 대신 \(a-b\)를 넣으면
+\[|a-b|+|b|\ge|(a-b)+b|\]
+이고, 이것을 정리하면
+\[|a|-|b|\le|a-b|\]
+
+\clearpage
+%
+\an{17}
+\begin{align*}
+\sqrt{ab}-\frac{2ab}{a+b}
+&=\frac{(a+b)\sqrt{ab}-2ab}{a+b}\\
+&=\frac{\sqrt{ab}\left(a+b-\sqrt{ab}\right)}{a+b}\\
+&=\frac{\sqrt{ab}(\sqrt a-\sqrt b)^2}{a+b}\\
+&\ge0
+\end{align*}
+(단, 등호는 \(\sqrt a=\sqrt b\)일 때, 즉 \(a=b\)일 때 성립)
+
+\vspace{40pt}
+\textbf{(다른방법)}
+예시 \ref{arithmetic_geometric}에서 얻은 식의 양변에 \(\frac{2\sqrt{ab}}{a+b}\)를 곱하면
+\[\sqrt{ab}\ge\frac{2ab}{a+b}\]
+
+%
+\an{20}
+\(산술평균=5\), \(기하평균=3\), \(조화평균=1.8\left(=\frac95\right)\)
+
+%
+\an{23}
+\begin{enumerate}
+\item
+\[a+\frac1a\ge2\sqrt{a\times\frac1a}=2\sqrt1=2\]
+(단, 등호는 \(a=\frac1a\)일 때, 즉 \(a=1\)일 때 성립)
+\item
+\[\frac ab+\frac ba\ge2\sqrt{\frac ab\times\frac ba}=2\sqrt1=2\]
+(단, 등호는 \(\frac ab=\frac ba\)일 때, 즉 \(a=b\)일 때 성립)
+\end{enumerate}
+
+\clearpage
+%
+\an{25}
+\begin{align*}
+&a^2+b^2+c^2-ab-bc-ca\\
+=&\frac12\left[2a^2+2b^2+2c^2-2ab-2bc-2ca\right]\\
+=&\frac12\left[(a^2-2ab+b^2)+(b^2-2bc+c^2)+(c^2-2ca+a^2)\right]\\
+=&\frac12\left[(a-b)^2+(b-c)^2+(c-a)^2\right]\\
+\ge&0
+\end{align*}
+(단, 등호는 \(a-b=0\), \(b-c=0\), \(c-a=0\)일 때, 즉 \(a=b=c\)일 때 성립)
+\end{document}

@@ -1,0 +1,48 @@
+\documentclass{xoblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,paralist,kswrapfig}
+
+\newcounter{num}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par}
+
+\newcommand{\ans}{
+{\par
+\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}
+\par}\bigskip\bigskip}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+%%
+\begin{document}
+%
+\prob{}
+\kswrapfig[Pos=r]{prob_1}{무리함수 \(y=-\sqrt{ax+b}+c\)의 그래프가 오른쪽 그림과 같을 때, 다음 물음에 답하여라.\\
+(1) 상수 \(a\), \(b\), \(c\)의 값을 구하여라.\\
+(2) 함수 \(y=\sqrt{ax+b}-c\)의 치역이\\ \(\{y|-2\le y\le 0\}\)일 때, 정의역을 구하여라.}
+\ans
+
+%
+\prob{}
+다음 함수의 역함수를 구하고, 역함수의 그래프를 그려라.\\
+(1) \(y=x^2+1(x\ge0)\)\\
+(2) \(f(x)=\sqrt{x-1}+2\)
+
+\bigskip\textbf{답 : }\bigskip
+
+{\footnotesize
+\begin{tabular}{p{0.49\textwidth}|p{0.49\textwidth}}
+\hline
+\raisebox{-.5\height}{\includegraphics[width=0.49\textwidth]{prob_2}}
+&\raisebox{-.5\height}{\includegraphics[width=0.49\textwidth]{prob_2}}
+\\\hline
+(1) \(y=\sqrt{\pb{x-1}}\) & (2) \(y=x^2-\pb{4}x+\pb{5}\quad(x\ge2)\)
+\\\hline
+\end{tabular}
+}
+
+%
+\prob{}
+무리함수 \(y=\sqrt{4x-8}\)의 그래프와 직선 \(y=x+k\)이 서로 다른 두 점에서 만날 때, 상수 \(k\)값의 범위를 구하여라.
+\ans
+
+\end{document}

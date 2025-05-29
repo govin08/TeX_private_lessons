@@ -1,0 +1,548 @@
+\documentclass[a4paper,twocolumn]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist,graphicx,tabu}
+\usepackage{fapapersize}
+%\usefapapersize{210mm,297mm,10mm,*,10mm,*}
+
+\usepackage[inline]{enumitem}
+\setlist[enumerate,1]{label=(\arabic*)}
+
+\usepackage{tabto,pifont}
+%\TabPositions{0.1\textwidth,0.2\textwidth,0.3\textwidth,0.4\textwidth}
+\newcommand\taba[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tabto{0.1\textwidth}\ding{173}\:\:{\ensuremath{#2}}
+\tabto{0.2\textwidth}\ding{174}\:\:{\ensuremath{#3}}
+\tabto{0.3\textwidth}\ding{175}\:\:{\ensuremath{#4}}
+\tabto{0.4\textwidth}\ding{176}\:\:{\ensuremath{#5}}}
+
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:\:{\ensuremath{#1}}
+\tabto{0.16\textwidth}\ding{173}\:\:{\ensuremath{#2}}
+\tabto{0.33\textwidth}\ding{174}\:\:{\ensuremath{#3}}\medskip\par\noindent
+\ding{175}\:\:{\ensuremath{#4}}
+\tabto{0.16\textwidth}\ding{176}\:\:{\ensuremath{#5}}}
+
+\newcommand\tabc[5]{\par\bigskip\noindent
+\ding{172}\:\:{\ensuremath{#1}}
+\tabto{0.25\textwidth}\ding{173}\:\:{\ensuremath{#2}}\medskip\par\noindent
+\ding{174}\:\:{\ensuremath{#3}}
+\tabto{0.25\textwidth}\ding{175}\:\:{\ensuremath{#4}}\medskip\par\noindent
+\ding{176}\:\:{\ensuremath{#5}}}
+
+\newcommand\tabd[5]{\par\bigskip\noindent
+\ding{172}\:{#1}\medskip\par\noindent
+\ding{173}\:\:{#2}\medskip\par\noindent
+\ding{174}\:\:{#3}\medskip\par\noindent
+\ding{175}\:\:{#4}\medskip\par\noindent
+\ding{176}\:\:{#5}}
+
+%
+\newcommand\one{\ding{172}}
+\newcommand\two{\ding{173}}
+\newcommand\three{\ding{174}}
+\newcommand\four{\ding{175}}
+\newcommand\five{\ding{176}}
+
+
+%\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+%\newcounter{answer}
+
+%%% Commands
+\newcommand\prob[1]
+{\vs\par\noindent\refstepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\exam[1]
+{\vs\par\noindent\refstepcounter{num} \textbf{예시 \thenum) #1}\par\noindent}
+
+\newenvironment{expl}{\begin{mdframed}[frametitle=풀이]}{\end{mdframed}}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\vs[1]{\vspace{30pt}}
+
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 \ref{#1})}\par\noindent}
+\newcommand\ann[2]{\par\bigskip\noindent\textbf{문제 \ref{#1})}\:\:#2\par\medskip\noindent}
+
+\newcommand\ov[1]{\ensuremath{\overline{#1}}}
+
+
+%%% Footnotes
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or
+*\or **\or ***\or
+\star\or\star\star\or\star\star\star\or
+\dagger\or\dagger\dagger\or\dagger\dagger\dagger
+\else\@ctrerr\fi}}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\makeatother
+
+%\let\emph\textsf
+
+\begin{document}
+\title{중학교 3-2 기말 대비(천재교육 교과서)}
+\date{\today}
+\author{}
+\maketitle
+
+%%%
+\section{이차방정식}
+
+%
+\prob{162-1}
+\label{162-1}%2
+네 수 \(m\), 5, 9, 16에 대하여 다음을 구하여라.
+\begin{enumerate}
+\item
+평균이 10일 때, \(m\)의 값
+\item
+중앙값이 10일 때, \(m\)의 값
+\end{enumerate}
+
+%
+\prob{162-2}
+\label{162-2}%2
+다음이 모두 성립할 때, \(a\)의 범위를 구하여라.
+\begin{mdframed}\small
+\begin{enumerate}
+\item[ㄱ.]
+5개의 수 10, 14, 20, 24, \(a\)의 중앙값은 14이다.
+\item[ㄴ.]
+4개의 수 2, 5, 11, \(a\)의 중앙값은 8이다.
+\end{enumerate}
+\end{mdframed}
+
+%
+\prob{162-3}
+\label{162-3}%2
+다음이 모두 성립할 때, \(a\)의 범위를 구하여라.
+\begin{mdframed}\small
+\begin{enumerate}
+\item[ㄱ.]
+5개의 수 21, 28, 35, 42, \(a\)의 중앙값은 35이다.
+\item[ㄴ.]
+4개의 수 40, 50, 60, \(a\)의 중앙값은 45이다.
+\end{enumerate}
+\end{mdframed}
+
+\newpage
+%
+\prob{162-4}
+\label{162-4}%2
+다음이 모두 성립할 때, \(a\)의 범위를 구하여라.
+\begin{mdframed}\small
+\begin{enumerate}
+\item[ㄱ.]
+5개의 수 5, 10, 15, 20, \(a\)의 평균은 13보다 작다.
+\item[ㄴ.]
+4개의 수 5, 9, 13, \(a\)의 중앙값은 11이다.
+\end{enumerate}
+\end{mdframed}
+
+%
+\prob{162-5}
+\label{162-5}%2
+다음이 모두 성립할 때, \(a\)의 범위를 구하여라.
+\begin{mdframed}\small
+\begin{enumerate}
+\item[ㄱ.]
+5개의 수 4, 10, 16, 22, \(a\)의 중앙값을 \(m\)이라고 할 때, \(13\le m\le 16\)이다.
+\item[ㄴ.]
+4개의 수 18, 27, 36, \(a\)의 평균은 25보다 작다.
+\end{enumerate}
+\end{mdframed}
+
+
+%
+\prob{162-6}
+\label{162-6}%2
+다음이 모두 성립할 때, \(a\)의 범위를 구하여라.
+\begin{mdframed}\small
+\begin{enumerate}
+\item[ㄱ.]
+5개의 수 2, 5, 7, 11, \(a\)의 중앙값을 \(m\)은 5이다.
+\item[ㄴ.]
+8개의 수 4, 5, 5, 6, 6, 6, 7 \(a\)의 최빈값은 6이다.
+\end{enumerate}
+\end{mdframed}
+
+\newpage
+%
+\prob{165}\label{165}
+다음은 수현이가 이번 중간고사에서 얻은 점수들을 나열한 것이다.
+\begin{center}
+\begin{tabu}{c|cccc}
+과목	&국어	&영어	&수학	&과학	\\\hline
+점수	&100	&90		&78		&76		
+\end{tabu}
+\end{center}
+이 점수들에 대해 다음 값들을 구하여라.
+\begin{enumerate}
+\item
+최솟값
+\item
+최댓값
+\item
+평균
+\item
+중앙값
+\item
+최빈값
+\item
+점수의 최댓값과 최솟값의 차
+\item
+각 점수와 평균의 차의 합
+\item
+각 점수의 평균의 차의 제곱의 합
+\item
+분산
+\item
+표준편차
+\end{enumerate}
+
+%
+\prob{167}\label{167}
+다음 중 틀린 것을 고르시오.
+\tabd
+{대푯값에는 평균, 중앙값, 최빈값 등이 있다.}
+{자료에 매우 크거나 작은 값이 포함되어 있을 때에는 평균보다는 중앙값을 사용하는 것이 좋다.}
+{자료들이 대푯값 주위에 몰려있으면 산포도가 작다.}
+{편차는 평균에서 편차를 뺀 값이다.}
+{편차들을 모두 더한 값은 0이다.}
+
+\newpage
+%
+\prob{173-1}\label{173-1}
+다섯 개의 수 4, 7, 11, \(x\), \(y\)의 평균이 9, 분산이 10일 때, \(x\)와 \(y\)의 값을 각각 구하여라. (단, \(x<y\))
+
+%
+\prob{173-2}\label{173-2}
+여섯 개의 수 1, 4, 5, 11, \(x\), \(y\)의 평균이 5, 분산이 11일 때, \(x\)와 \(y\)의 값을 각각 구하여라. (단, \(x<y\))
+
+%
+\prob{173-3}\label{173-3}
+다음은 다섯 학생의 수학 점수를 나타낸 것이다.
+\begin{center}\begin{tabu}{c|ccccc}
+학생	&일장	&지인	&소진	&진태	&태희\\\hline
+점수	&94		&\(x\)	&88		&82		&\(y\)
+\end{tabu}\end{center}
+수학 점수의 평균이 \(90\)점이고 표준편차는 \(40\)점일 때, \(xy\)의 값을 구하여라.
+
+\newpage
+%
+\exam{173-4}\label{173-4}
+다음은 지현이네 모둠 4명 각각의 쪽지 시험 점수에서 지현이의 점수를 뺀 값이다.
+\begin{center}\begin{tabu}{c|ccccc}
+학생		&지영	&민우	&지현	&현식\\\hline
+뺀점수	&\(-3\)	&\(-2\)	&0		&1
+\end{tabu}\end{center}
+\begin{mdframed}
+네 학생의 점수를 각각 \(a\), \(b\), \(c\), \(d\)라고 하자.
+표를 해석하면
+\[a-c=-3,\quad b-c=-2,\quad c-c=0,\quad d-c=1\]
+이다.
+따라서
+\[a=c-3,\quad b=c-2,\quad c=c,\quad d=c+1\]
+이다.
+
+\bigskip
+만약 \(c=8\)이면
+\vspace{-10pt}
+\[a=5,\quad b=6,\quad c=8,\quad d=9\]
+이고 \(c=10\)이면
+\vspace{-10pt}
+\[a=7,\quad b=8,\quad c=10,\quad d=11\]
+인 것이다.
+
+\bigskip
+네 점수의 평균은
+\[\frac{(c-3)+(c-2)+c+(c+1)}4=c-1\]
+이다.
+따라서
+\begin{center}\begin{tabu}{c|ccccc}
+학생	&지영	&민우	&지현	&현식\\\hline
+점수	&\(c-3\)	&\(c-2\)	&c		&\(c+1\)\\
+편차&\(-2\)	&\(-1\)	&1		&\(2\)
+\end{tabu}\end{center}
+이고 분산은
+\[\frac{(-2)^2+(-1)^2+1^2+2^2}4=\frac52\]
+이다.
+\end{mdframed}
+
+%
+\prob{173-5}\label{173-5}
+다음은 지현이네 모둠 5명 각각의 쪽지 시험 점수에서 지현이의 점수를 뺀 값이다.
+\begin{center}\begin{tabu}{c|ccccc}
+학생		&지영	&민우	&지현	&현식	&상철\\\hline
+뺀점수	&\(-7\)	&\(-3\)	&0		&1		&4
+\end{tabu}\end{center}
+\begin{enumerate}
+\item
+지현이의 점수가 11점일 때, 상철이의 점수를 구하여라.
+\item
+지현이의 점수가 13점일 때, 점수들의 평균을 구하여라.
+\item
+점수들의 분산을 구하여라.
+\end{enumerate}
+
+%
+\prob{173-6}\label{173-6}
+다음은 지현이네 모둠 5명 각각의 쪽지 시험 점수에서 지현이의 점수를 뺀 값이다.
+\begin{center}\begin{tabu}{c|ccccc}
+학생		&지영	&민우	&지현	&현식	&상철\\\hline
+뺀점수	&\(-3\)	&\(-1\)	&0		&6		&8
+\end{tabu}\end{center}
+이때, 다섯 점수들의 분산을 구하여라.
+
+\newpage
+%
+\exam{175-1}\label{175-1}%1,4,7
+3개의 변량 \(a\), \(b\), \(c\)의 평균이 4, 분산이 6이다.
+이때, \(2a-3\), \(2b-3\), \(2c-3\)의 평균과 분산을 구하여라.
+\begin{mdframed}
+평균이 \(4\)이므로
+\[a+b+c=12\tag{1}\]
+이다.
+또 분산이 6이므로
+\[(a-4)^2+(b-4)^2+(c-4)^2=18\]
+이다.
+즉
+\[(a^2+b^2+c^2)-8(a+b+c)+48=18\]
+이다.
+(1)를 적용하면
+\[a^2+b^2+c^2=66\tag{2}\]
+
+\bigskip
+이제  \(2a-3\), \(2b-3\), \(2c-3\)의 평균과 분산을 구하자.
+\begin{align*}
+평균
+&=\frac{(2a-3)+(2b-3)+(2c-3)}3\\
+&=\frac{2(a+b+c)-9}3=5
+\end{align*}
+이다.
+변량들의 편차는 각각
+\begin{align*}
+(2a-3)-5&=2a-8,\\
+(2b-3)-5&=2b-8,\\
+(2c-3)-5&=2c-8
+\end{align*}
+이므로
+\begin{align*}
+분산
+&=\frac{(2a-8)^2+(2b-8)^2+(2c-8)^2}3\\
+&=\frac{4(a^2+b^2+c^2)-32(a+b+c)+192}3\\
+&=\frac{4\cdot66-32\cdot12+192}3=\frac{72}3=24
+\end{align*}
+\end{mdframed}
+
+%
+\prob{175-2}\label{175-2}%1,2,3,4,5
+다섯 개의 변량 \(a\), \(b\), \(c\), \(d\), \(e\)의 평균이 \(3\), 분산이 \(2\)이다.
+이때 \(3a\), \(3b\), \(3c\), \(3d\), \(3e\)의 평균과 분산을 구하여라.
+
+%
+\prob{175-3}\label{175-3}%1,3,5,7
+네 개의 변량 \(a\), \(b\), \(c\), \(d\)의 평균이 \(4\), 분산이 \(5\)이다.
+이때 \(a+2\), \(b+2\), \(c+2\), \(d+2\)의 평균과 분산을 구하여라.
+
+%
+\prob{175-4}\label{175-4}%1, 7, 9, 15
+네 개의 변량 \(a\), \(b\), \(c\), \(d\)의 평균이 \(8\), 분산이 \(25\)이다.
+이때 \(3a+4\), \(3b+4\), \(3c+4\), \(3d+4\)의 평균과 분산을 구하여라.
+
+%
+\prob{178-1}\label{178-1}%2,4,6,8
+4개의 수 \(a\), \(b\), \(c\), \(d\)의 평균이 \(5\), 표준편차가 \(\sqrt5\)일 때,
+\(a^2\), \(b^2\), \(c^2\), \(d^2\)의 평균을 구하여라.
+
+\newpage
+%
+\prob{189-1}\label{189-1}
+\begin{enumerate}
+\item
+다음 식이 성립함을 확인하여라.
+\[(2mn)^2+(m^2-n^2)^2=(m^2+n^2)^2\]
+\item
+\(a^2+b^2=c^2\)을 만족시키는 세 자연수 \(a\), \(b\), \(c\)를 \fbox{피타고라스의 수}라고 한다.
+예를 들어 3, 4, 5는 \(3^2+4^2=5^2\)을 만족시키므로 피타고라스의 수이다.
+위의 식에 적당한 자연수 \(m\), \(n\)을 넣어 다른 피타고라스의 수를 다섯 개 이상 찾아라.
+\end{enumerate}
+
+%
+\prob{189-2}\label{189-2}
+\(p^2+q^2=1\)을 만족시키는 유리수 \(p\), \(q\)를 다섯 개 이상 찾아라.
+
+
+%
+\prob{189-3}\label{189-3}
+\(a^2+b^2+c^2=d^2\)을 만족시키는 네 자연수 \(a\), \(b\), \(c\), \(d\)를 구하여라.
+
+%
+\prob{189-4}\label{189-4}
+\(a^3+b^3=d^3\)을 만족시키는 세 자연수 \(a\), \(b\), \(c\)를 구하여라.
+
+%
+\prob{189-5}\label{189-5}
+\(a^4+b^4=d^4\)을 만족시키는 세 자연수 \(a\), \(b\), \(c\)를 구하여라.
+
+
+\clearpage
+%%
+\section*{답}
+
+\an{162-1}
+\begin{enumerate}
+\item
+10
+\item
+11
+\end{enumerate}
+
+%
+\ann{162-2}{\(11\le a\le 14\)}
+
+%
+\ann{162-3}{\(35\le a\le 40\)}
+
+%
+\ann{162-4}{\(13\le a<15\)}
+
+%
+\ann{162-5}{\(13\le a<19\)}
+
+%
+\ann{162-6}{\(a<5\)}
+
+%
+\an{165}
+\begin{enumerate}
+\item
+78
+\item
+100
+\item
+86
+\item
+84
+\item
+없다.
+\item
+24
+\item
+36
+\item
+376
+\item
+94
+\item
+\(\sqrt{94}\)
+\end{enumerate}
+
+%
+\ann{167}\four
+
+%
+\an{173-1}
+\(x=10\), \(y=13\)
+
+%
+\an{173-2}
+\(x=2\), \(y=7\)
+
+%
+\ann{173-3}{8600}
+
+%
+\an{173-5}
+\begin{enumerate}
+\item
+15점
+\item
+12점
+\item
+14
+\end{enumerate}
+
+%
+\ann{173-6}{18}
+
+%
+\an{175-2}
+평균=9, 분산=18
+
+%
+\an{175-3}
+평균=6, 분산=5
+
+%
+\an{175-4}
+평균=28, 분산=225
+
+%
+\ann{178-1}{30}
+\newpage
+%
+\an{189-1}
+\begin{enumerate}
+\item
+\begin{align*}
+&(2mn)^2+(m^2-n^2)^2\\
+=&4m^2n^2+m^4-2m^2n^2+n^4\\
+=&m^4+2m^2n^2+n^4\\
+=&(m^2+n^2)^2
+\end{align*}
+\item
+\begin{gather*}
+\begin{aligned}
+(m,n)=(2,1)&\qquad\Longrightarrow\qquad (a,b,c)=(3,4,5)\\
+(m,n)=(4,1)&\qquad\Longrightarrow\qquad (a,b,c)=(8,15,17)\\
+(m,n)=(6,1)&\qquad\Longrightarrow\qquad (a,b,c)=(12,35,37)\\
+(m,n)=(3,2)&\qquad\Longrightarrow\qquad (a,b,c)=(5,12,13)\\
+(m,n)=(5,2)&\qquad\Longrightarrow\qquad (a,b,c)=(20,21,29)\\
+(m,n)=(4,3)&\qquad\Longrightarrow\qquad (a,b,c)=(7,24,25)\\
+(m,n)=(5,4)&\qquad\Longrightarrow\qquad (a,b,c)=(9,40,41)\\
+(m,n)=(6,5)&\qquad\Longrightarrow\qquad (a,b,c)=(11,60,61)\\
+\end{aligned}\\
+\vdots
+\end{gather*}
+\end{enumerate}
+
+%
+\an{189-2}
+\begin{align*}
+(p,q)=
+&\left(\frac35,\frac45\right),\left(\frac{5}{13},\frac{12}{13}\right),\left(\frac{7}{25},\frac{24}{25}\right),\\
+&\left(\frac{8}{17},\frac{15}{17}\right),\left(\frac{9}{41},\frac{40}{41}\right)\cdots
+\end{align*}
+
+%
+\an{189-3}
+\begin{align*}
+(a,b,c,d)=
+&(1,2,2,3),(2,10,11,15),\\
+&(2,3,6,7),(1,4,8,9),\cdots
+\end{align*}
+
+\newpage
+%
+\an{189-4}
+없다.
+
+%
+\an{189-5}
+없다.\footnotemark
+
+\footnotetext{
+\begin{mdframed}
+\[a^n+b^n=c^n(\text{단, \(n\)은 3 이상의 자연수})\]
+를 만족시키는 자연수 \(a\), \(b\), \(c\)는 존재하지 않는다.
+\end{mdframed}
+이것은 \fbox{페르마의 마지막 정리}라고 불리는 정리이다.
+이 정리는 17세기 프랑스의 수학자 페르마의 이름을 따서 만들어진 정리로, 오랜 세월을 거쳐 1995년 영국의 수학자 앤드류 와일즈에 의해 완전히 증명되었다.
+}
+
+
+\end{document}

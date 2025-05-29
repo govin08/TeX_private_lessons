@@ -1,0 +1,5 @@
+\contentsline {section}{차\nobreakspace {}례}{1}{section*.1}
+\contentsline {section}{\numberline {1}수학1[쎈] 258}{2}{section.0.1}
+\contentsline {section}{\numberline {2}등비수열}{4}{section.0.2}
+\contentsline {section}{\numberline {3}등비수열의 합}{8}{section.0.3}
+\contentsline {section}{\numberline {4}등비수열의 활용}{11}{section.0.4}

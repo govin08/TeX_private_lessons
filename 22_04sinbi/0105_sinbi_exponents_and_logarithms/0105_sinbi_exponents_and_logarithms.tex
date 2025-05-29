@@ -1,0 +1,297 @@
+\documentclass[a4paper,twocolumn]{article}
+\usepackage{amsmath,amssymb,kotex,mdframed,paralist,tabu}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, total={190mm, 270mm}]{geometry}
+%\input{preamble.tex}
+\begin{document}
+\begin{center}
+\LARGE신비, 지수와 로그 (간단히)
+\end{center}
+
+%%
+\section{지수}
+\(a^x\)
+와 같이 생긴 것을 \fbox{거듭제곱}이라고 부른다.
+이때 \(a\)를 \fbox{밑}, \(x\)를 \fbox{지수}라고 부른다.
+
+%
+\subsection{자연수 지수}
+\(2\times 2\times 2\)를 \(2^3\)으로 표현한다.
+\begin{itemize}
+\item
+\(3^3=\square\)
+\item
+\(2^4=\square\)
+\item
+\(7^1=\square\)
+\end{itemize}
+
+%
+\subsection{정수 지수}
+\(\frac15\)를 \(5^{-1}\)로 표시한다.
+따라서 \(\frac1{25}\)는
+\[\frac1{25}=\left(\frac15\right)^2=(5^{-1})^2=5^{-2}\]
+이다.
+\begin{itemize}
+\item
+\(3^3=\square\)
+\item
+\(3^2=\square\)
+\item
+\(3^1=\square\)
+\item
+\(3^0=\square\)
+\item
+\(3^{-1}=\square\)
+\item
+\(3^{-2}=\square\)
+\item
+\(3^{-3}=\square\)
+\end{itemize}
+
+%
+\subsection{유리수 지수}
+\(\sqrt5\)을 \(5^{\frac12}\)로 표시한다.
+마찬가지로, \(\sqrt[3]5\)는 \(5^{\frac13}\)로 표시한다.
+\begin{itemize}
+\item
+\(2^{\frac12}=\square\)
+\item
+\(6^{\frac12}=\square\)
+\item
+\(7^{\frac13}=\square\)
+\item
+\(10^{\frac15}=\square\)
+\item
+\(3^{\frac32}=\square\)
+\end{itemize}
+
+%
+\subsection{지수 법칙}
+\(a>0\), \(b>0\)이고 \(x\), \(y\)가 실수일 때,
+\begin{enumerate}[(1)]
+\item
+\(a^x\times a^y=a^{x+y}\)
+\item
+\(a^x\div a^y=a^{x-y}\)
+\item
+\((a^x)^y=a^{xy}\)
+\item
+\((ab)^x=a^xb^x\)
+\end{enumerate}
+
+\begin{itemize}
+\item
+\(5^3\times5^2=(5\times5\times5)\times(5\times5)=5^5\)
+\item
+\(5^3\div5^2=\frac{5\times5\times5}{5\times5}=5=5^1\)
+\item
+\((5^3)^2=(5\times5\times5)^2=(5\times5\times5)\times(5\times5\times5)=5^6\)
+\item
+\((2\times3)^2=(2\times3)\times(2\times3)=2^2\times3^2\)
+\end{itemize}
+
+%%
+\section{로그}
+
+%
+\subsection{로그의 정의}
+지수에서의 문제가
+\[2^3=\square\]
+인 \(\square\)를 구하는 문제였다면, 로그에서의 문제는
+\[2^\square=8\]
+인 \(\square\)를 구하는 문제이다.
+(즉, 지수와 로그는 서로 반대이다)
+이러한 \(\square\)의 값을 \(\log_28\)이라고 쓴다.
+따라서 \(\log_28=3\)이다.
+\begin{itemize}
+\item
+\(\log_28\qquad\longrightarrow\qquad2^\square=8\qquad\longrightarrow\qquad\square=3\)\\[10pt]
+\(\therefore\log_28=3\)
+\item
+\(\log_39\qquad\longrightarrow\qquad3^\square=9\qquad\longrightarrow\qquad\square=2\)\\[10pt]
+\(\therefore\log_39=2\)
+\item
+\(\log_2\sqrt2\qquad\longrightarrow\qquad2^\square=\sqrt2\qquad\longrightarrow\qquad\square=\frac12\)\\[10pt]
+\(\therefore\log_2\sqrt2=\frac12\)
+\item
+\(\log_216\qquad\longrightarrow\qquad\phantom{2^\square=8}\qquad\longrightarrow\qquad\square=\)\\[10pt]
+\(\therefore\log_216=\)
+\item
+\(\log_3\frac13\qquad\longrightarrow\qquad\phantom{2^\square=8}\qquad\longrightarrow\qquad\square=\)\\[10pt]
+\(\therefore\log_3\frac13=\)
+\item
+\(\log_51\qquad\longrightarrow\qquad\phantom{2^\square=8}\qquad\longrightarrow\qquad\square=\)\\[10pt]
+\(\therefore\log_51=\)
+\end{itemize}
+
+\bigskip
+\begin{itemize}
+\item
+\(\log_24=\square\)
+\item
+\(\log_61=\square\)
+\item
+\(\log_5\frac1{25}=\square\)
+\item
+\(\log_416=\square\)
+\end{itemize}
+
+방금까지는 계산이 잘 되는 로그의 값들만을 나열해보았다.
+하지만, 대부분의 경우에 로그의 값은 계산해내기 어렵다.
+\begin{itemize}
+\item
+\(\log_27\qquad\longrightarrow\qquad2^\square=7\qquad\longrightarrow\qquad\square=?\)
+\end{itemize}
+이때의 \(\square\)값은 \(2<\square<3\)일 것이다.
+왜냐하면 \(2^2<7<2^3\)이기 때문이다.
+하지만 정확한 \(\log_27\)의 값은 계산기를 사용하지 않는 이상 구할 수 없다.
+다시 말해, \(\log_27\)이란 \(2^\square=7\)를 만족시키는 값을 나타내는 표현법이다.
+
+%
+\subsection{로그의 (정확한) 정의}
+정리하면
+\[a^\square=N\]
+를 만족시키는 값 \(\square\)를 \(\log_aN\)이라고 쓴다.
+이때 \(a\)를 \fbox{밑}, \(N\)을 \fbox{진수}라고 부른다.
+
+한편, 실수 지수가 정의되려면 \(a>0\)이어야 한다(따라서 \(N>0\)이다).
+또한 \(a=1\)이면
+\[1^\square=N\]
+이 되어 이 문제가 의미 없어진다.
+따라서 로그값 \(\log_aN\)을 정의할 때, 다음 두 가지 조건을 만족해야 한다.
+\begin{itemize}
+\item
+밑조건 : \(a>0\), \(a\neq1\)
+\item
+진수조건 : \(N>0\)
+\end{itemize}
+
+%
+\subsection{로그의 기본적인 성질}
+\(a>0\), \(a\neq1\), \(M>0\), \(N>0\)일 때,
+\begin{enumerate}[(1)]
+\item
+\(\log_a1=0,\quad\log_aa=1\)
+\item
+\(\log_aM+\log_aN=\log_aMN\)
+\item
+\(\log_aM-\log_aN=\log_a{\frac MN}\)
+\item
+\(\log_a{M^k}=k\log_aM\)\quad(단, \(k\)는 실수)
+\end{enumerate}
+
+\begin{itemize}
+\item
+\(3^0=1\)이고 \((\frac15)^0=1\)이다.
+따라서
+\begin{center}
+\fbox{\(\log_31=0\)}
+\qquad
+\fbox{\(\log_{\frac15}1=0\)}
+\end{center}
+한편, \(3^1=3\)이고 \((\frac15)^1=\frac15\)이다.
+따라서
+\begin{center}
+\fbox{\(\log_33=1\)}
+\qquad
+\fbox{\(\log_{\frac15}{\frac15}=1\)}
+\end{center}
+\item
+\(\log_28=3\), \(\log_24=2\), \(\log_232=5\)이다.
+\(3+2=5\)에서
+\begin{mdframed}[rightmargin=.1\textwidth,leftmargin=.1\textwidth]
+\centering
+\(\log_28+\log_24=\log_232\)
+\end{mdframed}
+\item
+또, \(\log_22=1\)이므로 \(3-2=1\)에서
+\begin{mdframed}[rightmargin=.1\textwidth,leftmargin=.1\textwidth]
+\centering
+\(\log_28-\log_24=\log_22\)
+\end{mdframed}
+\item
+\(\log_232=5\), \(\log_22=1\)이므로
+\begin{mdframed}[rightmargin=.1\textwidth,leftmargin=.1\textwidth]
+\centering
+\(\log_2{2^5}=5\log_22\)
+\end{mdframed}
+\end{itemize}
+
+\par\bigskip\noindent
+\textbf{예제)} 다음 식을 간단히 하시오.
+\begin{itemize}
+\item
+\(\log_612+\log_63\)
+\item
+\(\log_3\sqrt{27}\)
+\item
+\(\log_23-2\log_2\sqrt6\)
+\item
+\(\log_{10}\sqrt5+\frac12\log_{10}2\)
+\end{itemize}
+
+\noindent
+\begin{mdframed}[frametitle=풀이]
+\begin{itemize}
+\item
+\(\log_612+\log_63
+\stackrel{(2)}=
+\log_636=2\)
+\item
+\(\log_3\sqrt{27}=\log_3{3^{\frac32}}
+\stackrel{(4)}=
+\frac32\log_33=\frac32\)
+\item
+\(\log_23-2\log_2\sqrt6
+\stackrel{(4)}=
+\log_23-\log_26
+\stackrel{(2)}=
+\log_2\frac12=-1\)
+\item
+\(\log_{10}\sqrt5+\frac12\log_{10}2
+\stackrel{(4)}=
+\log_{10}\sqrt5+\log_{10}\sqrt2
+\stackrel{(2)}=
+\log_{10}\sqrt{10}=\frac12\)
+\end{itemize}
+\end{mdframed}
+
+\textbf{문제)} 다음 식을 간단히 하시오.
+\begin{itemize}\label{prop5}
+\item
+\(\log_3\sqrt[3]{81}\)
+\item
+\(\log_798-\log_72\)
+\item
+\(\log_{\frac23}27-\log_{\frac23}8\)
+\item
+\(\log_3{\frac{\sqrt3}5}+\log_345\)
+\item
+\(\log_212+\log_26-2\log_23\)
+\item
+\(\frac12\log_3\frac95+\log_3\sqrt5\)
+\end{itemize}
+
+%
+\subsection{로그의 추가적인 성질}
+\begin{enumerate}[(1)]
+\setcounter{enumi}{4}
+\item
+\(a>0\), \(a\neq1\), \(b>0\), \(c>0\), \(c\neq1\)일 때,
+\[\phantom{\qquad(\text{밑의 변환 공식})}\log_ab=\frac{\log_cb}{\log_ca}\qquad(\text{밑의 변환 공식})\]
+\item
+\(a>0\), \(a\neq1\), \(b>0\), \(b\neq1\)일 때,
+\[\log_ab=\frac1{\log_ba}\]
+\item
+\(a>0\), \(a\neq1\), \(b>0\)이고 \(m\), \(n\)이 실수일 때,
+\[\log_{a^n}{b^m}=\frac mn \log_ab\]
+\item
+\(\displaystyle a^{\log_ab}=b\)
+\item
+\(\displaystyle a^{\log_bc}=c^{\log_ba}\)
+
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,91 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathrsfs,kotex,mdframed,paralist}
+
+\newcounter{num}
+\newcommand{\prob}
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num})}\par}
+
+\newcommand{\uu}{\ensuremath{\boldsymbol{u}}}
+\newcommand{\xx}{\ensuremath{\boldsymbol{x}}}
+\newcommand{\vv}{\ensuremath{\boldsymbol{v}}}
+\newcommand{\ww}{\ensuremath{\boldsymbol{w}}}
+\newcommand{\zz}{\ensuremath{\boldsymbol{0}}}
+
+%%%
+\begin{document}
+
+\title{동락 04}
+\author{}
+\date{\today}
+\maketitle
+\newpage
+
+\prob
+\(B\)의 열벡터들을 각각 \(B_1\), \(B_2\), \(\cdots\), \(B_p\)이라고 하자 ;
+\[
+B=
+\begin{bmatrix}
+B_1&\cdots&B_p
+\end{bmatrix},
+\quad B_i\in\mathbb R^n.
+\]
+또 \(r=\text{rank}(A)\)라고 하자.
+
+\(AB=\boldsymbol0\)에서 \(AB_i=\boldsymbol0\)이다(\(1\le i\le p\)).
+%\begin{align*}
+%AB_1&=\boldsymbol0\\
+%&\vdots\\
+%AB_n&=\boldsymbol0\\
+%\end{align*}
+따라서 \(B_i\in N(A)\) (\(N(A)\)는 \(A\)의 퇴화공간, \(1\le i\le p\)).
+이때
+\[\text{rank}(A)+\dim(N(A))=n\]
+이므로 \(\dim(N(A))=n-r\).
+\(B_i\)들이 \(n-r\)차원의 부분공간 내에 있으므로 \(B_i\)들은 최대 \(n-r\)개의 일차독립인 열들을 가진다.
+즉 \(\text{rank}(B)\le n-r\).
+따라서
+\[\text{rank}(A)+\text{rank}(B)\le n.\]
+
+\prob
+\begin{gather*}
+(가)=\begin{bmatrix}
+1&0&0&-1\\
+0&1&0&2\\
+0&0&1&0
+\end{bmatrix}\\
+(나) : Rx=\boldsymbol0,
+\left(R=\begin{bmatrix}
+1&0&0&-1\\
+0&1&0&2\\
+0&0&1&0
+\end{bmatrix}
+\right)\\
+(다)=\begin{bmatrix}
+1\\-2\\0\\1
+\end{bmatrix}
+\\
+(라)=1\\
+(마)=3\\
+(바): 1,2,3(번째)\\
+(사)=2
+\end{gather*}
+
+\prob
+(문제가 이상한 것 같은데..?)
+
+반례)
+\(\vv_1=(1,0,0)\), \(\vv_2=(0,1,0)\), \(\vv_3=(1,1,0)\)이면, \(\vv_1\)와 \(\vv_2\)는 일차독립, \(\vv_1\)와 \(\vv_3\)도 일차독립, \(\vv_2\)와 \(\vv_3\)도 일차독립이다.
+하지만 \(\vv_1\), \(\vv_2\), \(\vv_3\)는 일차종속이다.
+
+\prob
+\[c_1\ww_1+\cdots+c_r\ww_r=\boldsymbol0\]
+을 가정하자.
+양변의 왼쪽에 \(A\)를 곱하면
+\begin{gather*}
+A\times\left(c_1\ww_1+\cdots+c_r\ww_r\right)=A\times\boldsymbol0,\\
+c_1A\ww_1+\cdots+c_rA\ww_r=\boldsymbol0,\\
+c_1\vv_1+\cdots+c_r\vv_r=\boldsymbol0.
+\end{gather*}
+\(\vv_1\), \(\vv_2\), \(\cdots\), \(\vv_r\)은 일차독립이므로 \(c_1=c_2=\cdots c_r=0\).
+따라서 \(\ww_1\), \(\ww_2\), \(\cdots\), \(\ww_r\)은 일차독립이다.
+\end{document}

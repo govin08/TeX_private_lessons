@@ -1,0 +1,79 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{graphicx}
+
+\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\prob[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{25pt}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE준영, 미니테스트 12
+\end{center}
+\begin{flushright}
+날짜 : 2017년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%
+\prob{}
+두 함수 \(f(x)\), \(g(x)\)가 다음 조건을 모두 만족시킬 때,
+\(\displaystyle\lim_{x\to0}\frac{x+f(x)g(x)}{x^2-f(x)}\)
+의 값을 구하여라.
+\begin{mdframed}
+\begin{enumerate}
+\item[(가)]
+\(f(x)\{g(x)+2\}=x\{g(x)-2\}\)
+\item[(나)]
+\(\displaystyle\lim_{x\to0}g(x)=1\)
+\end{enumerate}
+\end{mdframed}
+
+%
+\prob{}
+최고차항의 계수가 \(1\)인 두 삼차함수 \(f(x)\), \(g(x)\)가 다음 조건을 만족시킨다.
+\begin{mdframed}
+\begin{enumerate}
+\item[(가)]
+\(g(x)=1\)
+\item[(나)]
+\(\displaystyle\lim_{x\to n}\frac{f(x)}{g(x)}=(n-1)(n-2)\) \((n=1,2,3,4)\)
+\end{enumerate}
+\end{mdframed}
+\(g(5)\)의 값은?
+\tabb468{10}{12}
+\end{document}

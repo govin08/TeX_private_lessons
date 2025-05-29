@@ -1,0 +1,72 @@
+\usepackage{amsmath,amssymb,amsthm,kotex,kswrapfig,tabu}
+
+\usepackage[skipabove=10pt,innertopmargin=10pt,nobreak]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+
+\newcommand\taba[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tabto{0.33\textwidth}\ding{173}\:\:{\ensuremath{#2}}
+\tabto{0.67\textwidth}\ding{174}\:\:{\ensuremath{#3}}\medskip\par\noindent
+\ding{175}\:\:{\ensuremath{#4}}
+\tabto{0.33\textwidth}\ding{176}\:\:{\ensuremath{#5}}}
+
+\newcommand\tabc[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tabto{0.5\textwidth}\ding{173}\:\:{\ensuremath{#2}}\medskip\par\noindent
+\ding{174}\:\:{\ensuremath{#3}}
+\tabto{0.5\textwidth}\ding{175}\:\:{\ensuremath{#4}}\medskip\par\noindent
+\ding{176}\:\:{\ensuremath{#5}}}
+
+\newcommand\tabd[5]{\par\bigskip\noindent
+\ding{172}\:{#1}\medskip\par\noindent
+\ding{173}\:\:{#2}\medskip\par\noindent
+\ding{174}\:\:{#3}\medskip\par\noindent
+\ding{175}\:\:{#4}\medskip\par\noindent
+\ding{176}\:\:{#5}}
+
+%\usepackage{enumitem}
+%\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num})} #1\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num})} #1\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textheight}\end{mdframed}}
+
+\newcommand{\ans}{
+{\par
+\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}
+\par}\bigskip}
+
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\ba{\,|\,}
+
+%\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\renewcommand{\arraystretch}{1.5}
+
+\let\emph\textsf

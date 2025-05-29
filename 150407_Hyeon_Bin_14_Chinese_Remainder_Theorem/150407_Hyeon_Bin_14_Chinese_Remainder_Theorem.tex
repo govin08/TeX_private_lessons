@@ -1,0 +1,187 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,paralist}
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par}
+\newcommand{\exam}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{연습문제 \arabic{num}) #1}\par}
+
+\newcommand{\pr}
+{\begin{mdframed}[skipabove=10pt,skipbelow=10pt]
+증명)
+\vspace{0.5\textheight}
+\par
+\end{mdframed}
+\par
+}
+\newcommand{\sol}
+{\begin{mdframed}[skipabove=10pt]
+풀이)
+\vspace{0.5\textheight}
+\par
+\end{mdframed}
+\par
+}
+
+\renewcommand{\proofname}{증명)}
+\newcommand{\mo}[1]{\ensuremath{\:(\text{mod}\:\:#1)}}
+
+%%%
+\begin{document}
+
+\title{현빈 : 15 수의 합동(3)}
+\author{}
+\date{\today}
+\maketitle
+%\tableofcontents
+%
+%\newpage
+
+%%
+\setcounter{section}{5}
+\setcounter{num}{30}
+
+%
+\section{중국인의 나머지 정리(The Chinese Remainder Theorem)}
+
+%
+\exam{}
+다음과 같은 문제를 풀어보자.
+
+\begin{quote}
+\begin{mdframed}
+5으로 나누었을 때의 나머지가 1이고, 6으로 나누었을 때의 나머지가 2이고, 7로 나누었을 때의 나머지가 3인 숫자를 구하여라.
+\end{mdframed}
+\end{quote}
+
+이 문제는 다음 연립 일차 합동식을 푸는 것과 같다.
+\begin{gather}
+x\equiv1\mo{5}\\
+x\equiv2\mo{6}\\
+x\equiv3\mo{7}
+\end{gather}
+
+(1)에 의해 \(x=5t+1\)이다.
+이를 (2)에 넣으면
+\[5t+1\equiv2\mo{6}\]
+이고 1을 이항하면
+\[5t\equiv1\mo{6}\]
+이다.
+따라서 \(t\)는 \(5\)의 역원인 \(5\)이다(mod 6).
+즉
+\[t\equiv5\mo{6}\]
+혹은
+\[t=6u+5\]
+이다.
+따라서
+\[x=5(6u+5)+1=30u+26\]
+이다.
+이것을 다시 (3)에 넣으면
+\[30u+26\equiv3\mo{7}\]
+이고 \(30\equiv2\mo{7}\)이므로
+\[2u\equiv30u\equiv3-26\equiv-23\equiv5\mo{7}\]
+이다.
+양변에 \(2^{-1}(\equiv4)\)를 곱하면
+\[u\equiv20\equiv6\mo{7}\]
+따라서
+\[u=7v+6\]
+이고
+\[x=30(7v+6)+26=210v+206\]
+이다.
+즉
+\[x\equiv206\mo{210}\]
+인 모든 정수이다.
+
+\bigskip
+이와 같은 문제를 푸는 일반적인 해법은 5세기 남북조 시대의 중국 수학서 ≪손자산경(孫子算經)≫에 최초로 등장하였다.
+따라서 ``중국인의 나머지 정리''라는 이름으로 불린다.
+
+%
+\theo{중국인의 나머지 정리(The Chinese Remainder Theorem)}
+\(m_1\), \(m_2\), \(m_3\), \(\cdots\), \(m_r\)이 자연수이고 임의의 두 쌍의 \(m_i\), \(m_j\)가 서로소이다.
+(즉 \(i\neq j\)이면 \((m_i,m_j)=1\)이다.)
+\(M=m_1\cdots m_r\)이라고 하자.
+그러면 다음 연립 합동 방정식의 해는 mod \(M\)에 대해 유일하게 존재한다.
+\begin{gather*}
+x\equiv a_1\mo{m_1}\\
+x\equiv a_2\mo{m_2}\\
+\vdots\\
+x\equiv a_r\mo{m_r}
+\end{gather*}
+
+\begin{proof}
+먼저 이 연립 합동 방정식의 해가 존재함을 밝히고, 그 다음에 그 해가 mod \(M\)에 대해 유일하다는 것을 밝히면 된다.
+
+\smallskip\smallskip
+(존재성) :\\
+임의의 \(k\)에 대해(\(1\le k\le r\))
+\[M_k=M/m_k\]
+라고 하자.
+가정에 의해
+\[(M_k,m_k)=1\]
+이다.
+따라서 mod \(m_k\)에서 \(M_k\)의 역원 \(y_k\)가 존재한다.
+즉
+\[M_ky_k\equiv1\mo{m_k}\]
+이다.
+그러면
+\[x=a_1M_1y_1+\cdots+a_rM_ry_r\]
+이 연립 합동 방정식을 만족한다.
+
+\smallskip\smallskip
+(유일성) : \\
+만약 \(x\), \(x'\)이 모두 연립 합동 방정식의 근이라면,
+\begin{gather*}
+m_1\mid x-x'\\
+m_2\mid x-x'\\
+\vdots\\
+m_r\mid x-x'
+\end{gather*}
+이다.
+따라서
+\[M\mid x-x'\]
+이고,
+\[x\equiv x'\mo{M}\]
+\end{proof}
+
+\exam{}
+연립 합동 방정식
+\begin{gather*}
+x\equiv 1\mo{3}\\
+x\equiv 2\mo{5}\\
+x\equiv 3\mo{7}\\
+\end{gather*}
+을 생각하자.
+\(M=3\cdot5\cdot7=105\), \(M_1=105/3=35\), \(M_2=105/5=21\), \(M_3=105/7=15\)이다.
+또 \(35y_1\equiv1\mo{3}\)를 풀면 \(y_1\equiv2\mo{3}\)이고, 마찬가지로 \(y_2\equiv1\mo{5}\), \(y_3\equiv 1\mo{7}\)이다.
+따라서
+\[x\equiv1\cdot35\cdot2+2\cdot21\cdot1+3\cdot15\cdot1\equiv151\equiv52\mo{105}\]
+이다.
+
+\prob{}
+다음 연립 합동 방정식을 풀어라.
+\begin{enumerate}[(1)]
+\item
+\begin{gather*}
+x\equiv4\mo{11}\\
+x\equiv3\mo{17}
+\end{gather*}
+\item
+\begin{gather*}
+x\equiv1\mo{2}\\
+x\equiv2\mo{3}\\
+x\equiv3\mo{5}
+\end{gather*}
+\item
+\begin{gather*}
+x\equiv0\mo{2}\\
+x\equiv0\mo{3}\\
+x\equiv1\mo{5}\\
+x\equiv6\mo{7}
+\end{gather*}
+\end{enumerate}
+\end{document}

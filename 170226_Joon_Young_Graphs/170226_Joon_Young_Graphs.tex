@@ -1,0 +1,96 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,tabto,paralist,graphicx}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,10mm,*,10mm,*}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\defi[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정의 \thenum) #1}\par\noindent}
+\newcommand\theo[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정리 \thenum) #1}\par\noindent}
+\newcommand\exam[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{예시 \thenum) #1}\par\noindent}
+\newcommand\prob[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\procedure[1]{\begin{mdframed}\vspace{#1\textheight}\end{mdframed}\bigskip}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+%%% Title
+\title{준영, 절댓값을 포함한 함수 그래프 그리기}
+\date{\today}
+\author{}
+
+\begin{document}
+\maketitle
+
+다음 그래프를 그리시오.
+\begin{enumerate}[(1)]
+\item
+\(y=|x+1|\)
+\item
+\(y=|x|+1\)
+\item
+\(y=|2x-5|\)
+\item
+\(y=-|x-2|+3\)
+\item
+\(y=|-x+3|\)
+\item
+\(y=|x-1|+|x-3|\)
+\item
+\(y=|x+2|+|x-2|\)
+\item
+\(y=\frac1{|x|}\)
+\item
+\(y=\frac{x}{|x|}\)
+\item
+\(y=\frac{x^2}{|x|}\)
+\item
+\(y=\frac{x^3}{|x|}\)
+\item
+\(y=\frac{x}{|x-2|}\)
+\end{enumerate}
+\clearpage
+\begin{figure*}
+\noindent\includegraphics[width=0.47\textwidth]{55}
+\hspace{30pt}\includegraphics[width=0.47\textwidth]{55}
+\par\vspace{40pt}
+\noindent\includegraphics[width=0.47\textwidth]{55}
+\hspace{30pt}\includegraphics[width=0.47\textwidth]{55}
+\end{figure*}
+
+\clearpage
+\begin{figure*}
+\noindent\includegraphics[width=0.47\textwidth]{55}
+\hspace{30pt}\includegraphics[width=0.47\textwidth]{55}
+\par\vspace{40pt}
+\noindent\includegraphics[width=0.47\textwidth]{55}
+\hspace{30pt}\includegraphics[width=0.47\textwidth]{55}
+\end{figure*}
+
+\clearpage
+\begin{figure*}
+\noindent\includegraphics[width=0.47\textwidth]{55}
+\hspace{30pt}\includegraphics[width=0.47\textwidth]{55}
+\par\vspace{40pt}
+\noindent\includegraphics[width=0.47\textwidth]{55}
+\hspace{30pt}\includegraphics[width=0.47\textwidth]{55}
+\end{figure*}
+
+
+\end{document}

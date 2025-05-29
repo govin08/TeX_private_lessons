@@ -1,0 +1,134 @@
+\documentclass[a4paper]{oblivoir}
+\input{../preamble.tex}
+\begin{document}
+\begin{center}
+\LARGE 준영, 미니테스트 1
+\end{center}
+\begin{center}
+날짜 : \today
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{center}
+
+
+%
+\begin{Exercise}
+다음과 같이 주어진 좌극한과 우극한을 계산하여라.
+(단, \([x]\)는 \(x\)보다 크지 않은 최대의 정수)
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle \lim_{x\to2-}\frac{|x-2|}{x-2}\)
+\item
+\(\displaystyle \lim_{x\to2+}\frac{|x-2|}{x-2}\)
+\item
+\(\displaystyle \lim_{x\to1-}\frac{2x-2}{|x-1|}\)
+\item
+\(\displaystyle \lim_{x\to1+}\frac{2x-2}{|x-1|}\)
+\item
+\(\displaystyle \lim_{x\to2-}\frac{x^2+5x+6}{|x+2|}\)
+\item
+\(\displaystyle \lim_{x\to2+}\frac{x^2+5x+6}{|x+2|}\)
+\item
+\(\displaystyle \lim_{x\to2-}\frac{x^2-4}{|x-2|}\)
+\item
+\(\displaystyle \lim_{x\to2+}\frac{x^2-4}{|x-2|}\)
+\item
+\(\displaystyle \lim_{x\to3-}[x]\)
+\item
+\(\displaystyle \lim_{x\to3+}[x]\)
+\end{enumerate}
+\end{Exercise}
+
+\begin{Answer}
+\begin{enumerate}[(1)]
+\item
+\(-1\)
+\item
+\(1\)
+\item
+\(-2\)
+\item
+\(2\)
+\item
+\(-5\)
+\item
+\(5\)
+\item
+\(-4\)
+\item
+\(4\)
+\item
+\(2\)
+\item
+\(3\)
+\end{enumerate}
+\end{Answer}
+
+%
+\begin{Exercise}
+다음 극한의 존재여부를 말하여라.
+또한 극한이 존재할 경우, 그 극한값을 구하여라.
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle \lim_{x\to2}(x+1)\)
+\item
+\(\displaystyle \lim_{x\to2}\frac{x^2-x-2}{x-2}\)
+\item
+\(\displaystyle \lim_{x\to1}\frac{2x-2}{|x-1|}\)
+\item
+\(\displaystyle \lim_{x\to4}[x]\)
+\end{enumerate}
+\end{Exercise}
+
+\begin{Answer}
+\begin{enumerate}[(1)]
+\item
+존재한다, 3
+\item
+존재한다, 3
+\item
+존재하지 않는다.
+\item
+존재하지 않는다.
+\end{enumerate}
+\end{Answer}
+
+%
+\begin{Exercise}
+다음 극한값을 계산하여라.
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle\lim_{x\to3}\frac{x^2-4x+3}{x-3}\)
+\item
+\(\displaystyle\lim_{x\to0}\frac{x^2+5x}{2x}\)
+\item
+\(\displaystyle\lim_{x\to-2}\frac{x^2+2x}{x^2-4}\)
+\item
+\(\displaystyle\lim_{x\to1}\frac{x^3-1}{x^2-1}\)
+\item
+\(\displaystyle\lim_{x\to-1}\frac{x^3+1}{x^2+3x+2}\)
+\item
+\(\displaystyle\lim_{x\to2}\frac{x^3-8}{x^2-3x+2}\)
+\end{enumerate}
+\end{Exercise}
+
+\begin{Answer}
+\begin{enumerate}[(1)]
+\item
+2
+\item
+\(\frac52\)
+\item
+\(\frac12\)
+\item
+\(\frac32\)
+\item
+3
+\item
+\(12\)
+\end{enumerate}
+\end{Answer}
+
+\newpage
+\shipoutAnswer
+\end{document}

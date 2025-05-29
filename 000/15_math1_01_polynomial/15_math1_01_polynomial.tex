@@ -1,0 +1,533 @@
+\documentclass{oblivoir}
+\input{../preamble.tex}
+%%%%
+\begin{document}
+
+\title{수학(상) : 01 다항식의 연산}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+\section{다항식}
+
+%
+\exam{\(x^2-3x+4\)}
+\begin{enumerate}[(1)]
+\item
+\(x\)에 대한 \emph{다항식} \(x^2-3x+4\)은 세 개의 \emph항 \(x^2\), \(-3x\), \(4\)로 이루어져 있다.
+\item
+\(x^2\)의 \emph{차수}는 \(2\)이고 \emph{이차항}이라고 부른다.
+이차항의 \emph{계수}는 \(1\)이다.
+\item
+\(-3x\)의 차수는 \(1\)이고 \emph{일차항}이라고 부른다.
+일차항의 계수는 \(-3\)이다.
+\item
+\(4\)의 차수는 \(0\)이고 \emph{상수항}이라고 부른다.
+\item
+\emph{최고차항}의 차수가 \(2\)이므로 이 다항식 \(x^2+3x+4\)는 \emph{이차식}이다.
+\item
+이 다항식은 \emph{내림차순}으로 정리되어 있다.
+이것을 \emph{오름차순}으로 정리하면 \(4+3x+x^2\)이다.
+\end{enumerate}
+
+%
+\exam{\(x^3+2x^2y-x-2y\)}
+\begin{enumerate}[(1)]
+\item
+\(x\), \(y\)에 대한 다항식 \(x^3+2x^2y-x-2y\)은 네 개의 항으로 이루어져 있다.
+\item
+\(x^3\)의 차수는 \(x\)에 대하여 3차이고, 계수는 1이다.
+\item
+\(2x^2y\)의 차수는 \(x\)에 대하여 2차, \(y\)에 대하여 1차이며 계수는 2이다.
+\item
+이 다항식을 \(x\)에 대해 내림차순으로 정리하면 \(x^3+2yx^2-x-2y\)이고, \(y\)에 대해 내림차순으로 정리하면 \((2x^2-2)y+(x^3-x)\)이다.
+\item
+이 다항식은 \(x\)에 대하여 삼차식, \(y\)에 대하여 일차식이다.
+\end{enumerate}
+
+\newpage
+%
+\prob{다항식 \(x^3-6x+4\)에 대한 다음 설명 중 틀린 것을 고르시오.}
+\vspace{-20pt}
+\tabd
+{\text{세 개의 항으로 이루어져 있다.}}
+{\text{일차항의 계수는 \(6\)이다.}}
+{\text{상수항은 \(4\)이다.}}
+{\text{3차 다항식이다.}}
+{\text{오름차순으로 정리하면 \(4-6x+x^3\)이다.}}
+
+%
+\prob{다음 다항식에 대한 설명 중 틀린 것을 고르시오.}
+\vspace{-20pt}
+\tabd
+{\(\sqrt{x+1}\), \(\frac1{x^2}+3\)은 다항식이 아니다.}
+{\(x^2+y^2+z^2-xy-yz-zx\)는 \(x\), \(y\), \(z\)에 대한 다항식이다.}
+{\(x^2+3xy+2y^2\)은 \(x\), \(y\)에 대한 이차식이다.}
+{\(x^4-4x^2y^2+3y^4\)에서 \(x^2y^2\)의 계수는 \(-4\)이다.}
+{\(2x^2-3xy+3y^2-2x+4y-3\)을 \(x\)에 대한 내림차순으로 정리하면\\ \(2x^2-(3y-2)x+3y^2-4y-3\)이다.}
+
+%%
+\section{다항식의 덧셈, 뺄셈}
+
+다항식 \(A\), \(B\), \(C\)에 대하여 다음 법칙들이 성립한다.
+\begin{mdframed}
+%
+\defi{}
+\begin{enumerate}
+\item
+\emph{교환법칙} : \(A+B=B+A\)			\tabto{0.6\textwidth}\(AB=BA\)
+\item
+\emph{결합법칙} : \((A+B)+C=A+(B+C)\)	\tabto{0.6\textwidth}\((AB)C=A(BC)\)
+\item
+\emph{분배법칙} : \(A(B+C)=AB+AC\)		
+\end{enumerate}
+\end{mdframed}
+
+%
+\exam{}
+\vspace{-25pt}
+\begin{align*}
+(1)&\:\:
+(3x+2y)+(4x-3y)
+=(3x+4x)+(2y-3y)
+=(3+4)x+(2-3)y=7x-y\\
+(2)&\:\:
+3(x^2-x+1)+2(-x^2+2x-3)
+=(3x^2-3x+3)+(-2x^2+4x-6)\\
+&=(3x^2-2x^2)+(-3x+4x)+(3-6)
+=(3-2)x^2+(-3+4)x+(-3)\\
+&=x^2+x-3.
+\end{align*}
+
+%
+\prob{}
+\(A=3x^2+3xy-5y^2\), \(B=x^2-xy-3y^2\)일 때, 다음 물음에 답하여라.
+\begin{enumerate}[(1)]
+\item
+\(2A-B\)를 계산하여라.
+\item
+\(A-2X=B\)를 만족시키는 다항식 \(X\)를 구하여라.
+\end{enumerate}
+
+%%
+\section{다항식의 곱셈}
+
+%
+\begin{mdframed}
+\theo{곱셈공식(1)}
+\begin{enumerate}[(1)]
+\item
+\((a+b)^2=a^2+2ab+b^2\)
+\item
+\((a-b)^2=a^2-2ab+b^2\)
+\item
+\((a+b)(a-b)=a^2-b^2\)
+\item
+\((x+a)(x+b)=x^2+(a+b)x+ab\)
+\item
+\((ax+b)(bx+d)=acx^2+(ad+bc)x+bd\)
+\end{enumerate}
+\end{mdframed}
+
+%
+\prob{다음 식을 전개하여라.}
+\begin{enumerate}[(1)]
+\item
+\((2x+1)^2=\)
+\item
+\((3x-1)^2=\)
+\item
+\((x+3)(x+4)=\)
+\item
+\((x+2)(3x+2)=\)
+\end{enumerate}
+
+%
+\prob{}
+\begin{enumerate}[(1)]
+\item
+\(x+y=5\), \(xy=6\)일 때 \(x^2+y^2\)의 값을 구하여라.
+\item
+\(x-y=2\), \(x^2+y^2=34\)일 때, \(xy\)의 값을 구하여라.
+\end{enumerate}
+
+%
+\prob{\(x+\frac1x=4\)일 때, 다음 식의 값을 구하여라(단, \(x>1\)).}
+\begin{enumerate}[(1)]
+\item
+\(x^2+\frac1{x^2}=\)
+\item
+\(x-\frac1x=\)
+\end{enumerate}
+
+\newpage
+%
+\begin{mdframed}
+\theo{곱셈공식(2)}
+\begin{enumerate}[(1)]
+\setcounter{enumi}{5}
+\item
+\((a+b)^3=a^3+3a^2b+3ab^2+b^3\)
+\item
+\((a-b)^3=a^3-3a^2b+3ab^2-b^3\)
+\item
+\((a+b)(a^2-ab+b^2)=a^3+b^3\)
+\item
+\((a-b)(a^2+ab+b^2)=a^3-b^3\)
+\item
+\((a+b+c)^2=a^2+b^2+c^2+2ab+2bc+2ca\)
+\item
+\((x+a)(x+b)(x+c)=x^3+(a+b+c)x^2+(ab+bc+ca)x+abc\)
+\end{enumerate}
+\end{mdframed}
+
+%
+\exam{(6), (8), (10)의 식을 유도해보면}
+\begin{enumerate}[(1)]
+\item[(6)]
+\((a+b)^3=(a+b)(a+b)^2=(a+b)(a^2+2ab+b^2)\\
+=a(a^2+2ab+b^2)+b(a^2+2ab+b^2) =(a^3+2a^2b+2ab^2)+(a^2b+2ab^2+b^3)\\
+=a^3+3a^2b+3ab^2+b^3\)
+\item[(8)]
+\((a+b)(a^2-ab+b^2)=a(a^2-ab+b^2)+b(a^2-ab+b^2)\\
+=(a^3-a^2b+ab^2)+(a^2b-ab^2+b^3)=a^3+b^3\)
+\item[(10)]
+\((a+b+c)^2=\{(a+b)+c\}^2=(a+b)^2+2(a+b)c+c^2\\
+=(a^2+2ab+b^2)+(2ac+2bc)+c^2=a^2+b^2+c^2+2ab+2bc+2ca\)
+\end{enumerate}
+
+%
+\prob{(7), (9), (11)의 식을 유도하여라.}
+\procedure{0.2}
+
+%
+\prob{다음 식을 전개하여라.}
+\begin{enumerate}[(1)]
+\item
+\((x+2)^3=\)
+\item
+\((x-1)^3=\)
+\item
+\((x+2y)(x^2-2xy+4y^2)=\)
+\item
+\((3a-1)(9a^2+3a+1)=\)
+\item
+\((a+2b-c)^2=\)
+\item
+\((x+2)(x-4)(x+5)=\)
+\end{enumerate}
+
+%
+\prob{}
+\(a+b=3\), \(ab=-2\)일 때, \(a^3+b^3\)의 값을 구하여라.
+
+%
+\prob{}
+\(a-b=1\), \(ab=4\)일 때, \(a^3-b^3\)의 값을 구하여라.
+
+%
+\prob{}
+\(a+b+c=9\), \(ab+bc+ca=8\)일 때, \(a^2+b^2+c^2\)의 값을 구하여라.
+
+\newpage
+%
+\begin{mdframed}
+\theo{곱셈공식(3)}
+\begin{enumerate}[(1)]
+\setcounter{enumi}{11}
+\item
+\((a+b+c)(a^2+b^2+c^2-ab-bc-ca)=a^3+b^3+c^3-3abc\)
+\item
+\((a^2+ab+b^2)(a^2-ab+b^2)=a^4+a^2b^2+b^4\)
+\end{enumerate}
+\end{mdframed}
+
+%
+\exam{(13)의 식을 유도해보면}
+\begin{enumerate}[(1)]
+\setcounter{enumi}{9}
+\item
+\((a^2+ab+b^2)(a^2-ab+b^2)=\{(a^2+b^2)+ab\}\{(a^2+b^2)-ab\}\\
+=(a^2+b^2)^2-(ab)^2=(a^4+2a^2b^2+b^4)-a^2b^2=a^4+a^2b^2+b^4\)
+\end{enumerate}
+
+%
+\prob{(12)의 식을 유도하여라.}
+\procedure{0.2}
+
+%
+\prob{다음 식을 전개하여라.}
+\begin{enumerate}[(1)]
+\item
+\((2a+b-c)(4a^2+b^2+c^2-2ab+bc+2ca)=\)
+\item
+\((x-y-1)(x^2+y^2+xy+x-y+1)=\)
+\item
+\((4x^2+2xy+y^2)(4x^2-2xy+y^2)=\)
+\end{enumerate}
+
+%
+\prob{}
+\(a+b+c=3\), \(a^2+b^2+c^2=9\), \(abc=-4\)일 때, \(a^3+b^3+c^3\)의 값을 구하여라.
+
+%%
+\section{다항식의 나눗셈}
+
+%%
+\subsection{정수의 나눗셈}
+
+\exam{}
+\(32\)을 \(5\)로 나누면 몫은 \(6\)이고 나머지는 \(2\)이다.
+\begin{table}[h!]
+\centering
+\begin{tabular}{cc@{}c}
+&&6\\
+\cline{2-3}
+5	&\multicolumn{1}{|c}{3}	&2\\
+	&3							&0\\
+\hline
+	&							&2
+\end{tabular}
+\end{table}
+
+이것을 \[32=5\times6+2\]로 표현할 수 있다.
+하지만
+\[32=5\times5+7\]
+이라고 해서 몫이 \(5\)이고 나머지가 \(7\)이라고 말하지는 않는다.
+또한,
+\[32=5\times7+(-3)\]
+라고 해서 몫이 \(7\)이고 나머지가 \(-3\)이라고 말하지는 않는다.
+%\[28=5\times q+r\]
+%으로 표현되었을 때, \(r\)의 범위가 \(0\le r<5\)인 경우에만 \(r\)을 나머지라고 부른다.
+
+\begin{mdframed}
+%
+\defi{}
+\(a\)가 정수이고, \(b\)가 자연수일 때,
+\[a=bq+r\qquad(0\le r<b)\]
+가 성립하면, \(a\)를 \(b\)로 나누었을 떄의 \emph몫은 \(q\), \emph{나머지}는 \(r\)이다.
+\end{mdframed}
+
+\clearpage
+%
+\exam{}
+\begin{enumerate}[(1)]
+\item
+\(32\)\를 \(4\)\으로 나누면(\(28=4\times8+0\)) 몫이 \(8\)이고 나머지가 \(0\)이다.
+이때 \(32\)\은 \(4\)\으로 \emph{나누어떨어진다}고 한다.
+또한 \(4\)\는 \(32\)의 약수, \(32\)\은 \(4\)의 배수이다.
+\item
+\(-32\)\은 \(5\)\로 나누면(\(-32=5\times(-7)+3\)) 몫이 \(-7\)이고 나머지가 \(3\)이다.
+\item
+\(2\)로 나누어떨어지는 정수를 \emph{짝수}, \(2\)로 나누었을 때 나머지가 \(1\)인 정수를 \emph{홀수}라고 한다.
+따라서 \(5\)는 홀수, \(0\)은 짝수, \(-4\)는 짝수이다.
+\end{enumerate}
+
+%
+\exam{주어진 \(a\), \(b\)에 대하여, \(a\)를 \(b\)로 나누었을 때의 몫 \(q\)와 나머지 \(r\)을 각각 구하여라.}
+\begin{enumerate}[(1)]
+\item
+\(a=50,\quad b=4\)
+\item
+\(a=50,\quad b=5\)
+\item
+\(a=50,\quad b=12\)
+\item
+\(a=0,\quad b=4\)
+\item
+\(a=-14,\quad b=5\)
+\item
+\(a=-14,\quad b=2\)
+\end{enumerate}
+
+\clearpage
+%%
+\subsection{다항식의 나눗셈}
+
+정수와 마찬가지로 다항식도 나눌 수 있다.
+
+%
+\exam{}
+다항식 \(x^3+2x^2+5x-3\)을 \(x^2-2x-1\)으로 나누면
+\begin{equation*}
+\begin{array}{c@{\:}c@{\:}cc@{\:}c@{\:}c@{\:}c}
+&&&x&+4\\
+\cline{4-7}
+x^2&-2x&-1	&\multicolumn{1}{|c}{x^3}&+2x^2&+5x&-3\\
+&&							&x^3	&-2x^2	&-x\\
+\cline{4-7}
+&&							&			&4x^2	&+6x		&-3\\
+&&							&			&4x^2	&-8x	&-4\\
+\cline{4-7}
+&&							&			&			&14x	&+1
+\end{array}
+\end{equation*}
+몫이 \(x+4\)이고 나머지가 \(14x+1\)이다.
+
+이것을
+\[x^3+2x^2+5x-3=(x^2-2x-1)(x+4)+14x+1\]
+로 표현한다.
+한편
+\[x^3+2x^2+5x-3=(x^2-2x-1)(x+3)+x^2+12x\]
+도 성립한다.
+하지만 몫이 \(x+3\)이고 나머지가 \(x^2+12x\)이라고 말하지는 않는다.
+
+\begin{mdframed}
+%
+\defi{}
+\(A\), \(B\)가 다항식일 때,
+\[A=BQ+R\qquad(R\text{의 차수}<B\text{의 차수})\]
+가 성립하면, \(A\)를 \(B\)로 나누었을 떄의 \emph몫은 \(Q\), \emph{나머지}는 \(R\)이다.
+\end{mdframed}
+
+\clearpage
+%
+\exam{}
+\begin{enumerate}[(1)]
+\item
+\(x^3+11=(x+2)(x^2-2x+4)+3\)이므로 \(x^3+11\)을 \(x+2\)로 나누었을 때의 몫은 \(x^2-2x+4\), 나머지는 \(3\)이다.
+\item
+\(x^4+4x^2+16=(x^2+2x+4)(x^2-2x+4)\)이므로 \(x^4+4x^2+16\)를 \(x^2+2x+4\)로 나누었을 때의 몫은 \(x^2-2x+4\)이고 나머지는 \(0\)이다.
+이때, \(x^4+4x^2+16\)는 \(x^2+2x+4\)로 \emph{나누어떨어진다}고 말한다.
+\end{enumerate}
+
+%
+\prob{다음 나눗셈의 몫과 나머지를 구하여라.}
+\begin{enumerate}[(1)]\label{poly_div_prob}
+\item
+\((3x^3-2x^2-5x+1)\div(x-2)\)
+\item
+\((2x^3-5x^2+4x-1)\div(x^2-2x-2)\)
+\end{enumerate}
+
+%
+\prob{}
+다항식 \(A\)는 \(x^3+1\)으로 나누어떨어지고 이 때의 몫이 \(x+1\)이다.
+다항식 \(A\)를 구하여라.
+
+\clearpage
+%%
+\subsection{조립제법}
+나누는 수 \(B\)가 일차식일 때, 다음의 \emph{조립제법}을 사용할 수 있다.
+
+%
+\exam{}
+\(3x^3-2x^2-5x+1\)를 \(x-2\)로 나누는 과정은
+\begin{equation*}
+\begin{array}{ccccc}
+\multicolumn{1}{c|}{2}	&3	&-2	&-5	&1\\
+\multicolumn{1}{c|}{}		&	&6	&8	&6\\
+\cline{2-5}
+							&3	&4	&3	&\multicolumn1{|c}{7}\\
+\cline{5-5}
+\end{array}
+\end{equation*}
+로 간단히 표시할 수 있다.
+이때, 몫은 \(3x^2+4x+3\)이고, 나머지는 \(7\)이다.
+이것은 문제 \ref{poly_div_prob})의 (1)에서 구한 답과 일치한다.
+
+%
+\prob{조립제법을 사용하여 다음 나눗셈의 몫과 나머지를 구하여라.}
+\begin{enumerate}[(1)]
+\item
+\((x^3-2x^2-5x+3)\div(x+2)\)
+\item
+\((2x^3+3x^2-6x+1)\div(x-\frac12)\)
+\end{enumerate}
+
+%
+\prob{}
+위의 결과를 이용하여 \(2x^3+3x^2-6x+1\)를 \(2x-1\)로 나눈 몫과 나머지를 구하여라.
+
+%%
+\section*{답}
+
+\begin{minipage}{0.49\textwidth}
+%
+\an{7}
+(1) \(5x^2+7xy-7y^2\)\\
+(2) \(x^2+2xy-y^2\)
+
+%
+\an{9}
+(1) \(4x^2+4x+1\)\\
+(2) \(9x^2-6x+1\)\\
+(3) \(x^2+7x+12\)\\
+(4) \(3x^2+8x+4\)
+
+%
+\an{10}
+(1) \(13\)\\
+(2) \(15\)
+
+%
+\an{11}
+(1) \(14\)\\
+(2) \(2\sqrt3\)
+
+%
+\an{15}
+(1) \(x^3+6x^2+12x+8\)\\
+(2) \(x^3-3x^2+3x-1\)\\
+(3) \(x^3+8y^3\)\\
+(4) \(27a^3-1\)\\
+(5) \(a^2+4b^2+c^2+4ab-4bc-2ca\)\\
+(6) \(x^3+3x^2-18x-40\)
+
+%
+\an{16}
+\(45\)
+
+%
+\an{17}
+\(13\)
+
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+
+%
+\an{18}
+\(65\)
+
+%
+\an{22}
+(1) \(8a^3+b^3+b^3+6abc\)\\
+(2) \(x^3-y^3-1+xy+x-y\)\\
+(3) \(16x^4+4x^2y^2+y^4\)
+
+%
+\an{23}
+\(15\)
+
+%
+\an{27}
+(1) \(q=12,\quad r=2\)\\
+(2) \(q=10,\quad r=0\)\\
+(3) \(q=4,\quad r=2\)\\
+(4) \(q=0,\quad r=0\)\\
+(5) \(q=-3,\quad r=1\)\\
+(6) \(q=-7,\quad r=0\)
+
+%
+\an{31}
+(1) 몫 : \(3x^2+4x+3\), 나머지 : \(7\)\\
+(2) 몫 : \(2x-1\), 나머지 : \(6x-3\)
+
+%
+\an{32}
+\(A=x^4+x^3+x+1\)
+
+%
+\an{34}
+(1) 몫 : \(x^2-4x+3\), 나머지 : \(-3\)\\
+(2) 몫 : \(2x^2+4x-4\), 나머지 : \(-1\)
+
+%
+\an{35}
+몫 : \(x^2+2x-2\), 나머지 : \(-1\)
+
+\end{minipage}
+\end{document}

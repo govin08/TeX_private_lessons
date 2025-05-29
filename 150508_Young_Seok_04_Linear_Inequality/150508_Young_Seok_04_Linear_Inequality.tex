@@ -1,0 +1,328 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,paralist,chngcntr}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par}
+\newcommand{\exam}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par}
+
+
+\renewcommand{\proofname}{증명)}
+\newcommand{\mo}[1]{\ensuremath{\:(\text{mod}\:\:#1)}}
+\counterwithout{subsection}{section}
+
+
+%%%
+\begin{document}
+
+\title{영석 : 04 일차부등식}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+\subsection{부등호와 부등식}
+%
+\defi{부등호와 부등식}
+\[<,>,\le,\ge\]
+등의 기호를 \textbf{부등호}라고 한다.
+또 부등호의 양 옆에 수나 식이 나타나있는 경우 이것을 \textbf{부등식}이라고 한다.
+
+%
+\exam{}
+(1) 
+\begin{gather*}
+1<2\\
+2x\ge3\\
+3(x+4)+5>2x-2\\
+x+y>2\\
+x^2>1\\
+x^2-x-2\le0
+\end{gather*}
+등은 모두 부등식이다.
+
+(2)
+\[1<2\]
+는 `\(1\)이 \(2\)보다 작다'라고 읽는다.
+혹은 `\(1\)이 \(2\) 미만이다'라고 읽는다.
+\[2>1\]
+은 `\(2\)가 \(1\)보다 크다'라고 읽는다.
+혹은 `\(2\)가 \(1\) 초과이다'라고 읽는다.
+\[1\le2\]
+은 `\(1\)이 \(2\)보다 작거나 같다'라고 읽는다.
+혹은 \(1\)이 \(2\) 이하이다.'라고 읽는다.
+\[2\ge1\]
+는 `\(2\)가 \(1\)보다 크거나 같다'라고 읽는다.
+혹은 \(2\)가 \(1\) 이상이다.'라고 읽는다.
+
+(3)
+허수에 관해서는 수의 대소관계를 나타내지 않는다.
+예를 들어 
+\begin{gather*}
+i<1\\
+i^3+i^2-2i\ge0
+\end{gather*}
+등의 식은 쓰지 않는다.
+\bigskip
+
+부등식은 다음과 같은 성질을 만족한다.
+
+%
+\defi{부등식의 성질 1}\label{prop1}
+\(a\), \(b\), \(c\)가 실수이고 \(a<b\)이면\\
+(1) \(a+c<b+c\)\\
+(2) \(a-c<b-c\)
+
+%
+\defi{부등식의 성질 2}\label{prop2}
+\(a\), \(b\), \(c\)가 실수이고 \(a<b\), \(c>0\)이면\\
+(1) \(ac<bc\)\\
+(2) \(\frac ac<\frac bc\)
+
+%
+\defi{부등식의 성질 3}\label{prop3}
+\(a\), \(b\), \(c\)가 실수이고 \(a<b\), \(c<0\)이면\\
+(1) \(ac>bc\)\\
+(2) \(\frac ac>\frac bc\)
+
+정리하면, 부등식의 양 변에 같은 값을 더하거나 빼도 부등호의 방향은 그대로 유지된다.
+부등식의 양 변에 같은 값을 곱하거나 나눌 경우, 곱하거나 나누는 수가 양수이면 부등호의 방향이 그대로 유지되고, 곱하거나 나누는 수가 음수이면 부등호의 방향이 바뀐다.
+
+이 결과는 `\(>\)'이 `\(\le\)'와 \(\ge\)'로 바뀐 경우에도 여전히 비슷하게 성립한다.
+
+%
+\exam{}
+(1)
+\[1<3\]
+에서 양변에 \(2\)를 더한 
+\[3<5\]
+와, 양변에 \(2\)를 뺀
+\[-1<1\]
+은 모두 성립한다.
+(부등호의 방향은 바뀌지 않았다.)
+
+(2)
+\[1<3\]
+에서 양변에 \(2\)를 곱한
+\[2<6\]
+과, 양변에 \(2\)를 나눈
+\[\frac12<\frac32\]
+는 모두 성립한다.
+(부등호의 방향은 바뀌지 않았다.)
+
+(3)
+\[1<3\]
+에서 양변에 \(-2\)를 곱한
+\[-2>-6\]
+과, 양변에 \(-2\)를 나눈
+\[-\frac12>-\frac32\]
+는 모두 성립한다.
+(부등호의 방향이 바뀌었다.)
+
+%%
+\subsection{일차부등식}
+%
+\defi{일차부등식}
+정의 \ref{prop1}, \ref{prop2}, \ref{prop3}의 결과로 부등식에서도 등식에서와 마찬가지로 이항을 마음대로 할 수 있음을 알 수 있다.
+예를 들어
+\[4x+3<x+1\]
+과 같은 부등식의 경우 양변에 1을 빼어
+\[4x+2<x\]
+를 얻고, 다시 양변에 \(x\)를 빼어
+\[3x+2<0\]
+를 얻을 수 있다.
+이처럼, 이항하여
+\begin{gather*}
+ax+b>0\\
+ax+b<0\\
+ax+b\ge0\\
+ax+b\le0
+\end{gather*}
+꼴(\(a\), \(b\)는 실수, \(a\neq0\))로 나타낼 수 있는 부등식을 \textbf{일차부등식}이라고 한다.
+또 이러한 일차부등식을 만족하는 \(x\)의 범위를 찾는 과정을 `일차부등식을 푼다'라고 한다.
+
+%
+\prob{}
+다음 중 일차부등식을 찾아보자.
+\begin{gather}
+x>1\\
+2x\ge x\\
+x+1<x+2\\
+0\cdot x+3>1\\
+x^2+2x+1\ge0\\
+3(x+4)<2(x+1)
+\end{gather}
+
+%
+\exam{일차방정식의 풀이}
+(1)
+일차방정식
+\[2x+3>0\]
+를 풀어보자.
+
+양변에서 \(3\)을 빼면
+\[2x>-3\]
+이다.
+양변을 \(2\)로 나누면
+\[x>-\frac32\]
+이다.
+
+(2)
+일차방정식
+\[-3x-5\ge0\]
+을 풀어보자.
+
+양변에서 \(5\)를 더하면
+\[-3x\ge5\]
+이다.
+양변을 \(-3\)으로 나누면
+\[x\le-\frac53\]
+이다.
+
+(3) 일차방정식
+\[2x+4<3x+2\]
+를 풀어보자.
+
+양변에서 \(3x\)를 빼면
+\[-x+4<2\]
+이다.
+양변에서 \(4\)를 빼면
+\[-x<-2\]
+이다.
+양변에 \(-1\)을 곱하면
+\[x>2\]
+이다.
+
+%
+\prob{}
+다음 일차부등식을 풀어라.
+\setcounter{equation}{0}
+\begin{gather}
+x+4\le0\\
+x-\frac12<0\\
+2x+1>0\\
+3x+4\ge0\\
+\frac32x+\frac43<0\\
+-x+7>0\\
+-2x+4\ge0\\
+-\frac12x+3<0
+\end{gather}
+
+%
+\prob{}
+다음 일차부등식을 풀어라.
+\setcounter{equation}{0}
+\begin{gather}
+x+2\ge0\\
+x-\frac34>0\\
+3x+4<0\\
+7x+24\ge0\\
+\frac12x+\frac78>0\\
+-x>0\\
+-5x+3\ge0\\
+-\frac32x+6>0
+\end{gather}
+
+%
+\prob{}
+다음 일차부등식을 풀어라.
+\setcounter{equation}{0}
+\begin{gather}
+2x+3\ge x+2\\
+2x-3<3x-3\\
+-3x+4\le x+3\\
+-x+1>2x+5\\
+\frac12x+4<\frac32+1\\
+\frac13x+\frac13>x+1\\
+\frac25x+1<\frac13x+\frac23\\
+2(x+3)+4>3(x-1)+1\\
+\frac12(x+4)+1\ge2(x-2)+2
+\end{gather}
+
+%
+\prob{}
+다음 일차부등식을 풀어라.
+\setcounter{equation}{0}
+\begin{gather}
+3x+1\ge x+1\\
+2x-5<3x-6\\
+-2x+1\le x-3\\
+-2x+2\ge x+3\\
+\frac32x+1>\frac12+1\\
+\frac32x+\frac23>2x+2\\
+\frac14x+2>\frac15x+\frac45\\
+x+4<2(x+3)+1\\
+\frac13(2x+4)+2\le3(x-4)+2
+\end{gather}
+
+%%
+\subsection{부정과 불능}
+
+%
+\exam{}
+(1)
+부등식
+\[x+3>x+2\]
+의 경우 우변의 모든 항을 좌변으로 이항하면
+\[0\cdot x+1>0\]
+혹은
+\[1>0\]
+이 되므로 엄밀히 말해 일차부등식은 아니다.
+그래도 부등식의 해를 구해보면, 즉 \(x\)가 어떤 값일 때 이 부등식이 성립하는 지 살펴보면, \(x\)가 어떤 값을 가지더라도 위의 부등식이 성립함을 알 수 있다.
+따라서 구하고자 하는 부등식의 해는 `\(x\)는 모든 실수'이다.
+
+이처럼 부등식의 해가 실수 전체인 경우, \textbf{부정(不定)}이라고 말한다.
+
+(2)
+반면 부등식
+\[2x+4\ge 2x+5\]
+의 경우 정리하면
+\[0\cdot x-1\ge0\]
+혹은
+\[-1\ge0\]
+이 되어 역시 일차부등식은 아니다.
+이 부등식의 경우 어떤 실수 \(x\)에 대해서도 성립하지 않기 때문에 `해는 없다.'
+
+이처럼 부등식을 만족하는 실수 \(x\)의 값이 존재하지 않을 경우 \textbf{불능(不能)}이라고 말한다.
+
+
+%
+\exam{}
+다음 부등식의 해를 구하시오.
+
+\setcounter{equation}{0}
+\begin{gather}
+2x+3>2x+2\\
+3x+1\le x+2x\\
+2(x+1)\ge 3(x+3)-(x+7)\\
+\frac12(x+4)+\frac12(x-2)<x+4\\
+\frac{2x+3}6<\frac13 x+\frac12
+\end{gather}
+
+%
+\exam{}
+다음 부등식이 부정(해가 실수 전체)이기 위한 상수 \(a\)의 범위를 구하시오.
+\setcounter{equation}{0}
+\begin{gather}
+x+a>x\\
+2x-a<2x+a\\
+\frac12(x+a)\ge\frac12x+1
+\end{gather}
+
+%
+\exam{}
+다음 부등식이 불능(해가 없음)이기 위한 상수 \(a\)의 값을 구하시오.
+\setcounter{equation}{0}
+\begin{gather}
+ax+1>2\\
+(a+2)x+4<0\\
+\frac{2x+1}4>\frac{ax+3}2
+\end{gather}
+\end{document}

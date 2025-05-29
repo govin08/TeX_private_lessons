@@ -1,0 +1,105 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{tabu}
+
+\pagestyle{empty}
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\defi[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정의 \thenum) #1}\par\noindent}
+\newcommand\theo[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정리 \thenum) #1}\par\noindent}
+\newcommand\exam[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{예시 \thenum) #1}\par\noindent}
+\newcommand\prob[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{60pt}}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE민형, 미니테스트 01
+\end{center}
+\begin{flushright}
+날짜 : 2017년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%미3유4
+\prob{}
+\(\sin\theta+\cos\theta=\frac{3\sqrt2}4\)일 때, \(16\sin\theta\cos\theta\)의 값은?
+\tabb{-2}{-1}123
+\vs
+
+%미3유6
+\prob{}
+함수 \(y=a\cos bx+2\)의 최댓값과 최솟값이 각각 \(6\), \(-2\)이고 주기가 \(\pi\)일 때, 두 상수 \(a\), \(b\)에 대하여 \(a+b\)의 값을 구하시오. (단 \(a>0\), \(b>0\))
+\vs
+
+%미3유7
+\prob{}
+방정식 \(\sqrt2\cos x+1=0\)의 해가 \(x=\alpha\) 또는 \(x=\beta\)일 때, \(\alpha+\beta\)의 값은?
+(단, \(0\le x<2\pi\))
+\tabb{\pi}{\frac32\pi}{2\pi}{\frac52\pi}{3\pi}
+\vs
+
+%미3유8
+\prob{}
+부등식 \(\tan x<1\)의 해가 \(0\le x<\alpha\), \(\;\frac\pi2<x<\beta\), \(\;\gamma<x<2\pi\)일 때, \(\alpha+\beta+\gamma\)의 값은?
+(단, \(0\le x<2\pi\))
+\tabb{\pi}{\frac32\pi}{2\pi}{\frac52\pi}{3\pi}
+\vs
+
+%미3확3
+\prob{}
+중심각의 크기가 \(60^\circ\)인 부채꼴의 넓이가 \(\frac83\pi\)cm\(^2\)일 때, 이 부채꼴의 반지름의 길이를 구하시오.
+\vs
+
+%미3확5
+\prob{}
+\(\sin\theta=0.4226\)일 때, \(\displaystyle\cot\theta\left(
+\frac{\sin\theta\cos\theta}{\csc\theta+1}+\frac{\sin\theta\cos\theta}{\csc\theta-1}
+\right)\)
+의 값은?
+\tabb{0.4226}{0.6339}{0.8452}{1.0565}{1.2678}
+\vs
+
+\par
+\begin{tabu}{|c|c|c|c|c|c|}
+\hline
+문제1&문제2&문제3&문제4&문제5&문제6
+\\\hline
+\ding{174}&\(6\)&\ding{174}&\ding{176}&\(4\)cm&\ding{174}
+\\\hline
+\end{tabu}
+
+\end{document}

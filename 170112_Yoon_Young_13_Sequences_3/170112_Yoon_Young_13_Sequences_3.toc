@@ -1,0 +1,4 @@
+\contentsline {section}{차\nobreakspace {}례}{1}{section*.1}
+\contentsline {section}{\numberline {1}합의 기호 \(\Sigma \)}{2}{section.0.1}
+\contentsline {section}{\numberline {2}\(\DOTSB \sum@ \slimits@ \)의 성질}{4}{section.0.2}
+\contentsline {section}{\numberline {3}자연수의 거듭제곱의 합}{6}{section.0.3}

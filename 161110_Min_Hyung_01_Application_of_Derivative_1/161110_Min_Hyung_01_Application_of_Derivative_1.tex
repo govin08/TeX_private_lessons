@@ -1,0 +1,295 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig}
+
+\usepackage[skipabove=10pt,innertopmargin=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\ans}{
+{\par
+\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}
+\par}\bigskip\bigskip}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\ba{\,|\,}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+%%%%
+\begin{document}
+
+\title{민형 : 01 도함수의 활용(1)}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+
+%%
+\section{복습}
+\begin{mdframed}
+%
+\defi{미분계수}
+함수 \(f\)와 실수 \(a\)에 대해
+\[
+\lim_{h\to0}\frac{f(a+h)-f(a)}h
+\]
+가 존재하면 `\(f\)가 \(x=a\)에서 \textbf{미분가능}하다'라고 말하고 이 값을 함수 \(f\)의 \(x=a\)에서의 \textbf{미분계수}라고 말한다.
+구간 \(I\)에 대해, 모든 \(a\in I\)에 대해 \(f\)가 \(x=a\)에서 미분가능하면 `\(f\)가 구간 \(I\)에서 \textbf{미분가능}하다'라고 말한다.
+\end{mdframed}
+
+%
+\exam{}\label{differential_coefficient}
+함수 \(f(x)=x^2\)에 대해 \(x=2\)에서의 미분계수는
+\[
+\lim_{h\to0}\frac{f(2+h)-f(2)}h=\lim_{h\to0}\frac{(2+h)^2-2^2}h
+=\lim_{h\to0}\frac{h^2+4h}h=\lim_{h\to0}(h+4)=4
+\]
+이다.
+따라서 \(f\)는 \(x=2\)에서 미분가능하다.
+
+\begin{mdframed}
+%
+\defi{도함수}
+함수 \(f\)가 구간 \(I\)에서 미분가능할 때
+\[
+f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}h
+\]
+로 함수 \(f'\)를 정의할 수 있다.
+이 함수를 함수 \(f\)의 \textbf{도함수}라고 말한다.
+\end{mdframed}
+
+%
+\exam{}\label{derivative}
+예제 \ref{differential_coefficient}에서의 함수 \(f(x)=x^2\)는 실수 전체에서 미분가능하다.
+이때의 도함수 도함수 \(f'\)는
+\[
+f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}h=\lim_{h\to0}\frac{(x+h)^2-x^2}h
+=\lim_{h\to0}\frac{h^2+2hx}h=\lim_{h\to0}(h+2x)=2x
+\]
+로 정의된다.
+죽
+\[f'(x)=2x\]
+이다.
+
+\begin{mdframed}
+%
+\defi{Leibniz Notation}
+함수 \(f\)에 대해 \(y=f(x)\)라고 하면 \(f\)의 도함수 \(f'(x)\)를
+\[
+\frac{{d}y}{{d}x},\quad\frac{{d}f(x)}{{d}x},\quad\frac{{d}}{{d}x}f(x),\quad\left(f(x)\right)'
+\]
+등으로 쓰기도 한다.
+함수 \(f\)의 \(x=a\)에서의 미분계수 \(f'(a)\)는
+\[
+\left.\frac{{d}y}{{d}x}\right|_{x=a},\quad\left.\frac{{d}f(x)}{{d}x}\right|_{x=a},\quad\left.\frac{{d}}{{d}x}f(x)\right|_{x=a},\quad\left.\left(f(x)\right)'\right|_{x=a}
+\]
+등으로 쓰기도 한다.
+\end{mdframed}
+
+%
+\exam{}
+예시 \ref{differential_coefficient}, 예시 \ref{derivative}의 결과를
+\begin{gather*}
+\frac{d(x^2)}{dx}=2x,\quad\left.\frac{d(x^2)}{dx}\right|_{x=2}=4\\
+(x^2)'=2x,\quad \left.(x^2)'\right|_{x=2}=4
+\end{gather*}
+등으로 쓸 수도 있다.
+
+\begin{mdframed}
+%
+\theo{도함수의 성질}
+실수 \(c\), 미분가능한 함수 \(f\), \(g\)에 대해
+\begin{enumerate}[label=(\emph{\alph*})]
+\item
+\((c)'=0\)
+\item
+\(\left(cf(x)\right)'=cf'(x)\)
+\item
+\(\left(f(x)+g(x)\right)'=f'(x)+g'(x)\)
+\item
+\(\left(f(x)-g(x)\right)'=f'(x)-g'(x)\)
+\item
+\(\left\{f(x)g(x)\right\}'=f(x)g'(x)+f'(x)g(x)\)
+\item
+\(\left(\frac{f(x)}{g(x)}\right)'=\frac{f'(x)g(x)-f(x)g'(x)}{\left\{g(x)\right\}^2}\)
+\end{enumerate}
+\end{mdframed}
+
+%\begin{mdframed}
+%%
+%\theo{곱의 미분법과 몫의 미분법}
+%미분가능한 함수 \(f\), \(g\)에 대해 (\(g(x)\neq0\))
+%\begin{align*}
+%\left\{f(x)g(x)\right\}'		&=f(x)g'(x)+f'(x)g(x)\\
+%\left(\frac{f(x)}{g(x)}\right)'	&=\frac{f'(x)g(x)-f(x)g'(x)}{\left\{g(x)\right\}^2}
+%\end{align*}
+%\end{mdframed}
+
+\begin{mdframed}
+%
+\theo{여러 가지 함수의 도함수}
+\begin{enumerate}[label=(\emph{\alph*})]
+\item
+\((x^a)'=ax^{a-1}\)\qquad(\(a\)는 실수)
+\item
+\((e^x)'=e^x\)
+\item
+\((a^x)'=a^x\ln a\)\qquad(\(a>0\))
+\item
+\((\ln x)'=\frac1x\)
+\item
+\((\log_ax)'=\frac1{x\ln a}\)\qquad(\(a>0,\quad a\neq0\))
+\item
+\((\sin x)'=\cos x\)
+\item
+\((\cos x)'=-\sin x\)
+\item
+\((\tan x)'=\sec^2x\)
+\item
+\((\cot x)'=-\csc^2x\)
+\item
+\((\sec x)'=\tan x\sec x\)
+\item
+\((\csc x)'=-\cot x\csc x\)
+\end{enumerate}
+\end{mdframed}
+
+\begin{mdframed}
+%
+\theo{합성함수의 미분법}
+두 함수 \(f\), \(g\)가 미분가능할 때 합성함수 \((f\circ g)\)의 도함수는
+\[
+\left\{f(g(x))\right\}'=f'(g(x))g'(x)
+\]
+이다.
+\(y=f(u)\), \(u=g(x)\)라고 하면
+\[
+\frac{dy}{dx}=\frac{dy}{du}\cdot\frac{du}{dx}\]
+로 쓸 수도 있다.
+\end{mdframed}
+
+\begin{mdframed}
+%
+\theo{역함수의 미분법}
+함수 \(f\)와 그 역함수 \(f^{-1}\)가 모두 미분가능할 때,
+\[
+\frac{dy}{dx}=\frac1{\frac{dx}{dy}}
+\]
+이다.
+\(y=f(x)\)라고 하면
+\[
+\left(f^{-1}(x)\right)=\frac1{f'(y)}
+\]
+로 쓸 수도 있다.
+\end{mdframed}
+
+\prob{}
+다음 함수의 도함수를 구하여라.
+\begin{enumerate}
+\item
+\(y=\sqrt x\)
+\begin{mdframed}
+\(y'=(x^{\frac12})'=\frac12x^{1-\frac12}=\frac12x^{-\frac12}=\frac1{2\sqrt x}\)
+\end{mdframed}
+%\ans
+{\par
+\raggedleft\textbf{답 : (\qquad\qquad\(\frac1{2\sqrt x}\)\qquad\qquad)}
+\par}\bigskip\bigskip
+\item
+\(y=\frac1{x-1}\)
+\begin{mdframed}
+\vspace{0.1\textheight}
+\end{mdframed}
+\ans
+\clearpage
+\item
+\(y=3\sin^3 x\)
+\begin{mdframed}
+\vspace{0.08\textheight}
+\end{mdframed}
+\ans
+\item
+\(y=e^{-2x}\)
+\begin{mdframed}
+\vspace{0.08\textheight}
+\end{mdframed}
+\ans
+\item
+\(y=\left(\log_2 x\right)^3\)
+\begin{mdframed}
+\vspace{0.08\textheight}
+\end{mdframed}
+\ans
+\item
+\(y=\frac{\cos x}x\)
+\begin{mdframed}
+\vspace{0.08\textheight}
+\end{mdframed}
+\ans
+\end{enumerate}
+
+%%
+\section{접선의 방정식}
+\begin{mdframed}
+%
+\theo{}\label{formula}
+점 \((x_1,y_1)\)을 지나고 기울기가 \(m\)인 직선의 방정식은
+\[y=m(x-x_1)+y_1\]
+이다.
+\end{mdframed}
+\proo
+기울기가 \(m\)인 직선의 방정식은
+\[y=mx+n\]
+이다.
+\(n\)을 구하기 위해 \((x_1,y_1)\)을 대입하면
+\[y_1=mx_1+n\]
+이고, 따라서
+\[n=y_1-mx_1\]
+이다.
+그러므로 구하는 방정식은 
+\[y=mx+y_1-mx_1\]
+이다.
+이것을 정리하면 위의 식이 된다.
+
+\begin{mdframed}
+%
+\theo{}
+함수 \(y=f(x)\)가 \(x=a\)에서 미분가능할 때, 곡선 \(y=f(x)\) 위의 점 \(P(a,f(a))\)에서의 접선의 방정식은
+\[y=f'(a)(x-a)+f(a)\]
+이다.
+\end{mdframed}
+
+\vspace{-10pt}
+\proo
+접선의 기울기는 \(f'(a)\)이다.
+따라서 정리 \ref{formula}에 대입하면 위의 결과를 얻는다.
+
+\end{document}

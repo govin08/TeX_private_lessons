@@ -1,0 +1,211 @@
+\documentclass[b4paper]{article}
+\usepackage{amsmath,amssymb,kotex,paralist,graphicx,tabu}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\setlength{\columnseprule}{0.4pt}
+
+\usepackage[inline]{enumitem}
+\setlist[enumerate,1]{label=(\arabic*)}
+
+%%% Counters
+\newcounter{num}
+%\newcounter{answer}
+
+%%% Commands
+\newcommand\prob
+{\par\bigskip\noindent\refstepcounter{num} \textbf{문제 \thenum) }}
+\newcommand\ans[1]
+{\begin{flushright}답 : #1\end{flushright}}
+
+%\let\emph\textsf
+
+\begin{document}
+%\begin{center}
+%\LARGE
+%중학교 1학년 수학 문제들
+%\end{center}
+\begin{flushright}
+\quad중학교 \qquad학년 \qquad반
+\end{flushright}
+
+\bigskip
+\begin{multicols}{2}
+
+%
+\prob
+두 수 \(48\), \(60\)의 최대공약수를 구하여라.
+\begin{enumerate}
+\item
+48을 소인수분해하면 :
+\(48=2^4\times3\)
+\item
+60을 소인수분해하면 :
+\(60=2^2\times 3\times 5\)
+\item
+최대공약수\(=2^\times3=12\)
+\end{enumerate}
+\ans{12}
+
+%
+\prob
+135의 약수의 개수를 구하여라.
+\begin{enumerate}
+\item
+135를 소인수분해하면 : \(135=3^3\times5\)
+\item
+135의 약수들 : 1, 3, 9, 27, 5, 15, 45, 135
+\item
+135의 약수의 개수 : 8개
+\end{enumerate}
+\ans{8개}
+
+%
+\prob
+다음 중 가장 큰 수와 가장 작은 수의 합은?
+\[
+\left(-\frac23\right)^2,
+\quad
+-\left(\frac23\right)^2,
+\quad
+-\frac{2^3}3,
+\quad
+\frac2{(-3)^3},
+\quad
+\frac{(-2)^2}3
+\]
+\begin{enumerate}
+\item
+다섯 개의 수를 각각 계산하면
+\[
+\frac49,
+\quad
+-\frac49,
+\quad
+-\frac83,
+\quad
+-\frac2{27},
+\quad
+\frac43
+\]
+\item
+가장 큰 수는 \(\frac43\)이고 가장 작은 수는 \(-\frac83\)이다.
+\item
+\(\frac43+(-\frac83)=-\frac43\)
+\end{enumerate}
+\ans{\(-\frac43\)}
+
+%
+\prob
+농도가 9\%인 소금물 200g과 농도가 4\%인 소금물 300g을 섞을 때 혼합된 소금물의 농도는?
+\begin{enumerate}
+\item
+첫번째 소금물 속의 소금의 양은
+\(200\text g\times\frac9{100}=18\text g\)
+\item
+두번째 소금물 속의 소금의 양은
+\(300\text g\times\frac4{100}=12\text g\)
+\item
+혼합된 소금물 속의 소금의 양은
+\(18\text g+12\text g=30\text g\)
+\item
+혼합된 소금물의 농도는
+\(\frac{30}{200+300}\times100=6\%\)
+\end{enumerate}
+\ans{6\%}
+
+%
+\prob
+농도가 6\%인 소금물 200g에 몇 g의 물을 넣으면 농도가 4\%인 소금물이 되는가?
+\begin{enumerate}
+\item
+넣는 물의 양을 \(x\) g이라고 하자.
+\item
+처음 소금물 속의 소금의 양은
+\(200\text g\times\frac6{100}=12\text g\)
+\item
+\(x\)에 관해서 식을 세우고 방정식을 풀면
+\begin{gather*}
+\frac{12}{200+x}\times100=4\\
+1200=4(200+x)\\
+1200=800+4x\\
+400=4x\\
+x=100
+\end{gather*}
+\end{enumerate}
+\ans{100g}
+
+%
+\prob
+유진이는 A에서 B까지 500m의 거리를 5m/s의 속력으로 뛰다가 B에서 C까지의 300m의 거리를 2m/s로 걸었다.
+유진이가 A에서 C까지 이동할 때의 평균 속력을 구하여라.
+\begin{enumerate}
+\item
+\(A\)에서 \(B\)까지 이동할 때 걸린 시간은 \(\frac{500\text m}{5\text{m/s}}=100\text s=100초\)
+\item
+\(B\)에서 \(C\)까지 이동할 때 걸린 시간은 \(\frac{300\text m}{2\text{m/s}}=150\text s=150초\)
+\item
+\(A\)에서 \(C\)까지 이동할 때 걸린 시간은 \(100초+150초=250초\)
+\item
+\(A\)에서 \(C\)까지 이동할 때의 평군 속력은
+\[\frac{500\text m+300\text m}{250s}=\frac{16}5\text{m/s}=3.2\text{m/s}\]
+\end{enumerate}
+\ans{3.2m/s}
+
+\vfill\null\columnbreak
+
+%%
+\setcounter{num}{0}
+%
+\prob
+세 수 225, 105, 300의 최대공약수를 구하여라.
+\vspace{50pt}
+\ans{}
+
+%
+\prob
+120의 약수의 개수를 구하여라.
+\vspace{50pt}
+\ans{}
+
+%
+\prob
+다음 중 가장 큰 수와 가장 작은 수의 합은?
+\[
+\frac5{3^2},
+\quad
+\left(-\frac53\right)^2,
+\quad
+-\frac{5^2}3,
+\quad
+-\frac 5{(-3)^3},
+\quad
+\frac53
+\]
+\vspace{65pt}
+\ans{}
+
+%
+\prob
+농도가 4\%인 소금물 300g과 농도가 10\%인 소금물 600g을 섞을 때 혼합된 소금물의 농도는?
+\vspace{65pt}
+\ans{}
+
+%
+\prob
+농도가 10\%인 소금물 100g에 몇 g의 소금을 넣으면 농도가 20\%인 소금물이 되겠는가?
+\vspace{140pt}
+\ans{}
+
+%
+\prob
+준용이는 A에서 B까지 210m의 거리를 7m/s의 속력으로 뛰다가 B에서 C까지의 60m의 거리를 3m/s로 걸었다.
+준용이가 A에서 C까지 이동할 때의 평균 속력을 구하여라.
+\vspace{100pt}
+\ans{}
+\newpage
+%%
+%\prob
+%집에서 서점까지 가는데 60km/h의 자동차로 가면 10km/h의 자전거로 가는 것보다 50분 빨리 도착한다고 한다. 그렇다면 40km/h의 오토바이로 가면 집에서 서점까지 몇 분 걸리겠는가?
+
+\end{multicols}
+\end{document}

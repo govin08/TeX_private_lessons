@@ -1,0 +1,532 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathrsfs,kotex,mdframed,paralist}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par}
+\newcommand{\exam}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par}
+\newcommand{\rema}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{참고 \arabic{num}) #1}\par}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par}
+
+\renewcommand{\figurename}{그림}
+\renewcommand{\proofname}{증명)}
+\newcommand{\sol}{\par\bigskip\noindent{\bfseries풀이)}\par}
+
+\newcommand{\uu}{\ensuremath{\boldsymbol{u}}}
+\newcommand{\xx}{\ensuremath{\boldsymbol{x}}}
+\newcommand{\vv}{\ensuremath{\boldsymbol{v}}}
+\newcommand{\ww}{\ensuremath{\boldsymbol{w}}}
+\newcommand{\zz}{\ensuremath{\boldsymbol{0}}}
+
+%%%
+\begin{document}
+
+\title{동락 02 - Chapter 2, Vector Space}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+
+\newpage
+
+\setcounter{chapter}{01}
+
+%%%
+\chapter{벡터공간}
+
+%%
+\section{벡터공간과 부분공간}
+
+%
+\defi{실수 집합 \(\mathbb R\)}
+\(\mathbb R\)은 실수의 집합이다.
+
+%
+\exam{}
+\(1\in\mathbb R\)이고, \(\frac12\in\mathbb R\)이며, \(\sqrt2\in\mathbb R\)이다. 하지만 \(1+i\not\in\mathbb R\)이다.
+
+%
+\defi{\(n\)차원 유클리드 공간 \(\mathbb R^n\)}
+(1)
+\(\mathbb R^2\)은 실수들의 순서쌍(=ordered pair)을 원소로 가지는 집합이다.
+즉
+\[\mathbb R^2=\{(a,b)\mid a,b\in\mathbb R\}\]
+이다.
+따라서 \(\mathbb R^2\)은 \(xy\)-평면과 동일시될 수 있다.
+비슷한 의미에서 \(\mathbb R\)은 수직선과 동일시될 수 있다.
+이러한 \(\mathbb R^2\)를 \textbf{2차원 유클리드 공간} 이라고 부른다.
+
+(2)
+\(\mathbb R^3\)는 실수들의 ordered triple을 원소로 가지는 집합이다.
+즉
+\[\mathbb R^3=\{(a,b,c)\mid a,b,c\in\mathbb R\}\]
+따라서 \(\mathbb R^3\)은 삼차원의 공간과 동일시될 수 있다.
+이러한 \(\mathbb R^3\)은 \textbf{3차원 유클리드 공간} 이라고 부른다.
+
+(3)
+일반적으로 \(\mathbb R^4\)는 실수들의 n-tuple을 원소로 가지는 집합이다.
+즉
+\[\mathbb R^n=\{(a_1,a_2,\cdots,a_n)\mid a_1,a_2,\cdots,a_n\in\mathbb R\}\]
+이다.
+이러한 \(\mathbb R^n\)을 \textbf{n차원 유클리드 공간}이라고 부른다.
+
+%
+\rema{}
+\(\mathbb R^n\)의 원소는 \textbf{벡터}라고 불린다.
+이는 <<기하와 벡터>>에서 점 \(A=(1,2)\)가 그 방향벡터 \(\overrightarrow{OA}=(1,2)\)와 동일시되는 것과 비슷한 맥락이다.
+
+%
+\defi{벡터의 상등}
+두 벡터 \(u=(a_1,\cdots,a_n)\), \(v=(b_1,\cdots,b_n)\)에 대해서, \(a_1=b_1\), \(\cdots\), \(a_n=b_n\)이면 `두 벡터가 같다'고 말하고 \(u=v\)라고 쓴다.
+
+%
+\defi{벡터의 덧셈과 실수배}
+두 벡터 \(u=(a_1,\cdots,a_n)\), \(v=(b_1,\cdots,b_n)\)와 실수 \(k\)에 대해서
+
+\begin{enumerate}[(1)]\tightlist
+\item
+\(u+v=(a_1+b_1,\cdots,a_n+b_n)\)이다.%(벡터의 덧셈)
+\item
+\(ku=(ka_1,\cdots,ka_n)\)이다.%(벡터의 실수배)
+\end{enumerate}
+
+%
+\rema{}\label{closure}
+
+모든 \(i\)에 대해 \(a_i+b_i\in\mathbb R\)이므로 \(u+v\in\mathbb R^n\)이다.
+모든 \(i\)에 대해 \(ka_i\in\mathbb R\)이므로 \(ku\in\mathbb R^n\)이다.
+즉 두 벡터를 더해도 여전히 벡터이고 또 어떤 벡터에 실수배를 해도 여전히 벡터이다.
+이것을 `\(\mathbb R^n\)은 덧셈과 실수배에 대해 닫혀있다.'라고도 말한다.
+
+%
+\theo{}\label{euclid vector space}
+벡터의 덧셈과 실수배에 대해 다음과 같은 성질들이 성립한다 ;
+\(\boldsymbol{u}=(a_1,\cdots,a_n)\), \(\boldsymbol{v}=(b_1,\cdots,b_n)\), \(\boldsymbol{w}=(c_1,\cdots,c_n)\)이고 \(k\), \(l\)이 실수이면
+
+\begin{enumerate}[(1)]\tightlist
+\item
+\(\boldsymbol{u}+\boldsymbol{v}\in\mathbb R^n\)이다.
+\item
+\(\boldsymbol{u}+\boldsymbol{v}=\boldsymbol{v}+\boldsymbol{u}\)이다.% (덧셈에 대한 교환법칙)
+\item
+\((\boldsymbol{u}+\boldsymbol{v})+w=\boldsymbol{u}+(\boldsymbol{v}+\boldsymbol{w})\)이다.% (덧셈에 대한 결합법칙)
+\item
+\(\boldsymbol{u}+\mathbf0=\mathbf0+\boldsymbol{u}=\boldsymbol{u}\)를 만족시키는 벡터 \(\mathbf0\)이 존재한다.% (덧셈에 대한 항등원)
+\item
+임의의 \(\boldsymbol{u}\)에 대해  \(\boldsymbol{u}+\xx=\xx+\boldsymbol{u}=\mathbf0\)를 만족시키는 벡터 \(\xx\)이 존재한다.% (덧셈에 대한 역원)
+\item
+\(k\boldsymbol{u}\in\mathbb R^n\)이다.
+\item
+\(1\cdot \boldsymbol{u}=\boldsymbol{u}\)이다.
+\item
+\((kl)\boldsymbol{u}=k(l\boldsymbol{u})\)이다.
+\item
+\(k(\boldsymbol{u}+\boldsymbol{v})=k\boldsymbol{u}+k\boldsymbol{v}\)이다.
+\item
+\((k+l)\boldsymbol{u}=k\boldsymbol{u}+l\boldsymbol{u}\)이다.
+\end{enumerate}
+
+\begin{proof}
+(1), (6)은 참고 \ref{closure}과 정확히 같다.
+(2)와 (3)은 실수의 덧셈에 대한 교환법칙 \((*)\)과 결합법칙\((**)\)으로부터 얻을 수 있다;
+\[\boldsymbol{u}+\boldsymbol{v}=(a_1+b_1,\cdots,a_n+b_n)\stackrel{(*)}{=}(b_1+a_1,\cdots,b_n+a_n)=\boldsymbol{v}+\boldsymbol{u}.\]
+
+\begin{align*}
+(\boldsymbol{u}+\boldsymbol{v})+\boldsymbol{w}
+&=(a_1+b_1,\cdots,a_n+b_n)+(c_1,\cdots,c_n)\\
+&=((a_1+b_1)+c_1,\cdots,(a_n+b_n)+c_n)\\
+&\stackrel{(**)}{=}(a_1+(b_1+c_1),\cdots,a_n+(b_n+c_n)\\
+&=(a_1,\cdots,a_n)+(b_1+c_1,\cdots,b_n+c_n)\\
+&=\boldsymbol{u}+(\boldsymbol{v}+\boldsymbol{w}).
+\end{align*}
+
+(4) \(0=(0,\cdots,0)\)이라고 하면
+
+\begin{align*}
+\boldsymbol{u}+\mathbf0
+&=(a_1,\cdots,a_n)+(0,\cdots,0)\\
+&=(a_1+0,\cdots,a_n+0)=(a_1,\cdots,a_n)\\
+&=\boldsymbol{u}\\
+&=(a_1,\cdots,a_n)=(0+a_1,\cdots,0+a_n)\\
+&=(0,\cdots,0)+(a_1,\cdots,a_n)\\
+&=\mathbf0+\boldsymbol{u}.
+\end{align*}
+
+(5) \(\boldsymbol x=(-a_1,\cdots,a_n)\)이라고 하면
+
+\begin{align*}
+\boldsymbol{u}+\boldsymbol x
+&=(a_1,\cdots,a_n)+(-a_1,\cdots,-a_n)\\
+&=(a_1+(-a_1),\cdots,a_n+(-a_n))=(0,\cdots,0)\\
+&=\mathbf0\\
+&=(0,\cdots,0)=((-a_1)+a_1,\cdots,(-a_n)+a_n)\\
+&=(-a_1,\cdots,-a_n)+(a_1,\cdots,a_n)\\
+&=\boldsymbol x+\boldsymbol{u}.
+\end{align*}
+
+(7)
+\(1\cdot \boldsymbol{u}=1\cdot(a_1,\cdots,a_n)=(1\cdot a_1,\cdots,1\cdot a_n)=(a_1,\cdots,a_n)=\boldsymbol{u}\).
+
+(8)은 실수의 곱셈에 대한 결합법칙으로\((\star)\)부터 성립한다;
+
+\begin{align*}
+(kl)\boldsymbol{u}
+&=(kl)(a_1,\cdots,a_n)=((kl)a_1,\cdots,(kl)a_n)\\
+&\stackrel{(\star)}{=}(k(la_1),\cdots,k(la_n))=k(la_1,\cdots,la_n)\\
+&=k(l\boldsymbol{u}).
+\end{align*}
+
+
+(9), (10)은 실수의 분배법칙으로\((\star\star)\)부터 성립한다;
+
+\begin{align*}
+k(\boldsymbol{u}+\boldsymbol{v})
+&=k(a_1+b_n,\cdots,a_n+b_n)=(k(a_1+b_1),\cdots,k(a_n+b_n)\\
+&\stackrel{(\star\star)}{=}(ka_1+kb_1,\cdots,ka_n+kb_n)\\
+&=(ka_1,\cdots,ka_n)+(kb_1,\cdots,kb_n)\\
+&=k(a_1,\cdots,a_n)+k(b_1,\cdots,b_n)\\
+&=k\boldsymbol{u}+k\boldsymbol{v}.\\
+(k+l)\boldsymbol{u}
+&=((k+l)a_1,\cdots,(k+l)a_n)\\
+&\stackrel{(\star\star)}{=}(ka_1+la_1,\cdots,ka_n+la_n)\\
+&=(ka_1,\cdots,ka_n)+(la_1,\cdots,la_n)\\
+&=k(a_1,\cdots,a_n)+l(a_1,\cdots,a_n)\\
+&=k\boldsymbol{u}+l\boldsymbol{u}.
+\end{align*}
+
+%
+\rema{}
+정리 \ref{euclid vector space}의 (4)를 만족시키는 벡터 \(\boldsymbol0\)을 \textbf{영벡터}라고 부른다.
+이것은 덧셈에 대한 항등원이라고 볼 수 있다.
+한 가지 중요한 사실은, 영벡터가 유일하다는 것이다; 만약 \(\boldsymbol0\)과 \(\boldsymbol0'\)이 모두 영벡터이면, 영벡터의 성질에 의해 \(\boldsymbol0=\boldsymbol0+\boldsymbol0'=\boldsymbol0'\)이기 때문이다. (첫 번째 등호는 \(\boldsymbol0'\)이 영벡터라는 사실을, 두 번째 등호는 \(\boldsymbol0\)이 영벡터라는 성질을 사용했다.)
+
+정리 \ref{euclid vector space}의 (5)를 만족시키는 벡터 \(\xx\)는 \(\boldsymbol{u}\)의 덧셈에 대한 역원이라고 볼 수 있다.
+이러한 \(\xx\)도 유일하다 ; 만약 \(\xx\)와 \(\xx'\) 모두 \(\uu\)의 덧셈에 대한 역원이면 \(\xx=\xx+\boldsymbol0=\xx+(\uu+\xx')=(\xx+\uu)+\xx'=\boldsymbol0+\xx'=\xx'\)이기 때문이다.
+
+정리 \ref{euclid vector space}의 (5)의 증명에서 알 수 있듯, \(\xx=(-1)\uu\)이다.
+따라서 \(\xx\)를 \(\xx=-\boldsymbol{u}\)라고도 쓴다.
+
+\defi{벡터공간}\label{vector space}
+공집합이 아닌 어떤 집합 \(V\)에 대해 \(V\)에서 덧셈과 실수배가 정의되어 있고 다음 열 가지 성질을 만족하면 \(V\)를 벡터공간이라고 부른다;
+
+\(\boldsymbol{u}\), \(\boldsymbol{v}\), \(\boldsymbol{w}\)가 모두 \(V\)의 원소이고 \(k\), \(l\)이 실수이면,
+
+\begin{enumerate}[(1)]\tightlist
+\item
+\(\boldsymbol{u}+\boldsymbol{v}\in V\)이다.
+\item
+\(\boldsymbol{u}+\boldsymbol{v}=\boldsymbol{v}+\boldsymbol{u}\)이다.% (덧셈에 대한 교환법칙)
+\item
+\((\boldsymbol{u}+\boldsymbol{v})+\boldsymbol{w}=\boldsymbol{u}+(\boldsymbol{v}+\boldsymbol{w})\)이다.% (덧셈에 대한 결합법칙)
+\item
+\(\boldsymbol{u}+0=0+\boldsymbol{u}=\boldsymbol{u}\)를 만족시키는 벡터 \(0\)이 존재한다.% (덧셈에 대한 항등원)
+\item
+임의의 \(\boldsymbol{u}\)에 대해  \(\boldsymbol{u}+x=x+\boldsymbol{u}=0\)를 만족시키는 벡터 \(x\)이 존재한다.% (덧셈에 대한 역원)
+\item
+\(k\boldsymbol{u}\in V\)이다.
+\item
+\(1\cdot \boldsymbol{u}=\boldsymbol{u}\)이다.
+\item
+\((kl)\boldsymbol{u}=k(l\boldsymbol{u})\)이다.
+\item
+\(k(\boldsymbol{u}+\boldsymbol{v})=k\boldsymbol{u}+k\boldsymbol{v}\)이다.
+\item
+\((k+l)\boldsymbol{u}=k\boldsymbol{u}+l\boldsymbol{u}\)이다.
+\end{enumerate}
+\end{proof}
+
+%
+\exam{}
+(1)
+집합
+\[\mathbb R=\{(a_1,a_2,a_3,\cdots)\mid a_i\in\mathbb R\}\]
+을 생각하자.
+이것은 유한차원의 유클리드공간을 일반화한 것이라고 볼 수 있다.
+또한 \(\mathbb R^\infty\)의 원소는 \((a_1,a_2,a_3,\cdots)\)꼴로서, 하나의 수열과 같다.
+즉 \(\mathbb R^\infty\)는 수열들의 집합이다.
+덧셈과 실수배를 
+\begin{gather*}
+(a_1,a_2,a_3,\cdots)+(b_1,b_2,b_3,\cdots)=(a_1+b_1,a_2+b_2,a_3+b_3,\cdots)\\
+k(a_1,a_2,a_3,\cdots)=(ka_1,ka_2,ka_3,\cdots)
+\end{gather*}
+와 같이 정의하면 \(\mathbb R^\infty\)는 벡터공간을 이룬다.
+
+(2)
+집합 \(\mathfrak M\)을
+\[\mathfrak M=\left\{
+\begin{bmatrix}
+a&b\\
+c&d\\
+e&f\\
+\end{bmatrix}
+\Bigg| a,b,c,d,e,f\in\mathbb R\right\}\]
+로 정의하면 통상적인 행렬의 덧셈과 실수배에 대해서 \(\mathfrak M\)은 벡터공간을 이룬다.
+
+(3)
+집합 \(\mathscr F\)를
+\[\mathscr F=\{f:[0,1]\to\mathbb R\}\mid f\text{는 함수}\}\]
+라고 하자.
+두 함수 \(f,g\in\mathscr F\)의 합인 \(f+g:[0,1]\to R\)는
+\[(f+g)(x)=f(x)+g(x)\]
+를 만족시키는 함수이고 
+두 함수 의 곱인 \(f\cdot g:[0,1]\to R\)는
+\[(f\cdot g)(x)=f(x)\cdot g(x)\]
+를 만족시키는 함수라고 하자.
+그러면 \(\mathscr F\)는 벡터공간을 이룬다.
+
+(4)
+집합 \(\mathcal P_3\)를 2차 이하의 다항식들의 집합
+\[\mathcal P_3=\{a+bx+cx^2\mid a,b,c\in\mathbb R\}\]
+이라고 하자.
+통상적인 다항식의 덧셈과 실수배에 대해서 \(\mathcal P_3\)는 벡터공간을 이룬다.
+
+\defi{부분공간}
+벡터공간 \(V\)의 부분집합 \(W\)에 대해 \(W\neq\emptyset\)이고, \(W\)가 그 자체로 벡터공간을 이루면 \(W\)를 \(V\)의 \textbf{부분공간}이라고 부른다.
+
+이때, 기호로 `\(W<V\)'라고 나타내기도 한다.
+
+\rema{}\label{basic conditions}
+\(W\)가 벡터공간 \(V\)의 부분집합이고 \(W\neq\emptyset\)이라고 하자.
+또, \uu, \vv, \ww가 \(W\)의 원소이고 \(k\), \(l\)이 실수라고 하자.
+그러면 \uu, \vv, \ww가 \(V\)의 원소이고 따라서,
+
+\begin{enumerate}[(1)]\tightlist
+\item[(2)]
+\(\boldsymbol{u}+\boldsymbol{v}=\boldsymbol{v}+\boldsymbol{u}\)
+\item[(3)]
+\((\boldsymbol{u}+\boldsymbol{v})+\boldsymbol{w}=\boldsymbol{u}+(\boldsymbol{v}+\boldsymbol{w})\)
+\item[(7)]
+\(1\cdot \boldsymbol{u}=\boldsymbol{u}\)
+\item[(8)]
+\((kl)\boldsymbol{u}=k(l\boldsymbol{u})\)
+\item[(9)]
+\(k(\boldsymbol{u}+\boldsymbol{v})=k\boldsymbol{u}+k\boldsymbol{v}\)
+\item[(10)]
+\((k+l)\boldsymbol{u}=k\boldsymbol{u}+l\boldsymbol{u}\)
+\end{enumerate}
+이다.
+
+%
+\theo{}\label{subspacethm1}
+벡터공간 \(V\)의 부분집합 \(W\)에 대해
+\begin{enumerate}[(a)]\tightlist
+\item
+\(W\neq\emptyset\)
+\item
+\(W\) 임의의 원소 \(\uu\)와 \(\vv\)에 대해 \(\uu+\vv\in W\)
+\item
+\(W\) 임의의 원소 \(\uu\)와 임의의 실수 \(k\)에 대해 \(k\uu\in W\)
+\end{enumerate}
+이면 \(W\)는 \(V\)의 부분공간이다.
+
+\begin{proof}
+참고 \ref{basic conditions}에 의해 정의 \ref{vector space}의 (1), (4), (5), (6)번만 증명하면 된다.
+(1), (6)은 정확히 (b), (c)과 같다.
+첫 번째 가정(\(W\neq\emptyset\))에 의해 \(W\)의 원소 \(\uu\)가 적어도 하나 존재한다.
+그러면 (c)에 의해 \(0\cdot\uu\in W\)인데
+\[0\cdot\uu=(1+(-1))\uu=\uu+(-\uu)=\boldsymbol0\]
+이므로 \(\boldsymbol0\in W\)이다.
+따라서 (4)번이 증명되었다.
+마지막으로 \(-\uu=(-1)\uu\in W\)이므로 (5)번도 증명되었다.
+\end{proof}
+
+%
+\theo{}
+벡터공간 \(V\)의 부분집합 \(W\)에 대해
+\begin{enumerate}[(a)]\tightlist
+\item
+\(W\neq\emptyset\)
+\item
+\(W\) 임의의 원소 \(\uu\), \(\vv\)와 임의의 실수 \(k\), \(l\)에 대해 \(k\uu+l\vv\in W\)
+\end{enumerate}
+이면 \(W\)는 \(V\)의 부분공간이다.
+
+\begin{proof}
+(b)에 \(k=l=1\)을 대입하면 정확히 정리 \ref{subspacethm1}의 (b)를 얻을 수 있다.
+또 (b)에 \(l=0\)을 대입하면 정확히 정리 \ref{subspacethm1}의 (c)를 얻을 수 있다.
+그러면 정리 \ref{subspacethm1}의 가정들이 모두 성립하므로 \(W\)는 \(V\)의 부분공간이다.
+\end{proof}
+
+%
+\defi{}
+실수 \(c_1\), \(c_2\), \(\cdots\), \(c_n\)와 벡터 \(\uu_1\), \(\uu_2\), \(\cdots\), \(\uu_n\)에 대하여 벡터
+\[c_1\uu_1+c_2\uu_2+\cdots+c_n\uu_n=\sum_{i=1}^nc_i\uu_i\]
+를 벡터 \(\uu_1\), \(\uu_2\), \(\cdots\), \(\uu_n\)의 \textbf{일차결합}이라고 부른다.
+
+%
+\prob{}
+집합
+\[\mathcal P_3=\{a+bx+cx^2\mid a,b,c\in\mathbb R\}\]
+의 부분집합
+\[\{a+bx+cx^2\mid a+b+c=0\}\]
+이 \(\mathcal P_3\)의 부분공간임을 증명하시오.
+
+%
+\prob{}
+다음 명제의 참/거짓을 판별하시오.(참인 경우 증명하고, 거짓인 경우 반례를 제시하시오.)\\
+(1)
+\[\left\{
+\begin{bmatrix}
+a&b\\c&0
+\end{bmatrix}
+\Bigg|a,b,c\in\mathbb R
+\right\}\]
+는 통상적인 행렬의 덧셈과 실수배에 대하여 벡터공간을 이룬다.\\
+(2)
+\[\left\{
+\begin{bmatrix}
+a&b\\c&d
+\end{bmatrix}
+\Bigg|ad-bc\neq0
+\right\}\]
+는 통상적인 행렬의 덧셈과 실수배에 대하여 벡터공간을 이룬다.\\
+(3)
+\(V\), \(W\)가 벡터공간이면 \(V\cap W\)도 벡터공간을 이룬다.\\
+(4)
+\(V\), \(W\)가 벡터공간이면 \(V\cup W\)도 벡터공간을 이룬다.\\
+
+%%
+\section{Solving \(Ax=b\) and \(Ax=b\)}
+
+%%
+\section{일차독립, 기저, 차원}
+
+%
+\defi{}
+벡터 \(\uu_1\), \(\uu_2\), \(\cdots\), \(\uu_n\)에 대하여
+\[c_1\uu_1+c_2\uu_2+\cdots+c_n\uu_n=\zz\]
+를 만족하는 \(c_i\)들이 존재하고 이 때 모든 \(c_i\)가 동시에 0은 아닐 때(\(\sim(c_1=c_2=\cdots=c_n=0)\)), 이 벡터들을 \textbf{일차 종속}이라고 말한다.
+
+한편, 
+\[c_1\uu_1+c_2\uu_2+\cdots+c_n\uu_n=\zz\]
+를 만족하고 모든 \(c_i\)가 동시에 0이 되지는 않는 \(c_i\)들이 존재하지 않으면 이 벡터들을 \textbf{일차 독립}이라고 말한다.
+
+%
+\rema{}\label{alternative definition of l'indep}
+다시 말해, \(\uu_1\), \(\uu_2\), \(\cdots\), \(\uu_n\)들이 일차독립이기 위한 필요충분조건은
+\[``c_1\uu_1+c_2\uu_2+\cdots+c_n\uu_n=\zz\text{\quad 이면 \quad} c_1=c_2=\cdots=c_n=0''\]
+인 것이다.
+
+%
+\theo{}
+\(\uu_1\), \(\uu_2\), \(\cdots\), \(\uu_n\)들이 일차종속이면 어느 한 벡터가 나머지 벡터들의 일차결합으로 표현될 수 있다.
+즉, \(\uu_j=\sum_{i\neq j}^nk_i\uu_i\)인 \(j\)가 존재한다.
+또한 이 명제의 역도 성립한다.
+
+\begin{proof}
+\(\uu_1\), \(\uu_2\), \(\cdots\), \(\uu_n\)들이 일차종속이면
+\[c_1\uu_1+c_2\uu_2+\cdots+c_n\uu_n=\zz\]
+를 만족하는 \(c_i\)들이 존재하고 이 때 모든 \(c_i\)가 동시에 0은 아니다.
+즉, \(c_j\neq0\)인 \(j\)가 적어도 하나 존재한다.
+식을 정리해 \(c_j\uu_j\)에 관한 식으로 만들면
+\[c_j\uu_j=-c_1\uu_1-\cdots-c_{j-1}\uu_{j-1}-c_{j+1}\uu_{j+1}-\cdots-c_n\uu_n=\sum_{i\neq j}^n(-c_i)\uu_i\]
+이고 이를 \(c_j(\neq0)\)로 나누면
+\[\uu_j=-\frac{c_1}{c_j}\uu_1-\cdots-\frac{c_{j-1}}{c_j}\uu_{j-1}-\frac{c_{j+1}}{c_j}\uu_{j+1}-\cdots-\frac{c_n}{c_j}\uu_n=\sum_{i\neq j}^n\left(-\frac{c_i}{c_j}\right)\uu_i\]
+이다.
+따라서 \(\uu_j\)가 나머지 벡터들의 일차결합으로 나타났다.
+
+또, 만약 \(\uu_j=\sum_{i\neq j}^nk_i\uu_i\)인 \(j\)가 존재한다면, 즉
+\[\uu_j=k_1\uu_1+\cdots+k_{j-1}\uu_{j-1}+k_{j+1}\uu_{j+1}+\cdots+k_n\uu_n\]
+이라면,
+\[\uu_1+\cdots+k_{j-1}\uu_{j-1}-\uu_j+k_{j+1}\uu_{j+1}+\cdots+k_n\uu_n=\zz\]
+가 성립하고 따라서 일차독립이다.
+\end{proof}
+
+%
+\exam{}
+(1)
+\((1,2,-1)\), \((3,6,-3)\), \((3,9,3)\), \((2,5,0)\)는 일차 종속이다.
+왜냐하면
+\[3(1,2,-1)-(3,6,-3)+0(3,9,3)+0(2,5,0)=(0,0,0)\]
+이기 때문이다.
+(\(c_1=3\), \(c_2=-1\), \(c_3=0\), \(c_4=0\))
+
+혹은, \((1,2,-1)\)이 \((3,6,-3)\), \((3,9,3)\), \((2,5,0)\)들의 일차결합으로 표현될 수 있기 때문이다 ;
+\[(1,2,-1)=\frac13\cdot(3,6,-3)+0\cdot(3,9,3)+0\cdot(2,5,0)\]
+
+(2) 
+\((3,0,0)\), \((4,1,0)\), \((2,5,2)\)는 일차 독립이다.
+왜나햐면
+\[c_1(3,0,0)+c_2(4,1,0)+c_3(2,5,2)=(0,0,0)\]
+이 성립하려면
+\[
+\begin{cases}
+3c_1+4c_2+2c_3=0\\
+c_2+5c_3=0\\
+c_3=0
+\end{cases}\]
+이 성립해야 하는데 그러면 \(c_1=c_2=c_3=0\)이 되어
+\(c_i\)들이 동시에 0이 되지는 않는 \(c_1\), \(c_2\), \(c_3\)가 존재하지 않기 때문이다.
+
+혹은, 참고 \ref{alternative definition of l'indep}에 의해
+\[c_1(3,0,0)+c_2(4,1,0)+c_3(2,5,2)=(0,0,0)\]
+를 가정하면 \(c_1=c_2=c_3=0\)가 얻어지기 때문이다.
+
+%
+\prob{}
+다음 벡터들(\(\in\mathbb R^3\))이 일차결합인지 일차종속인지 판단하시오.
+\begin{enumerate}[(1)]
+\item
+\((1,-3,5)\), \((2,2,4)\), \((4,-4,14)\)
+\item
+\((1,7,7)\), \((2,7,7)\), \((3,7,7)\)
+\item
+\((0,0,-1)\), \((1,0,4)\)
+\item
+\((9,9,0)\), \((2,0,-1)\), \((3,5,-4)\), \((12,12,-1)\)
+\end{enumerate}
+
+%
+\prob{}
+다음 벡터들(\(\in\mathcal P_3\))이 일차결합인지 일차종속인지 판단하시오.
+\begin{enumerate}[(1)]
+\item
+\(3-x+9x^2\), \(5-6x+3x^2\), \(1+1x-5x^2\)
+\item
+\(-x^2\), \(1+4x^2\)
+\item
+\(2+x+7x^2\), \(3-x+2x^2\), \(4-3x^2\)
+\item
+\(8+3x+3x^2\), \(x+2x^2\), \(2+2x+2x^2\), \(8-2x+5x^2\)
+\end{enumerate}
+
+
+%
+\prob{}
+다음 벡터들(\(\in\mathscr F\))이 일차결합인지 일차종속인지 판단하시오.
+이때,
+\[\mathscr F=\{f:\mathbb R\to\mathbb R\mid f\text{는 함수}\}\]
+\begin{enumerate}[(1)]
+\item
+\(f(x)=x\), \(g(x)=\frac1x\)
+\item
+\(f(x)=e^x\), \(g(x)=\ln x\)
+\item
+\(f(x)=\sin x\), \(g(x)=\cos x\)
+\item
+\(f(x)=\sin x\), \(g(x)=\cos x\), \(h(x)=\sin(x+\frac{\pi}4)\)
+\item
+\(f(x)=e^x\), \(g(x)=\frac{e^x+e^{-x}}2\), \(h(x)=\frac{e^x-e^{-x}}2\)
+\item
+\(f(x)=0\), \(g(x)=x\), \(h(x)=x^2\)
+\end{enumerate}
+
+%
+\prob{}
+다음 명제의 참/거짓을 판별하시오.\\
+(1) \uu, \vv, \ww가 일차 독립일 때, \uu, \uu+\vv, \uu+\ww도 일차 독립이다.\\
+(2) \uu, \vv, \ww가 일차 독립일 때, \uu+\vv, \uu+\ww, \vv+\ww도 일차 독립이다.\\
+(3) \(\uu=\zz\) 이면 \uu, \vv, \ww가 일차종속이다.\\
+(4) \uu, \vv, \ww가 일차 독립일 때, \uu, \vv도 일차독립이다.
+
+%
+\defi{}
+\(\ww_1\), \(\ww_2\), \(\cdots\), \(\ww_n\)들이 \(V\)의 원소라고 가정하자.
+임의의 \(v\in V\)에 대해 \(v\)가 \(\ww_i\)들의 일차결합으로 표현될 수 있으면 `\textbf{\(\ww_1\), \(\ww_2\), \(\cdots\), \(\ww_n\)들이 \(V\)를 생성(span)한다}'고 말한다.
+
+\end{document}

@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{미분계수와 도함수}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{평균변화율}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{미분계수(순간변화율)}{8}{0}{1}
+\beamer@subsectionintoc {1}{3}{미분가능성과 연속성}{14}{0}{1}
+\beamer@subsectionintoc {1}{4}{도함수}{23}{0}{1}
+\beamer@sectionintoc {2}{도함수의 활용}{37}{0}{2}
+\beamer@subsectionintoc {2}{1}{접선의 방정식}{38}{0}{2}
+\beamer@subsectionintoc {2}{2}{롤의 정리}{43}{0}{2}
+\beamer@subsectionintoc {2}{3}{평균값 정리}{44}{0}{2}

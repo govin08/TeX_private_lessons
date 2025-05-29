@@ -1,0 +1,123 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\defi[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정의 \thenum) #1}\par\noindent}
+\newcommand\theo[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정리 \thenum) #1}\par\noindent}
+\newcommand\exam[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{예시 \thenum) #1}\par\noindent}
+\newcommand\prob[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{10pt}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE준영, 미니테스트 03
+\end{center}
+\begin{flushright}
+날짜 : 2017년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%
+\prob{}
+두 수열 \(\{a_n\}\), \(\{b_n\}\)에 대하여 옳은 것만을 <보기>에서 있는 대로 고른 것은?(단 \(\alpha\), \(\beta\)는 상수)
+\begin{mdframed}[frametitle=<보기>]
+\begin{enumerate}[ㄱ.]
+\item
+\(\displaystyle\lim_{n\to\infty}a_n=\infty\), \(\displaystyle\lim_{n\to\infty}b_n=\infty\)이 \(\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n}=1\)
+\item[ㄴ.]
+\(\displaystyle\lim_{n\to\infty}(3a_n+b_n)=0\)이고, \(\displaystyle\lim_{n\to\infty}a_n=1\)이면 \(\displaystyle\lim_{n\to\infty}b_n=-3\)이다.
+\item[ㄷ.]
+\(\displaystyle\lim_{n\to\infty}a_n=\alpha\), \(\displaystyle\lim_{n\to\infty}b_n=\beta\)이고 \(a_n<b_n\)이면 \(\alpha<\beta\)이다.
+\end{enumerate}
+\end{mdframed}
+\tabb{\text{ㄱ}}{\text{ㄴ}}{\text{ㄷ}}{\text{ㄱ, ㄴ}}{\text{ㄱ, ㄴ, ㄷ}}
+\vs
+
+%
+\prob{}
+두 수열 \(\{a_n\}\), \(\{b_n\}\)에 대하여 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+\begin{mdframed}[frametitle=<보기>]
+\begin{enumerate}[ㄱ.]
+\item
+\(a_n<c_n<b_n\)이고 \(\displaystyle\lim_{n\to\infty}(b_n-a_n)=0\)이면 수열 \(\{c_n\}\)은 수렴한다.
+\item[ㄴ.]
+\(\displaystyle\lim_{n\to\infty}a_n=\infty\), \(\displaystyle\lim_{n\to\infty}(a_n-b_n)=0\)이면 \(\displaystyle\lim_{n\to\infty}b_n=\infty\)
+\item[ㄷ.]
+\(\displaystyle\lim_{n\to\infty}a_n=\infty\), \(\displaystyle\lim_{n\to\infty}b_n=0\)이면 \(\displaystyle\lim_{n\to\infty}a_nb_n=0\)
+\end{enumerate}
+\end{mdframed}
+\tabb{\text{ㄱ}}{\text{ㄴ}}{\text{ㄷ}}{\text{ㄱ, ㄴ}}{\text{ㄱ, ㄴ, ㄷ}}
+\vs
+
+%
+\prob{}
+두 수열 \(\{a_n\}\), \(\{b_n\}\)에 대하여 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+\begin{mdframed}[frametitle=<보기>]
+\begin{enumerate}[ㄱ.]
+\item
+\(a_n<b_n\)일 때, \(\displaystyle\lim_{n\to\infty}a_n=\infty\)이면 \(\displaystyle\lim_{n\to\infty}b_n=\infty\)
+\item[ㄴ.]
+\(\displaystyle\lim_{n\to\infty}a_n=\infty\)이고 \(\displaystyle\lim_{n\to\infty}(a_n-b_n)=2\)이면 \(\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n}=1\)이다.
+\item[ㄷ.]
+\(\displaystyle\lim_{n\to\infty}a_n=3\)이고 \(\displaystyle\lim_{n\to\infty}(a_n-b_n)=0\)이면 \(\displaystyle\lim_{n\to\infty}b_n=3\)이다.
+\end{enumerate}
+\end{mdframed}
+\tabb{\text{ㄱ}}{\text{ㄴ}}{\text{ㄷ}}{\text{ㄱ, ㄴ}}{\text{ㄱ, ㄴ, ㄷ}}
+\vs
+
+
+%
+\prob{}
+두 수열 \(\{a_n\}\), \(\{b_n\}\)에 대하여 옳은 것만을 <보기>에서 있는 대로 고른 것은?(단 \(\alpha\)는 상수)
+\begin{mdframed}[frametitle=<보기>]
+\begin{enumerate}[ㄱ.]
+\item
+두 수열 \(\{a_{2n}\}\), \(\{a_{2n-1}\}\)이 모두 수렴하면 수열 \(\{a_n\}\)은 수렴한다.
+\item[ㄴ.]
+두 수열 \(\{a_n+b_n\}\), \(\{a_n-b_n\}\)이 모두 수렴하면 두 수열 \(\{a_n\}\), \(\{b_n\}\)은 모두 수렴한다.
+\item[ㄷ.]
+\(\displaystyle\lim_{n\to\infty}{a_n}^2=\alpha^2\)이면, \(\displaystyle\lim_{n\to\infty}a_n=\alpha\) 또는 \(\displaystyle\lim_{n\to\infty}a_n=-\alpha\)이다.
+\end{enumerate}
+\end{mdframed}
+\tabb{\text{ㄱ}}{\text{ㄴ}}{\text{ㄷ}}{\text{ㄱ, ㄴ}}{\text{ㄱ, ㄴ, ㄷ}}
+\vs
+
+
+
+\end{document}

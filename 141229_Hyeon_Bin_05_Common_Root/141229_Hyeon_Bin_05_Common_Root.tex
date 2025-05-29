@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,mathrsfs,mdframed}
+\newcommand{\ao}{\ensuremath{{\alpha_1}}}
+\newcommand{\at}{\ensuremath{{\alpha_2}}}
+\newcommand{\bo}{\ensuremath{{\beta_1}}}
+\newcommand{\bt}{\ensuremath{{\beta_2}}}
+
+%%%
+\begin{document}
+
+\title{현빈 : 05 이차방정식의 공통근}
+\author{}
+\date{\today}
+\maketitle
+
+\noindent
+\begin{mdframed}[frametitle={17장의 한 정리(p191)의 역}]
+근을 가지는 두 이차방정식(\(a_i\), \(b_i\), \(c_i\)는 실수, \(a_i\neq0\))
+\begin{gather}
+a_1x^2+b_1x+c_1=0\\
+a_2x^2+b_2x+c_2=0
+\end{gather}
+에 대해
+\begin{equation}
+(a_1c_2-a_2c_1)^2=(a_1b_2-a_2b_1)(b_1c_2-b_2c_1)
+\end{equation}
+이면 두 이차방정식은 공통근을 가진다.
+\end{mdframed}
+
+\begin{proof}
+(1)의 두 근을 \(\ao\), \(\bo\), (2)의 두 근을 \(\at\), \(\bt\)라고 하면(각각 서로다른 두 근을 가질 수도 있고 중근을 가질 수도 있다.)
+\begin{gather}
+\alpha_i+\beta_i=-\frac{b_i}{a_i}\\
+\alpha_i\beta_i=\frac{c_i}{a_i}
+\end{gather}
+이다.
+\[(\ao-\at)(\ao-\bt)(\bo-\at)(\bo-\bt)=A\]
+라고 하자.
+그러면 \(A=0\)이라는 것만 증명하면 된다.
+
+\((a-x)(a-y)(b-x)(b-y)\)를 전개하면
+\[
+\begin{split}
+&(a-x)(a-y)(b-x)(b-y)\\
+=&a^2b^2-a^2by-a^2bx+a^2xy-ab^2y+aby^2+abxy-axy^2\\
+&-ab^2x+abxy+abx^2-ax^2y+b^2xy-bxy^2-bx^2y+x^2y^2\\
+=&(ab-xy)^2+ab(x+y)^2+xy(a+b)^2\\
+&-[a^2b(x+y)+ab^2(x+y)]-[axy(x+y)+bxy(x+y)]\\
+=&(ab-xy)^2+ab(x+y)^2+xy(a+b)^2-ab(a+b)(x+y)-xy(a+b)(x+y)\\
+=&(ab-xy)^2+ab(x+y)^2+xy(a+b)^2-(ab-xy)(a+b)(x+y)\\
+\end{split}
+\]
+이다.
+따라서
+\begin{multline*}
+A=(\ao\bo-\at\bt)^2+\ao\bo(\at+\bt)^2+\at\bt(\ao+\bo)^2\\
+-(\ao\bo-\at\bt)(\ao+\bo)(\at+\bt)
+\end{multline*}
+(4), (5)를 적용하면
+\begin{align*}
+A
+&=\left(\frac{c_1}{a_1}-\frac{c_2}{a_2}\right)^2+\frac{{b_2}^2c_1}{{a_1}{a_2}^2}+\frac{{b_1}^2c_2}{{a_1}^2{a_2}}-\left(\frac{c_1}{a_1}+\frac{c_2}{a_2}\right)\frac{b_1b_2}{a_1a_2}\\
+&=\frac{B}{{a_1}^2{a_2}^2}
+\end{align*}
+(3)을 적용하면
+\begin{align*}
+B
+&=(a_2c_1-a_1c_2)^2+a_1{b_2}^2c_1+a_2{b_1}^2c_2-b_1b_2(a_2c_1+a_1c_2)\\
+&=(a_1b_2-a_2b_1)(b_1c_2-b_2c_1)+a_1{b_2}^2c_1+a_2{b_1}^2c_2-b_1b_2(a_2c_1+a_1c_2)\\
+&=0
+\end{align*}
+따라서 \(A=0\)이다.
+\end{proof}
+%따라서
+%\[
+%\begin{split}
+%&(\ao-\at)(\ao-\bt)(\bo-\at)(\bo-\bt)\\
+%=&\ao^2\bo^2-\ao^2\bo\bt-\ao^2\at\bo+\ao^2\at\bt
+%-\ao\bo^2\bt+\ao\bo\bt^2+\ao\at\bo\bt-\ao\at\bt^2\\
+%&-\ao\at\bo^2+\ao\at\bo\bt+\ao\at^2\bo-\ao\at^2\bt
+%+\at\bo^2\bt-\at\bo\bt^2-\at^2\bo\bt+\at^2\bt^2\\
+%=&(\ao+\bo)(\at+\bt)
+%\end{split}
+%\]
+\end{document}

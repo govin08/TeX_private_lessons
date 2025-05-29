@@ -1,0 +1,149 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,mdframed,paralist,tabu}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+
+%%% 객관식 선지
+\newcommand\one{\ding{172}}
+\newcommand\two{\ding{173}}
+\newcommand\three{\ding{174}}
+\newcommand\four{\ding{175}}
+\newcommand\five{\ding{176}}
+\usepackage{tabto,pifont}
+%\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+
+\newcommand\taba[5]{\par\noindent
+\one\:{#1}
+\tabto{0.2\textwidth}\two\:\:{#2}
+\tabto{0.4\textwidth}\three\:\:{#3}
+\tabto{0.6\textwidth}\four\:\:{#4}
+\tabto{0.8\textwidth}\five\:\:{#5}}
+
+\newcommand\tabb[5]{\par\noindent
+\one\:{#1}
+\tabto{0.33\textwidth}\two\:\:{#2}
+\tabto{0.67\textwidth}\three\:\:{#3}\medskip\par\noindent
+\four\:\:{#4}
+\tabto{0.33\textwidth}\five\:\:{#5}}
+
+\newcommand\tabc[5]{\par\noindent
+\one\:{#1}
+\tabto{0.5\textwidth}\two\:\:{#2}\medskip\par\noindent
+\three\:\:{#3}
+\tabto{0.5\textwidth}\four\:\:{#4}\medskip\par\noindent
+\five\:\:{#5}}
+
+\newcommand\tabd[5]{\par\noindent
+\one\:{#1}\medskip\par\noindent
+\two\:\:{#2}\medskip\par\noindent
+\three\:\:{#3}\medskip\par\noindent
+\four\:\:{#4}\medskip\par\noindent
+\five\:\:{#5}}
+
+\newcommand\vs[1]{\par\vspace{30pt}}
+
+\usepackage{graphicx}
+
+%\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num})} #1\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE태희, 미니테스트 11
+\end{center}
+\begin{flushright}
+날짜 : 2018년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%
+\prob{다음 <보기>에서 옳은 것만을 있는 대로 고른 것은?}
+\begin{mdframed}[frametitle=<보기>]
+\begin{enumerate}
+\item[ㄱ.]
+\(a<b<c<d\)일 때, \(ad+bc>ac+bd\)
+\item[ㄴ.]
+실수 \(x\), \(y\)에 대하여 \(x^2+5y^2+2y+1\ge4xy\)
+\item[ㄷ.]
+실수 \(a\), \(b\)에 대하여 \(|a+2b|+2|b|\ge|a|\)
+\end{enumerate}
+\end{mdframed}
+\tabb{\text{ㄱ}}{\text{ㄷ}}{\text{ㄱ, ㄷ}}{\text{ㄴ, ㄷ}}{\text{ㄱ, ㄴ, ㄷ}}
+\vs
+
+%
+\prob{\(x^2+y^2+z^2=18\)일 때, \(x+2y-2z\)의 최댓값을 구하여라.}
+\taba{\(6\sqrt2\)}{\(7\sqrt2\)}{\(8\sqrt2\)}{\(9\sqrt2\)}{\(10\sqrt2\)}
+\vs
+
+%
+\prob{함수 \(f(x)=3x-\frac12\)에 대하여 \((f^{-1}\circ f^{-1}\circ f^{-1})(7)\)의 값을 구하여라.}
+\taba{\(-\frac32\)}{\(\frac12\)}{\(\frac52\)}{\(\frac92\)}{\(\frac{13}2\)}
+\vs
+
+%
+\prob{\(4^a+4^{-a}=7\)일 때, \(\displaystyle\frac{2^{5a}+2^{-a}}{2^{3a}+2^a}\)의 값을 구하시오.}
+\vs
+
+%
+\prob{두 집합 \(X=\{x\ba 3\le x\le 6\}\), \(Y=\{y\ba a\le y\le b\}\)에 대하여 \(X\)에서 \(Y\)로의 함수 \(f(x)=3^{x-2}+1\)의 역함수가 존재할 때, \(a+b\)의 값을 구하시오. (단, \(a\), \(b\)는 상수)}
+\taba{6}{8}{14}{32}{86}
+\vs
+
+%
+\prob{\(0\le x\le 3\)에서 함수 \(\displaystyle y=\frac{x+2}{x+1}\)의 최댓값과 최솟값의 합을 구하여라.}
+\vs
+
+%
+\prob{\(\displaystyle f(x)=\frac{x+2}{3x+a}\)에 대하여 \(f=f^{-1}\)가 성립할 때, 상수 \(a\)의 값은?}
+\taba{\(-2\)}{\(-1\)}012
+\vs
+
+%
+\prob{두 함수 \(f(x)=3x-1\), \(g(x)=\sqrt{2x-5}\)에 대하여 \(((f\circ g^{-1})^{-1}\circ f)(3)\)의 값은?}
+\taba1{$\frac32$}2{$\frac52$}3
+\vs
+
+%
+\prob{함수 \(y=\sqrt{1-x}\)의 그래프와 직선 \(y=-x+k\)가 서로 다른 두 점에서 만나도록 하는 실수 \(k\)의 값의 범위는?}
+\taba{\(k\ge1\)}{\(k\le\frac54\)}{\(0<k<\frac54\)}{\(1<k\le\frac54\)}{\(1\le k<\frac54\)}
+\vs
+
+%
+\prob{글자 \scriptsize\(\fbox A \)\normalsize를 어떤 비율로 확대 복사하여 큰 글자 \(\fbox A\)를 만들었다.
+확대한 \(\fbox A\)를 같은 비율로 확대복사하여 더 큰 글자 \LARGE\(\fbox  A\)\normalsize를 만들었다. 이와 같은 작업을 계속해 나갔더니 5회째의 복사본은 처음의 원본보다 글자의 크기가 2배가 되었다. 13회째의 복사본의 글자의 크기는 3회째의 복사본의 글자의 크기의 몇 배인지 구하여라.
+}
+\vs
+
+%
+\prob{어떤 방사능 물질이 시간이 지남에 따라 일정한 비율로 붕괴되어 \(a\)년 후에는 처음 양의 \(\frac12\)이 된다고 할 때, \(a\)년을 이 물질의 반감기라고 한다.
+반감기가 \(a\)년인 방사능 물질의 처음의 양을 \(m_0\)라고 할 때, \(t\)년 후 이 방사능 물질의 양 \(m(t)\)는}
+\[m(t)=m_0\cdot\left(\frac12\right)^{\frac ta}\]
+인 관계가 성립한다.
+반감기가 300년인 방사능 물질의 양이 현재 \(m\)이라고 할 때, 이 물질의 양이 \(\frac m{16}\)이 되는 것은 지금으로부터 약 몇 년 후인지 구하여라.
+
+\end{document}

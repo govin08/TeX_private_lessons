@@ -1,0 +1,9 @@
+\contentsline {section}{차\nobreakspace {}례}{1}{section*.1}
+\contentsline {section}{\numberline {1}평행이동}{2}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}점의 평행이동}{2}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}도형의 평행이동}{3}{subsection.0.1.2}
+\contentsline {section}{\numberline {2}대칭이동}{8}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}점의 대칭이동}{8}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}도형의 대칭이동}{10}{subsection.0.2.2}
+\contentsline {chapter}{\numberline {*}답}{17}{section*.2}
+\contentsline {chapter}{\numberline {*}요약}{20}{section*.3}

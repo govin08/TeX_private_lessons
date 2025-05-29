@@ -1,0 +1,1090 @@
+\documentclass{oblivoir}
+\input{../preamble.tex}
+%%%%
+\begin{document}
+
+\title{수학Ⅰ : 02 로그}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%%
+\section{로그의 뜻}
+
+%
+\prob{다음 등식을 만족시키는 \(x\)의 값을 각각 구하여라.}
+\begin{enumerate}\label{log1}
+\item
+\(2^x=8\)
+\item
+\(2^x=\frac12\)
+\item
+\(2^x=1\)
+\item
+\(2^x=2\sqrt2\)
+\end{enumerate}
+
+%
+\exam{등식 \(2^x=7\)를 만족시키는 \(x\)는 어떤 값인지 알아보자.}\label{log2}
+계산기를 사용해 계산하면,
+\begin{align*}
+&2^2=4				\text{ 이고 }&&2^3=8				\text{ 이므로 }&&2<x<3\text{이다.}\\
+&2^{2.8}=6.964\cdots 	\text{ 이고 }&&2^{2.9}=7.464\cdots 	\text{ 이므로 }&&2.8<x<2.9\text{이다.}\\
+&2^{2.80}=6.964\cdots 	\text{ 이고 }&&2^{2.81}=7.012\cdots 	\text{ 이므로 }&&2.80<x<2.81\text{이다.}\\
+&2^{2.807}=6.998\cdots 	\text{ 이고 }&&2^{2.808}=7.003\cdots 	\text{ 이므로 }&&2.807<x<2.808\text{이다.}\\
+\end{align*}
+%따라서, \(2^x=7\)을 만족시키는 \(x\)의 값은
+따라서, \(x=2.807\cdots\)이다.
+%복잡한 값이긴 하지만 \(2^x=7\)를 만족시키는 실수 \(x\)의 값은 존재할 것이다.
+이 값 \(x\)를 \(\log_27\)로 표시한다.
+\begin{mdframed}[rightmargin=.2\textwidth,leftmargin=.2\textwidth]
+\centering
+\(2^x=7\qquad\iff\qquad x=\log_27\)
+\end{mdframed}
+위의 계산에서 \(\log_27\)을 소수점 둘째자리까지 구하면,
+\[\log_27\approx2.81\]
+인 것이다.
+
+%
+\prob{등식 \(3^x=5\)를 만족시키는 \(x\)의 값을 로그로 표시하고, 소수점 둘째자리까지 구하여라(계산기).}\label{log3}
+
+\newpage
+\begin{mdframed}
+%
+\defi{로그의 정의}\label{log4}
+\(a>0\), \(a\neq1\), \(N>0\)일 때, 
+\begin{mdframed}[rightmargin=.2\textwidth,leftmargin=.2\textwidth]
+\centering
+\(a^x=N\qquad\iff\qquad x=\log_aN\)
+\end{mdframed}
+%\[a^x=N\]
+%을 만족시키는 \(x\)의 값을
+%\[x=\log_aN\]
+%으로 표시한다.
+이때 \(a\)를 \fbox밑, \(N\)을 \fbox{진수}라고 부른다.
+\end{mdframed}
+
+
+%
+\exam{다음 등식들을 만족시키는 \(x\)의 값을 생각해보자.}\label{log5}
+%\begin{enumerate}
+%\item
+%\(2^x=-7\)을 만족시키는 \(x\)의 값을 구하여라.
+%\item
+%\(2^x=0\)을 만족시키는 \(x\)의 값을 구하여라.
+%\item
+%\((\frac12)^x=7\)을 만족시키는 \(x\)의 값을 구하여라.
+%\item
+%\((-2)^x=7\)을 만족시키는 \(x\)의 값을 구하여라.
+%\item
+%\(1^x=7\)을 만족시키는 \(x\)의 값을 구하여라.
+%\item
+%\(0^x=7\)을 만족시키는 \(x\)의 값을 구하여라.
+%\end{enumerate}
+\par\vspace{-10pt}\noindent
+(1)\:\:{\(2^x=-7\)}
+\tabto{0.33\textwidth}
+(2)\:\:{\((\frac12)^x=7\)}
+\tabto{0.66\textwidth}
+(3)\:\:{\((-2)^x=7\)}
+\medskip\par\noindent
+(4)\:\:{\(1^x=7\)}
+\tabto{0.33\textwidth}
+(5)\:\:{\(1^x=1\)}
+\tabto{0.66\textwidth}
+(6)\:\:{\(0^x=7\)}
+%\begin{enumerate}
+%\item[(1), (2)]
+\begin{mdframed}
+\begin{enumerate}
+\item
+\(2^x>0\)이므로 (1)을 만족시키는 실수 \(x\)는 존재하지 않는다.
+\item
+\((\frac12)^x=(2^{-1})^x=2^{-x}\)이다.
+\(2^{-x}=7\)에서 \(-x=2.807\cdots\)이다.
+따라서 \(x=-2.807\cdots\)이다.
+\item
+\(x\)는 정수가 아니다.
+정수가 아닌 지수가 정의되려면 밑은 음수여야 하는데 이 경우에 밑은 \(-2\)이다.
+따라서 위 등식을 만족시키는 \(x\)는 존재하지 않는다.
+\item
+\(1^x=1\)이므로 위 등식을 만족시키는 \(x\)는 존재하지 않는다.
+\item
+\(x\)의 값에 관계없이 \(1^x=1\)이 성립하므로 \(x\)는 모든 실수가 가능하다.
+\item
+\(0^x=0\)이므로 위 등식을 만족시키는 \(x\)는 존재하지 않는다.
+%\end{enumerate}
+\end{enumerate}
+\end{mdframed}
+위의 예시에서 보듯 \(a\le0\), \(a=1\), \(N\le0\)이면 \(a^x=N\)를 만족시키는 \(x\)의 값이 존재하지 않거나 유일하지 않다.
+한편, \(a>0\), \(a\neq1\)이고 \(N>0\)이면 \(x\)의 값은 유일하게 하나 존재한다는 것이 알려져 있다.
+
+%
+\prob{다음 등식들을 만족시키는 \(x\)의 값을 소수점 둘째자리까지 구하여라.}
+\begin{enumerate}\label{log6}
+\item
+\(3^x=\frac15\)
+\item
+\(9^x=5\)
+\end{enumerate}
+
+%
+\exam{}
+\begin{enumerate}\label{log7}
+\item
+\(2^3=8\)을 로그를 사용하여 나타내어라.
+\item
+\(-2=\log_3{\frac19}\)를 \(a^x=N\)의 꼴로 나타내어라.
+\end{enumerate}
+\ans{(1)\;\(3=\log_28\)\qquad(2)\;\(3^{-2}=\frac19\)}
+
+%
+\prob{다음 등식을 로그를 사용하여 나타내어라.}\label{log8}
+\par\noindent
+\begin{enumerate*}[itemjoin=\tabto{.5\textwidth}]
+\item
+\(5^3=125\)
+\item
+\(3^{\frac12}=\sqrt3\)
+\end{enumerate*}
+
+%
+\prob{다음 등식을 \(a^x=N\)의 꼴로 나타내어라.}\label{log9}
+\\
+\begin{enumerate*}[itemjoin=\tabto{.5\textwidth}]
+\item
+\(\log_31=0\)
+\item
+\(\log_{\frac13}9=-2\)
+\end{enumerate*}
+
+\bigskip\bigskip
+%
+\exam{\(\log_{\frac13}27\)의 값을 구하여라.}\label{log10}
+\begin{mdframed}
+\(x=\log_{\frac13}27\)로 두면 \((\frac13)^x=27\)이다.\\
+\((3^{-1})^x=3^3\), \(3^{-x}=3^3\)에서 \(-x=3\), \(x=-3\)이다.
+\end{mdframed}
+\ans{\(-3\)}
+
+%
+\prob{다음 값을 구하여라.}\label{log11}
+\\
+\begin{enumerate*}[itemjoin=\qquad\qquad\qquad]
+\item
+\(\log_525\)
+\item
+\(\log_7{\frac1{49}}\)
+\item
+\(\log_{\frac14}8\)
+\end{enumerate*}
+
+\newpage
+%
+\exam{다음 등식을 만족시키는 \(N\), \(a\)의 값을 각각 구하여라.}\label{log12}
+\\
+\begin{enumerate*}[itemjoin=\tabto{.5\textwidth}]
+\item
+\(\log_2N=-5\)
+\item
+\(\log_a81=4\)
+\end{enumerate*}
+\bigskip
+\begin{mdframed}
+\begin{enumerate}
+\item
+\(N=2^{-5}\)이므로 \(N=\frac1{32}\).
+\item
+\(a^4=81\)이다.
+\(a^4-81=0\), \((a+3)(a-3)(a+3i)(a-3i)=0\)에서 \(a=\pm3,\pm3i\)이다.
+이때, \(a>0\), \(a\neq1\)이므로 \(a=3\)이다.
+\end{enumerate}
+\end{mdframed}
+\ans{(1)\;\(N=\frac1{32}\)\qquad(2)\;\(a=3\)}
+
+%
+\prob{다음 빈 칸에 알맞은 수를 넣어라.}
+\begin{enumerate}\label{log13}
+\item
+\(\log_3\square=3\)
+\item
+\(\log_8\square=\frac16\)
+\item
+\(\log_{\frac23}\square=-2\)
+\item
+\(\log_\square64=3\)
+\item
+\(\log_\square25=2\)
+\item
+\(\log_2(\log_3\square)=2\)
+\end{enumerate}
+
+%%%
+\section{로그의 성질}
+%%
+%\prob{다음 값들을 구하여라.}
+%\begin{enumerate*}[itemjoin=\qquad\qquad\quad]
+%\item
+%\(\log_33\)
+%\item
+%\(\log_{\frac15}{\frac15}\)
+%\item
+%\(\log_41\)
+%\item
+%\(\log_71\)
+%\end{enumerate*}
+
+%
+\exam{}
+\begin{enumerate}\label{prop1}
+\item
+\(3^0=1\)이고 \((\frac15)^0=1\)이다.
+따라서
+\begin{center}
+\fbox{\(\log_31=0\)}
+\qquad
+\fbox{\(\log_{\frac15}1=0\)}
+\end{center}
+한편, \(3^1=3\)이고 \((\frac15)^1=\frac15\)이다.
+따라서
+\begin{center}
+\fbox{\(\log_33=1\)}
+\qquad
+\fbox{\(\log_{\frac15}{\frac15}=1\)}
+\end{center}
+\item
+\(\log_28=3\), \(\log_24=2\), \(\log_232=5\)이다.
+\(3+2=5\)에서
+\begin{mdframed}[rightmargin=.2\textwidth,leftmargin=.2\textwidth]
+\centering
+\(\log_28+\log_24=\log_232\)
+\end{mdframed}
+\item
+또, \(\log_22=1\)이므로 \(3-2=1\)에서
+\begin{mdframed}[rightmargin=.2\textwidth,leftmargin=.2\textwidth]
+\centering
+\(\log_28-\log_24=\log_22\)
+\end{mdframed}
+\item
+\(\log_232=5\), \(\log_22=1\)이므로
+\begin{mdframed}[rightmargin=.2\textwidth,leftmargin=.2\textwidth]
+\centering
+\(\log_2{2^5}=5\log_22\)
+\end{mdframed}
+\end{enumerate}
+
+\begin{mdframed}
+%
+\defi{로그의 성질(1)}\label{prop2}
+\(a>0\), \(a\neq1\), \(M>0\), \(N>0\)일 때,
+\begin{enumerate}[label=(\alph*)]
+\item
+\(\log_a1=0,\quad\log_aa=1\)
+\item
+\(\log_aM+\log_aN=\log_aMN\)
+\item
+\(\log_aM-\log_aN=\log_a{\frac MN}\)
+\item
+\(\log_a{M^k}=k\log_aM\)\quad(단, \(k\)는 실수)
+\end{enumerate}
+\end{mdframed}
+
+\newpage
+%
+\prob{다음은 위의 정리를 증명하는 과정이다. 빈 칸을 완성하여라.}\label{prop3}
+\begin{mdframed}
+\begin{enumerate}[label=(\alph*)]
+\item
+\(a^{\scalebox{.4}{\fbox{(가)}}}=1\)이고 \(a^1=a\)이다.
+따라서
+\(\log_a1=\fbox{(가)}\)이고 \(\log_aa=1\)이다.
+\item
+\(\log_aM=m\), \(\log_aN=n\)이라고 하면,
+\[a^m=M,\quad a^n=N\tag{$*$}\]
+이다.
+두 식을 곱하면
+\[MN=a^m\times a^n=a^{m+n}\]
+이다.
+따라서
+\[m+n=\log_a{MN}\]
+이고, (b)가 성립한다.
+\item
+($*$)의 두 식을 나누면
+\[\frac MN=\frac{a^m}{a^n}=a^{\scalebox{.4}{\fbox{(나)}}}\]
+이다.
+따라서
+\[{\fbox{(나)}}=\log_a{\frac MN}\]
+이고, (c)가 성립한다.
+\item
+($*$)의 첫번째식의 양변을 \(k\)제곱하면,
+\begin{gather*}
+(a^m)^k=M^k\\
+a^{\scalebox{.4}{\fbox{(다)}}}=M^k
+\end{gather*}
+이다.
+따라서
+\(\fbox{(다)}=\log_a{M^k}\)이고 (d)가 성립한다.
+\end{enumerate}
+\end{mdframed}
+\newpage
+
+%
+\exam{다음 식을 간단히 하시오.}
+\begin{enumerate}\label{prop4}
+\item
+\(\log_612+\log_63\)
+\item
+\(\log_3\sqrt{27}\)
+\item
+\(\log_23-2\log_2\sqrt6\)
+\item
+\(\log_{10}\sqrt5+\frac12\log_{10}2\)
+\end{enumerate}
+\begin{mdframed}[innerleftmargin=0pt]
+\begin{enumerate}
+\item
+\(\log_612+\log_63
+\stackrel{(b)}=
+\log_636=2\)
+\item
+\(\log_3\sqrt{27}=\log_3{3^{\frac32}}
+\stackrel{(d)}=
+\frac32\log_33=\frac32\)
+\item
+\(\log_23-2\log_2\sqrt6
+\stackrel{(d)}=
+\log_23-\log_26
+\stackrel{(b)}=
+\log_2\frac12=-1\)
+\item
+\(\log_{10}\sqrt5+\frac12\log_{10}2
+\stackrel{(d)}=
+\log_{10}\sqrt5+\log_{10}\sqrt2
+\stackrel{(b)}=
+\log_{10}\sqrt{10}=\frac12\)
+\end{enumerate}
+\end{mdframed}
+
+%
+\prob{다음 식을 간단히 하시오.}
+\begin{enumerate}\label{prop5}
+\item
+\(\log_3\sqrt[3]{81}\)
+\item
+\(\log_798-\log_72\)
+\item
+\(\log_{\frac23}27-\log_{\frac23}8\)
+\item
+\(\log_3{\frac{\sqrt3}5}+\log_345\)
+\item
+\(\log_212+\log_26-2\log_23\)
+\item
+\(\frac12\log_3\frac95+\log_3\sqrt5\)
+\end{enumerate}
+
+%
+\prob{\(\log_52=a\), \(\log_53=b\)라고 할 때, 다음을 \(a\)와 \(b\)로 나타내어라.}
+\begin{enumerate}\label{prop6}
+\item
+\(\log_518=\log_5(2\times3^2)=\log_52+2\log_53=a+2b\)
+\item
+\(\log_5{60}\)
+\item
+\(\log_5\frac89\)
+%\item
+%\(\log_50.25\)
+\item
+\(\log_5\sqrt{1000}\)
+\end{enumerate}
+
+\newpage
+%
+\prob{다음 값들을 구하여라.}\label{prop7}
+\vspace{-10pt}\par\noindent
+\begin{enumerate*}[itemjoin=\qquad\qquad\qquad]
+\item
+\(\log_{16}256\)
+\item
+\(\frac{\log_2256}{\log_216}\)
+\item
+\(\frac{\log_4256}{\log_416}\)
+\end{enumerate*}
+
+%
+\exam{}
+\begin{enumerate}\label{prop8}
+\item
+위의 문제에서의 세 값은 서로 같다.
+즉,
+\begin{center}
+\fbox{\(\displaystyle\log_{16}256=\frac{\log_2256}{\log_216}\)}
+\qquad
+\fbox{\(\displaystyle\log_{16}256=\frac{\log_4256}{\log_416}\)}
+\end{center}
+이다.
+\(\log_{16}256\)의 밑은 \(16\)이었지만, 밑을 2로 변환할 수 있고 4로도 변환할 수 있는 것이다.
+일반적으로는 다음 공식이 성립한다.
+\[\fbox{\(\displaystyle\log_ab=\frac{\log_cb}{\log_ca}\)}\tag{$*$}\]
+이것을 `밑의 변환 공식'이라고 부른다.
+\item
+밑의 변환 공식을 이용하여 \(\log_23\)과 \(\log_32\)를 곱해보자.\\
+밑을 \(5\)로 통일하면,
+\[\log_23\stackrel{(*)}=\frac{\log_53}{\log_52},\quad\log_32\stackrel{(*)}=\frac{\log_52}{\log_53}\]
+이다.
+따라서
+\[\log_23\times\log_32=\frac{\log_53}{\log_52}\times\frac{\log_52}{\log_53}=1\]
+즉 \(\log_23\)과 \(\log_32\)는 서로 역수관계이다.
+%\begin{mdframed}[innertopmargin=5pt,innerbottommargin=5pt,rightmargin=.3\textwidth,leftmargin=.3\textwidth]
+%\centering
+%\(\displaystyle\log_23=\frac1{\log_32}\)
+%\end{mdframed}
+\begin{center}
+\fbox{\(\displaystyle\log_23=\frac1{\log_32}\)}
+\end{center}
+\item
+한편 밑의 변환 공식을 두 번 적용하여 다음과 같은 계산을 할 수도 있다.
+\[\log_825\stackrel{(*)}=\frac{\log_725}{\log_78}=\frac{2\log_75}{3\log_72}\stackrel{(*)}=\frac23\log_25\]
+따라서
+%\begin{mdframed}[rightmargin=.3\textwidth,leftmargin=.3\textwidth]
+%\centering
+%\(\log_{2^3}{5^2}=\frac23\log_25\)
+%\end{mdframed}
+\begin{center}
+\fbox{\(\log_{2^3}{5^2}=\frac23\log_25\)}
+\end{center}
+\end{enumerate}
+
+\begin{mdframed}
+%
+\theo{로그의 성질(2)}
+\begin{enumerate}[label=(\alph*)]\label{prop9}
+\setcounter{enumi}{4}
+\item
+\(a>0\), \(a\neq1\), \(b>0\), \(c>0\), \(c\neq1\)일 때,
+\[\phantom{\qquad(\text{밑의 변환 공식})}\log_ab=\frac{\log_cb}{\log_ca}\qquad(\text{밑의 변환 공식})\]
+\item
+\(a>0\), \(a\neq1\), \(b>0\), \(b\neq1\)일 때,
+\[\log_ab=\frac1{\log_ba}\]
+\item
+\(a>0\), \(a\neq1\), \(b>0\)이고 \(m\), \(n\)이 실수일 때,
+\[\log_{a^n}{b^m}=\frac mn \log_ab\]
+\end{enumerate}
+\end{mdframed}
+
+%
+\exam{다음 식을 간단히 하시오.}\label{prop10}
+\\[-5pt]
+\begin{enumerate*}[itemjoin=\tabto{.5\textwidth}]
+\item
+\(\frac1{\log_26}+\frac1{\log_36}\)
+\item
+\(\log_927\)
+\end{enumerate*}
+\begin{mdframed}
+\begin{enumerate}
+\item
+\(\frac1{\log_26}+\frac1{\log_36}
+\stackrel{(f)}=\log_62+\log_63
+\stackrel{(b)}=\log_66=1\)
+\item
+\(\log_927=\log_{3^2}{3^3}
+\stackrel{(g)}=\frac32\log_33\)
+\end{enumerate}
+\end{mdframed}
+\ans{(1)\;1\quad(2)\;\(\frac32\)}
+
+%
+\prob{다음 식을 간단히 하시오.}
+\begin{enumerate}\label{prop11}
+\item
+\(\log_8\frac1{16}\)
+\item
+\(\log_220-\frac1{\log_52}\)
+\item
+\(\log_52\cdot\log_225\)
+\item
+\(\log_45\cdot\log_56\cdot\log_64\)
+\item
+\((\log_38+\log_94)\cdot\log_23\)
+\item
+\(\log_2(\log_23)+\log_2(\log_34)\)
+\end{enumerate}
+
+\newpage
+%
+\prob{\(\log_72=a\), \(\log_73=b\)라고 할 때, 다음을 \(a\)와 \(b\)로 나타내어라.}
+\begin{enumerate}\label{prop12}
+\item
+\(\log_23\)
+\item
+\(\log_6{28}\)
+\end{enumerate}
+
+%
+\prob{다음은 밑의 변환 공식를 증명하는 과정이다. 빈칸을 완성하여라.}\label{prop13}
+\begin{mdframed}[nobreak=false]
+\(\fbox{(가)}=x\), \(\fbox{(나)}=y\)라고 하면
+\[a^x=b,\qquad c^y=a\]
+이다.
+지수의 성질에 따라
+\[b=a^x=(c^y)^x=c^{\scalebox{.4}{\fbox{(다)}}}\]
+이다.
+그러면 로그의 정의에 의해
+\[\fbox{(다)}=\log_cb\]
+이다.
+따라서
+\[\fbox{(가)}\times\fbox{(나)}=\log_cb\]
+이다.
+그런데 \(a\neq1\)로부터 \(\fbox{(나)}\neq0\)이므로 위의 식의 양변을 \(\fbox{(나)}\)로 나누면
+\[\log_ab=\frac{\log_cb}{\log_ca}\]
+이 얻어진다.
+\end{mdframed}
+
+\newpage
+%
+\exam{}
+\begin{enumerate}\label{prop14}
+\item
+\(2^x=5\)라고 하자.
+그러면 \(x=\log_25\)이다.
+두 번째 식의 \(x\)를 첫 번째 식의 \(x\)에 대입하면
+\begin{center}
+\fbox{\(\displaystyle2^{\log_25}=5\)}
+\end{center}
+이다.
+\item
+지수와 로그의 성질을 사용하여 \(\displaystyle8^{\log_32}\)를 계산하면
+\[8^{\log_32}=(2^3)^{\log_32}=2^{3\log_32}=2^{\log_38}\]
+따라서
+\begin{center}
+\fbox{\(\displaystyle8^{\log_32}=2^{\log_38}\)}
+\end{center}
+이다.
+즉 \(\displaystyle8^{\log_32}\)에서 8과 2의 위치를 바꿀 수 있다.
+\end{enumerate}
+
+\begin{mdframed}
+%
+\theo{로그의 성질(3)}\label{prop15}
+\(a\), \(b\), \(c\)가 1이 아닌 양수일 때,
+\begin{enumerate}[label=(\alph*)]
+\setcounter{enumi}{7}
+\item
+\(\displaystyle a^{\log_ab}=b\)
+\item
+\(\displaystyle a^{\log_bc}=c^{\log_ba}\)
+\end{enumerate}
+\end{mdframed}
+
+\newpage
+%
+\prob{다음은 위의 정리를 증명하는 과정이다. 빈칸을 완성하여라.}\label{prop16}
+\begin{mdframed}
+먼저 (i)를 증명하자.
+\(a^{\log_bc}=x\)라 하면 로그의 정의에 의해
+\[\log_bc=\fbox{(가)}\tag{$*$}\]
+($*$)의 양변을 각각 \(c\)를 밑으로 하는 로그로 바꾸면\\
+\(\displaystyle\log_bc=\frac1{\fbox{(나)}}\), \(\displaystyle\fbox{(가)}=\frac{\log_cx}{\fbox{(다)}}\)이므로
+\[\frac1{\fbox{(나)}}=\frac{\log_cx}{\fbox{(다)}}\]
+따라서
+\[\log_cx=\frac{\fbox{(다)}}{\fbox{(나)}}=\log_ba\]
+로그의 정의에 의해
+\[x=c^{\log_ba}\]
+그러므로
+\[a^{\log_bc}=c^{\log_ba}\]
+가 성립한다.
+
+\bigskip
+(i)의 식에 \(b\) 대신 \fbox{(라)}를, \(c\)대신 \fbox{(마)}를 대입하면 (h)가 나온다.
+\end{mdframed}
+
+%
+\prob{다음 식을 간단히 하시오.}
+\begin{enumerate}\label{prop17}
+\item
+\(3^{\log_310}+7^{\log_72}\)
+\item
+\(27^{\log_35}\)
+\end{enumerate}
+
+%%%
+\section{상용로그}
+
+밑이 \(10\)인 로그를 \fbox{상용로그}라고 한다.
+양수 \(N\)의 상용로그 \(\log_{10}N\)은 보통 밑을 생략하여
+\[\log N\]
+과 같이 나타낸다.
+
+%
+\prob{다음 상용로그의 값을 구하시오.}\label{common1}
+\vspace{-10pt}\par\noindent
+\begin{enumerate*}[itemjoin=\qquad\qquad\qquad]
+\item
+\(\log100\)
+\item
+\(\log\sqrt{10}\)
+\item
+\(\log\frac1{1000}\)
+\end{enumerate*}
+
+\bigskip\bigskip
+%이 소책자의 맨 뒤 수록된 
+상용로그표란 \(1.00\)부터 \(9.99\)까지의 수에 대한 상용로그의 값을 표시해놓은 표이다.
+%이
+이 표를 사용하면 유효숫자가 최대 세 자리인 모든 양수 \(N\)에 대한 상용로그의 값을 계산할 수 있다.
+
+%
+\exam{상용로그표를 이용하여 다음 값들을 구하여라.}\label{common2}
+\begin{enumerate*}[itemjoin=\tabto{.5\textwidth}]
+\item
+\(\log 3.12\)
+\item
+\(\log 312\)
+\end{enumerate*}
+\begin{mdframed}[nobreak=false]
+\begin{enumerate}
+\item
+상용로그표에서 \(\log3.12\)의 값을 구하려면 3.1의 가로줄과 2의 세로줄이 만나는 곳에 있는 \(.4942\)를 찾으면 된다.
+즉 \(\log 3.12=0.4942\)이다.
+\begin{center}
+\begin{tabu}to.5\textwidth{X[c]|X[c]X[c]X[c]X[c]}
+수	&0		&1		&2		&3\\\hline
+1.0	&.0000	&.0043	&.0086	&.0128\\
+1.1	&.0414	&.0453	&.0492	&.0531\\
+\(\vdots\)&\(\vdots\) 	&\(\vdots\)	&\(\vdots\)	&\(\vdots\)\\
+3.1	&.4914	&.4928	&\fbox{.4942}	&.4955\\
+3.2	&.5051	&.5065	&.5079	&.5092
+\end{tabu}
+\end{center}
+\item
+\(\log312=\log(3.12\times100)=\log3.12+\log100=0.4942+2=2.4942\)
+\end{enumerate}
+\end{mdframed}
+
+%
+\prob{상용로그표를 이용하여 다음 값들을 구하여라.}\label{common3}
+\vspace{-10pt}\par\noindent
+\begin{enumerate*}[itemjoin=\qquad\quad]
+\item
+\(\log8.02\)
+\item
+\(\log8020\)
+\item
+\(\log0.00802\)
+\item
+\(\log\sqrt[3]{8.02}\)
+\end{enumerate*}
+
+%
+\prob{상용로그표를 이용하여 다음 값들을 구하여라}\label{common4}
+\vspace{-10pt}\par\noindent
+\begin{enumerate*}[itemjoin=\tabto{.5\textwidth}]
+\item
+\(\log41\)
+\item
+\(\log0.007\)
+\end{enumerate*}
+
+%
+\exam{실수 \(x\)의 정수부분을 \([x]\), 소수부분을 \(\langle x\rangle\)이라고 하자.
+이때, 다음 값의 정수부분과 소수부분을 각각 계산하여라.}\label{common5}
+\vspace{-10pt}\par\noindent
+\begin{enumerate*}[itemjoin=\tabto{.5\textwidth}]
+\item
+\(\log3240\)
+\item
+\(\log0.324\)
+\end{enumerate*}
+\begin{mdframed}[nobreak=false]
+\(\log3.24=0.5105\)이다.
+따라서
+\begin{enumerate}
+\item
+\(\log3240=3+\log3.24=3.5105\)
+그러므로
+\[[\log3240]=3,\qquad\langle\log3240\rangle=0.5105\]
+\item
+\(\log0.324=-1+\log3.24=-0.4895\)
+그러므로
+\[[\log0.324]=-1,\qquad\langle\log0.324\rangle=0.5105\]
+\end{enumerate}
+\end{mdframed}
+
+%
+\prob{다음 값의 정수부분과 소수부분을 각각 계산하여라.}\label{common6}
+\vspace{-10pt}\par\noindent
+\begin{enumerate*}[itemjoin=\tabto{.5\textwidth}]
+\item
+\(\log52000\)
+\item
+\(\log0.052\)
+\end{enumerate*}
+
+%
+\prob{\(a=\log2\), \(b=\log3\)이라고 하자.
+이때, 다음 수들을 \(a\)와 \(b\)로 각각 나타내어라.}
+\begin{enumerate}\label{common7}
+\item
+\(\log12\)
+\item
+\(\log5\)
+\item
+\(\log_43\)
+\end{enumerate}
+
+%%%
+\section{상용로그의 활용}
+%
+\exam{}
+\begin{enumerate}\label{app1}
+\item
+365는 세자리수이다.
+왜냐하면 365은 100 이상 1000 미만인 수이기 때문이다.
+\[100\le365<1000\]
+이 식의 양변에 상용로그를 취하면
+\[2\le\log365<3\]
+이다.
+즉
+\[[\log365]=2\]
+인 것이다.
+\begin{center}
+\fbox{
+\(A\)가 \(n\)자리수이다.
+\qquad\(\iff\)\qquad
+\([\log A]=n-1\)
+}
+\end{center}
+\item
+\(0.00032\)는 소수 넷째자리에서 처음으로 0이 아닌 숫자가 나타난다.
+왜냐하면 0.00032는 0.0001 이상 0.001 미만인 수이기 때문이다.
+\[0.0001\le0.00032<0.001\]
+이 식의 양변에 상용로그를 취하면
+\[-4\le\log0.00032<-3\]
+이다.
+즉
+\[[\log0.00032]=-4\]
+인 것이다.
+\begin{center}
+\fbox{
+\parbox{0.43\textwidth}{\(A\)가 소수 \(n\)째자리에서 처음으로\\ 0이 아닌 수가 나타난다.}
+\qquad\(\iff\)\qquad
+\([\log A]=-n\)
+}
+\end{center}
+\end{enumerate}
+
+\newpage
+%
+\exam{\(\log2=0.3010\), \(\log3=0.4771\)로 계산할 때,}
+\begin{enumerate}\label{app2}
+\item
+\(6^{100}\)은 몇 자리수인가?
+\item
+\(5^{-30}\)는 소수 몇째 자리에서 처음으로 0이 아닌 숫자가 나타나는가?
+\end{enumerate}
+\begin{mdframed}
+\begin{enumerate}
+\item
+\(6^{100}\)에 상용로그를 취하면
+\[\log6^{100}=100\log6=100(\log2+\log3)=100(0.3010+0.4771)=77.81\]
+따라서 \([\log6^{100}]=77\)이고 \(6^{100}\)은 78자리 수이다.
+\item
+\(5^{-30}\)에 상용로그를 취하면
+\[\log5^{-30}=-30\log5=-30(1-\log2)=-30(1-0.3010)=-20.97\]
+따라서 \([\log5^{-30}]=-21\)이고 \(5^{-30}\)은 소수 21번째 자리에서 처음으로 0이 아닌 숫자가 나타난다.
+\end{enumerate}
+\end{mdframed}
+
+%
+\prob{\(\log2=0.3010\), \(\log3=0.4771\)로 계산할 때,}
+\begin{enumerate}\label{app3}
+\item
+\(2^{100}\times3^{10}\)은 몇 자리수인가?
+\item
+\(3^{-20}\)는 소수 몇째 자리에서 처음으로 0이 아닌 숫자가 나타나는가?
+\end{enumerate}
+
+
+%%%
+\section*{답}
+\addcontentsline{toc}{chapter}{\protect\numberline{*}답}
+\begin{multicols*}{2}
+
+%%
+\anssec{1. 로그의 뜻}
+%
+\an{log1}
+\begin{enumerate*}[itemjoin=\qquad]
+\item
+3
+\item
+\(-1\)
+\item
+0
+\item
+\(\frac32\)
+\end{enumerate*}
+
+%
+\an{log3}
+\(x=\log_35\approx1.46\)
+
+%
+\an{log6}
+\begin{enumerate*}[itemjoin=\qquad]
+\item
+\(x\approx-1.46\)
+\item
+\(x\approx1.23\)
+\end{enumerate*}
+
+%
+\an{log8}
+\begin{enumerate*}[itemjoin=\qquad]
+\item
+\(3=\log_5125\)
+\item
+\(\frac12=\log_3\sqrt3\)
+\end{enumerate*}
+
+%
+\an{log9}
+\begin{enumerate*}[itemjoin=\qquad]
+\item
+\(3^0=1\)
+\item
+\((\frac13)^{-2}=9\)
+\end{enumerate*}
+
+%
+\an{log11}
+\begin{enumerate*}[itemjoin=\qquad]
+\item
+2
+\item
+\(-2\)
+\item
+\(-\frac32\)
+\end{enumerate*}
+
+\an{log13}\\[-15pt]
+(1)\:27
+\tabto{.33\columnwidth}
+(2)\:\(\sqrt2\)
+\tabto{.66\columnwidth}
+(3)\:\(\frac94\)
+\par\noindent
+(4)\:4
+\tabto{.33\columnwidth}
+(5)\:5
+\tabto{.66\columnwidth}
+(6)\:81
+
+%%
+\anssec{2. 로그의 성질}
+%
+\an{prop3}\\[-10pt]
+\((가)=0\)\\
+\((나)=m-n\)\\
+\((다)=km\)
+
+%
+\an{prop5}\\[-15pt]
+(1)\:\(\frac43\)
+\tabto{.33\columnwidth}
+(2)\:2
+\tabto{.66\columnwidth}
+(3)\:\(-3\)
+\par\noindent
+(4)\:\(\frac52\)
+\tabto{.33\columnwidth}
+(5)\:3
+\tabto{.66\columnwidth}
+(6)\:1
+
+\columnbreak
+%
+\an{prop6}
+\begin{enumerate}
+\setcounter{enumi}1
+\item
+\(2a+b+1\)
+\item
+\(3a-2b\)
+\item
+\(\frac32a+\frac32\)
+\end{enumerate}
+
+%
+\an{prop7}
+\begin{enumerate*}[itemjoin=\qquad]
+\item
+2
+\item
+2
+\item
+2
+\end{enumerate*}
+
+%
+\an{prop11}\\[-15pt]
+(1)\:\(-\frac43\)
+\tabto{.33\columnwidth}
+(2)\:2
+\tabto{.66\columnwidth}
+(3)\:2
+\par\noindent
+(4)\:1
+\tabto{.33\columnwidth}
+(5)\:4
+\tabto{.66\columnwidth}
+(6)\:1
+
+%
+\an{prop12}
+\begin{enumerate*}[itemjoin=\qquad]
+\item
+\(\frac ba\)
+\item
+\(\frac{2a+1}{a+b}\)
+\end{enumerate*}
+
+%
+\an{prop13}
+\\
+\((가)=\log_ab\)\\
+\((나)=\log_ca\)\\
+\((다)=xy\)
+
+%
+\an{prop16}
+\\
+\((가)=\log_ax\)\\
+\((나)=\log_cb\)\\
+\((나)=\log_ca\)\\
+\((라)=a\)\\
+\((마)=b\)
+%\(\log_ax\), \(\log_cb\), \(\log_ax\), \(\log_ca\), \(\log_cb\), \(\log_ca\), \(\log_ca\), \(\log_cb\), \(a\), \(b\)
+
+%
+\an{prop17}
+\begin{enumerate*}[itemjoin=\qquad\qquad]
+\item
+12
+\item
+125
+\end{enumerate*}
+
+\columnbreak
+%%
+\anssec{3. 상용로그}
+
+%
+\an{common1}
+\begin{enumerate*}[itemjoin=\qquad\qquad]
+\item
+2
+\item
+\(\frac12\)
+\item
+\(-3\)
+\end{enumerate*}
+
+%
+\an{common3}
+\begin{enumerate}
+\item
+0.9042
+\item
+3.9042
+\item
+-2.0958
+\item
+0.3014
+\end{enumerate}
+
+%
+\an{common4}
+\begin{enumerate*}[itemjoin=\tabto{.5\columnwidth}]
+\item
+1.6128
+\item
+-2.1549
+\end{enumerate*}
+
+%
+\an{common6}
+\begin{enumerate}
+\item
+정수부분 : 4\\
+소수부분 : 0.7160
+\item
+정수부분 : -2\\
+소수부분 : 0.7160
+\end{enumerate}
+
+%
+\an{common7}
+\begin{enumerate}
+\item
+\(2a+b\)
+\item
+\(1-a\)
+\item
+\(\frac b{2a}\)
+\end{enumerate}
+
+\columnbreak
+%%
+\anssec{4. 상용로그의 활용}
+
+%
+\an{app3}
+\begin{enumerate*}[itemjoin=\qquad\qquad]
+\item
+35
+\item
+소수 10째자리
+\end{enumerate*}
+\end{multicols*}
+
+
+%
+\section*{요약}
+\addcontentsline{toc}{chapter}{\protect\numberline{*}요약}
+\begin{enumerate}[label=\arabic*.,itemsep=40pt]
+\item
+로그의 정의\\
+\(a>0\), \(a\neq1\), \(N>0\)일 때,
+\[a^x=N\qquad\iff\qquad x=\log_aN\]
+\item
+로그의 성질
+\begin{enumerate}[itemsep=10pt]
+\item
+\(\log_a1=0,\quad\log_aa=1\)
+\item
+\(\log_aM+\log_aN=\log_aMN\)
+\item
+\(\displaystyle\log_aM-\log_aN=\log_a{\frac MN}\)
+\item
+\(\log_a{M^k}=k\log_aM\)
+\item
+\(\displaystyle\log_ab=\frac{\log_cb}{\log_ca}\qquad(\text{밑의 변환 공식})\)
+\item
+\(\displaystyle\log_ab=\frac1{\log_ba}\)
+\item
+\(\displaystyle\log_{a^n}{b^m}=\frac mn \log_ab\)
+\item
+\(\displaystyle a^{\log_ab}=b\)
+\item
+\(\displaystyle a^{\log_bc}=c^{\log_ba}\)
+\end{enumerate}
+\item
+상용로그
+\[\log N=\log_{10}N\]
+\item
+상용로그의 활용 : 자릿수문제
+\end{enumerate}
+\end{document}

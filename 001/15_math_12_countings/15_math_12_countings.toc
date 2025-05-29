@@ -1,0 +1,6 @@
+\contentsline {section}{차\nobreakspace {}례}{1}{section*.1}
+\contentsline {section}{\numberline {1}합의 법칙과 곱의 법칙}{2}{section.0.1}
+\contentsline {section}{\numberline {2}순열}{6}{section.0.2}
+\contentsline {section}{\numberline {3}조합}{10}{section.0.3}
+\contentsline {chapter}{\numberline {*}답}{14}{section*.2}
+\contentsline {chapter}{\numberline {*}요약}{16}{section*.3}

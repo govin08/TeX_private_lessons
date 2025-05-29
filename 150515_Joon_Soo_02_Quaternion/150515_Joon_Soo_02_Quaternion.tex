@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,paralist,chngcntr}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par}
+\newcommand{\exam}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par}
+
+
+\renewcommand{\proofname}{증명)}
+\newcommand{\mo}[1]{\ensuremath{\:(\text{mod}\:\:#1)}}
+\counterwithout{subsection}{section}
+
+
+%%%
+\begin{document}
+
+\title{준수 : 02 사원수(四元數, Quaternion)}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+\subsection{군(群, Group)과 환(環, Ring)}
+%
+\defi{군(群, Group)}\label{group}
+다음 조건들을 만족시키면 집합 \(G\)는 연산 \(\circ\)에 대한 \textbf{군}이다.
+\begin{enumerate}
+\item
+\(a\in G\), \(b\in G\)이면 \(a\circ b\in G\)이다.
+\item
+\(a\in G\), \(b\in G\), \(c\in G\)이면 \((a\circ b)\circ c=a\circ(b\circ c)\)이다.
+\item
+임의의 \(a\in G\)에 대해 \(a\circ e=e\circ a=e\)를 만족시키는 \(e\in G\)가 존재한다.
+\item
+임의의 \(a\in G\)에 대해 \(a\circ x=e\)를 만족시키는 \(x\in G\)가 존재한다.
+\end{enumerate}
+
+%
+\defi{가환군(可換群, Abelian Group)}\label{abelian group}
+군 \(G\)가 다음 추가조건을 만족시키면 \textbf{가환군}이라고 부른다.
+\begin{enumerate}
+\item[5. ]
+\(a\in G\), \(b\in G\)이면 \(a\circ b=b\circ a\)이다.
+\end{enumerate}
+
+%
+\defi{}
+정의 \ref{group}, \ref{abelian group}에서 1번 조건은, `\(G\)가 연산 \(\circ\)에 대해 닫혀있다.'라고도 말할 수 있다.
+2번 조건은 \textbf{결합법칙(associative law)}이라고 부른다.
+3번 조건을 만족시키는 원소 \(e\)는 \textbf{항등원}이라고 부른다.
+4번 조건을 만족시키는 원소 \(x\)는 \(a\)의 \textbf{역원}이라고 부르며, \(a^{-1}\)이라고 쓴다.
+5번 조건은 \textbf{교환법칙(commutative law)}이라고 부른다.
+
+%
+\exam{}
+(1)
+자연수의 집합 \(\mathbb N\)은 덧셈에 대해 닫혀있다.
+즉 \(a\in\mathbb N\)이고 \(b\in\mathbb N\)이면 \(a+b\in\mathbb N\)이다.
+또 결합법칙이 성립한다.
+즉 \(a+(b+c)=(a+b)+c\)이다.
+하지만 항등원이 존재하지 않는다.
+즉 임의의 \(a\in\mathbb N\)에 대해 \(a+e=e+a=e\)를 만족시키는 \(e\)의 값은 \(0\)인데 \(0\not\in\mathbb N\)이기 때문이다.
+
+따라서 \(\mathbb N\)은 덧셈에 대한 군이 아니다.
+\medskip
+
+(2)
+정수의 집합 \(\mathbb Z\)는 덧셈에 대해 닫혀있고 결합법칙이 성립한다.
+또 항등원이 존재한다.
+\(0\in\mathbb Z\)이기 때문이다.
+또한 임의의 정수 \(a\)에 대해서 \(a+x=0\)을 만족시키는 \(x\)는 \(-a\)이며, \(-a\in\mathbb Z\)이다.
+
+따라서 \(\mathbb Z\)는 덧셈에 대한 군이다.
+심지어 \(\mathbb Z\)는 덧셈에 대한 교환법칙을 만족시키므로 가환군이라고 볼 수 있다.
+\medskip
+
+(3)
+마찬가지로 유리수의 집합 \(\mathbb Q\), 실수의 집합 \(\mathbb R\), 복소수의 집합 \(\mathbb C\)도 덧셈에 대한 가환군이라는 것을 쉽게 밝힐 수 있다.
+\medskip
+
+(4)
+정수의 집합 \(\mathbb Z\)는 곱셈에 대해 닫혀있다.
+즉 \(ab\in\mathbb Z\)이다.
+또 결합법칙이 성립한다.
+즉 \(a(bc)=(ab)c\)이다.
+또한 항등원이 존재한다.
+즉 임의의 \(a\in\mathbb Z\)에 대해, \(ae=ea=e\)를 만족하는 \(e\)의 값은 \(1\)인데 \(1\in\mathbb Z\)이다.
+하지만 모든 \(\mathbb Z\)의 원소에 대해 역원이 존재하지는 않는다.
+예를 들어 \(2\in\mathbb Z\)에 대한 역원 \(x\)는 \(2x=1\)을 만족시키는 값으로서 \(x=\frac12\)인데 \(\frac12\not\in\mathbb Z\)이기 때문이다.
+
+따라서 \(\mathbb Z\)는 곱셈에 대한 군이 아니다.
+\medskip
+
+(5)
+유리수의 집합에서 0을 뺀 집합인 \(\mathbb Q-\{0\}\)는 곱셈에 대해 닫혀있고, 결합법칙이 성립하며, 항등원이 존재한다.
+이 때의 항등원은 \(1\)이다.
+또 임의의 \(\frac pq\in\mathbb Q-\{0\}\)에 대해 역원 \(x\)는 \(\frac pqx=1\)를 만족시키는 값이다.
+그런데 \(p\neq0\)이고 \(q\neq0\)이므로 \(x\)를 \(x=\frac qp\)로 잡으면
+\[\frac pq\cdot\frac qp=1\]
+이 되어 성립하며, 이 때 \(\frac qp\in\mathbb Q-\{0\}\)이다.
+
+따라서 \(\mathbb Q-\{0\}\)은 곱셈에 대한 군이며, 교환법칙도 만족하므로 가환군이다.
+\medskip
+
+
+(6)
+마찬가지로 \(\mathbb R-\{0\}\), \(\mathbb C-\{0\}\)도 곱셈에 대한 가환군이라는 것을 쉽게 밝힐 수 있다.
+
+%
+\exam{}
+실수의 집합 \(\mathbb R\)에 대해 연산 \(\circ\)를
+\[a\circ b=a+b+ab\]
+로 정의하자.
+그러면 \(a\circ b\in\mathbb R\)이고 \((a\circ b)\circ c=a\circ(b\circ c)\)이며, \(a\circ b=b\circ a\)이다.
+따라서 \(\mathbb R\)은 \(\circ\)에 대해 닫혀있고 결합법칙과 교환법칙이 성립한다.
+
+항등원이 존재하려면 \(a\)의 값에 상관없이
+\[a\circ e=a\]
+를 만족시키는 \(e\)가 존재해야 하고 또 \(e\)가 실수여야 한다.
+즉
+\[a+e+ae=a\]
+이고
+\[e(1+a)=0\]
+이다.
+이 식이 \(a\)의 값에 상관없이 성립해야 하므로 \(e=0\)이며 \(0\)은 실수이다.
+따라서 항등원이 존재한다.
+
+마지막 조건을 따지기 위해서는 임의의 실수 \(a\)에 대해서 \(a\circ x=e\)를 만족시키는 \(x\)가 존재하는 지 살펴야 한다.
+식을 풀면
+\[a+x+ax=0\]
+이다.
+좀 더 정리하면
+\[x=-\frac{a}{a+1}\]
+이다.
+\end{document}

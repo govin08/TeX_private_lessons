@@ -1,0 +1,165 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,kotex,paralist,graphicx,fmtcount,pifont}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+%\pagestyle{empty}
+\usepackage{multicol}
+\setlength{\columnsep}{30pt}
+\setlength{\columnseprule}{1pt}
+
+%%% Counters
+\newcounter{num}
+\newcounter{tyt}
+\makeatletter
+\renewcommand\thenum{\two@digits{\value{num}}}
+\renewcommand\thetyt{\two@digits{\value{tyt}}}
+\makeatother
+
+%%% Commands
+\newcommand\tytle[1]{\begin{center}\LARGE태희, 추가 과제 \thetyt\:--\:#1\normalsize\end{center}\vspace{50pt}\setcounter{num}0}
+\newcommand\tytlea{\stepcounter{tyt}\tytle{문제}}
+\newcommand\tytlec{\tytle{풀이}}
+
+\newcommand{\prob}[1]
+{\vspace{70pt}\par\noindent\refstepcounter{num}\textbf{문제 \thetyt--\thenum)}\label{#1}\par\noindent}
+
+\newcommand\inc[1]{\begin{center}\includegraphics[width=0.95\columnwidth]{#1}\end{center}}
+
+\newcommand\incc[2]{\begin{center}\includegraphics[width=0.95\columnwidth]{#1}
+\par\includegraphics[width=0.95\columnwidth]{#2}\end{center}}
+
+\newcommand\inccc[3]{\begin{center}\includegraphics[width=0.95\columnwidth]{#1}
+\par\includegraphics[width=0.95\columnwidth]{#2}\par\includegraphics[width=0.95\columnwidth]{#3}\end{center}}
+
+\newcommand\an[3]{\par\bigskip\noindent\textbf{문제 \thetyt--\ref{#1})}\:\:#2,\:\:#3\\}
+
+\newcommand\ans[1]{\begin{flushright}\textbf{답 : }#1\end{flushright}}
+
+\renewcommand{\arraystretch}{1.5}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+\let\emph\textsf
+
+%% Numbers
+\newcommand\one{\ding{172}}
+\newcommand\two{\ding{173}}
+\newcommand\three{\ding{174}}
+\newcommand\four{\ding{175}}
+\newcommand\five{\ding{176}}
+
+%%%%
+\begin{document}
+
+%% 02 problem
+\tytlea\begin{multicols*}{2}
+\prob{01-1}\inc{a0101}
+\prob{01-2}\inc{a0102}\vfill\null\columnbreak
+\prob{01-3}\inc{a0103}\end{multicols*}\newpage
+
+
+%% 01 answer
+\tytlec\begin{multicols*}{2}
+\an{01-1}{40}{2018년 6월 고1 학력평가 26번}\incc{c0101-1}{c0101-2}
+\an{01-2}{\one}{2018년 6월 고1 학력평가 15번}\inc{c0102-1}\vfill\null\columnbreak
+\an{01-3}{\five}{2018년 6월 고1 학력평가 21번}\incc{c0103-1}{c0103-2}\end{multicols*}\newpage
+
+%% 02 problem
+\tytlea\begin{multicols*}{2}
+\prob{02-1}\inc{a0201}
+\prob{02-2}\inc{a0202}\vfill\null\columnbreak
+\prob{02-3}\inc{a0203}\end{multicols*}\newpage
+
+%% 02 answer
+\tytlec\begin{multicols*}{2}
+\an{02-1}{\five}{2017년 6월 고1 학력평가 18번}\inc{c0201-1}
+\an{02-2}{\one}{2017년 6월 고1 학력평가 21번}\incc{c0202-1}{c0202-2}\newpage
+\an{02-3}{27}{2017년 6월 고1 학력평가 30번}\inc{c0203-1}\vfill\null\inc{c0203-2}\end{multicols*}
+
+%% 03 problem
+\tytlea\begin{multicols*}{2}
+\prob{03-1}\inc{a0301}
+\prob{03-2}\inc{a0302}\vfill\null\columnbreak
+\prob{03-3}\inc{a0303}\end{multicols*}\newpage
+
+%% 03 answer
+\tytlec\begin{multicols*}{2}
+\an{03-1}{\four}{2016년 6월 고1 학력평가 15번}\inc{c0301-1}\bigskip\bigskip
+\an{03-2}{\two}{2016년 6월 고1 학력평가 21번}\inc{c0302-1}\vfill\null\columnbreak\inc{c0302-2}\newpage
+\an{03-3}{12}{2016년 6월 고1 학력평가 29번}\incc{c0303-1}{c0303-2}\end{multicols*}
+
+%% 04 problem
+\tytlea\begin{multicols*}{2}
+\prob{04-1}\inc{a0401}
+\prob{04-2}\inc{a0402}\vfill\null\columnbreak
+\prob{04-3}\inc{a0403}\end{multicols*}\newpage
+
+%% 04 answer
+\tytlec\begin{multicols*}{2}
+\an{04-1}{\three}{2015년 6월 고1 학력평가 16번}\inc{c0401-1}\bigskip
+\an{04-2}{\five}{2015년 6월 고1 학력평가 20번}\inc{c0402-1}\vfill\null\columnbreak\inc{c0402-2}
+\an{04-3}{26}{2015년 6월 고1 학력평가 29번}\incc{c0403-1}{c0403-2}\end{multicols*}
+
+%% 05 problem
+\tytlea\begin{multicols*}{2}
+\prob{05-1}\inc{a0501}\vfill\null\columnbreak
+\prob{05-2}\inc{a0502}
+\prob{05-3}\inc{a0503}\end{multicols*}\newpage
+
+%% 05 answer
+\tytlec\begin{multicols*}{2}
+\an{05-1}{\one}{2014년 6월 고1 학력평가 12번}\inc{c0501-1}\vfill\null\columnbreak
+\an{05-2}{\four}{2014년 6월 고1 학력평가 19번}\inc{c0502-1}\vfill\null\columnbreak\inc{c0502-2}
+  \vfill\null\columnbreak
+\an{05-3}{21}{2014년 6월 고1 학력평가 29번}\incc{c0503-1}{c0503-2}\end{multicols*}
+
+%% 06 problem
+\tytlea\begin{multicols*}{2}
+\prob{06-1}\inc{a0601}
+\prob{06-2}\inc{a0602}\vfill\null\columnbreak
+\prob{06-3}\inc{a0603}\end{multicols*}\newpage
+
+%% 06 answer
+\tytlec\begin{multicols*}{2}
+\an{06-1}{\four}{2018년 6월 고1 학력평가 17번}\incc{c0601-1}{c0601-2}\bigskip\bigskip
+\an{06-2}{11}{2018년 6월 고1 학력평가 27번}\inc{c0602-1}\vfill\null\columnbreak
+\an{06-3}{16}{2018년 6월 고1 학력평가 29번}\inc{c0603-1}\end{multicols*}
+
+%% 07 problem
+\tytlea\begin{multicols*}{2}
+\prob{07-1}\inc{a0701}
+\prob{07-2}\inc{a0702}\vfill\null\columnbreak
+\prob{07-3}\inc{a0703}\end{multicols*}\newpage
+
+%% 07 answer
+\tytlec\begin{multicols*}{2}
+\an{07-1}{\three}{2017년 6월 고1 학력평가 17번}\inc{c0701-1}\vfill\null\columnbreak
+\an{07-2}{11}{2017년 6월 고1 학력평가 26번}\inc{c0702-1}\vfill\null\columnbreak
+\an{07-3}{16}{2017년 6월 고1 학력평가 29번}\incc{c0603-1}{c0603-2}\vfill\null\columnbreak\inc{c0603-3}\end{multicols*}
+
+%% 08 problem
+\tytlea\begin{multicols*}{2}
+\prob{08-1}\inc{a0801}
+\prob{08-2}\inc{a0802}\vfill\null\columnbreak
+\prob{08-3}\inc{a0803}\end{multicols*}\newpage
+
+%% 08 answer
+\tytlec\begin{multicols*}{2}
+\an{08-1}{\three}{2016년 6월 고1 학력평가 20번}\inc{c0801-1}\vfill\null\columnbreak
+\an{08-2}{54}{2016년 6월 고1 학력평가 27번}\incc{c0802-1}{c0802-2}\vfill\null\columnbreak
+\an{08-3}{394}{2016년 6월 고1 학력평가 30번}\incc{c0803-1}{c0803-2}\end{multicols*}
+
+%% 09 problem
+\tytlea\begin{multicols*}{2}
+\prob{09-1}\inc{a0901}\vfill\null\columnbreak
+\prob{09-2}\inc{a0902}
+\prob{09-3}\inc{a0903}\end{multicols*}\newpage
+
+%% 09 answer
+\tytlec\begin{multicols*}{2}
+\an{09-1}{\four}{2015년 6월 고1 학력평가 18번}\incc{c0901-1}{c0901-2}\vfill\null\columnbreak
+\an{09-2}{16}{2015년 6월 고1 학력평가 27번}\inc{c0902-1}\vfill\null\columnbreak
+\an{09-3}{240}{2015년 6월 고1 학력평가 30번}\inc{c0903-1}\vfill\null\columnbreak\inc{c0903-2}\end{multicols*}
+
+\end{document}

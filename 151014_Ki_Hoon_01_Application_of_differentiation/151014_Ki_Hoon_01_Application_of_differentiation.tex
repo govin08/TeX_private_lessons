@@ -1,0 +1,358 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,paralist}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par}
+\newcommand{\rema}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{참고 \arabic{num}) #1}\par}
+\newcommand{\ctex}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{반례 \arabic{num}) #1}\par}
+
+\newcommand{\bb}{
+\begin{mdframed}[skipabove=10pt,skipbelow=10pt, leftmargin=70pt, rightmargin=70pt]}
+\newcommand{\eb}{\end{mdframed}}
+
+\renewcommand{\proofname}{증명)}
+
+%%%
+\begin{document}
+
+\title{기훈 : 01 도함수의 활용}
+\author{}
+\date{\today}
+\maketitle
+%\tableofcontents
+\newpage
+
+%%
+\section{증가함수와 도함수}
+
+%
+\defi{증가함수}\label{increasing}
+임의의 \(x_1,x_2\in I\)에 대해
+\[x_1<x_2\Rightarrow f(x_1)<f(x_2)\]
+이면, \(f(x)\)가 구간 \(I\)에서 \textbf{증가}한다고 말한다.
+%\begin{align*}
+%&f(x)\text{가 구간 }I\text{에서 \textbf{증가}한다.}\\
+%\iff&\text{임의의 }x_1,x_2\in I\text{에 대해, }x_1<x_2\text{이면 }f(x_1)<f(x_2)\text{이다.}
+%\end{align*}
+
+%
+\theo{}\label{increasing1}
+\(f(x)\)가 열린 구간 \((a,b)\)에서 미분가능하고, \(f(x)\)가 구간 \((a,b)\)에서 \(f'(x)>0\)이면 \(f(x)\)는 \((a,b)\)에서 증가함수이다.
+\bb
+\[f'>0\:\:\Rightarrow\:\:\text{증가}\]
+\eb
+
+\begin{proof}
+\(x_1,x_2\in(a,b)\), \(x_1<x_2\)를 가정하자.
+평균값의 정리에 의해
+\[
+f'(c)=\frac{f(x_2)-f(x_1)}{x_2-x_1}
+\]
+인 \(c\)가 존재한다(\(x_1<c<x_2\)).
+\(c\in(a,b)\)이므로 \(f'(c)>0\)이고, 따라서 \(f(x_2)-f(x_1)>0\)이다.
+
+즉 \(f(x)\)는 \((a,b)\)에서 증가한다.
+\end{proof}
+
+%
+\ctex{}
+\bb
+\[f'\ge0\:\:\not\Rightarrow\:\:\text{증가}\]
+\eb
+
+\(f(x)\)가 상수함수이면 \(f'(x)\ge0\)이지만 증가함수는 아니다.
+
+\newpage
+
+%
+\theo{}\label{increasing2}
+\(f(x)\)가 \((a,b)\)에서 미분가능하고 \((a,b)\)에서 증가하면 \((a,b)\)에서 \(f'(x)\ge0\)이다.
+\bb
+\[\text{증가}\:\:\Rightarrow\:\: f'\ge0\]
+\eb
+
+\begin{proof}
+\(x\in(a,b)\)를 가정하고 \(f'(x)\)를 살펴보면
+\[f'(x)=\lim_{t\to x}\frac{f(t)-f(x)}{t-x}\]
+에서 \(f(x)\)가 증가함수이므로
+\[
+\begin{cases}
+t>x\text{이면 }f(t)>f(x)\\
+t<x\text{이면 }f(t)<f(x)
+\end{cases}
+\]
+이다.
+따라서
+\[\frac{f(t)-f(x)}{t-x}>0\]
+그러므로 \(f'(x)\ge0\).
+\end{proof}
+
+%
+\ctex{}
+\bb
+\[\text{증가}\:\:\not\Rightarrow\:\: f'>0\]
+\eb
+\(f(x)=x^3\)이면 \(f(x)\)는 증가함수이지만 \(f'(0)\not>0\)이다.
+
+\newpage
+%%
+\section{극소와 도함수}
+
+%
+\defi{극소}\label{critical}
+\[t\in(p,q)\Rightarrow f(a)\le f(t)\]
+를 만족하는 실수 \(p\), \(q\)가 존재하면(\(p<a<q\)),
+\(f(x)\)가 \(x=a\)에서 \textbf{극소}이다.
+
+%
+\theo{}\label{critical1}
+미분가능한 함수 \(f(x)\)에 대해 \(f'(a)=0\)이고, \(x=a\) 좌우에서 \(f'(x)\)의 부호가 음에서 양으로 바뀌면 \(f(x)\)는 \(x=a\)에서 극소이다.
+
+\begin{proof}
+가정에 의해
+\[
+\begin{cases}
+x<a\text{ 이면 }f'(x)<0\\
+x>a\text{ 이면 }f'(x)>0
+\end{cases}
+\]
+이다.
+조금 더 정확히 쓰면
+\[
+\begin{cases}
+p<x<a\text{ 이면 }f'(x)<0\\
+a<x<q\text{ 이면 }f'(x)>0
+\end{cases}
+\]
+인 실수 \(p\), \(q\)가 존재한다(\(p<a<q\)).
+
+\(t\in(p,a)\)라고 하자(\(p<t<a\)).
+평균값의 정리에 의해
+\[f'(c)=\frac{f(t)-f(a)}{t-a}\]
+인 \(c\)가 존재한다(\(t<c<a\)).
+\(f'(c)<0\)이므로 \(f(t)-f(a)>0\)이다.
+즉 \(f(t)>f(a)\)이다.
+정리하면,
+\[t\in(p,a)\text{ 이면, }f(a)<f(t)\text{ 이다.}\]
+마찬가지 논리에 의해서
+\[t\in(a,q)\text{ 이면, }f(a)<f(t)\text{ 이다.}\]
+이 둘을 종합하면
+\[t\in(p,q)\text{ 이면, }f(a)\le f(t)\text{ 이다.}\]
+다시 말해, \(f(x)\)는 \(x=a\)에서 극소이다.
+\end{proof}
+
+%
+\theo{}\label{critical2}
+이계도함수를 가지는 함수 \(f(x)\)가 \(f'(a)=0\)이고 \(f''(a)>0\)이면 \(f(x)\)는 \(x=a\)에서 극소이다.
+\bb
+\[f'(a)=0,\:\:f''(a)>0\:\:\Rightarrow\:\:극소\]
+\eb
+\begin{proof}
+(교과과정 외)
+\(f''(a)\)의 좌극한을 살펴보면
+\[0<f''(a)=\lim_{h\to0+}\frac{f'(a-h)-f'(a)}{-h}.\]
+\(h\)가 충분히 작으면 (어떤 양수 \(\delta_1>0\)가 존재하여 \(0<h<\delta_1\)이면)
+\[0<\frac{f'(a-h)-f'(a)}{-h}\]
+이다.
+따라서 \(f'(a-h)<0\).
+즉 \(x=a\) 왼쪽에서 \(f'(x)<0\)이다.
+마찬가지의 논리에 의해서 \(x=a\) 오른쪽에서 \(f'(x)>0\)이다.
+그러면 정리 \ref{critical1}의 가정을 만족하므로 \(f(x)\)는 \(x=a\)에서 극소이다.
+\end{proof}
+
+\newpage
+
+%%
+\section{오목성과 볼록성(concavity)}
+
+%
+\defi{아래로 볼록}\label{concavity}
+구간 \(I\)의 임의의 두 실수 \(x,y\in I\)(\(x<y\))에 대해 \(A=(x,f(x))\), \(B=(y,f(y))\)라고 하자.
+임의의 \(x_3\in(x,y)\)에 대해 \(C=(x_3,f(x_3))\)가 선분 \(AB\)의 아래에 있으면 \(f(x)\)를 \(I\)에서 \textbf{아래로 볼록}이라고 한다.
+
+%
+\rema{동등한 정의들(교과과정 외)}\label{remark}
+다음 다섯 가지 문장들은 모두 \(f(x)\)가 구간 \(I\)에서 아래로 볼록이기 위한 필요충분조건이다.
+
+\begin{enumerate}[(1)]
+\item
+%\(x\), \(y\) 사이의 임의의 내분점 \(x_3\)는
+%\(x_3=tx+(1-t)y\)로 표현될 수 있고(\(0<t<1\)), \(C\)도 비슷하게 표현될 수 있으므로
+%위 정의는 다음과 같이 써질 수도 있다.
+%
+%``
+구간 \(I\)의 임의의 두 실수 \(x,y\in I\)(\(x<y\))에 대해 \(0<t<1\)일 때
+\[f(tx_1+(1-t)y)<tf(x_1)+(1-t)f(y)\]
+가 성립한다.
+%하면 \(f(x)\)는 \(I\)에서 아래로 볼록이다.
+%''
+\item
+%같은 의미에서 다음과 같이 표현될 수 있다.
+%
+%``
+구간 \(I\)의 임의의 두 실수 \(x,y\in I\)(\(x<y\))에 대해 \(\alpha+\beta=1\), \(\alpha,\beta>0\)일 때
+\[f(\alpha x_1+\beta y)<\alpha f(x_1)+\beta f(y)\]
+가 성립한다.
+%하면 \(f(x)\)는 \(I\)에서 아래로 볼록이다.
+%''
+\item
+%``
+구간 \(I\)의 임의의 세 실수 \(x_1,x_2,x_3\)(\(x_1<x_2<x_3\))에 대해
+\[
+\frac{f(x_3)-f(x_2)}{x_3-x_2}<\frac{f(x_2)-f(x_1)}{x_2-x_1}
+\]
+가 성립한다.
+%''
+\item
+%``
+구간 \(I\)의 임의의 세 실수 \(x_1,x_2,x_3\)(\(x_1<x_2<x_3\))에 대해
+\[
+\frac{f(x_3)-f(x_2)}{x_3-x_2}<\frac{f(x_3)-f(x_1)}{x_3-x_1}
+\]
+가 성립한다.
+%''
+\item
+%``
+구간 \(I\)의 임의의 세 실수 \(x_1,x_2,x_3\)(\(x_1<x_2<x_3\))에 대해
+\[
+\frac{f(x_3)-f(x_1)}{x_3-x_1}<\frac{f(x_2)-f(x_1)}{x_2-x_1}
+\]
+가 성립한다.
+%''
+\end{enumerate}
+
+\begin{proof}
+(1)과 (2)가 정의 \ref{concavity}와 동치인 것은 당연하다.
+
+또 \(\alpha=\frac{x_3-x_2}{x_3-x_1}\), \(\beta=\frac{x_2-x_1}{x_3-x_1}\), \(x=x_1\), \(y=x_3\)를 대입하면
+\begin{align*}
+(2)
+&\iff f\left(\frac{(x_3-x_2)x_1}{x_3-x_1}+\frac{(x_2-x_1)x_3}{x_3-x_1}\right)
+<\frac{x_3-x_2}{x_3-x_1}f(x_1)+\frac{x_2-x_1}{x_3-x_1}f(x_3)\\
+&\iff (x_3-x_1)f(x_2)<(x_3-x_2)f(x_1)+(x_2-x_1)f(x_3)\tag{\(\ast\)}\\
+&\iff (x_3-x_1)(f(x_2)-f(x_1))<(x_2-x_1)(f(x_3)-f(x_1))\\
+&\iff (5).
+\end{align*}
+
+또
+\begin{align*}
+(\ast)
+&\iff (x_3-x_2)(f(x_3)-f(x_1))<(x_3-x_1)(f(x_3)-f(x_2))\\
+&\iff (4)
+\end{align*}
+이다.
+따라서 \((2)\Leftrightarrow(4)\Leftrightarrow(5)\)이다.
+
+한편 \((4)\wedge(5)\Rightarrow(3)\)이고, 따라서 \((2)\Rightarrow(3)\)이다.
+
+또 (3)을 가정하면
+\[\frac{f(x_2)-f(x_1)}{x_2-x_1}\times(x_2-x_1)
++
+\frac{f(x_3)-f(x_2)}{x_3-x_2}\times(x_3-x_2)
+=
+\frac{f(x_3)-f(x_1)}{x_3-x_1}\times(x_3-x_1)\]
+에서
+\[\frac{f(x_3)-f(x_2)}{x_3-x_2}\times(x_2-x_1)
++
+\frac{f(x_3)-f(x_2)}{x_3-x_2}\times(x_3-x_2)
+>
+\frac{f(x_3)-f(x_1)}{x_3-x_1}\times(x_3-x_1)\]
+이고 따라서 (4)가 성립한다.
+
+그러므로 (1) \(\sim\) (5)은 모두 동치이다.
+\end{proof}
+
+\newpage
+
+\theo{}\label{concavity1}
+\(f(x)\)가 구간 \(I\)에서 \(f''(x)>0\)이면 \(f(x)\)는 \(I\)에서 아래로 볼록이다.
+
+\bb
+\[f''>0\:\:\Rightarrow\:\:아래로볼록\]
+\eb
+
+\begin{proof}
+\(x_1,x_2,x_3\in I\), \(x_1<x_2<x_3\)라고 하자.
+평균값의 정리에 의해 
+\[\frac{f(x_2)-f(x_1)}{x_2-x_1}=f'(c),\quad\frac{f(x_3)-f(x_2)}{x_3-x_2}=f'(d)\]
+인 \(c\), \(d\)가 존재한다(\(x_1<c<x_2<d<x_3\)).
+그런데 \(I\)에서 \(f''(x)>0\)이므로 \(f'(x)\)는 증가함수이고, 따라서 \(f'(c)<f'(d)\)이다.
+그러므로
+\[\frac{f(x_2)-f(x_1)}{x_2-x_1}=f'(c)<f'(d)=\frac{f(x_3)-f(x_2)}{x_3-x_2}\]
+이다.
+참고 \ref{remark}에 의해 \(f(x)\)는 \(I\)에서 아래로 볼록이다.
+\end{proof}
+
+%
+\ctex{}
+\bb
+\[f''\ge0\:\:\not\Rightarrow\:\:아래로볼록\]
+\eb
+\(f(x)\)가 일차함수이거나 상수함수이면 \(f''=0\)이어서 \(f''\ge0\)이 성립하지만 아래로 볼록은 아니다.
+
+\newpage
+
+%
+\theo{}\label{concavity2}
+\(f(x)\)가 구간 \(I\)에서 아래로 볼록이고 이계도함수가 존재하면 \(f(x)\)는 구간 \(I\)에서 \(f''(x)\ge0\)이다.
+\bb
+\[
+아래로볼록\:\:\Rightarrow\:\:f''\ge0
+\]
+\eb
+\begin{proof}
+\(x_2<x_3\)를 가정하고 \(x_1<x_2<x_3<x_4\)인 \(x_1\)과 \(x_4\)를 생각하자.
+\(f(x)\)가 아래로 볼록이므로
+\[
+\frac{f(x_2)-f(x_1)}{x_2-x_1}
+<
+\frac{f(x_3)-f(x_2)}{x_3-x_2}
+<
+\frac{f(x_4)-f(x_4)}{x_4-x_3}
+\]
+이다.
+\(x_1\to x_2\)와 \(x_4\to x_3\)을 하면
+\[
+\lim_{x_1\to x_2-}\frac{f(x_2)-f(x_1)}{x_2-x_1}
+\le
+\frac{f(x_3)-f(x_2)}{x_3-x_2}
+\le
+\lim_{x_4\to x_3+}\frac{f(x_4)-f(x_4)}{x_4-x_3}
+\]
+이고, 따라서 \(f'(x_2)\le f'(x_3)\) 이다.
+즉 \(f'(x)\)는 (거의) 증가함수이다.
+따라서 정리 \ref{increasing2}에서 사용한 논리를 똑같이 적용하면 \(f''(x)\ge0\)이다.
+\end{proof}
+
+%
+\ctex{}
+\bb
+\[
+아래로볼록\:\:\not\Rightarrow\:\:f''>0
+\]
+\eb
+\(f(x)=x^4\)은 실수 전체에서 아래로 볼록이지만 \(f''(0)\not>0\)이다.
+
+\newpage
+%%
+\section{변곡점}
+
+%
+\defi{변곡점}
+\(f(x)\)가 \(x=a\)를 기준으로 오목성(볼록성)이 바뀌면 점 \((a,f(a))\)를 \textbf{변곡점}이라고 한다.
+
+%
+\theo{}
+\(f''(x)\)의 부호가 \(x=a\)를 기준으로 바뀌면 점 \((a,f(a))\)는 변곡점이다.
+
+\begin{proof}
+\(x<a\)에서는 \(f''(x)>0\)이었다가 \(x>a\)에서는 \(f''(x)<0\)이다. (혹은 그 반대이다.)
+정리 \ref{concavity1}에 의해 \(x<a\)에서는 아래로 볼록이었다가 \(x<a\)에서는 위로 볼록이 된다.
+따라서 점 \((a,f(a))\)는 변곡점이다.
+\end{proof}
+\end{document}

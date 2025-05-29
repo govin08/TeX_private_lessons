@@ -1,0 +1,202 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,paralist,graphicx}
+\usepackage{mdframed}
+\usepackage{../kswrapfig}
+%\usepackage{fapapersize}
+%\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+\pagestyle{empty}
+
+%%% 객관식 선지
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+
+\newcommand\one{\ding{172}}
+\newcommand\two{\ding{173}}
+\newcommand\three{\ding{174}}
+\newcommand\four{\ding{175}}
+\newcommand\five{\ding{176}}
+
+\newcommand\taba[5]{\par\bigskip\noindent
+\one\:{\ensuremath{#1}}
+\tab\two\:\:{\ensuremath{#2}}
+\tab\three\:\:{\ensuremath{#3}}
+\tab\four\:\:{\ensuremath{#4}}
+\tab\five\:\:{\ensuremath{#5}}}
+
+\newcommand\tabb[5]{\par\bigskip\noindent
+\one\:{\ensuremath{#1}}
+\tabto{0.33\textwidth}\two\:\:{\ensuremath{#2}}
+\tabto{0.67\textwidth}\three\:\:{\ensuremath{#3}}\medskip\par\noindent
+\four\:\:{\ensuremath{#4}}.
+\tabto{0.33\textwidth}\five\:\:{\ensuremath{#5}}}
+
+\newcommand\tabc[5]{\par\bigskip\noindent
+\one\:{\ensuremath{#1}}
+\tabto{0.5\textwidth}\two\:\:{\ensuremath{#2}}\medskip\par\noindent
+\three\:\:{\ensuremath{#3}}
+\tabto{0.5\textwidth}\four\:\:{\ensuremath{#4}}\medskip\par\noindent
+\five\:\:{\ensuremath{#5}}}
+
+\newcommand\tabd[5]{\par\bigskip\noindent
+\one\:{#1}\medskip\par\noindent
+\two\:\:{#2}\medskip\par\noindent
+\three\:\:{#3}\medskip\par\noindent
+\four\:\:{#4}\medskip\par\noindent
+\five\:\:{#5}}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand{\prob}[1]
+{\vs\par\noindent\refstepcounter{num}\textbf{문제 \arabic{num})}\label{#1}\par\noindent}
+
+\newcommand\vs[1]{\vspace{70pt}}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\an[2]{\par\bigskip\noindent\textbf{문제 \ref{#1})} #2\\}
+
+\newcommand\ans[1]{\begin{flushright}\textbf{답 : }#1\end{flushright}}
+
+\renewcommand{\arraystretch}{1.5}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE태희, 추가 과제 01
+\end{center}
+\begin{flushright}
+\today
+\end{flushright}
+%40
+\prob{01-1}
+\(x\)에 대한 다항식 \(x^4+ax+b\)가 \((x-2)^2\)으로 나누어떨어질 때, 몫을 \(Q(x)\)라고 하자.
+두 상수 \(a\), \(b\)에 대하여 \(a+b+Q(2)\)의 값을 구하여라.
+
+%1
+\prob{01-2}
+\(2018^3-27\)을 \(2018\times2021+9\)로 나눈 몫은?
+\taba{2015}{2025}{2035}{2045}{2055}
+
+%5
+\prob{01-3}
+모든 실수 \(x\)에 대하여 두 이차다항식 \(P(x)\), \(Q(x)\)가 다음 조건을 만족시킨다.
+\begin{mdframed}\begin{enumerate}[(가)]
+\item
+\(P(x)+Q(x)=4\)
+\item[(나)]
+\(\{P(x)\}^3+\{Q(x)\}^3=12x^4+24x^3+12x^2+16\)
+\end{enumerate}\end{mdframed}
+\(P(x)\)의 최고차항의 계수가 음수일 때, \(P(2)+Q(3)\)의 값은?
+\taba6789{10}
+
+\newpage
+%
+\an{01-1}{2018년 6월 고1 교육청 모의고사 26번}
+\[x^4+ax+b=(x-2)^2Q(x)\tag{1}\]
+에서 \(x=2\)를 대입하면
+\[16+2a+b=0\]
+따라서
+\(b=-2a-16\)이다. 이것을 (1)에 대입하면
+\[x^4+ax-2a-16=(x-2)^2Q(x)\]
+이다.
+조립제법을 사용하여 좌변을 인수분해하면
+
+\[\begin{array}{cccccc}
+\multicolumn{1}{c|}{2}	&1	&0	&0	&a	&-2a-16\\
+\multicolumn{1}{c|}{}		&	&2	&4	&8	&2a+16\\
+\cline{2-6}
+							&1	&2	&4	&a+8	&\multicolumn1{|c}{0}\\
+\cline{6-6}
+\end{array}\]
+\[(x-2)(x^3+2x^2+4x+a+8)=(x-2)^2Q(x)\]
+이다.
+이 식을 \(x-2\)로 나누면
+\[x^3+2x^2+4x+a+8=(x-2)Q(x)\tag{2}\]
+여기에 \(x=2\)를 대입하면 \(a+32=0\), \(a=-32\).
+또한 \(b=48\).
+따라서 (2)는
+\[x^3+2x^2+4x-24=(x-2)Q(x)\]
+이 된다.
+한편
+\[\begin{array}{ccccc}
+\multicolumn{1}{c|}{2}	&1	&2	&4	&-24\\
+\multicolumn{1}{c|}{}		&	&2	&8	&24	\\
+\cline{2-5}
+							&1	&4	&12	&\multicolumn1{|c}{0}\\
+\cline{5-5}
+\end{array}\]
+에서
+\[(x-2)(x^2+4x+12)=(x-2)Q(x)\]
+이고 다시 양변을 \(x-2\)로 나누면
+\[Q(x)=x^2+4x+12\tag{3}\]
+이다.
+따라서 \(Q(2)=24\).
+그러므로
+\[a+b+Q(2)=-32+48+24=40\]
+\ans{40}
+
+%
+\an{01-2}{2018년 6월 고1 교육청 모의고사 15번}
+\begin{mdframed}
+정수 \(a\)와 자연수 \(b\)에 대하여
+\[a=bq+r\quad(0\le r<b)\]
+이면 \(a\)를 \(b\)로 나누었을 때 몫이 \(q\)이고 나머지가 \(r\)이다.
+\end{mdframed}
+곱셈공식 \(a^3-b^3=(a-b)(a^2+ab+b^2)\)으로부터
+\begin{align*}
+x^3-27
+&=(x-3)(x^2+3x+9)\\
+&=(x-3)\{x(x+3)+9\}
+\end{align*}
+\(x=2018\)을 대입하면
+\[2018^3-27=2015\cdot(2018\times2021+9)\]
+따라서 \(2018^3-27\)를 \(2018\times2021+9\)로 나누면 몫이 \(2015\)이고 나머지가 \(0\)이다.
+\ans{\one}
+
+%
+\an{01-3}{2018년 6월 고1 교육청 모의고사 21번}
+(나)의 좌변을 인수분해하여 정리하면(\(P(x)=P\), \(Q(x)=Q\)로 표기)
+\begin{align*}
+P^3+Q^3
+&=(P+Q)(P^2-PQ+Q^2)\\
+&\stackrel{(가)}=4(P^2-PQ+Q^2)
+\end{align*}
+따라서
+\[P^2-PQ+Q^2=3x^4+6x^3+3x^2+4\]
+(가)를 변형한 \(Q=4-P\)를 대입하면
+\[3P^2-12P+16=3x^4+6x^3+3x^2+4\]
+\[3P^2-12P=3x^4+6x^3+3x^2-12\]
+\[P(P-4)=x^4+2x^3+x^2-4\]
+조립제법을 써서 우변을 인수분해하면
+\[P(P-4)=(x-1)(x+2)(x^2+x+2)\]
+이것을 다시 정리하면
+\[P(P-4)=(x^2+x-2)(x^2+x+2)\]
+따라서
+\[P(x)=x^2+x+2,\qquad P(x)-4=x^2+x-2\]
+혹은
+\[P(x)=-x^2-x+2,\qquad P(x)-4=-x^2-x-2\]
+\(P(x)\)의 최고차항의 계수가 음수이므로
+\[P(x)=-x^2-x+2\]
+또한 \(Q=4-P\)에서
+\[Q=x^2+x+2\]
+\(P(2)+Q(3)=(-4)+14=10\)
+\ans{\five}
+
+
+%(가)로부터 \(Q(x)=4-P(x)\)이다.
+%이것을 (나)에 대입하면(\(P(x)=P\), \(Q(x)=Q\)로 표기)
+%\begin{align*}
+%P^3+(4-P)^3=12x^4+24x^3
+%\end{align*}
+
+
+\end{document}

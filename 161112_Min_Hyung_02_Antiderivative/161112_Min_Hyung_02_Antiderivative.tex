@@ -1,0 +1,452 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig}
+
+\usepackage[skipabove=10pt,skipbelow=10pt,innertopmargin=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\ans}{
+{\par\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}\par}\bigskip\bigskip}
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\ba{\,|\,}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\newenvironment{talign}
+ {\let\displaystyle\textstyle\align}
+ {\endalign}
+\newenvironment{talign*}
+ {\let\displaystyle\textstyle\csname align*\endcsname}
+ {\endalign}
+
+%%%%
+\begin{document}
+
+\title{민형 : 02 부정적분}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+\section{부정적분의 기본공식}
+
+\begin{mdframed}
+%
+\defi{부정적분}
+\(F(x)\)의 도함수가 \(f(x)\)이면, 즉
+\vspace{-10pt}
+\[F'(x)=f(x)\]
+\vspace{-10pt}
+이면 \(F(x)\)를 \(f(x)\)의 \textbf{부정적분} 혹은 \textbf{원시도함수}라고 부르고 기호로는
+\[\int f(x)\,dx=F(x)+C\]
+
+\vspace{-10pt}
+\noindent
+라고 표현한다.
+\end{mdframed}
+즉, 부정적분은 미분의 반대인 `역미분'이다.
+따라서 부정적분의 공식들은 미분 공식들을 거꾸로 뒤집어서 얻어질 수 있다.
+
+\begin{mdframed}[innerbottommargin=-10pt]
+%
+\theo{부정적분의 기본 공식}
+\vspace{-20pt}
+\begin{align*}
+F'(x)=f(x)						\qquad&\Rightarrow\qquad\int f(x)\,dx=F(x)+C\\
+\left(\frac1{n+1}x^{n+1}\right)'=x^n	
+\qquad&\Rightarrow\qquad\int x^n\,dx=\frac1{n+1}x^{n+1}+C\\
+\left(\ln|x|\right)'=\frac1x
+\qquad&\Rightarrow\qquad\int\frac1x\,dx=\ln|x|+C\\
+\left(e^x\right)'=e^x
+\qquad&\Rightarrow\qquad\int e^x\,dx=e^x+C\\
+\left(\frac{a^x}{\ln a}\right)'=a^x
+\qquad&\Rightarrow\qquad\int a^x\,dx=\frac{a^x}{\ln a}+C\\
+(-\cos x)'=\sin x
+\qquad&\Rightarrow\qquad\int\sin x\,dx=-\cos x+C\\
+(\sin x)'=\cos x
+\qquad&\Rightarrow\qquad\int\cos x\,dx=\sin x+C\\
+(\tan x)'=\sec^2 x
+\qquad&\Rightarrow\qquad\int\sec^2 x\,dx=\tan x+C\\
+(-\cot x)'=\csc^2 x
+\qquad&\Rightarrow\qquad\int\csc^2 x\,dx=-\cot x+C\\
+(\sec x)'=\tan x\sec x
+\qquad&\Rightarrow\qquad\int\tan x\sec x\,dx=\sec x+C\\
+(-\csc x)'=\cot x\csc x
+\qquad&\Rightarrow\qquad\int\cot x\csc x\,dx=-\csc x+C\\
+\end{align*}
+\end{mdframed}
+
+%%
+\section{치환적분법}
+
+\begin{mdframed}
+%
+\theo{합성함수의 미분법}
+\[
+\left\{f(g(x))\right\}'=f'(g(x))g'(x)
+\]
+\end{mdframed}
+\(y=f(t)\), \(t=g(x)\)라고 하면
+\begin{mdframed}
+\[\frac{dy}{dx}=\frac{dy}{dt}\cdot\frac{dt}{dx}\]
+\end{mdframed}
+로 쓸 수도 있다.
+이때 `\(dt\)'가 마치 약분되는 것처럼 보인다.
+
+\begin{mdframed}
+%
+\theo{치환적분법}
+\(t=g(x)\)일 때,
+\[\int f(g(x))g'(x)\,dx=\int f(t)\,dt\]
+\end{mdframed}
+\proo
+\(f(t)\)의 부정적분을 \(F(t)\)라고 하면
+\[\{F(g(x))\}'=f(g(x))g'(x)\]
+이므로 
+\begin{align*}
+\int f(g(x))g'(x)\,dx
+&=F(g(x))+C\\
+&=F(t)+C\\
+&=\int f(t)\,dt
+\end{align*}
+\qed
+
+\(g(x)=t\)임을 감안하여 치환적분법 식을 다시 쓰면
+\begin{mdframed}
+\[\int f(t)\frac{dt}{dx}\,dx=\int f(t)\,dt\]
+\end{mdframed}
+이다.
+이때 `\(dx\)'가 마치 약분되는 것처럼 보인다.
+
+%
+\exam{}
+\par\(\displaystyle\int e^{2x+1}\,dx\)를 구해보자.
+\begin{enumerate}
+\item
+\(2x+1=t\)로 치환하면 \(x=\frac12(t-1)\)이고 따라서 \(\frac{dx}{dt}=\frac12\)이고
+\begin{align*}
+\int e^{2x+1}\,dx
+&=\int e^t\,dx\\
+&=\int e^t\frac{dx}{dt}\,dt\\
+&=\frac12\int e^t\,dt\\
+&=\frac12e^t+C=\frac12e^{2x+1}+C.
+\end{align*}
+\item
+\(f(t)=e^t\), \(g(x)=2x+1\)이라고 하면
+\begin{align*}
+\int e^{2x+1}\,dx
+&=\frac12\int e^{2x+1}\cdot2\,dx\\
+&=\frac12\int f(g(x))g'(x)\,dx\\
+&=\frac12\int f(t)\,dt\\
+&=\frac12\int e^t\,dt=e^t+C=\frac12e^{2x+1}+C.
+\end{align*}
+\end{enumerate}
+
+\clearpage
+%
+\exam{\(\tan x\)와 \(\sec x\)의 적분}
+\begin{enumerate}
+\item
+\(\cos x=t\)로 치환하면 \(\sin x=-\frac{dt}{dx}\)이므로
+\begin{align*}
+\int\tan x\,dx
+&=\int\frac{\sin x}{\cos x}\,dx\\
+&=\int\frac1t\cdot\left(-\frac{dt}{dx}\right)\,dx\\
+&=-\int\frac1t\,dt\\
+&=-\ln|t|+C=-\ln|\cos x|+C
+\end{align*}
+\item
+\(\tan x+\sec x=u\)로 치환하면 \(\sec x(\tan x+\sec x)=\frac{du}{dx}\)이므로
+\begin{align*}
+\int\sec x\,dx
+&=\int\frac{\sec x(\tan x+\sec x)}{\tan x+\sec x}\,dx\\
+&=\int\frac1u\cdot\frac{du}{dx}\,dx\\
+&=\int\frac1u\,du\\
+&=\ln|u|+C=\ln|\tan x+\sec x|+C
+\end{align*}
+\end{enumerate}
+
+%%
+\section{분수함수의 부정적분}
+분수 형태로 된 함수를 미분할 때는 몫의 미분법인
+\[\left(\frac{f(x)}{g(x)}\right)'=\frac{f'(x)g(x)-f(x)g'(x)}{\left\{g(x)\right\}^2}\]
+을 사용하면 되지만 이것을 변형한
+\[\int\frac{f'(x)g(x)-f(x)g'(x)}{\left\{g(x)\right\}^2}\,dx=\frac{f(x)}{g(x)}+C\]
+는 거의 쓰이기가 힘들다.
+분수함수의 경우 다음 두 방법을 통해 적분을 시도해볼 수 있다.
+
+\bigskip
+만약 피적분함수가 \(\frac{f'(x)}{f(x)}\)의 형태이면 아래 정리를 활용한다.
+\begin{mdframed}
+%
+\theo{}
+\[
+\int\frac{f'(x)}{f(x)}\,dx=\ln|f(x)|+C
+\]
+\end{mdframed}
+\proo
+\(f(x)=t\)라고 하면
+
+\[\int\frac{f'(x)}{f(x)}\,dx=\int\frac1t\frac{dt}{dx}\,dx=\int\frac1t\,dt=\ln|f(x)|+C\]
+\qed
+
+\exam{}
+\begin{align*}
+\int\frac{x^2+1}{x^3+3x+2}\,dx&=\frac13\int\frac{(x^3+3x+2)'}{x^3+3x+2}\,dx=\frac13\ln|x^3+3x+2|+C
+\\
+\int\frac{\sin x}{1-\cos x}\,dx&=\int\frac{(1-\cos x)'}{1-\cos x}\,dx=\ln|1-\cos x|+C=\ln(1-\cos x)+C
+\end{align*}
+
+\clearpage
+피적분함수가 \(\frac{f'(x)}{f(x)}\)의 형태가 아니면 아래 식을 사용해 계산할 수 있다.
+\begin{mdframed}
+%
+\theo{}
+좌변처럼 주어진 식은 항상 우변의 형태로 정리할 수 있다.
+\begin{enumerate}
+\item
+\(\frac{ax+b}{(x+\alpha)(x+\beta)}=\frac A{x+\alpha}+\frac B{x+\beta}\)
+\item
+\(\frac{ax^2+bx+c}{(x+\alpha)(x^2+\beta x+\gamma)}=\frac A{x+\alpha}+\frac{Bx+C}{x^2+\beta x+\gamma}\)
+\item
+\(\frac{ax^2+bx+c}{(x+\alpha)(x+\beta)^2}=\frac A{x+\alpha}+\frac B{x+\beta}+\frac C{(x+\beta)^2}\)
+\end{enumerate}
+\end{mdframed}
+
+\exam{}
+\begin{enumerate}
+\item
+\(\displaystyle\int\frac{x^2+1}{x-1}\,dx\)\par
+분자를 정리하면 \(x^2+1=(x-1)(x+1)+2\)이므로 
+\begin{align*}
+\int\frac{x^2+1}{x-1}\,dx
+&=\int\frac{(x-1)(x+1)+2}{x-1}\,dx\\
+&=\int\left(x+1+\frac2{x-1}\right)\,dx\\
+&=\frac12x^2+x+2\ln|x-1|+C
+\end{align*}
+\item
+\(\displaystyle\int\frac x{x^2+3x+2}\,dx\)
+\[\frac x{x^2+3x+2}=\frac x{(x+1)(x+2)}=\frac A{x+1}+\frac B{x+2}\]
+로 두면
+\[\frac x{(x+1)(x+2)}=\frac{A(x+2)+B(x+1)}{(x+1)(x+2)}\]
+에서 \(A+B=1\), \(2A+B=0\).
+따라서 \(A=-1\), \(B=2\)이고,
+\begin{align*}
+\int\frac x{x^2+3x+2}\,dx
+&=\int\frac x{(x+1)(x+2)}\,dx\\
+&=\int\left(-\frac1{x+1}+\frac2{x+2}\right)\,dx\\
+&=-\ln|x+1|+2\ln|x+2|+C
+\end{align*}
+\end{enumerate}
+
+%%
+\section{부분적분법}
+\begin{mdframed}
+%
+\theo{곱의 미분법}
+\[\left\{f(x)g(x)\right\}'=f(x)g'(x)+f'(x)g(x)\]
+\end{mdframed}
+곱의 미분법 식을 부정적분의 형태로 고치면
+\begin{align*}
+\int\big[f(x)g'(x)+f'(x)g(x)\big]\,dx			&=f(x)g(x)+C\\
+\int f(x)g'(x)\,dx+\int f'(x)g(x)\,dx	&=f(x)g(x)+C\\
+\int f(x)g'(x)\,dx&=f(x)g(x)-\int f'(x)g(x)\,dx
+\end{align*}
+이다.
+%(좌변과 우변에 상수가 생기므로 원래 있던 적분상수 \(C\)는 없어도 된다.)
+
+\begin{mdframed}
+%
+\theo{부분적분법}
+\[\int f(x)g'(x)\,dx=f(x)g(x)-\int f'(x)g(x)\,dx\]
+\end{mdframed}
+부분적분법은 주어진 피적분함수를 다른 피적분함수로 바꾸는 역할을 할뿐이다.
+따라서 좀 더 간단한 피적분 함수로 바꾸는 것이 필요하며 이를 위해서는 \(f(x)\)를 `미분하기 좋은' 함수로, \(g'(x)\)를 `적분하기 좋은' 함수로 선정하는 것이 좋다.
+\begin{align*}
+f(x) : \text{미분하기 좋은 함수} 	&\Rightarrow \text{다항함수, 로그함수}\\
+g(x) : \text{적분하기 좋은 함수} 	&\Rightarrow \text{지수함수, 삼각함수}
+\end{align*}
+\clearpage
+\exam{}
+\begin{enumerate}
+\item
+\(\displaystyle\int(x+4)e^x\,dx\)\par
+\(x+4\)는 미분하면 간단해지고, 적분하면 복잡해진다. \(e^x\)는 미분하건 적분하건 간단하다.
+따라서 \(x+4\)를 \(f(x)\)로, \(e^x\)를 \(g'(x)\)로 잡는다.
+\begin{align*}
+&f(x)=x+4,		&f'(x)=1\\
+&g'(x)=e^x,	&g(x)=e^x
+\end{align*}
+\begin{align*}
+\int(x+4)e^x\,dx
+&=\int f(x)g'(x)\,dx\\
+&=f(x)g(x)-\int f'(x)g(x)\,dx\\
+&=(x+4)e^x-\int e^x\,dx\\
+&=(x+4)e^x-e^x+C\\
+&=(x+3)e^x+C
+\end{align*}
+
+(참고) 만약 반대로 \(f(x)\)와 \(g'(x)\)를 잡았다면
+\begin{align*}
+&f(x)=e^x,		&f'(x)=e^x\\
+&g'(x)=x+4,	&g(x)=\frac12x^2+4x
+\end{align*}
+\begin{align*}
+\int(x+4)e^x\,dx
+&=\int f(x)g'(x)\,dx\\
+&=f(x)g(x)-\int f'(x)g(x)\,dx\\
+&=\left(\frac12x^2+4x\right)e^x-\int\left(\frac12x^2+4x\right)e^x\,dx
+\end{align*}
+가 되어 오히려 더 복잡해졌을 것이다.
+\clearpage
+\item
+\(\displaystyle\int x\cos x\,dx\)\par
+\(x\)는 미분하면 간단해지고, 적분하면 복잡해진다.
+\(\cos x\)는 미분하건 적분하건 복잡해지지도 간단해지지도 않는다.
+따라서 \(x\)를 \(f(x)\)로 잡고, \(\cos x\)를 \(g'(x)\)로 잡자.
+\begin{align*}
+&f(x)=x,		&f'(x)=1\\
+&g'(x)=\cos x,	&g(x)=\sin x
+\end{align*}
+\begin{align*}
+\int x\cos x\,dx
+&=\int f(x)g'(x)\,dx\\
+&=f(x)g(x)-\int f'(x)g(x)\,dx\\
+&=x\sin x-\int \sin x\,dx\\
+&=x\sin x+\cos x+C
+\end{align*}
+\item
+\(\displaystyle\int\ln x\,dx\)\par
+\(\ln x\)는 미분하면 \(\frac1x\)가 되고 적분하면 어떻게 되는지는 아직 모른다.
+따라서 \(\ln x\)를 \(f(x)\)로 잡고 \(g'(x)=1\)이라고 하자.
+\begin{align*}
+&f(x)=\ln x,		&f'(x)=\frac 1x\\
+&g'(x)=1,			&g(x)=x
+\end{align*}
+\begin{align*}
+\int \ln x\,dx
+&=\int f(x)g'(x)\,dx\\
+&=f(x)g(x)-\int f'(x)g(x)\,dx\\
+&=x\ln x-\int1\,dx\\
+&=x\ln x-x+C
+\end{align*}
+\end{enumerate}
+
+\clearpage
+\prob{}
+\begin{enumerate}
+\item
+\(\displaystyle\int xe^x\,dx\)
+\begin{mdframed}
+\vspace{0.8\textheight}
+\end{mdframed}
+{\par\raggedleft\textbf{답 : \(xe^x-e^x+C\)\quad}\par}\bigskip
+\clearpage
+%
+\item
+\(\displaystyle\int x\sin x\,dx\)\par
+\begin{mdframed}
+\vspace{0.8\textheight}
+\end{mdframed}
+{\par\raggedleft\textbf{답 : \(-x\cos x+\sin x+C\)\quad}\par}\bigskip
+\clearpage
+%
+\item
+\(\displaystyle\int x\ln x\,dx\)
+\begin{mdframed}
+\vspace{0.8\textheight}
+\end{mdframed}
+{\par\raggedleft\textbf{답 : \(\frac12x^2\ln x-\frac12x+C\)\quad}\par}\bigskip
+\end{enumerate}
+
+\clearpage
+다음 두 결과는 외워두면 유용하게 써먹을 수 있다.
+\begin{mdframed}
+%
+\theo{}
+\begin{enumerate}
+\item
+\(\int xe^x\,dx=xe^x-e^x+C\)
+\item
+\(\int\ln x\,dx=x\ln x-x+C\)
+\end{enumerate}
+\end{mdframed}
+
+%
+\exam{}
+\par\(\displaystyle\int e^x\sin x\,dx\)\par
+\begin{align*}
+&f(x)=e^x,		&f'(x)=e^x\\
+&g'(x)=\sin x,	&g(x)=-\cos x
+\end{align*}
+\begin{align*}
+e^x\sin x\,dx
+&=e^x(-\cos x)-\int e^x(-\cos x)\,dx\\
+&=-e^x\cos x+\int e^x\cos x\,dx\
+\end{align*}
+\begin{align*}
+&f(x)=e^x,		&f'(x)=e^x\\
+&g'(x)=\cos x,	&g(x)=\sin x
+\end{align*}
+\[e^x\sin x\,dx=-e^x\cos x+e^x\sin x-\int e^x\sin x\,dx\]
+우변의 \(\int e^x\sin x\,dx\)를 이항하여 정리하면
+\[\int e^x\sin x=\frac12e^x\left(\sin x-\cos x\right)+C\]
+
+\clearpage
+%
+\prob{}
+\(\displaystyle\int e^x\cos x\,dx\)\par
+\begin{mdframed}
+\vspace{0.8\textheight}
+\end{mdframed}
+{\par\raggedleft\textbf{답 : \(\frac12e^x\left(\sin x+\cos x\right)+C\)\quad}\par}\bigskip
+%\begin{align*}
+%&f(x)=e^x,		&f'(x)=e^x\\
+%&g'(x)=\cos x,	&g(x)=\sin x
+%\end{align*}
+%\begin{align*}
+%e^x\cos x\,dx
+%&=e^x\sin x-\int e^x\sin x\,dx
+%\end{align*}
+%\begin{align*}
+%&f(x)=e^x,		&f'(x)=e^x\\
+%&g'(x)=\sin x,	&g(x)=-\cos x
+%\end{align*}
+%\begin{align*}
+%e^x\cos x\,dx
+%&=e^x\sin x-\left(e^x(-\cos x)-\int e^x(-\cos x)\,dx\right)\\
+%&=e^x\sin x+e^x\cos x-\int e^x\cos x\,dx
+%\end{align*}
+%우변의 \(\int e^x\cos x\,dx\)를 이항하여 정리하면
+%\[\int e^x\cos x=\frac12e^x\left(\sin x+\cos x\right)+C\]
+
+\end{document}

@@ -1,0 +1,257 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+%\pagestyle{empty}
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\defi[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정의 \thenum) #1}\par\noindent}
+\newcommand\theo[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정리 \thenum) #1}\par\noindent}
+\newcommand\exam[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{예시 \thenum) #1}\par\noindent}
+\newcommand\prob[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{60pt}}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\begin{document}
+
+\title{유진, 미적1 참고자료}
+\author{}
+\date{\today}
+\maketitle
+
+%
+\prob{미적1[라쎈] \#357}
+\(\displaystyle\lim_{x\to-1}\frac{x^2+ax+b}{x+1}=2\)일 때, 상수 \(a\), \(b\)에 대하여 \(a+b\)의 값을 구하여라.
+\begin{mdframed}[frametitle=<풀이1> 인수분해를 통한 방법]
+\(\displaystyle\lim_{x\to-1}(분모)=\lim_{x\to-1}(x+1)=0\)이므로
+\(\displaystyle\lim_{x\to-1}(분자)=0\)이다.
+\[0=\lim_{x\to-1}(x^2+ax+b)=(-1)^2+a(-1)+b=1-a+b\]
+따라서 \[b=a-1\tag{1}\]이다.
+그러면
+\begin{align*}
+2
+&=\lim_{x\to-1}\frac{x^2+ax+(a-1)}{x+1}
+=\lim_{x\to-1}\frac{(x+1)(x+a-1)}{x+1}\\
+&=\lim_{x\to-1}(x+a-1)
+=-1+a-1=a-2
+\end{align*}
+따라서 \(a=4\)이다.
+(1)에 대입하면 \(b=3\).
+따라서 \(a+b=7\)
+\end{mdframed}
+\begin{mdframed}[frametitle=<풀이2> 인수정리를 사용한 방법]
+\[x^2+ax+b=f(x)\tag{2}\]라고 하자.
+\(\displaystyle\lim_{x\to-1}(x+1)=0\)이므로
+\(\displaystyle\lim_{x\to-1}f(x)=0\)이다.
+한편 \(f(x)\)는 \(x=-1\)에서 연속이므로 \(f(-1)=\displaystyle\lim_{x\to-1}f(x)\)이고, 따라서
+\[f(-1)=0\]
+인수정리에 의해 \(f(x)\)는 \(x+1\)이라는 인수를 가진다.
+따라서
+\[f(x)=(x+1)Q(x)\]이다.
+(2)와 비교해보면 \(Q(x)=x+b\)이고 \(a=b+1\)이다.
+따라서
+\[2=\lim_{x\to-1}\frac{f(x)}{x+1}=\lim_{x\to-1}\frac{(x+1)(x+b)}{x+1}=\lim_{x\to-1}(x+b)=-1+b\]
+이다.
+그러므로 \(b=3\), \(a=4\).
+%따라서 \(f(x)=(x+1)(x+3)=x^2+4x+3\).
+%\(a=4\)
+\end{mdframed}
+{\par
+\raggedleft\textbf{답 : 7}
+\par}\bigskip
+
+\clearpage
+%
+\prob{미적1[라쎈] \#357-1}
+\(\displaystyle\lim_{x\to2}\frac{x^2+ax+b}{x-2}=7\)일 때, 상수 \(a\), \(b\)에 대하여 \(a+b\)의 값을 구하여라.
+\vs
+
+%
+\prob{미적1[라쎈] \#357-2}
+\(\displaystyle\lim_{x\to\frac12}\frac{2x^2+ax+b}{x-\frac12}=5\)일 때, 상수 \(a\), \(b\)에 대하여 \(a+b\)의 값을 구하여라.
+\vs
+
+%
+\prob{미적1[라쎈] \#357-3}
+\(\displaystyle\lim_{x\to1}\frac{x^3+ax^2+b}{x-1}=-3\)일 때, 상수 \(a\), \(b\)에 대하여 \(a+b\)의 값을 구하여라.
+\vs
+
+\clearpage
+%
+\prob{미적1[라쎈] \#365}
+\(x\)에 대한 다항식 \(f(x)\)가 다음 조건을 모두 만족시킬 때, \(f(x)\)를 \(x-1\)로 나누었을 때의 나머지를 구하여라.
+\begin{mdframed}
+\[
+(가)\:\:\lim_{x\to\infty}\frac{f(x)-x^3}{x^2}=2,\qquad
+(나)\:\:\lim_{x\to0}\frac{f(x)}x=-1
+\]
+\end{mdframed}
+\begin{mdframed}[frametitle=<풀이>]
+(가)로부터 \(f(x)-x^3\)은 이차식이고 이차항의 계수는 2이다.
+따라서 \[f(x)-x^3=2x^2+ax+b\]
+또는
+\[f(x)=x^3+2x^2+ax+b\tag{3}\]
+이다.
+(나)에서 \(\displaystyle\lim_{x\to0}(분모)=0\)이므로
+\(\displaystyle\lim_{x\to0}(분자)=\lim_{x\to0}(x^3+2x^2+ax+b)=0\)이다.
+따라서 \(b=0\).
+그러므로 \(f(x)=x^3+2x^2+ax\)이고 이를 (나)에 대입하면
+\[-1=\lim_{x\to0}(x^2+2x+a)=a\]
+이다.
+즉 \(a=-1\)이고
+\[f(x)=x^3+2x^2-x\]
+이다. \(f(x)\)를 \(x-1\)로 나눈 나머지인 \(f(1)\)은
+\[f(1)=1^3+2\cdot1^2-1=2\]
+이다.
+\end{mdframed}
+{\par
+\raggedleft\textbf{답 : 2}
+\par}\bigskip
+
+\clearpage
+%
+\prob{미적1[라쎈] \#365-1}
+\(x\)에 대한 다항식 \(f(x)\)가 다음 조건을 모두 만족시킬 때, \(f(x)\)를 \(x-2\)로 나누었을 때의 나머지를 구하여라.
+\begin{mdframed}
+\[
+(가)\:\:\lim_{x\to\infty}\frac{f(x)-2x^3}{2x^2+5}=1,\qquad
+(나)\:\:\lim_{x\to0}\frac{f(x)}{x}=3
+\]
+\end{mdframed}
+\vs
+
+%
+\prob{미적1[라쎈] \#365-2}
+\(x\)에 대한 다항식 \(f(x)\)가 다음 조건을 모두 만족시킬 때, \(f(x)\)를 \(x-3\)로 나누었을 때의 나머지를 구하여라.
+\begin{mdframed}
+\[
+(가)\:\:\lim_{x\to\infty}\frac{f(x)-x^3}{x^2+4x}=-1,\qquad
+(나)\:\:\lim_{x\to1}\frac{f(x)}{x-1}=10
+\]
+\end{mdframed}
+\vs
+
+%
+\prob{미적1[라쎈] \#365-3}
+\(x\)에 대한 다항식 \(f(x)\)가 다음 조건을 모두 만족시킬 때, \(f(x)\)를 \(x+1\)로 나누었을 때의 나머지를 구하여라.
+\begin{mdframed}
+\[
+(가)\:\:\lim_{x\to\infty}\frac{f(x)-x^2}{ax-1}=2,\qquad
+(나)\:\:\lim_{x\to-1}\frac{f(x)-5}{x+1}=8
+\]
+\end{mdframed}
+\vs
+
+\clearpage
+%
+\prob{미적1[라쎈] \#366}
+\(x\)에 대한 삼차식 \(f(x)\)가
+\[
+(가)\:\:\lim_{x\to0}\frac{f(x)}x=2,\qquad
+(나)\:\:\lim_{x\to1}\frac{f(x)}{x-1}=-1
+\]
+을 만족시킬 때, \(\displaystyle\lim_{x\to2}\frac{f(x)}{x-2}\)의 값을 구하여라.
+
+\begin{mdframed}[frametitle=<풀이1> 인수분해를 통한 방법]
+\(f(x)=ax^3+bx^2+cx+d\)이라고 하자.
+(가)에서 \(f(0)=0\). 따라서 \(d=0\).
+(나)에서 \(f(1)=0\). 따라서 \(a+b+c=0\), \(c=-(a+b)\). 그러면
+\begin{align*}
+f(x)
+&=ax^3+bx^2-(a+b)x\\
+&=a(x^3-x)+b(x^2-x)\\
+&=ax(x-1)(x+1)+bx(x-1)\\
+&=x(x-1)\left\{a(x+1)+b\right\}
+\end{align*}
+(가)에서
+\(\displaystyle\lim_{x\to0}(x-1)\left\{a(x+1)+b\right\}=2\),
+따라서 \(a+b=-2\).\medskip\par\noindent
+(나)에서
+\(\displaystyle\lim_{x\to1}x\left\{a(x+1)+b\right\}=-1\),
+\(2a+b=-1\).\medskip\par\noindent
+두 식을 연립하면 \(a=1\), \(b=-3\).
+또 \(c=2\).
+그러므로
+\[f(x)=x^3-3x^2-2x=x(x-1)(x-2)\]
+이고
+\[\lim_{x\to2}\frac{f(x)}{x-2}=\lim_{x\to2}x(x-1)=2\]
+\end{mdframed}
+
+\begin{mdframed}[frametitle=<풀이2> 인수정리를 사용한 방법]
+(가)에서 \(f(0)=0\), (나)에서 \(f(1)=0\)이므로 \(f(x)\)는 \(x\)와 \(x-1\)을 인수로 가진다.
+따라서 \(f(x)=x(x-1)Q(x)\)이고 \(Q(x)\)는 일차식이다. \(Q(x)=mx+n\)라고 하면,
+\[f(x)=x(x-1)(mx+n)\]
+이다.
+다시 (가)로부터
+\[2=\lim_{x\to0}(x-1)(mx+n)=-n,\]
+\(n=-2\), \(f(x)=x(x-1)(mx-2)\).
+또 (나)로부터
+\[-1=\lim_{x\to1}x(mx-2)=m-2,\]
+\(m=1\).
+따라서 \(f(x)=x(x-1)(x-2)\)이고
+\[\lim_{x\to2}\frac{f(x)}{x-2}=\lim_{x\to2}x(x-1)=2\]
+\end{mdframed}
+
+\begin{mdframed}[frametitle=<풀이3> 미분계수를 사용한 방법]
+(가)에서 \(f(0)=0\)이므로 (가)를 다시 쓰면
+\[\lim_{x\to0}\frac{f(x)-f(0)}{x-0}=2\]
+따라서 \(f'(0)=2\).
+
+(나)에서 \(f(1)=0\)이므로 (나)를 다시 쓰면
+\[\lim_{x\to1}\frac{f(x)-f(1)}{x-1}=-1\]
+따라서 \(f'(1)=-1\).
+
+\(f(x)=ax^3+bx^2+cx+d\)라고 놓으면 \(f'(x)=3ax^2+2bx+c\)이다.
+\(f(0)=2\), \(f'(0)=2\), \(f(1)=0\), \(f'(1)=-1\)을 차례로 사용하면
+\(d=0\), \(c=2\), \(a+b+2=0\), \(3a+2b+2=-1\)이다.
+따라서 \(a=1\), \(b=-3\). \(f(x)=x^3-3x^2+2x=x(x-1)(x-2)\)이고
+\[\lim_{x\to2}\frac{f(x)}{x-2}=\lim_{x\to2}\frac{f(x)-f(2)}{x-2}=f'(2)=2\]
+\end{mdframed}
+{\par
+\raggedleft\textbf{답 : 2}
+\par}\bigskip
+
+%
+\prob{미적1[라쎈] \#366-1}
+\(x\)에 대한 삼차식 \(f(x)\)가
+\[
+(가)\:\:\lim_{x\to1}\frac{f(x)}{x-1}=-1,\qquad
+(나)\:\:\lim_{x\to2}\frac{f(x)}{x-2}=5
+\]
+을 만족시킬 때, \(f(3)\)의 값을 구하여라.
+\vs
+
+%
+\prob{미적1[라쎈] \#366-2}
+삼차함수 \(f(x)\)가
+\[
+(가)\:\:\lim_{x\to1}\frac{f(x)}{x-1}=1,\qquad
+(나)\:\:\lim_{x\to2}\frac{f(x)-3}{x-2}=6
+\]
+을 만족시킬 때, \(f(3)\)의 값을 구하여라.
+
+\end{document}

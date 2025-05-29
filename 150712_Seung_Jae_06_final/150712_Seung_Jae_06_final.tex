@@ -1,0 +1,213 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,paralist,chngcntr}
+\usepackage{kswrapfig}
+
+\newcounter{num}
+%\newcommand{\defi}[1]
+%{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par}
+%\newcommand{\theo}[1]
+%{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par}
+%\newcommand{\exam}[1]
+%{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par}
+\newcommand{\prob}
+{\bigskip\noindent\refstepcounter{num}\textbf{\arabic{num}.}\par}
+%\newcommand{\howo}[1]
+%{\bigskip\noindent\refstepcounter{num}\textbf{숙제 \arabic{num}) #1}\par\bigskip}
+
+\newcommand{\ans}{{\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}
+\par}}
+
+\renewcommand{\proofname}{증명)}
+\counterwithout{subsection}{section}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\LARGE\bfseries}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+%%%
+\begin{document}
+\Large
+
+\title{승재 05 - 최고수준 수학(마지막)}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+
+\newpage
+
+\setcounter{section}{1}
+
+\section{분수의 나눗셈}
+
+%
+\prob{}
+빈 욕조에 수도를 틀어 놓고 15분 후에 보았더니 전체의 \(\frac13\)만큼 물이 찼습니다.
+같은 크기의 빈 욕조에 \(\frac45\)만큼 물을 채우려면 몇 분 동안 수도를 틀어야 합니까?
+(단, 수도에서 나오는 물의 양은 일정합니다.)
+
+\ans
+
+%
+\prob
+한 변이 \(\frac23\)m인 정사각형 모양의 유리판의 무게는 \(\frac7{12}\)kg입니다.
+이 유리판 \(\frac{10}{27}\)m\(^2\)의 무게는 몇 kg입니까?
+
+\ans
+
+%
+\prob
+영혜는 \(1\frac79\)km를 가는 데 \(\frac45\)시간이 걸렸고, 선영이는 \(2\frac25\)km를 가는 데 \(1\frac13\)시간이 걸렸습니다.
+두 사람이 동시에 출발하여 각각 일정한 빠르기로 8km의 길을 간다면 누가 몇 시간 더 빨리 도착하겠습니까?
+
+{\raggedleft\textbf{답 : (\qquad\qquad)가 (\qquad\qquad)시간 더 빨리 도착했습니다.}
+\par}
+
+\section{소수의 나눗셈}
+
+%
+\prob{}
+어떤 수를 8.4로 나누어 몫을 자연수 부분까지 구하면 몫은 \(6\)이고 나머지는 1.7입니다.
+어떤 수를 구하세요.
+
+\ans
+
+%
+\prob
+어떤 물건을 원가의 0.25만큼 이익을 붙여 정가를 매겼습니다.
+이 물건을 정가의 0.1을 할인하여 팔면 1500원의 이익이 생긴다고 합니다.
+이 물건의 원가는 얼마입니까?
+
+\ans
+
+%
+\prob
+3.5m\(^2\)의 벽을 치하는 데 0.56L의 페인트가 필요합니다.
+140m\(^2\)의 벽을 칠하려고 하는데 페인트가 20L 있습니다.
+페인트는 몇 L 더 필요합니까?
+
+\ans
+
+%
+\prob
+길이가 50m인 기차가 초속 35m로 달리고 있습니다.
+이 기차가 길이가 550m인 터널을 완전히 통과하는 데 걸리는 시간은 약 몇 초인지 반올림하여 자연수로 나타내시오.
+
+\ans
+
+%
+\prob
+\kswrapfig[Pos=r]{03}{
+떨어뜨린 높이의 0.7만큼 튀어 오르는 공이 있습니다.
+오른쪽 그림과 같이 공을 떨어뜨렸을 때, 두 번째 튀어오른 높이는 계단보다 81cm 높았습니다.
+처음 공을 떨어뜨린 높이는 몇 cm입니까?
+
+}
+
+\ans
+
+\section{비와 비율}
+
+%
+\prob
+유선이는 국어와 수학을 공부하는데 국어 공부 시간과 수학 공부 시간을 \(3:7\)로 하였습니다.
+국어 공부를 36분 동안 하였다면 전체 공부한 시간은 수학 공부한 시간의 몇 배입니까?
+
+%
+\prob
+진하기가 25\%인 소금물 200g과 진하기가 20\%인 소금물 300g이 있습니다.
+이 두 소금물을 섞었을 때 소금물의 진하기는 몇 \%입니까?
+
+\ans
+
+%
+\prob
+은수네 집과 혜정이네 집 사이의 거리는 1600m 입니다.
+은수는 매분 50m의 속력으로, 혜정이는 매분 30m의 속력으로 각자의 집에서 상대방의 집을 향하여 동시에 출발하였습니다.
+은수는 자기 집에서 얼마나 떨어진 곳에서 혜정이를 만나겠습니까?
+
+%
+\prob
+어떤 정사각형의 가로를 20\% 늘리고 세로를 20\% 줄여서 새로운 직사각형을 만들었습니다.
+정사각형의 넓이에 대한 새로 만든 직사각형의 넓이의 비율을 백분율로 나타내시오.
+
+\section{원의 넓이}
+
+%
+\prob
+\kswrapfig[Pos=r]{05}{
+오른쪽은 반지름이 20cm인 원의 일부분 안에 지름이 20cm인 반원 2개를 그린 것입니다.
+색칠한 부분의 둘레는 몇 cm입니까?(원주율 : 3.14)
+}
+
+\ans
+
+%
+\prob
+\kswrapfig[Pos=r]{06}{
+오른쪽 도형은 지름이 4cm인 반원을 점 ㄴ을 중심으로 \(45^\circ\)만큼 회전시킨 것입니다.
+색칠한 부분의 넓이는 몇 cm\(^2\)입니까?
+(원주율 : 3.14)
+}
+
+\ans
+
+%
+\prob
+\kswrapfig[Pos=r]{07}{
+오른쪽 그림은 한 변이 2cm인 정사각형 안에 반지름이 2cm인 원의 일부분 2개를 그린 것입니다.
+A와 B의 넓이의 차를 구하세요.
+(원주율 : 3.14)
+}
+
+\ans
+
+
+%
+\prob
+\kswrapfig[Pos=r]{08}{
+오른쪽 그림과 같이 한 변의 길이가 \(3\)m인 정사각형 모양인 염소 우리의 한 꼭짓점에 염소 한 마리가 4m의 끈으로 매여 있습니다.
+이 염소가 풀을 뜯기 위해 움직일 수 있는 범위의 넓이는 몇 m\(^2\)입니까?
+(단, 우리 안으로는 들어갈 수 없고 염소의 길이는 생각하지 않습니다.
+원주율 : \(3.14\))
+}
+
+\ans
+
+\section{직육면체의 겉넓이와 부피(부피X)}
+
+%
+\prob
+\kswrapfig[Pos=r]{rec}{
+전개도가 오른쪽 그림과 같은 직육면체의 겉넓이를 구하세요.
+}
+
+\ans{}
+
+%
+\prob
+\kswrapfig[Pos=r]{09}{
+크기가 같은 정육면체 모양의 쌓기나무 18개를 쌓아서 오른쪽과 같은 큰 정육면체를 만들었더니 겉넓이가 쌓기나무 18개의 겉넓이의 합보다 66cm\(^2\) 줄어들었습니다.
+쌓기나무 한 개의 겉넓이는 몇 cm\(^2\) 입니까?
+}
+
+\ans{}
+
+%
+\prob
+\kswrapfig[Pos=r]{17}{
+다음 입체도형의 겉넓이를 구하세요.
+}
+
+\ans{}
+
+%
+\prob
+\kswrapfig[Pos=r]{18}{
+다음 입체도형의 겉넓이를 구하세요.
+}
+
+\ans{}
+
+\end{document}

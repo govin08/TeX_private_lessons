@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{집합}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{집합의 뜻과 표현}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{부분집합}{4}{0}{1}
+\beamer@subsectionintoc {1}{3}{부분집합의 개수}{5}{0}{1}
+\beamer@sectionintoc {2}{집합의 연산}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{집합의 연산}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{집합의 연산 법칙}{8}{0}{2}
+\beamer@subsectionintoc {2}{3}{유한집합의 원소의 개수}{9}{0}{2}

@@ -1,0 +1,161 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,mdframed,paralist,tabu}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+
+%%% 객관식 선지
+\newcommand\one{\ding{172}}
+\newcommand\two{\ding{173}}
+\newcommand\three{\ding{174}}
+\newcommand\four{\ding{175}}
+\newcommand\five{\ding{176}}
+\usepackage{tabto,pifont}
+%\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+
+\newcommand\taba[5]{\par\noindent
+\one\:{#1}
+\tabto{0.2\textwidth}\two\:\:{#2}
+\tabto{0.4\textwidth}\three\:\:{#3}
+\tabto{0.6\textwidth}\four\:\:{#4}
+\tabto{0.8\textwidth}\five\:\:{#5}}
+
+\newcommand\tabb[5]{\par\noindent
+\one\:{#1}
+\tabto{0.33\textwidth}\two\:\:{#2}
+\tabto{0.67\textwidth}\three\:\:{#3}\medskip\par\noindent
+\four\:\:{#4}
+\tabto{0.33\textwidth}\five\:\:{#5}}
+
+\newcommand\tabc[5]{\par\noindent
+\one\:{#1}
+\tabto{0.5\textwidth}\two\:\:{#2}\medskip\par\noindent
+\three\:\:{#3}
+\tabto{0.5\textwidth}\four\:\:{#4}\medskip\par\noindent
+\five\:\:{#5}}
+
+\newcommand\tabd[5]{\par\noindent
+\one\:{#1}\medskip\par\noindent
+\two\:\:{#2}\medskip\par\noindent
+\three\:\:{#3}\medskip\par\noindent
+\four\:\:{#4}\medskip\par\noindent
+\five\:\:{#5}}
+
+\newcommand\vs[1]{\par\vspace{30pt}}
+
+\usepackage{graphicx}
+
+%\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num})} #1\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE태희, 미니테스트 07
+\end{center}
+\begin{flushright}
+날짜 : 2018년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%
+\prob{두 함수 \(f(x)=x+k\), \(g(x)=2x+3\)에 대하여 \(f\circ g=g\circ f\)가 성립할 때, 실수 \(k\)의 값은?}
+\taba{-3}{-2}023
+\vs
+
+%
+\prob{함수 \(f(x)=|x-3|+kx-6\)의 역함수가 존재하는 실수 \(k\)의 값의 범위는?}
+\tabb
+{\(k<-1\) 또는 \(k>1\)}
+{\(-1<k<1\)}
+{\(0<k<1\)}
+{\(k<0\) 또는 \(k>1\)}
+{\(-3<k<2\)}
+\vs
+
+%
+\prob{\(f(x)=2|x-1|+ax+b\)로 정의된 함수 \(f\)가 일대일대응일 때, 정수 \(a\)의 개수는?}
+\taba12345
+\vs
+
+%
+\prob{두 집합 \(X=\{x\ba 1\le x\le 2\}\), \(Y=\{y\ba a\le y\le b\}\)에 대하여 \(X\)에서 \(Y\)로의 함수 \(f(x)=-x+2\)의 역함수가 존재할 때, \(a+b\)의 값을 구하시오. (단, \(a\), \(b\)는 상수)}
+\taba12345
+\vs
+
+%
+\prob{두 집합 \(X=\{x\ba a\le x\le 1\}\), \(Y=\{y\ba -4\le y\le4\}\)에 대하여 \(X\)에서 \(Y\)로의 함수 \(f(x)=-x^2-4x+b\)의 역함수가 존재할 때, \(a+b\)의 값을 구하시오. (단, \(a\), \(b\)는 상수)}
+\taba01234
+\vs
+ 
+%
+\prob{집합 \(X=\{x\ba x\ge1\}\)에 대하여 함수 \(f:X\to X\)가}
+\[f(x)=x^2-2x+2\]
+이다.
+방정식 \(f(x)=f^{-1}(x)\)의 모든 근의 합은?
+\taba12345
+\vs
+
+%
+\prob{함수 \(f(x)=\frac14(x^2+3)(x\ge0)\)의 역함수를 \(g(x)\)라고 할 때, 두 함수 \(y=f(x)\)와 \(y=g(x)\)의 그래프의 두 교점 사이의 거리는?}
+\taba2{\(2\sqrt2\)}3{\(2\sqrt3\)}4
+\vs
+
+%
+\prob{함수 \(f(x)=\begin{cases}\frac14x+3\quad(x\ge0)\\\frac52x+3\quad(x<0)\end{cases}\)의 역함수를 \(g(x)\)라고 할 때, 함수 \(y=f(x)\)와 \(y=g(x)\)의 그래프로 둘러싸인 부분의 넓이는?}
+\taba49{10}{18}{20}
+\vs
+
+%
+\prob{함수 \(f(x)=x+1-\left|\frac12x-1\right|\)의 역함수를 \(g(x)\)라고 할 때, 함수 \(y=f(x)\)와 \(y=g(x)\)의 그래프로 둘러싸인 부분의 넓이는?}
+\taba2489{18}
+\vs
+
+%
+\prob{두 함수 \(f(x)=ax+b\), \(g(x)=x+6\)에 대하여}
+\[(g^{-1}\circ f^{-1})(-6)=-4,\quad(f\circ g^{-1})(7)=-2\]
+일 때, \(ab\)의 값을 구하시오.
+(단, \(a\), \(b\)는 상수)
+\vs
+
+%
+\prob{집합 \(X=\{1,2,3\}\)에 대하여 함수 \(f:X\to X\)의 역함수가 존재하고 \((f\circ f)(1)=3\)을 만족시킬 때, \(f(1)+2f(2)+3f(3)\)의 값을 구하여라.}
+\vs
+
+%
+\prob{두 함수 \(f(x)=x^2-6x+12\), \(g(x)=-2x^2+4x+k\)에 대하여 합성함수 \((g\circ f)(x)\)의 최댓값이 \(10\)이 되도록 하는 상수 \(k\)의 값을 구하여라.}
+\vs
+
+%
+\prob{집합 \(S=\{n\ba1\le n\le100,\;n\text{은 9의 배수}\}\)의 공집합이 아닌 부분집합 \(X\)와 집합 \(Y=\{0,1,2,3,4,5,6\}\)에 대하여 함수 \(f:X\to Y\)를}
+\begin{center}
+\(f(n)\)은 \(n\)을 7로 나누었을 떄의 나머지
+\end{center}
+로 정의하자.
+함수 \(f(n)\)의 역함수가 존재하도록 하는 집합 \(X\)의 개수를 구하여라.
+
+
+
+\end{document}

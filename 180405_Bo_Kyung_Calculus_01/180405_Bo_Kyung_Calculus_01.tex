@@ -1,0 +1,123 @@
+\documentclass[twocolumn]{article}
+\usepackage{amsmath,amssymb,kotex,mdframed,paralist}
+\usepackage{chngcntr}
+\usepackage{geometry}
+\geometry{a4paper,margin=1in}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\newcounter{num}
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+\newcommand\lin{\displaystyle\ensuremath{\lim_{n\to\infty}}}
+
+\pagestyle{empty}
+
+\newcommand\prob[1]
+{\vspace{40pt}\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\medskip\noindent}
+
+\counterwithout{subsection}{section}
+
+\begin{document}
+\begin{center}
+\LARGE보경, 01 수열의 극한
+\end{center}
+\begin{flushright}
+\today
+\end{flushright}
+
+%%
+%\section{수열의 극한}
+
+%%%
+\subsection{극한값의 계산}
+
+%
+\prob{}
+\(\lin\frac1n=0\)
+
+%
+\prob{}
+\begin{align*}
+\lin\frac{5n+4}{2n^2+3n+1}
+&=\lin\frac{\frac5n+\frac4{n^2}}{2+\frac3n+\frac1{n^2}}\\
+&=\frac{0+0}{2+0+0}=0
+\end{align*}
+
+%
+\prob{}
+\begin{align*}
+\lin\frac{n^2+5n+4}{2n^2+3n+1}
+&=\lin\frac{1+\frac5n+\frac4{n^2}}{2+\frac3n+\frac1{n^2}}\\
+&=\frac{1+0+0}{2+0+0}=\frac12
+\end{align*}
+
+%
+\prob{}
+\begin{align*}
+\lin\frac{-n^3+n^2+5n+4}{2n^2+3n+1}
+&=\lin\frac{-n+1+\frac5n+\frac4{n^2}}{2+\frac3n+\frac1{n^2}}\\
+&=-\infty
+\end{align*}
+
+%
+\prob{}
+\begin{align*}
+\lin\frac{2n+7}{\sqrt{n^2+1}-1}
+&=\lin\frac{2+\frac7n}{\sqrt{1+\frac1{n^2}}-\frac1n}\\
+&=\frac{2+0}{\sqrt{1+0}-0}=2
+\end{align*}
+
+%
+\prob{}
+\begin{align*}
+\lin\frac1{\sqrt{n^2+4n}-n}
+&=\lin\frac{\sqrt{n^2+4n}+n}{4n}\\
+&=\lin\frac{\sqrt{1+\frac4n}+1}4=\frac12
+\end{align*}
+
+%
+\prob{}
+\begin{align*}
+\lin\frac{4^{n+2}}{2^{n+1}-4^n}
+&=\lin\frac{16\times4^n}{2\times2^n-4^n}\\
+&=\lin\frac{16}{2\times\left(\frac12\right)^n-1}\\
+&=\frac{16}{0-1}=-16
+\end{align*}
+
+\subsection{극한의 성질}
+\vspace{-20pt}
+%
+\prob{}
+\(\lin a_n=2\), \(\lin(a_n-b_n)=3\)일 때,\\[10pt]
+\begin{align*}
+\lin b_n
+&=\lin\left(a_n-(a_n-b_n)\right)\\
+&=\lin a_n-\lin(a_n-b_n)=2-3=-1
+\end{align*}
+
+%
+\prob{}
+\(\lin(n+4)a_n=4\)일 때,\\[10pt]
+\begin{align*}
+\lin(2n+5)a_n
+&=\lin\left\{(n+4)a_n\times\frac{2n+5}{n+4}\right\}\\
+&=\lin(n+4)a_n\times\lin\frac{2n+5}{n+4}\\
+&=4\times2=8
+\end{align*}
+
+%
+\prob{}
+\begin{mdframed}[frametitle=방법 1]
+\(b_n=\frac{3a_n-2}{2a_n+1}\)라고 하면
+\begin{gather*}
+nb_n+4b_n=2n+5
+\end{gather*}
+\end{mdframed}
+\end{document}

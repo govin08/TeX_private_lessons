@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{삼각함수의 기본 그래프}{2}{0}{1}
+\beamer@sectionintoc {2}{삼각함수의 평행이동}{9}{0}{2}
+\beamer@sectionintoc {3}{삼각함수의 대칭이동과 확대변환}{18}{0}{3}
+\beamer@sectionintoc {4}{삼각함수의 일반형}{29}{0}{4}

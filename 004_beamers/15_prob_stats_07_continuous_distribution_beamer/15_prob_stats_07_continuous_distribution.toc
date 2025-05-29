@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{연속확률분포}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{이산확률분포(복습)}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{연속확률분포}{13}{0}{1}
+\beamer@subsectionintoc {1}{3}{정규분포}{30}{0}{1}
+\beamer@subsectionintoc {1}{4}{표준정규분포}{34}{0}{1}

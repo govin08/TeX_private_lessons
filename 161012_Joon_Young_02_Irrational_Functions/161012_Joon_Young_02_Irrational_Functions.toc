@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}평행이동과 대칭이동 복습}{2}
+\contentsline {section}{\numberline {2}무리함수의 그래프}{6}
+\contentsline {subsection}{\numberline {2.1}\(y=\sqrt {x}\)}{6}
+\contentsline {subsection}{\numberline {2.2}\(y=\pm \sqrt {ax}\)}{7}
+\contentsline {subsection}{\numberline {2.3}\(y=\sqrt {a(x-p)}+q\)}{13}
+\contentsline {subsection}{\numberline {2.4}\(y=\sqrt {ax+b}+c\)}{16}

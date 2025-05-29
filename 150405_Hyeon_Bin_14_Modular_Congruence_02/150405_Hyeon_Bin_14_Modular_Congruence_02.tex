@@ -1,0 +1,122 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,paralist}
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par}
+\newcommand{\exam}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{연습문제 \arabic{num}) #1}\par}
+
+\newcommand{\pr}
+{\begin{mdframed}[skipabove=10pt,skipbelow=10pt]
+증명)
+\vspace{0.5\textheight}
+\par
+\end{mdframed}
+\par
+}
+\newcommand{\sol}
+{\begin{mdframed}[skipabove=10pt]
+풀이)
+\vspace{0.5\textheight}
+\par
+\end{mdframed}
+\par
+}
+
+\renewcommand{\proofname}{증명)}
+\newcommand{\mo}[1]{\ensuremath{\:(\text{mod}\:\:#1)}}
+
+%%%
+\begin{document}
+
+\title{현빈 : 14 일차합동식 추가문제들}
+\author{}
+\date{\today}
+\maketitle
+%\tableofcontents
+%
+%\newpage
+
+%%
+\setcounter{section}{4}
+\setcounter{num}{29}
+\section{일차합동식 추가문제들}
+
+%
+\prob{}
+다음 일차합동식들의 해를 구하시오.
+\begin{enumerate}[(1)]
+\item
+\(3x\equiv2\mo{7}\)
+\item
+\(6x\equiv3\mo{9}\)
+\item
+\(17x\equiv14\mo{21}\)
+\item
+\(15x\equiv9\mo{25}\)
+\item
+\(128x\equiv833\mo{1001}\)
+\item
+\(987x\equiv610\mo{1597}\)
+\end{enumerate}
+
+%\sol
+
+%%
+%\section{중국인의 나머지 정리(The Chinese Remainder Theorem)}
+%
+%%
+%\exam{}
+%다음과 같은 문제를 풀어보자.
+%
+%\begin{quote}
+%5으로 나누었을 때의 나머지가 1이고, 6으로 나누었을 때의 나머지가 2이고, 7로 나누었을 때의 나머지가 3인 숫자를 구하여라.
+%\end{quote}
+%
+%이 문제는 다음 연립 일차 합동식을 푸는 것과 같다.
+%\begin{gather}
+%x\equiv1\mo{5}\\
+%x\equiv2\mo{6}\\
+%x\equiv3\mo{7}
+%\end{gather}
+%
+%(1)에 의해 \(x=5t+1\)이다.
+%이를 (2)에 넣으면
+%\[5t+1\equiv2\mo{6}\]
+%이고 1을 이항하면
+%\[5t\equiv1\mo{6}\]
+%이다.
+%따라서 \(t\)는 \(5\)의 역원인 \(5\)이다(mod 6).
+%즉
+%\[t\equiv5\mo{6}\]
+%혹은
+%\[t=6u+5\]
+%이다.
+%따라서
+%\[x=5(6u+5)+1=30u+26\]
+%이다.
+%이것을 다시 (3)에 넣으면
+%\[30u+26\equiv3\mo{7}\]
+%이고 \(30\equiv2\mo{7}\)이므로
+%\[2u\equiv30u\equiv3-26\equiv-23\equiv5\mo{7}\]
+%이다.
+%양변에 \(2^{-1}(\equiv4)\)를 곱하면
+%\[u\equiv20\equiv6\mo{7}\]
+%따라서
+%\[u=7v+6\]
+%이고
+%\[x=30(7v+6)+26=210v+206\]
+%이다.
+%즉
+%\[x\equiv206\mo{210}\]
+%인 모든 정수이다.
+%
+%
+%%
+%\theo{중국인의 나머지 정리(The Chinese Remainder Theorem)}
+%\pr
+\end{document}

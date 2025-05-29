@@ -1,0 +1,222 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,10mm,*,10mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{graphicx}
+
+%\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\prob[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{25pt}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE수지, 추가과제 02
+\end{center}
+\begin{flushright}
+날짜 : 2017년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+\prob{}
+다음 빈칸에 알맞은 것을 써넣어라.
+\begin{mdframed}[rightmargin=100pt,leftmargin=100pt]
+\centering
+\(\displaystyle\lim_{x\to 2}f(x)\text{가 존재한다.}\iff
+\lim_{\pb{aaaa}}f(x)=\lim_{\pb{aaaa}}f(x)\)
+\end{mdframed}
+
+%
+\prob{}
+\begin{minipage}{0.45\textwidth}
+함수 \(y=\frac{x-2}{x+2}\)에 대하여 다음 물음에 답하여라.
+\begin{enumerate}[(1)]
+\item
+이 함수의 정의역은 \(\{x\,|\,x\text{는  }\fbox{\phantom{\(x\neq0\)}}\text{인 실수}\}\) 이다.
+\item
+이 함수의 그래프를 그려라(오른쪽 모눈).
+\item
+다음 극한값들을 구하여라. (존재하지 않으면 `\(\times\)' 표시 하여라)
+\par\bigskip
+\(\displaystyle\lim_{x\to0+}\frac{x-2}{x+2}=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to2+}\frac{x-2}{x+2}=\pb{3}\)
+\\\\
+\(\displaystyle\lim_{x\to0-}\frac{x-2}{x+2}=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to2-}\frac{x-2}{x+2}=\pb{3}\)
+\\\\
+\(\displaystyle\lim_{x\to0}\frac{x-2}{x+2}=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to2}\frac{x-2}{x+2}=\pb{3}\)
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\par\bigskip\includegraphics[width=0.9\textwidth]{55}
+\end{minipage}\bigskip\bigskip\par
+
+
+%
+\prob{}
+\begin{minipage}{0.45\textwidth}
+함수 \(y=\frac{x^2-3x}{|x-3|}\)에 대하여 다음 물음에 답하여라.
+\begin{enumerate}[(1)]
+\item
+이 함수의 정의역은 \(\{x\,|\,x\text{는  }\fbox{\phantom{\(x\neq0\)}}\text{인 실수}\}\) 이다.
+\item
+이 함수의 그래프를 그려라(오른쪽 모눈).
+\item
+다음 극한값들을 구하여라. (존재하지 않으면 `\(\times\)' 표시 하여라)
+\par\bigskip
+\(\displaystyle\lim_{x\to0+}\frac{x^2-3x}{|x-3|}=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to3+}\frac{x^2-3x}{|x-3|}=\pb{3}\)
+\\\\
+\(\displaystyle\lim_{x\to0-}\frac{x^2-3x}{|x-3|}=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to3-}\frac{x^2-3x}{|x-3|}=\pb{3}\)
+\\\\
+\(\displaystyle\lim_{x\to0}\frac{x^2-3x}{|x-3|}=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to3}\frac{x^2-3x}{|x-3|}=\pb{3}\)
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\par\bigskip\includegraphics[width=0.9\textwidth]{55}
+\end{minipage}\bigskip\bigskip\par
+
+\clearpage
+%
+\prob{}
+\begin{minipage}{0.45\textwidth}
+함수 \(y=\frac{2x^2+x-1}{|x+1|}\)에 대하여 다음 물음에 답하여라.
+\begin{enumerate}[(1)]
+\item
+이 함수의 정의역은 \(\{x\,|\,x\text{는  }\fbox{\phantom{\(x\neq0\)}}\text{인 실수}\}\) 이다.
+\item
+이 함수의 그래프를 그려라(오른쪽 모눈).
+\item
+다음 극한값들을 구하여라. (존재하지 않으면 `\(\times\)' 표시 하여라)
+\par\bigskip
+\(\displaystyle\lim_{x\to-1+}\frac{x^2-1}{|x+1|}=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to1+}\frac{x^2-1}{|x+1|}=\pb{3}\)
+\\\\
+\(\displaystyle\lim_{x\to-1-}\frac{x^2-1}{|x+1|}=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to1-}\frac{x^2-1}{|x+1|}=\pb{3}\)
+\\\\
+\(\displaystyle\lim_{x\to-1}\frac{x^2-1}{|x+1|}=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to1}\frac{x^2-1}{|x+1|}=\pb{3}\)
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\par\bigskip\includegraphics[width=0.9\textwidth]{55}
+\end{minipage}\bigskip\bigskip\par
+
+%
+\prob{}
+\begin{minipage}{0.45\textwidth}
+함수 \(y=[x]\)에 대하여 다음 물음에 답하여라.
+\begin{enumerate}[(1)]
+\item
+이 함수의 정의역은 \(\{x\,|\,x\text{는  }\fbox{\phantom{임의의 실수}}\}\) 이다.
+\item
+이 함수의 그래프를 그려라(오른쪽 모눈).
+\item
+다음 극한값들을 구하여라. (존재하지 않으면 `\(\times\)' 표시 하여라)
+\par\bigskip
+\(\displaystyle\lim_{x\to0+}[x]=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to2+}[x]=\pb{3}\)
+\\\\
+\(\displaystyle\lim_{x\to0-}[x]=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to2+}[x]=\pb{3}\)
+\\\\
+\(\displaystyle\lim_{x\to0}[x]=\pb{3}\)\qquad
+\(\displaystyle\lim_{x\to2}[x]=\pb{3}\)
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\par\bigskip\includegraphics[width=0.9\textwidth]{55}
+\end{minipage}\bigskip\bigskip\par
+
+%
+\prob{}
+다음 극한값을 구하여라. (존재하지 않으면 `\(\times\)' 표시 하여라)
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle\lim_{x\to4+}\frac{[x]-4}{x-4}\pb{3}\)
+\item
+\(\displaystyle\lim_{x\to0-}\frac{[x+1]}{x+1}\pb{3}\)
+\item
+\(\displaystyle\lim_{x\to0}\frac{x-1}{[x-1]}\pb{3}\)
+\end{enumerate}
+
+%
+\prob{}
+함수 \(f(x)\)에 대하여 \(\displaystyle\lim_{x\to0}\frac{f(x)}x=2\)일 때, \(\displaystyle\lim_{x\to0}\frac{2x^2+5f(x)}{3x^2-f(x)}\)의 값을 구하여라.
+
+\clearpage
+
+%
+\prob{}
+함수 \(f(x)\)에 대하여 \(\displaystyle\lim_{x\to7}f(x-7)=2\)가 성립할 때, \(\displaystyle\lim_{x\to0}\frac{2f(x)+1}{3f(x)-1}\)의 값을 구하여라.
+\vspace{0.1\textheight}
+
+%
+\prob{}
+다음 식을 만족시키는 상수 \(a\), \(b\)의 값을 각각 구하여라.
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle\lim_{x\to1}\frac{\sqrt{a+x}-b}{x-1}=\frac14\)
+\item
+\(\displaystyle\lim_{x\to2}\frac{x-2}{x^2+ax+b}=\frac13\)
+\item
+\(\displaystyle\lim_{x\to a}\frac{x^3-a^3}{x^2-a^2}=3\)
+\item
+\(\displaystyle\lim_{x\to-1}\frac{x^2+ax+b}{x+1}=2\)
+\item
+\(\displaystyle\lim_{x\to2}\frac{a\sqrt{x-1}+b}{x-2}=1\)
+\end{enumerate}
+
+\vspace{0.1\textheight}
+%
+\prob{}
+\(x\)에 대한 다항식 \(f(x)\)가 \(\displaystyle\lim_{x\to\infty}\frac{f(x)}{2x^2+x+1}=1\),
+\(\displaystyle\lim_{x\to2}\frac{f(x)}{x^2-x-2}=1\)을 만족시킬 때, \(f(0)\)의 값을 구하여라.
+
+\vspace{0.1\textheight}
+%
+\prob{}
+임의의 실수 \(x\)에 대하여 함수 \(f(x)\)가 다음을 만족시킬 때, \(\displaystyle\lim_{x\to\infty}f(x)\)의 값을 구하여라.
+\[\frac{x^2+x-1}{3x^2+2}\le f(x)\le\frac{x^2+x+4}{3x^2+2}\]
+
+\vspace{0.1\textheight}
+%
+\prob{}
+두 함수 \(f(x)\), \(g(x)\)가 \(f(x)=2x+1\), \(g(x)=x^2+2\)일 때, 함수 \(h(x)\)가 모든 실수 \(x\)에 대하여 \(f(x)\le h(x)\le g(x)\)를 만족시킨다.
+이때, \(\displaystyle\lim_{x\to1}f(x)\)의 값을 구하여라.
+\end{document}

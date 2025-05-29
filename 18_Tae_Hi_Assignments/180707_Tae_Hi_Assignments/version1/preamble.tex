@@ -1,0 +1,75 @@
+\usepackage{amsmath,amssymb,kotex,paralist,graphicx}
+\usepackage{mdframed}
+\usepackage{../kswrapfig}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+%\pagestyle{empty}
+\usepackage{multicol}
+\setlength{\columnsep}{30pt}
+\setlength{\columnseprule}{1pt}
+%\def\columnseprulecolor{\color{blue}}
+
+%%% 객관식 선지
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+
+\newcommand\one{\ding{172}}
+\newcommand\two{\ding{173}}
+\newcommand\three{\ding{174}}
+\newcommand\four{\ding{175}}
+\newcommand\five{\ding{176}}
+
+\newcommand\taba[5]{\par\bigskip\noindent
+\one\:{\ensuremath{#1}}
+\tab\two\:\:{\ensuremath{#2}}
+\tab\three\:\:{\ensuremath{#3}}
+\tab\four\:\:{\ensuremath{#4}}
+\tab\five\:\:{\ensuremath{#5}}}
+
+\newcommand\tabb[5]{\par\bigskip\noindent
+\one\:{\ensuremath{#1}}
+\tabto{0.16\textwidth}\two\:\:{\ensuremath{#2}}
+\tabto{0.33\textwidth}\three\:\:{\ensuremath{#3}}\medskip\par\noindent
+\four\:\:{\ensuremath{#4}}.
+\tabto{0.16\textwidth}\five\:\:{\ensuremath{#5}}}
+
+\newcommand\tabc[5]{\par\bigskip\noindent
+\one\:{\ensuremath{#1}}
+\tabto{0.25\textwidth}\two\:\:{\ensuremath{#2}}\medskip\par\noindent
+\three\:\:{\ensuremath{#3}}
+\tabto{0.25\textwidth}\four\:\:{\ensuremath{#4}}\medskip\par\noindent
+\five\:\:{\ensuremath{#5}}}
+
+\newcommand\tabd[5]{\par\bigskip\noindent
+\one\:{#1}\medskip\par\noindent
+\two\:\:{#2}\medskip\par\noindent
+\three\:\:{#3}\medskip\par\noindent
+\four\:\:{#4}\medskip\par\noindent
+\five\:\:{#5}}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand{\prob}[1]
+{\vs\par\noindent\refstepcounter{num}\textbf{문제 \arabic{num})}\label{#1}\par\noindent}
+
+\newcommand\vs[1]{\vspace{70pt}}
+
+\newcommand\inc[1]{\begin{center}\includegraphics[width=0.95\columnwidth]{#1}\end{center}}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\an[2]{\par\bigskip\noindent\textbf{문제 \ref{#1})} #2\\}
+
+\newcommand\ans[1]{\begin{flushright}\textbf{답 : }#1\end{flushright}}
+
+\renewcommand{\arraystretch}{1.5}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+\let\emph\textsf

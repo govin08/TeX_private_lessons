@@ -1,0 +1,371 @@
+\documentclass[t,8pt]{beamer}
+%\usetheme{boxes}
+%\usecolortheme{default}
+
+%%% packages
+\geometry{paperwidth=140mm,paperheight=105mm}
+\usefonttheme[onlymath]{serif}
+
+\usepackage{kotex,amsmath,tabto}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X} % centered
+\newcolumntype{M}{>{$}X<{$}} % math-moded
+\newcolumntype{N}{>{$}Y<{$}} %centered and math-moded
+
+%\usepackage[inline]{enumitem}
+%\setlist[enumerate,1]{label=(\arabic*)}
+%\setlist[enumerate,2]{label=(\alph*)}
+
+\usepackage{xcolor}
+
+\usepackage{gensymb} %\degree
+
+%%% counters, commands, environments
+\newcounter{num}
+\resetcounteronoverlays{num}
+
+\newenvironment{defi}[1]{\refstepcounter{num}\begin{block}{정의 \arabic{num}#1}}{\end{block}}
+\newenvironment{theo}[1]{\refstepcounter{num}\begin{block}{정리 \arabic{num}#1}}{\end{block}}
+\newenvironment{prob}[1]{\refstepcounter{num}\begin{block}{문제 \arabic{num}#1}}{\end{block}}
+\newenvironment{exam}[1]{\refstepcounter{num}\begin{block}{예시 \arabic{num}#1}}{\end{block}}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+\renewcommand{\arraystretch}{1.5}
+\newcommand{\red}[1]{\color{red}{#1}}
+\newcommand{\ivs}{\centering\strut\vspace*{-\baselineskip}\newline}%image vertical setting
+
+%%% title
+\title[삼각함수]{삼각함수의 그래프}
+\institute[ibedu]{아이비에듀}
+\date{\today}
+
+%%% toc
+\AtBeginSection[]
+{\begin{frame}
+    \frametitle{목차}
+    \tableofcontents[currentsection]
+  \end{frame}}
+
+
+\begin{document}
+
+%%
+\frame{\titlepage}
+
+%%%
+\section{삼각함수의 기본 그래프}
+
+%%
+\begin{frame}{\secname}
+\setlength{\tabcolsep}{0pt}
+%
+\begin{prob}{) 다음 표를 완성하여라.}
+\begin{tabularx}{\textwidth}{|@{\quad}N@{\quad\;\;}|N|N|N|N|N|N|N|N|N|N|N|N|N|}
+\hline
+\theta
+&0
+&\frac\pi6
+&\frac\pi3
+&\frac\pi2
+&\frac23\pi
+&\frac56\pi
+&\pi
+&\frac76\pi
+&\frac43\pi
+&\frac32\pi
+&\frac53\pi
+&\frac{11}6\pi
+&2\pi
+\\\hline
+\sin\theta
+&\uncover<2>{\red{0}}
+&\frac12
+&\uncover<2>{\red{\frac{\sqrt3}2}}
+&\uncover<2>{\red{1}}
+&\uncover<2>{\red{\frac{\sqrt3}2}}
+&\uncover<2>{\red{\frac12}}
+&\uncover<2>{\red{0}}
+&\uncover<2>{\red{-\frac12}}
+&\uncover<2>{\red{-\frac{\sqrt3}2}}
+&\uncover<2>{\red{-1}}
+&\uncover<2>{\red{-\frac{\sqrt3}2}}
+&\uncover<2>{\red{-\frac12}}
+&\uncover<2>{\red{0}}
+\\\hline
+\end{tabularx}
+\end{prob}
+%
+\begin{prob}{) \(y=\sin x\)의 그래프를 그려라.}
+\begin{minipage}{.7\textwidth}
+\includegraphics<1>[width=\textwidth]{graph_1_grid}
+\includegraphics<2>[width=\textwidth]{graph_1-1}
+\end{minipage}
+\begin{minipage}{.29\textwidth}
+\uncover<2>{\small
+\begin{itemize}
+\item
+\(-1\le\sin x\le 1\)
+\item
+\(\text{주기}=2\pi\)
+\item
+원점 대칭 (기함수)
+\end{itemize}}
+\end{minipage}
+\end{prob}
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+\setlength{\tabcolsep}{0pt}
+%
+\begin{prob}{) 다음 표를 완성하여라.}
+\begin{tabularx}{\textwidth}{|@{\quad}N@{\quad\;\;}|N|N|N|N|N|N|N|N|N|N|N|N|N|}
+\hline
+\theta
+&0
+&\frac\pi6
+&\frac\pi3
+&\frac\pi2
+&\frac23\pi
+&\frac56\pi
+&\pi
+&\frac76\pi
+&\frac43\pi
+&\frac32\pi
+&\frac53\pi
+&\frac{11}6\pi
+&2\pi
+\\\hline
+\cos\theta
+&\uncover<2>{\red{1}}
+&\frac{\sqrt3}2
+&\uncover<2>{\red{\frac12}}
+&\uncover<2>{\red{0}}
+&\uncover<2>{\red{-\frac12}}
+&\uncover<2>{\red{-\frac{\sqrt3}2}}
+&\uncover<2>{\red{-1}}
+&\uncover<2>{\red{-\frac{\sqrt3}2}}
+&\uncover<2>{\red{-\frac12}}
+&\uncover<2>{\red{0}}
+&\uncover<2>{\red{\frac12}}
+&\uncover<2>{\red{\frac{\sqrt3}2}}
+&\uncover<2>{\red{1}}
+\\\hline
+\end{tabularx}
+\end{prob}
+%
+\begin{prob}{) \(y=\cos x\)의 그래프를 그려라.}
+\begin{minipage}{.7\textwidth}
+\includegraphics<1>[width=\textwidth]{graph_1_grid}
+\includegraphics<2>[width=\textwidth]{graph_1-2}
+\end{minipage}
+\begin{minipage}{.29\textwidth}
+\uncover<2>{\small
+\begin{itemize}
+\item
+\(-1\le\cos x\le 1\)
+\item
+\(\text{주기}=2\pi\)
+\item
+\(y\)축 대칭 (우함수)
+\end{itemize}}
+\end{minipage}
+\end{prob}
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+\setlength{\tabcolsep}{0pt}
+%
+\begin{prob}{) 다음 표를 완성하여라.}
+\begin{tabularx}{\textwidth}{|@{\quad}N@{\quad\;\;}|N|N|N|N|N|N|N|N|N|N|}
+\hline
+\theta
+&0
+&\frac\pi4
+&\frac\pi2
+&\frac34\pi
+&\pi
+&\frac54\pi
+&\frac32\pi
+&\frac74\pi
+&2\pi
+\\\hline
+\tan\theta
+&\uncover<2>{\red{0}}
+&1
+&\uncover<2>{\red{\times}}
+&\uncover<2>{\red{-1}}
+&\uncover<2>{\red{0}}
+&\uncover<2>{\red{1}}
+&\uncover<2>{\red{\times}}
+&\uncover<2>{\red{-1}}
+&\uncover<2>{\red{0}}
+\\\hline
+\end{tabularx}
+\end{prob}
+%
+\begin{prob}{) \(y=\tan x\)의 그래프를 그려라.}
+\begin{minipage}{.7\textwidth}
+\includegraphics<1>[width=\textwidth]{graph_1_grid}
+\includegraphics<2>[width=\textwidth]{graph_1-3}
+\end{minipage}
+\begin{minipage}{.29\textwidth}
+\uncover<2>{\small
+\begin{itemize}
+\item
+\(-\infty<\tan x<\infty\)
+\item
+\(\text{주기}=\pi\)
+\item
+원점 대칭
+\end{itemize}}
+\end{minipage}
+\end{prob}
+\end{frame}
+
+%%%
+\section{삼각함수의 평행이동}
+
+%%
+\begin{frame}{\secname}
+%
+\begin{prob}{) 다음 삼각함수들의 그래프를 그려라.}
+(1-1) \(y=\sin(x-\frac\pi4)\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-1-1}\\
+(1-2) \(y=\sin x-1\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-1-2}\\
+\end{prob}
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+(1-3) \(y=\cos(x+\frac\pi2)\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-1-3}\\
+(1-4) \(y=\cos x+\frac12\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-1-4}\\
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+(1-5) \(y=\sin(x-\frac\pi4)+1\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-1-5}\\
+(1-6) \(y=\cos\left(x+\frac\pi2\right)+\frac12\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-1-6}\\
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+(1-7) \(y=\cos(x-\pi)-1\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-1-7}\\
+(1-8) \(y=\sin\left(x+\frac\pi2\right)-1\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-1-8}\\
+\end{frame}
+
+
+%%%
+\section{삼각함수의 대칭이동과 확대변환}
+
+%%
+\begin{frame}{\secname}
+(2-1) \(y=2\sin x\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-2-1}\\
+(2-2) \(y=\frac12\sin x\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-2-2}\\
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+(2-3) \(y=2\cos x\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-2-3}\\
+(2-4) \(y=\frac12\cos x\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-2-4}\\
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+(2-5) \(y=-\sin x\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-2-5}\\
+(2-6) \(y=-\cos x\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-2-6}\\
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+(2-7) \(y=\sin 2x\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-2-7}\\
+(2-8) \(y=\sin\frac12x\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-2-8}\\
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+(2-9) \(y=\cos 2x\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-2-9}\\
+(2-10) \(y=\cos\frac12x\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-2-10}\\
+\end{frame}
+
+%%%
+\section{삼각함수의 일반형}
+
+%%
+\begin{frame}{\secname}
+(3-1) \(y=2\sin\left(x-\pi\right)\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-3-1}\\
+(3-2) \(y=\frac12\sin\left(x+\frac\pi2\right)\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-3-2}\\
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+(3-3) \(y=2\cos x-1\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-3-3}\\
+(3-4) \(y=\frac12\cos x+\frac12\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-3-4}\\
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+(3-5) \(y=-\cos x+1\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-3-5}\\
+(3-6) \(y=-\cos\left(x-\frac\pi2\right)\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-3-6}\\
+\end{frame}
+
+%%
+\begin{frame}{\secname}
+(3-7) \(y=\sin\left(\frac12x-\frac\pi4\right)\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-3-7}\\
+(3-8) \(y=\sin\left(2x+\frac\pi2\right)\)\\
+\includegraphics<1>[width=.6\textwidth]{graph_2_grid}
+\includegraphics<2>[width=.6\textwidth]{graph_2-3-8}\\
+\end{frame}
+\end{document}

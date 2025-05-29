@@ -1,0 +1,2 @@
+\contentsline {section}{차\nobreakspace {}례}{1}{section*.1}
+\contentsline {section}{\numberline {1}인수분해}{2}{section.0.1}

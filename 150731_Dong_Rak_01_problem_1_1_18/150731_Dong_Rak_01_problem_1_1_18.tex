@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,mathrsfs,mdframed,systeme}
+
+%%%
+\begin{document}
+
+\title{동락 : 01 선형대수 (1,1) \#18}
+\author{}
+\date{\today}
+\maketitle
+
+\noindent
+
+\begin{mdframed}[frametitle={(1,3) \#18, p 11}]
+It is possible for a system of linear equations to have exactly two solutions.
+\textit{Explain why}
+\\
+(a) If \((x,y,z)\) and \((X,Y,Z)\) are two solutions, what is another one?\\
+(b) If 25 planes meet at two points, where else do they meet?
+\end{mdframed}
+
+(1) 연립방정식
+\begin{gather}
+a_{11}u+a_{12}v+a_{13}w=b_1\\
+a_{21}u+a_{22}v+a_{23}w=b_2\\
+a_{31}u+a_{32}v+a_{33}w=b_3
+\end{gather}
+의 해가  \((x,y,z)\)와 \((X,Y,Z)\)이면
+\begin{gather}
+a_{11}x+a_{12}y+a_{13}z=b_1\\
+a_{21}x+a_{22}y+a_{23}z=b_2\\
+a_{31}x+a_{32}y+a_{33}z=b_3
+\end{gather}
+이고,
+\begin{gather}
+a_{11}X+a_{12}Y+a_{13}Z=b_1\\
+a_{21}X+a_{22}Y+a_{23}Z=b_2\\
+a_{31}X+a_{32}Y+a_{33}Z=b_3
+\end{gather}
+가 성립한다.
+[(4)+(7)]/2, [(5)+(8)]/2, [(6)+(9)]/2를 각각 하면
+\begin{gather}
+a_{11}\frac{x+X}2+a_{12}\frac{y+Y}2+a_{13}\frac{z+Z}2=b_1\\
+a_{21}\frac{x+X}2+a_{22}\frac{y+Y}2+a_{23}\frac{z+Z}2=b_2\\
+a_{31}\frac{x+X}2+a_{32}\frac{y+Y}2+a_{33}\frac{z+Z}2=b_3
+\end{gather}
+이므로 \(\left(\frac{x+X}2,\frac{y+Y}2,\frac{z+Z}2\right)\)도 근이다.
+
+일반적으로, \((x,y,z)\)와 \((X,Y,Z)\) 가 이루는 직선 위의 점인 \(\lambda(x,y,z)+(1-\lambda)(X,Y,Z)\)도 근이다.\\
+\(\lambda\times(4)+(1-\lambda)\times(7)\) :
+\[a_{11}[\lambda x+(1-\lambda)X]+a_{12}[\lambda y+(1-\lambda)Y]+a_{13}[\lambda z+(1-\lambda)Z]=b_1\]
+\(\lambda\times(5)+(1-\lambda)\times(8)\) :
+\[a_{11}[\lambda x+(1-\lambda)X]+a_{12}[\lambda y+(1-\lambda)Y]+a_{13}[\lambda z+(1-\lambda)Z]=b_1\]
+\(\lambda\times(6)+(1-\lambda)\times(9)\) :
+\[a_{11}[\lambda x+(1-\lambda)X]+a_{12}[\lambda y+(1-\lambda)Y]+a_{13}[\lambda z+(1-\lambda)Z]=b_1\]
+이기 때문이다.
+
+(2) 식이 25개이고 미지수도 25개인 경우를 포함해서 식이  \(n\)개이고 미지수도 \(n\)개인 경우도 마찬가지의 방법을 쓸 수 있다.
+벡터 \(u=(u_1,\cdots,u_n)\)와 \(v=(v_1,\cdots,v_n)\)이 \(n\)원 일차 연립방정식의 근이면 \(\lambda u+(1-\lambda)v\)도 근이다.
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+"Linear Algebra", Gilbert Strang, 4ed, 2006.\\
+- 1장 3절 \#18, p 11
+\end{document}

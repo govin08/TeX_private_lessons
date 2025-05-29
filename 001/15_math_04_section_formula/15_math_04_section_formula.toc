@@ -1,0 +1,5 @@
+\contentsline {section}{차\nobreakspace {}례}{1}{section*.1}
+\contentsline {section}{\numberline {1}내분점과 외분점(1차원)}{2}{section.0.1}
+\contentsline {section}{\numberline {2}내분점과 외분점(2차원)}{8}{section.0.2}
+\contentsline {section}{\numberline {3}중점과 무게중심}{12}{section.0.3}
+\contentsline {chapter}{\numberline {*}답}{15}{section*.2}

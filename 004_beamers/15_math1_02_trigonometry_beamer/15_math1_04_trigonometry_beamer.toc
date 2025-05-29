@@ -1,0 +1,18 @@
+\beamer@sectionintoc {1}{삼각함수의 뜻}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{호도법}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{부채꼴의 호의 길이와 넓이}{11}{0}{1}
+\beamer@subsectionintoc {1}{3}{삼각비(복습)}{17}{0}{1}
+\beamer@subsectionintoc {1}{4}{삼각함수}{24}{0}{1}
+\beamer@subsectionintoc {1}{5}{삼각함수의 성질}{31}{0}{1}
+\beamer@sectionintoc {2}{삼각함수의 그래프}{33}{0}{2}
+\beamer@subsectionintoc {2}{1}{기본 그래프}{34}{0}{2}
+\beamer@subsectionintoc {2}{2}{그래프의 평행이동}{40}{0}{2}
+\beamer@subsectionintoc {2}{3}{그래프의 대칭이동과 확대변환}{48}{0}{2}
+\beamer@subsectionintoc {2}{4}{삼각함수의 일반형}{58}{0}{2}
+\beamer@subsectionintoc {2}{5}{삼각방정식}{66}{0}{2}
+\beamer@subsectionintoc {2}{6}{삼각부등식}{70}{0}{2}
+\beamer@sectionintoc {3}{삼각함수의 활용}{74}{0}{3}
+\beamer@subsectionintoc {3}{1}{원과 원주각(복습)}{75}{0}{3}
+\beamer@subsectionintoc {3}{2}{사인 법칙}{77}{0}{3}
+\beamer@subsectionintoc {3}{3}{피타고라스의 법칙(복습)}{81}{0}{3}
+\beamer@subsectionintoc {3}{4}{코사인 법칙}{84}{0}{3}

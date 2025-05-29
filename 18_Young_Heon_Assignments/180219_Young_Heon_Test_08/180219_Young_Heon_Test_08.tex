@@ -1,0 +1,411 @@
+\documentclass[twocolumn]{article}
+\usepackage{amsmath,amssymb,kotex,mdframed,paralist}
+\usepackage{geometry}
+\geometry{a4paper,margin=1in}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\newcounter{num}
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+%\pagestyle{empty}
+
+\newcommand\prob[1]
+{\vspace{40pt}\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\medskip\noindent}
+\newcommand\exam[1]
+{\vspace{40pt}\par\noindent\stepcounter{num} \textbf{예시 \thenum) #1}\par\medskip\noindent}
+
+\begin{document}
+\begin{center}
+\LARGE영헌, 추가과제 08
+\end{center}
+\begin{flushright}
+\today
+\end{flushright}
+
+%%
+\section{수열의 극한}
+
+%%%
+\subsection{계산}
+
+\vspace{-20pt}
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{n^2+4n+3}{-3n+5}=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{n^2+4n+3}{2n^2-3n+5}=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{n^2+4n+3}{n^3+2n^2-3n+5}=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{1+2+3+\cdots+n}{(n-2)(2n-1)}=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{1^2+2^2+3^2+\cdots+n^2}{\frac14n^2+1}=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{\sqrt{n+1}+\sqrt{n-1}}{n+1}=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{5n+\sqrt{9n^2+4}}{\sqrt{2n^2+3}}=\)
+
+\bigskip\bigskip
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\left(\sqrt{n^2+2n+5}-n\right)=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{an^2+3n+1}{6n^2+3}=1\)일 때, 상수 \(a\)의 값을 구하여라.
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{6n-2}{an^2+2n+5}=b\)일 때, 상수 \(a\), \(b\)의 값을 구하여라.
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{an^2+3n+3}{bn-1}=-3\)일 때, 상수 \(a\), \(b\)의 값을 구하여라.
+
+%
+\prob{}
+수열 \(\{a_n\}\)이 \(\displaystyle\lim_{n\to\infty}\frac{2a_n+3}{a_n+1}=2\)를 만족시킬 때, \(\displaystyle\lim_{n\to\infty}a_n\)의 값은?
+
+%
+\prob{}
+수열 \(\{a_n\}\)이 \(\displaystyle\lim_{n\to\infty}\frac{2a_n-6}{3a_n-4}=-1\)를 만족시킬 때, \(\displaystyle\lim_{n\to\infty}a_n\)의 값은?
+
+\vspace{20pt}
+%%%
+\subsection{식 변형하기}
+\vspace{-20pt}
+
+%
+\prob{}
+수열 \(a_n\)이 \(\displaystyle\lim_{n\to\infty}(3n-1)a_n=2\)을 만족시킬 때, \(\displaystyle\lim_{n\to\infty}(6n+1)a_n\)의 값은?
+\bigskip\bigskip\bigskip\bigskip
+
+%
+\prob{}
+수열 \(a_n\)이 \(\displaystyle\lim_{n\to\infty}(2n^2+5n-1)a_n=5\)을 만족시킬 때, \(\displaystyle\lim_{n\to\infty}(6n^2-5n+3)a_n\)의 값은?
+
+%
+\prob{}
+수열 \(\{a_n\}\), \(\{b_n\}\)이
+\[\lim_{n\to\infty}(n+1)a_n=2,\quad\lim_{n\to\infty}(3n+1)b_n=2\]을 만족시킬 때, \(\displaystyle\lim_{n\to\infty}(6n^2+4n+5)a_nb_n\)의 값은?
+
+%
+\prob{}
+수열 \(\{a_n\}\), \(\{b_n\}\)이
+\[\lim_{n\to\infty}(n-1)a_n=3,\quad\lim_{n\to\infty}(n^2+1)b_n=7\]을 만족시킬 때,
+\(\displaystyle\lim_{n\to\infty}\frac{(6n+1)b_n}{a_n}\)의 값은?
+
+%
+\prob{}
+수렴하는 두 수열 \(\{a_n\}\), \(\{b_n\}\)에 대하여
+\[\lim_{n\to\infty}\left(a_n+b_n\right)=7,\quad\lim_{n\to\infty}a_nb_n=12\]
+일 때, \(\displaystyle\lim_{n\to\infty}\left({a_n}^2+{b_n}^2\right)\)의 값은?
+
+%
+\prob{}
+수렴하는 두 수열 \(\{a_n\}\), \(\{b_n\}\)에 대하여
+\[\lim_{n\to\infty}\left(a_n+b_n\right)=-5,\quad\lim_{n\to\infty}a_nb_n=-6\]
+일 때, \(\displaystyle\lim_{n\to\infty}\left({a_n}^2+{b_n}^2\right)\)의 값은?
+
+%
+\prob{}
+수렴하는 두 수열 \(\{a_n\}\), \(\{b_n\}\)에 대하여
+\[\lim_{n\to\infty}\left({a_n}^2+{b_n}^2\right)=41,\quad\lim_{n\to\infty}\left(a_n+b_n\right)=-1\]
+일 때, \(\displaystyle\lim_{n\to\infty}a_nb_n\)의 값은?
+
+\bigskip\bigskip\bigskip\bigskip
+%
+\prob{}
+수렴하는 두 수열 \(\{a_n\}\), \(\{b_n\}\)에 대하여
+\[\lim_{n\to\infty}\left({a_n}^2+{b_n}^2\right)=29,\quad\lim_{n\to\infty}\left(a_n+b_n\right)=-7\]
+일 때, \(\displaystyle\lim_{n\to\infty}a_nb_n\)의 값은?
+
+\vspace{20pt}
+%%%
+\subsection{부등식과 수열의 극한}
+\vspace{-20pt}
+
+%
+\prob{}
+수열 \(\{a_n\}\)이 모든 자연수 \(n\)에 대하여 부등식
+\[\frac{3n-1}{n+2}<a_n<\frac{3n+5}{n+2}\]
+을 만족시킬 때, \(\displaystyle\lim_{n\to\infty}a_n\)의 값을 구하여라.
+
+%
+\prob{}
+수열 \(\{a_n\}\)이 모든 자연수 \(n\)에 대하여 부등식
+\[2+\frac2{n+1}<a_n<2+\frac2{n-1}\]
+을 만족시킬 때, \(\displaystyle\lim_{n\to\infty}a_n\)의 값을 구하여라.
+
+%
+\prob{}
+수열 \(\{a_n\}\)이 모든 자연수 \(n\)에 대하여 부등식
+\[n\le a_n<n+1\]
+을 만족시킬 때, \(\displaystyle\lim_{n\to\infty}\frac{a_n}{3n-1}\)의 값을 구하여라.
+
+%
+\prob{}
+수열 \(\{a_n\}\)이 모든 자연수 \(n\)에 대하여 부등식
+\[n\le\frac{a_n}{3n+1}<n+1\]
+을 만족시킬 때, \(\displaystyle\lim_{n\to\infty}\frac{a_n}{n^2+1}\)의 값을 구하여라.
+
+%
+\prob{}
+수열 \(\{a_n\}\)이 모든 자연수 \(n\)에 대하여 부등식
+\[\sqrt{4n^2-1}<(n+1)a_n<\sqrt{4n^2+1}\]
+을 만족시킬 때, \(\displaystyle\lim_{n\to\infty}a_n\)의 값을 구하여라.
+
+%
+\prob{}
+수열 \(\{a_n\}\)이 모든 자연수 \(n\)에 대하여 부등식
+\[n^2-n+1<(2n^2+1)a_n<n^2+n+1\]
+을 만족시킬 때, \(\displaystyle\lim_{n\to\infty}a_n\)의 값을 구하여라.
+
+
+\vspace{20pt}
+%%%
+\subsection{등비수열}
+\vspace{-20pt}
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\left(\frac13\right)^{n+1}=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}2^{n+1}=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}0.9^{n-1}=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\left(\frac43\right)^{n-2}=\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{3+3^n}{1+3^n}\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{-2+2^n}{4+2^n}\)
+
+\bigskip\bigskip\bigskip\bigskip
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{3^{n+1}+2}{3^n+5}\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{7^{n+1}+4}{7^{n-1}-4}\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{3^{2n+1}+4}{3^n+1}\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{2^{2n-1}+4}{4^{n-1}+1}\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{4^n+5^n}{5^n}\)
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{5^{n+1}+3^{n-1}}{5^n+3^n}\)
+
+\vspace{10pt}
+%%
+\section{급수}
+
+%%%
+\subsection{등비급수}
+\vspace{-20pt}
+%
+\prob{}
+\(1+\frac12+\frac14+\frac18+\frac1{16}+\cdots=\)
+
+%
+\prob{}
+\(2+\frac43+\frac89+\cdots=\)
+
+%
+\prob{}
+\(9+3+1+\frac13+\frac19+\cdots=\)
+
+%
+\prob{}
+\(1+0.4+0.16+0.064+\cdots=\)
+
+%
+\prob{}
+\(0.6+0.36+0.216+\cdots=\)
+
+%
+\prob{}
+\(1-\frac12+\frac14-\frac18+\frac1{16}-\cdots=\)
+
+%
+\prob{}
+\(2-\frac43+\frac89-\frac{16}{27}+\cdots=\)
+
+%
+\prob{}
+\(1+3+9+27+\cdots=\)
+
+%
+\prob{}
+\(6+8+\frac{32}3+\frac{128}9+\cdots=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\left(-\frac23\right)^n=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\left(\frac12\right)^n=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty6\cdot\left(\frac13\right)^n=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\left(\frac{\sqrt2}2\right)^n=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\left(\frac{\sqrt3}2\right)^n=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\left(\frac{2\sqrt2}3\right)^n=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty
+\left\{\left(\frac34\right)^n+\left(\frac23\right)^n\right\}=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty
+\left\{\left(-\frac14\right)^n+\left(-\frac23\right)^n\right\}=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty
+\left(\frac2{3^n}-\frac1{4^n}\right)=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty
+\left(\frac3{4^n}-\frac4{3^n}\right)=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\frac{2^n+5^n}{10^n}=\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\frac{(-2)^n+4^n}{5^n}=\)
+
+\vspace{10pt}
+%%%
+\subsection{부분분수를 사용한 급수의 계산}
+\vspace{-30pt}
+
+%
+\prob{}
+\(\displaystyle\frac1{2\cdot3}+\frac1{3\cdot4}+\frac1{4\cdot5}+\cdots\)
+
+%
+\prob{}
+\(\displaystyle\frac3{1\cdot2}+\frac3{2\cdot3}+\frac3{3\cdot4}+\cdots\)
+
+%
+\prob{}
+\(\displaystyle\frac1{2\cdot4}+\frac1{4\cdot6}+\frac1{6\cdot8}+\cdots\)
+
+%
+\prob{}
+\(\displaystyle\frac6{1\cdot4}+\frac6{4\cdot7}+\frac6{7\cdot10}+\cdots\)
+
+%
+\prob{}
+\(\displaystyle\frac2{1\cdot3}+\frac2{2\cdot4}+\frac2{3\cdot5}+\cdots\)
+
+%
+\prob{}
+\(\displaystyle\frac3{3\cdot5}+\frac3{4\cdot6}+\frac3{5\cdot7}+\cdots\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\frac4{(n+2)(n+3)}\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\frac2{(n+1)(n+3)}\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\frac3{1+2+3+\cdots+n}\)
+
+%
+\prob{}
+\(\displaystyle\frac1{2^2-1}+\frac1{4^2-1}+\frac1{6^2-1}+\cdots\)
+
+%
+\prob{}
+\(\displaystyle\frac4{5^2-1}+\frac4{7^2-1}+\frac4{9^2-1}+\cdots\)
+
+\vspace{20pt}
+%%%
+\subsection{제곱근을 사용한 급수의 계산}
+\vspace{-20pt}
+
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\left(\sqrt{n+1}-\sqrt n\right)\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\left(\sqrt{n+3}-\sqrt{n+1}\right)\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\frac{\sqrt{n+1}-\sqrt n}{\sqrt{n^2+n}}\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=3}^\infty\frac{\sqrt{n+1}-\sqrt{n-1}}{\sqrt{n^2-1}}\)
+
+%
+\prob{}
+\(\displaystyle\sum_{n=1}^\infty\frac{\sqrt{2n+2}-\sqrt{2n}}{\sqrt{4n^2+4n}}\)
+
+
+\end{document}

@@ -1,0 +1,249 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,mdframed,paralist,tabu}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+
+%%% 객관식 선지
+\newcommand\one{\ding{172}}
+\newcommand\two{\ding{173}}
+\newcommand\three{\ding{174}}
+\newcommand\four{\ding{175}}
+\newcommand\five{\ding{176}}
+\usepackage{tabto,pifont}
+%\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+
+\newcommand\taba[5]{\par\noindent
+\one\:{#1}
+\tabto{0.2\textwidth}\two\:\:{#2}
+\tabto{0.4\textwidth}\three\:\:{#3}
+\tabto{0.6\textwidth}\four\:\:{#4}
+\tabto{0.8\textwidth}\five\:\:{#5}}
+
+\newcommand\tabb[5]{\par\noindent
+\one\:{#1}
+\tabto{0.33\textwidth}\two\:\:{#2}
+\tabto{0.67\textwidth}\three\:\:{#3}\medskip\par\noindent
+\four\:\:{#4}
+\tabto{0.33\textwidth}\five\:\:{#5}}
+
+\newcommand\tabc[5]{\par\noindent
+\one\:{#1}
+\tabto{0.5\textwidth}\two\:\:{#2}\medskip\par\noindent
+\three\:\:{#3}
+\tabto{0.5\textwidth}\four\:\:{#4}\medskip\par\noindent
+\five\:\:{#5}}
+
+\newcommand\tabd[5]{\par\noindent
+\one\:{#1}\medskip\par\noindent
+\two\:\:{#2}\medskip\par\noindent
+\three\:\:{#3}\medskip\par\noindent
+\four\:\:{#4}\medskip\par\noindent
+\five\:\:{#5}}
+
+\newcommand\vs[1]{\par\vspace{30pt}}
+
+\usepackage{graphicx}
+
+%\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num})} #1\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE태희, 미니테스트 09
+\end{center}
+\begin{flushright}
+날짜 : 2018년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%
+\prob{다음 <보기>에서 옳은 것만을 있는 대로 고른 것은?}
+\begin{mdframed}[frametitle=<보기>]
+\begin{enumerate}
+\item[ㄱ.]
+실수 \(a\), \(b\)에 대하여 \(|a-b|\ge|b|-|a|\)
+\item[ㄴ.]
+실수 \(x\), \(y\)에 대하여 \(2x^2-y^2\ge x^2-4xy-6y^2\)
+\item[ㄷ.]
+\(a\), \(b\), \(c\)가 양수이면 \(\sqrt a+\sqrt b\ge\sqrt{2(a+b)}\)
+\end{enumerate}
+\end{mdframed}
+\tabb{\text{ㄱ}}{\text{ㄷ}}{\text{ㄱ, ㄴ}}{\text{ㄴ, ㄷ}}{\text{ㄱ, ㄴ, ㄷ}}
+\vs
+
+%
+\prob{\(x>0\), \(y>0\)이고 \(3x+2y=16\)일 때, \(\sqrt{3x}+\sqrt{2y}\)의 최댓값을 구하여라.}
+\taba4{\(2\sqrt5\)}{\(2\sqrt6\)}{\(2\sqrt7\)}{\(4\sqrt2\)}
+\vs
+
+%
+\prob{\(x^2+y^2+z^2=7\)일 때, \(3x+2y+z\)의 최댓값을 구하여라.}
+\taba7{\(7\sqrt2\)}{\(7\sqrt3\)}{\(14\)}{\(7\sqrt5\)}
+\vs
+
+%
+\prob{두 함수 \(f(x)=ax+3\), \(g(x)=-x+4\)에 대하여 \(f\circ g=g\circ f\)가 성립할 때, \(f(2)\)의 값을 구하여라.}
+\taba12345
+\vs
+
+%
+\prob{두 집합 \(X=\{x\ba-2\le x\le 3\}\), \(Y=\{y\ba1\le y\le11\}\)에 대하여 \(X\)에서 \(Y\)로의 함수 \(f(x)=ax+b\)가 일대일 대응일 때, \(a+b\)의 값을 구하여라(단, \(a>0\)).}
+\taba56789
+\vs
+
+\newpage
+%
+\prob{실수 전체에서 정의된 함수}
+\[f(x)=
+\begin{cases}
+x^2-2x+4	&(x\ge1)\\
+ax+b 	&(x<1)
+\end{cases}\]
+에 대하여 \(f\)의 역함수가 존재할 때, 상수 \(b\)의 값의 범위를 구하여라.
+\taba{\(b<2\)}{\(b<3\)}{\(b<4\)}{\(b>2\)}{\(b>3\)}
+\vs
+
+%
+\prob{두 함수 \(f(x)=4x-2\), \(g(x)=x-1\)에 대하여 \((f^{-1}\circ g)(a)=1\)을 만족시키는 상수 \(a\)의 값을 구하여라.}
+\taba12345
+\vs
+
+%
+\prob{두 집합 \(X=\{x\ba x\ge2\}\), \(Y=\{y\ba y\ge3\}\)에 대하여 \(X\)에서 \(Y\)로의 함수 \(f(x)=x^2+2x+a\)가 일대일대응일 때, 상수 \(a\)의 값을 구하여라.}
+\taba{\(-5\)}{\(-4\)}{\(-3\)}{\(-2\)}{\(-1\)}
+\vs
+
+%
+\prob{두 함수 \(f(x)=x^2+4x+6\), \(g(x)=x^2-x+k\)에 대하여 합성함수 \((g\circ f)(x)\)의 최솟값이 \(7\)이 되도록 하는 상수 \(k\)의 값을 구하여라.}
+\taba12345
+\vs
+
+%
+\prob{\(9^x=2\)일 때, \(\displaystyle\frac{27^x-27^{-x}}{3^x+3^{-x}}\)의 값을 구하여라.}
+\taba{\(\frac32\)}{\(\frac43\)}{\(\frac54\)}{\(\frac65\)}{\(\frac76\)}
+\vs
+
+%
+\prob{\(67^x=27\), \(603^y=81\)일 때, \(\frac3x-\frac4y\)의 값을 구하여라.}
+\taba{\(-5\)}{\(-2\)}147
+\vs
+
+
+%%
+%\prob{\(2^{8x}=9\)일 때, \(\displaystyle\frac{2^{6x}-2^{-6x}}{2^{2x}+2^{-2x}}\)의 값은?}
+%\taba{\(\frac53\)}{\(\frac{11}6\)}2{\(\frac{13}6\)}{\(\frac73\)}
+%\vs
+%
+%%
+%\prob{\(\log_7(\log_3(\log_2x))=0\)일 때, \(x\)의 값은?}
+%\taba2468{10}
+%\vs
+%
+%
+%%
+%\prob{\(12^x=18^y=6\)일 때, \(\frac1x+\frac1y\)의 값은?}
+%\taba12345
+%\vs
+%
+%%
+%\prob{\(4^a+4^{-a}=14\)일 때, \(\displaystyle\frac{2^{6a}+1}{2^{4a}+2^{2a}}\)의 값을 구하시오.}
+%\vs
+%
+%%
+%\prob{\(9^a+9^{-a}=11\)일 때, \(\displaystyle\frac{3^{8a}-1}{3^{5a}-3^{3a}}\)의 값을 구하시오.
+%(단, \(a>0\))}
+%\vs
+%
+%%
+%\prob{\(a\), \(b\)가 실수일 때, 다음 <보기> 중 옳은 것을 모두 고른 것은?}
+%\begin{mdframed}[frametitle=<보기>]
+%\begin{enumerate}
+%\item[ㄱ.]
+%\(a^2-ab+b^2\ge0\)
+%\item[ㄴ.]
+%\(|a+b|\ge|a-b|\)
+%\item[ㄷ.]
+%\(a\ge0\), \(b\ge0\)일 때, \(\sqrt a+\sqrt b\ge\sqrt{a+b}\)
+%\end{enumerate}
+%\end{mdframed}
+%\tabb{\text{ㄱ}}{\text{ㄴ}}{\text{ㄱ, ㄴ}}{\text{ㄱ, ㄷ}}{\text{ㄴ, ㄷ}}
+%\vs
+%
+%\newpage
+%%
+%\prob{다음 <보기>에서 옳은 것만을 있는 대로 고른 것은?}
+%\begin{mdframed}[frametitle=<보기>]
+%\begin{enumerate}
+%\item[ㄱ.]
+%실수 \(a\), \(b\)에 대하여 \(|a+b|\ge|a|-|b|\)
+%\item[ㄴ.]
+%\(a\ge b\ge0\)이면 \(\sqrt{a-b}\ge\sqrt a-\sqrt b\)
+%\item[ㄷ.]
+%\(a\), \(b\), \(c\)가 양수이면 \(\frac{b+c}a+\frac{c+a}b+\frac{a+b}c\ge6\)
+%\end{enumerate}
+%\end{mdframed}
+%\tabb{\text{ㄱ}}{\text{ㄷ}}{\text{ㄱ, ㄴ}}{\text{ㄴ, ㄷ}}{\text{ㄱ, ㄴ, ㄷ}}
+%\vs
+%
+%%
+%\prob{실수 \(x\), \(y\)에 대하여 \(x^2+y^2=13\)일 때, \(2x-3y\)의 최댓값은 \(M\)이고 최솟값은 \(m\)이다.
+%\(M-m\)의 값은?}
+%\taba{13}{26}{39}{52}{65}
+%\vs
+%
+%%
+%\prob{두 함수 \(f(x)=3x-1\), \(g(x)=-2x+k\)에 대하여 \(f\circ g=g\circ f\)가 성립할 때, \((g^{-1}\circ g^{-1})\left(\frac52\right)\)의 값을 구하여라.}
+%\taba12345
+%\vs
+%
+%
+%%
+%\prob{함수 \(f(x)=2|x-2|+(k+1)x+1\)가 일대일대응이 되도록 하는 실수 \(k\)의 값의 범위는?}
+%\tabb
+%{\(-1<k<3\)}
+%{\(k<-1\) 또는 \(k>3\)}
+%{\(-2<k<2\)}
+%{\(k<-2\) 또는 \(k>2\)}
+%{\(-3<k<1\)}
+%\vs
+%
+%%
+%\prob{두 집합 \(X=\{x\ba 1\le x\le 3\}\), \(Y=\{y\ba a\le y\le b\}\)에 대하여 \(X\)에서 \(Y\)로의 함수 \(f(x)=2^{x-1}-1\)의 역함수가 존재할 때, \(a+b\)의 값을 구하시오. (단, \(a\), \(b\)는 상수)}
+%\taba12345
+%\vs
+%
+%%
+%\prob{두 집합 \(X=\{x\ba a\le x\le 4\}\), \(Y=\{y\ba -4\le y\le4\}\)에 대하여 \(X\)에서 \(Y\)로의 함수 \(f(x)=-x^2+2x+b\)의 역함수가 존재할 때, \(a+b\)의 값을 구하시오. (단, \(a\), \(b\)는 상수)}
+%\taba34567
+%\vs
+% 
+
+
+
+
+
+\end{document}

@@ -1,0 +1,96 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{graphicx}
+
+\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\defi[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정의 \thenum) #1}\par\noindent}
+\newcommand\theo[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정리 \thenum) #1}\par\noindent}
+\newcommand\exam[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{예시 \thenum) #1}\par\noindent}
+\newcommand\prob[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{60pt}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE준영, 미니테스트 10
+\end{center}
+\begin{flushright}
+날짜 : 2017년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%
+\prob{}
+다음 급수의 합을 구하여라.
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle1+\frac13+\frac19+\frac1{27}+\cdots\)
+\item
+\(\displaystyle\frac1{2\cdot5}+\frac1{5\cdot8}+\frac1{8\cdot11}+\frac1{11\cdot14}+\cdots\)
+\end{enumerate}
+\vs
+
+%
+\prob{}
+급수 \(\displaystyle\sum_{n=2}^\infty\left(\log_n{10}-\log_{n+1}10\right)\)의 합은?
+\vspace{10pt}
+\tabb{2\log2}0{\displaystyle\frac1{\log2}}{\log2}1
+\vs
+
+%
+\prob{}
+급수 \(\displaystyle1-\frac12+\frac12-\frac13+\frac13-\cdots\)의 합은?
+\vspace{10pt}
+\tabb01234
+\vs
+
+%
+\prob{}
+다음 급수의 합을 구하여라.
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle\sum_{n=1}^\infty\left(\frac13\right)^{n-1}\)
+\item
+\(\displaystyle\sum_{n-1}^\infty\frac{2^n+3^n}{5^n}\)
+\item
+\(\displaystyle\sum_{n-1}^\infty\left\{\frac6{5^n}+\frac2{(-3)^n}\right\}\)
+\end{enumerate}
+\vs
+
+\end{document}

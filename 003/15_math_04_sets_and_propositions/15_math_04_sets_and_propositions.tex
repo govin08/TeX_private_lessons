@@ -1,0 +1,149 @@
+\documentclass[t,8pt]{beamer}
+
+%%% packages
+\geometry{paperwidth=140mm,paperheight=105mm}
+\usefonttheme[onlymath]{serif}
+
+\usepackage{kotex,amsmath,tabto,setspace,tikz}
+
+\usepackage{tabularx}
+%X is not not centered, text moded
+\newcolumntype{Y}{>{\centering\arraybackslash}X} % centered, text-moded
+\newcolumntype{M}{>{$}X<{$}} % math-moded
+\newcolumntype{N}{>{$}Y<{$}} %centered and math-moded
+\setlength\tabcolsep{1pt}
+
+
+%%% counters, commands, environments
+\newcounter{num}
+\resetcounteronoverlays{num}
+
+\newenvironment{defi}[1]{\refstepcounter{num}\begin{block}{정의 \arabic{num}#1}}{\end{block}}
+\newenvironment{theo}[1]{\refstepcounter{num}\begin{block}{정리 \arabic{num}#1}}{\end{block}}
+\newenvironment{prob}[1]{\refstepcounter{num}\begin{block}{문제 \arabic{num}#1}}{\end{block}}
+\newenvironment{exam}[1]{\refstepcounter{num}\begin{block}{예시 \arabic{num}#1}}{\end{block}}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+\newcommand{\rb}[2]%\Red+fBox
+{\fbox{\uncover<#1>{\red{\ensuremath{#2}}}}}
+\renewcommand{\arraystretch}{1.5}
+\newcommand{\red}[1]{\color{red}{#1}}
+\newcommand{\ivs}{\centering\strut\vspace*{-\baselineskip}\newline}%image vertical setting
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+%%% title
+\title{수학(하) : 04 집합}
+\institute[ibedu]{아이비에듀}
+\date{\today}
+
+%%% toc
+\AtBeginSection[]
+{\begin{frame}
+    \frametitle{목차}
+    \tableofcontents[currentsection]
+  \end{frame}}
+
+
+\begin{document}
+%%
+\frame{\titlepage}
+
+%%%%
+\section{집합}
+
+%%%
+\subsection{집합의 뜻과 표현}
+
+%%
+\begin{frame}[t]{\subsecname}
+\begin{minipage}{.47\textwidth}
+%
+\begin{prob}{) 10 이하의 홀수를 모두 구하시오.}
+\end{prob}
+%
+\begin{prob}{) 오른쪽 표는 우리나라 시 단위의 광역자치단체 목록이다.}
+\begin{enumerate}[(1)]
+\item
+광역시들을 모두 구하여라.
+\item
+특별시를 모두 구하여라.
+\end{enumerate}
+\end{prob}
+\end{minipage}
+\begin{minipage}{.47\textwidth}
+\begin{tabularx}{\textwidth}{|Y|@{}Y@{}|}
+\hline
+도시		&분류\\\hline
+서울		&특별시\\\hline
+부산		&광역시\\\hline
+대구		&광역시\\\hline
+인천		&광역시\\\hline
+\end{tabularx}
+\end{minipage}
+
+%%
+%\begin{defi}{) 집합과 원소}
+%어떤 기준에 따라 그 대상을 분명하게 알 수 있는 것들의 모임을 \alert{집합}이라고 한다.
+%집합을 이루는 대상 하나하나를 \alert{원소}라고 한다.
+%\end{defi}
+%
+\begin{exam}{}
+10 이하의 홀수들의 모임을 \(A\)라고 하면, 
+\[A=\{1,3,5,7,9\}\]
+이다.
+또한, \(1\in A\), \(3\in A\), \(5\in A\), \(7\in A\), \(9\in A\)이고, \(2\notin A\) 이다.
+집합 \(A\)는 5개의 원소를 가지고 있다.
+이것을 \(n(A)=5\)라고 표시한다.
+\end{exam}
+%
+\begin{prob}{}
+우리나라 광역시들의 모임을 \(B\), 특별시들의 모임을 \(C\)라고 하자.
+그러면
+\begin{align*}
+B&=\{\text{부산}, \text{대구}, \text{인천}, \text{광주}, \text{대전}, \text{울산}\}\\
+C&=\{\text{서울}\}
+\end{align*}
+이다.
+따라서 \(\text{세종}\notin B\), \(\text{대전}\in B\), \(\text{서울}\in C\), \(\text{울산}\notin C\)이다.
+그리고 \(n(B)=6\), \(n(C)=1\)이다.
+\end{prob}
+
+\end{frame}
+
+%%%
+\subsection{부분집합}
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+%%%
+\subsection{부분집합의 개수}
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+%%%%
+\section{집합의 연산}
+
+%%%
+\subsection{집합의 연산}
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+%%%
+\subsection{집합의 연산 법칙}
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+%%%
+\subsection{유한집합의 원소의 개수}
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+
+
+\end{document}

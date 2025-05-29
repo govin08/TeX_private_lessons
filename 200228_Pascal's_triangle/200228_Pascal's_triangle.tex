@@ -1,0 +1,206 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tikz}
+\newcommand\C[2]{\ensuremath{_{#1} C_{#2}}}
+\newcommand*\CC[2]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,minimum size=4mm, inner sep=0pt] (char){\C{#1}{#2}};}}
+
+\begin{document}
+\setlength{\tabcolsep}{0pt}
+
+파스칼의 삼각형에서 동그라미로 표시된 이항계수들의 합을 구하여라.
+
+\centering
+\begin{enumerate}[(1)]
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\C40	&		&\C41	&		&\C42	&		&\C43	&		&\C44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C50	&		&\C51	&		&\C52	&		&\C53	&		&\C54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\C61	&		&\C62	&		&\CC63	&		&\CC64	&		&\C65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\C70	&		&\C71	&		&\C72	&		&\C73	&		&\C74	&		&\C75	&		&\C76	&		&\C77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\C96	&		&\C97	&		&\C98	&		&\C99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\C40	&		&\C41	&		&\C42	&		&\C43	&		&\C44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C50	&		&\CC51	&		&\CC52	&		&\C53	&		&\C54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\CC61	&		&\C62	&		&\C63	&		&\C64	&		&\C65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\C70	&		&\C71	&		&\C72	&		&\C73	&		&\C74	&		&\C75	&		&\C76	&		&\C77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\C96	&		&\C97	&		&\C98	&		&\C99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\C40	&		&\C41	&		&\CC42	&		&\CC43	&		&\C44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C50	&		&\C51	&		&\CC42	&		&\C53	&		&\C54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\C61	&		&\CC62	&		&\C63	&		&\C64	&		&\C65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\C70	&		&\C71	&		&\CC72	&		&\C73	&		&\C74	&		&\C75	&		&\C76	&		&\C77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\C96	&		&\C97	&		&\C98	&		&\C99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\CC40	&		&\CC41	&		&\C42	&		&\C43	&		&\C44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C50	&		&\C51	&		&\CC52	&		&\C53	&		&\C54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\C61	&		&\C62	&		&\CC63	&		&\C64	&		&\C65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\C70	&		&\C71	&		&\C72	&		&\C73	&		&\CC74	&		&\C75	&		&\C76	&		&\C77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\CC85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\CC96	&		&\C97	&		&\C98	&		&\C99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\CC22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\CC32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\C40	&		&\C41	&		&\CC42	&		&\C43	&		&\C44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C50	&		&\C51	&		&\CC52	&		&\C53	&		&\C54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\C61	&		&\CC62	&		&\C63	&		&\C64	&		&\C65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\C70	&		&\C71	&		&\CC72	&		&\C73	&		&\C74	&		&\C75	&		&\C76	&		&\C77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\C96	&		&\C97	&		&\C98	&		&\C99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\CC40	&		&\CC41	&		&\CC42	&		&\CC43	&		&\CC44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C50	&		&\C51	&		&\C52	&		&\C53	&		&\C54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\C61	&		&\C62	&		&\C63	&		&\C64	&		&\C65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\C70	&		&\C71	&		&\C72	&		&\C73	&		&\C74	&		&\C75	&		&\C76	&		&\C77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\C96	&		&\C97	&		&\C98	&		&\C99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\C40	&		&\C41	&		&\C42	&		&\C43	&		&\C44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C50	&		&\C51	&		&\C52	&		&\C53	&		&\C54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\C61	&		&\C62	&		&\C63	&		&\C64	&		&\C65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\CC70	&		&\CC71	&		&\CC72	&		&\CC73	&		&\CC74	&		&\CC75	&		&\CC76	&		&\CC77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\C96	&		&\C97	&		&\C98	&		&\C99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\C40	&		&\C41	&		&\C42	&		&\C43	&		&\C44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\CC50	&		&\C51	&		&\CC52	&		&\C53	&		&\CC54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\C61	&		&\C62	&		&\C63	&		&\C64	&		&\C65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\C70	&		&\C71	&		&\C72	&		&\C73	&		&\C74	&		&\C75	&		&\C76	&		&\C77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\C96	&		&\C97	&		&\C98	&		&\C99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\C40	&		&\C41	&		&\C42	&		&\C43	&		&\C44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C50	&		&\C51	&		&\C52	&		&\C53	&		&\C54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\CC61	&		&\C62	&		&\CC63	&		&\C64	&		&\CC65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\C70	&		&\C71	&		&\C72	&		&\C73	&		&\C74	&		&\C75	&		&\C76	&		&\C77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\C96	&		&\C97	&		&\C98	&		&\C99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\C40	&		&\C41	&		&\C42	&		&\C43	&		&\C44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C50	&		&\C51	&		&\C52	&		&\C53	&		&\C54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\C61	&		&\C62	&		&\C63	&		&\C64	&		&\C65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\CC70	&		&\CC71	&		&\CC72	&		&\CC73	&		&\C74	&		&\C75	&		&\C76	&		&\C77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\C96	&		&\C97	&		&\C98	&		&\C99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccc}
+&		&		&		&		& 		&		&		&		&		&\C00																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C10	&		&\C10																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\C40	&		&\C41	&		&\C42	&		&\C43	&		&\C44											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C50	&		&\C51	&		&\C52	&		&\C53	&		&\C54	&		&\C55									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C60	&		&\C61	&		&\C62	&		&\C63	&		&\C64	&		&\C65	&		&\C66							\\\noalign{\smallskip\smallskip}
+&		&		&\C70	&		&\C71	&		&\C72	&		&\C73	&		&\C74	&		&\C75	&		&\C76	&		&\C77					\\\noalign{\smallskip\smallskip}
+&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88			\\\noalign{\smallskip\smallskip}
+&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\CC95	&		&\CC96	&		&\CC97	&		&\CC98	&		&\CC99	\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\item
+\begin{tabular}{cccccccccccccccccccccc}
+&		&		&		&		&		& 		&		&		&		&		&\C00																					\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&		&\C10	&		&\C10																			\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&		&\C20	&		&\C21	&		&\C22																	\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&		&\C30	&		&\C31	&		&\C32	&		&\C33															\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&		&\C40	&		&\C41	&		&\C42	&		&\C43	&		&\C44													\\\noalign{\smallskip\smallskip}
+&		&		&		&		&		&\C50	&		&\C51	&		&\C52	&		&\C53	&		&\C54	&		&\C55											\\\noalign{\smallskip\smallskip}
+&		&		&		&		&\C60	&		&\C61	&		&\C62	&		&\C63	&		&\C64	&		&\C65	&		&\C66									\\\noalign{\smallskip\smallskip}
+&		&		&		&\C70	&		&\C71	&		&\C72	&		&\C73	&		&\C74	&		&\C75	&		&\C76	&		&\C77							\\\noalign{\smallskip\smallskip}
+&		&		&\C80	&		&\C81	&		&\C82	&		&\C83	&		&\C84	&		&\C85	&		&\C86	&		&\C87	&		&\C88					\\\noalign{\smallskip\smallskip}
+&		&\C90	&		&\C91	&		&\C92	&		&\C93	&		&\C94	&		&\C95	&		&\C96	&		&\C97	&		&\C98	&		&\C99			\\\noalign{\smallskip\smallskip}
+&\CC{10}0&		&\C{10}1	&		&\CC{10}2&		&\C{10}3	&		&\CC{10}4&		&\C{10}5	&		&\C{10}6	&		&\C{10}7	&		&\C{10}8	&		&\C{10}9	&		&\C{10}{10}\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\end{enumerate}
+
+\newpage
+
+\section*{답}
+\begin{enumerate}[(1)]
+\item
+\(\C74=35\)
+\item
+\(\C72=21\)
+\item
+\(\C83=56\)
+\item
+\(\C{10}6=210\)
+\item
+\(\C83=56\)
+\item
+\(2^4=16\)
+\item
+\(2^7=128\)
+\item
+\(2^4=16\)
+\item
+\(2^5=32\)
+\item
+\(2^6=64\)
+\item
+\(2^8=256\)
+\item
+\(2^8=256\)
+\end{enumerate}
+
+\end{document}

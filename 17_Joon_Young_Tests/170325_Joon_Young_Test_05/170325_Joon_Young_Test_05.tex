@@ -1,0 +1,104 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\defi[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정의 \thenum) #1}\par\noindent}
+\newcommand\theo[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정리 \thenum) #1}\par\noindent}
+\newcommand\exam[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{예시 \thenum) #1}\par\noindent}
+\newcommand\prob[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{40pt}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE준영, 미니테스트 05
+\end{center}
+\begin{flushright}
+날짜 : 2017년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%
+\prob{}
+다음 수열 중 수렴하는 것은?
+\tabb{\{\frac{n^2-3}{n+1}\}}{\{2n-3\}}{\{\frac{(-1)^n}n\}}{\{1-n^2\}}{\{\frac{n^2+3}{2n+1}\}}
+\vs
+
+%
+\prob{}
+다음 중 극한 값이 가장 작은 것은?
+\par\medskip\noindent
+\ding{172}\:{\(\displaystyle\lim_{n\to\infty}\frac{2n^2+3n+5}{2n^2+1}\)}
+\tab\tab\ding{173}\:\:{\(\displaystyle\lim_{n\to\infty}\frac{2n^2+3n+5}{2n^2+1}\)}
+\tab\tab\ding{174}\:\:{\(\displaystyle\lim_{n\to\infty}\frac{3n^2+4}{n^3+2}\)}
+\par\medskip\noindent
+\ding{175}\:\:{\(\displaystyle\lim_{n\to\infty}\frac{1-n}{3n-1}\)}
+\tab\tab\ding{176}\:\:{\(\displaystyle\lim_{n\to\infty}\frac{6n^2+3n+2}{9n^2+2}\)}
+\vs
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\frac{(a+b)n^2+bn+1}{2n-1}=3\)일 때, 상수 \(a\), \(b\)의 곱 \(ab\)의 값은?
+\tabb{-39}{-36}{-34}{-30}{-28}
+\vs
+
+%
+\prob{}
+\(\displaystyle\lim_{n\to\infty}\left\{\sqrt{1+2+\cdots+n}-\sqrt{1+2+\cdots+(n-1)}\right\}\)의 값을 구하여라.
+\vs
+
+%
+\prob{}
+수열 \(\{a_n\}\)에 대하여, \(\displaystyle\lim_{n\to\infty}\frac{3a_n-2}{a_n+1}=2\)일 때, \(\displaystyle\lim_{n\to\infty}a_n\)의 값은?
+\tabb{-2}{-\frac45}{\frac45}{\frac52}{4}
+\vs
+
+%
+\prob{}
+수열 \(\{a_n\}\)에 대하여, \(\displaystyle\lim_{n\to\infty}(2n^2-3n)a_n=4\)일 때, 
+\(\displaystyle\lim_{n\to\infty}n^2a_n\)의 값은?
+\tabb{\frac13}{\frac12}{1}{2}{3}
+\vs
+
+%
+\prob{}
+수열 \(\{a_n\}\)에서 첫째항부터 제 \(n\)항까지의 합 \(S_n\)이 \(S_n=2n^2-3n\) (\(n=1,2,3,\cdots\))일 때, \(\displaystyle\lim_{n\to\infty}\frac{{a_n}^2}{S_n}\)의 값은?
+\tabb6789{10}
+\vs
+
+\end{document}

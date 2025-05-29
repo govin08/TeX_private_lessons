@@ -1,0 +1,897 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig,tabu}
+
+\usepackage[skipabove=10pt,innertopmargin=10pt,nobreak]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textwidth}\end{mdframed}}
+
+\newcommand{\ans}{
+{\par
+\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}
+\par}\bigskip}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\ba{\,|\,}
+
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\renewcommand{\arraystretch}{1.5}
+
+\let\emph\textsf
+%%%%
+\begin{document}
+
+\title{수학 2 : 지수}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+\section{복습}
+
+%
+\prob{다항식의 전개}
+다음 식을 전개하시오.
+\[(a+b)(a^2-ab+b^2)\]
+\vspace{-20pt}
+\begin{mdframed}
+\vspace{0.05\textheight}
+\end{mdframed}
+\ans
+
+%
+\prob{인수분해}
+다음 식을 인수분해하시오.
+\par\noindent
+(1)\:\:\(a^3-b^3\)
+\tabto{.5\textwidth}
+(2)\:\:\(x^3-27\)
+\par\noindent
+(3)\:\:\(x^2-1\)
+\tabto{.5\textwidth}
+(4)\:\:\(x^4-16\)
+\begin{mdframed}
+\vspace{0.3\textheight}
+\end{mdframed}
+
+\begin{mdframed}[frametitle={기본적인 인수분해 공식}]
+\begin{enumerate}
+\item
+\(a^2-b^2=(a+b)(a-b)\)
+\item
+\(a^3+b^3=(a+b)(a^2-ab+b^2)\)
+\item
+\(a^3-b^3=(a-b)(a^2+ab+b^2)\)
+\end{enumerate}
+\end{mdframed}
+
+%
+\prob{이차방정식}
+다음 이차방정식을 푸시오.
+\par\noindent
+(1)\:\:\(x^2-x-2=0\)
+\tabto{.333\textwidth}
+(2)\:\:\(x^2-x-1=0\)
+\tabto{.666\textwidth}
+(3)\:\:\(x^2-x+2=0\)
+\par\noindent
+(4)\:\:\(x^2=4\)
+\tabto{.333\textwidth}
+(5)\:\:\(x^2=0\)
+\tabto{.666\textwidth}
+(6)\:\:\(x^2=-4\)
+\begin{mdframed}
+\vspace{0.45\textheight}
+\end{mdframed}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\(x=\)\qquad\qquad(2)\:\:\(x=\)\qquad\qquad(3)\:\:\(x=\)\qquad\qquad\qquad}
+\par}
+{\par\raggedleft\textbf{
+(4)\:\:\(x=\)\qquad\qquad(5)\:\:\(x=\)\qquad\qquad(6)\:\:\(x=\)\qquad\qquad\qquad}
+\par}
+\bigskip
+
+\begin{mdframed}[frametitle={이차방정식의 풀이}]
+\begin{enumerate}
+\item
+이차방정식 \(x^2=A\)의 근은
+\[x=\pm\sqrt A\]
+\item
+이차방정식 \(ax^2+bx+c=0\)의 근은
+\[x=\frac{-b\pm\sqrt{b^2-4ac}}2\]
+\end{enumerate}
+\end{mdframed}
+%%
+\section{거듭제곱근}
+
+%
+\exam{3의 제곱근}
+제곱해서 3이 되는 수를 `3의 \emph{제곱근}'이라고 한다.
+즉 \(x^2=3\)의 근인데 이것을 풀면
+\begin{gather*}
+x^2=3\\
+x^2-3=0\\
+(x+\sqrt3)(x-\sqrt3)=0\\
+x=-\sqrt3,\sqrt3
+\end{gather*}
+%\(x=\pm\sqrt3\)이다.
+그러므로 3의 제곱근은 \(\sqrt3\)와 \(-\sqrt3\)의 두 개이다.
+
+\begin{mdframed}
+\[
+3\text{의 제곱근}
+\quad\Rightarrow\quad
+\text{제곱해서 3이 되는 수}
+\quad\Rightarrow\quad
+x^2=3
+\]
+\end{mdframed}
+
+%
+\exam{\(-3\)의 제곱근}
+\(-3\)의 제곱근은 제곱해서 \(-3\)이 되는 수이다.
+즉 \(x^2=-3\)의 근인데 이것을 풀면
+\begin{gather*}
+x=\pm\sqrt{-3}=\pm\sqrt3i
+\end{gather*}
+이다.
+따라서 \(-3\)의 제곱근은 \(\sqrt3i\)와 \(-\sqrt3i\)의 두 개이다.
+
+\begin{mdframed}
+\[
+-3\text{의 제곱근}
+\quad\Rightarrow\quad
+\text{제곱해서 \(-3\)이 되는 수}
+\quad\Rightarrow\quad
+x^2=-3
+\]
+\end{mdframed}
+
+\clearpage
+%
+\prob{}
+\begin{enumerate}
+\item
+\(4\)의 제곱근을 구하여라.
+\procedure{0.18}
+\ans
+\item
+\(8\)의 제곱근을 구하여라.
+\procedure{0.18}
+\ans
+\item
+\(0\)의 제곱근을 구하여라.
+\procedure{0.18}
+\ans
+\item
+\(-4\)의 제곱근을 구하여라.
+\procedure{0.18}
+\ans
+\end{enumerate}
+
+%
+\exam{8의 세제곱근}
+세제곱해서 8이 되는 수를 8의 \emph{세제곱근}이라고 한다.
+즉 \(x^3=8\)의 근인데 이것을 풀면
+\begin{gather*}
+x^3=8\\
+x^3-8=0\\
+(x-2)(x^2+2x+4)=0\\
+x=2\text{ 이거나 }x^2+2x+4=0
+\end{gather*}
+\(x^2+2x+4=0\)에서 근의공식을 쓰면
+\[
+x=\frac{-2\pm\sqrt{2^2-4\cdot1\cdot4}}2=\frac{-2\pm\sqrt{-12}}2
+=\frac{-2\pm\sqrt{12}i}2=\frac{-2\pm2\sqrt3i}2=-1\pm\sqrt3i
+\]
+이다.
+따라서 \(8\)의 세제곱근은 \(2\), \(-1+\sqrt3i\), \(1+\sqrt3i\)의 세 개이다.
+
+\begin{mdframed}
+\[
+8\text{의 세제곱근}
+\quad\Rightarrow\quad
+\text{세제곱해서 8이 되는 수}
+\quad\Rightarrow\quad
+x^3=8
+\]
+\end{mdframed}
+
+%
+\prob{}
+\begin{enumerate}
+\item
+\(-8\)의 세제곱근을 구하여라.
+\vspace{0.1\textwidth}
+\ans
+\item
+\(27\)의 세제곱근을 구하여라.
+\vspace{0.1\textwidth}
+\ans
+\item
+\(-1\)의 세제곱근을 구하여라.
+\vspace{0.1\textwidth}
+\ans
+\end{enumerate}
+
+%
+\exam{81의 네제곱근}
+네제곱해서 \(81\)이 되는 수를 \(81\)의 \emph{네제곱근}이라고 한다.
+즉 \(x^4=81\)의 근인데 이것을 풀면
+\begin{gather*}
+x^4=81\\
+x^4-81=0\\
+(x^2-9)(x^2+9)=0\\
+(x-3)(x+3)(x^2+9)=0\\
+x=3,\:-3\text{ 이거나 }x^2=-9
+\end{gather*}
+\(x^2=-9\)이면 \(x=\pm\sqrt{-9}=\pm\sqrt9i=\pm3i\)
+따라서 \(81\)의 네제곱근은 \(3\), \(-3\), \(3i\), \(-3i\)의 네 개이다.
+
+\begin{mdframed}
+\[
+81\text{의 네제곱근}
+\quad\Rightarrow\quad
+\text{네제곱해서 \(81\)이 되는 수}
+\quad\Rightarrow\quad
+x^4=81
+\]
+\end{mdframed}
+
+%
+\prob{}
+\begin{enumerate}
+\item
+\(16\)의 네제곱근을 구하여라.
+\procedure{0.15}
+\ans
+\item
+\(1\)의 네제곱근을 구하여라.
+\procedure{0.15}
+\ans
+\end{enumerate}
+
+%%
+%\begin{mdframed}
+%\defi{거듭제곱근}
+%제곱해서 \(a\)가 되는 수를 `\(a\)의 \emph{\(n\)제곱근}'이라고 한다.
+%\end{mdframed}
+
+%\bigskip
+%거듭제곱근 중에 실수인 것의 개수를 구해보자.
+%
+%%
+%\exam{제곱근 중에 실수인 것의 개수}
+%아까 구한 예에서
+%\begin{enumerate}
+%\item
+%\(3\)의 제곱근 중 실수인 것은 \(\sqrt3\)과 \(-\sqrt3\)의 두 개였다.
+%\item
+%\(-3\)의 제곱근 중 실수인 것은 0개였다.
+%\item
+%\(4\)의 제곱근 중 실수인 것은 \(2\)와 \(-2\)의 두 개였다.
+%\item
+%\(8\)의 제곱근 중 실수인 것은 \(2\sqrt2\)와 \(-2\sqrt2\)의 두 개였다.
+%\item
+%\(0\)의 제곱근 중 실수인 것은 \(0\)의 한 개였다.
+%\end{enumerate}
+%이것을 정리하면
+%
+%\begin{mdframed}[skipbelow=10pt]
+%\(a\)의 제곱근 중 실수인 것은
+%\(
+%\begin{cases}
+%a>0\text{ 이면 2개}\\
+%a=0\text{ 이면 1개}\\
+%a<0\text{ 이면 0개}
+%\end{cases}
+%\)
+%이다.
+%\end{mdframed}
+%
+%\(a>0\)일때, 두 제곱근을 각각 \(\sqrt a\), \(-\sqrt a\)라고 쓴다.
+%그러므로 \(4\)의 제곱근이 \(2\)와 \(-2\)이므로 \(\sqrt4=2\)이다.
+%
+%%
+%\exam{세제곱근 중에 실수인 것의 개수}
+%아까 구한 예에서
+%\begin{enumerate}
+%\item
+%\(8\)의 세제곱근 중 실수인 것은 \(2\)의 한 개였다.
+%\item
+%\(-8\)의 세제곱근 중 실수인 것은 \(-2\)의 한 개였다.
+%\item
+%\(27\)의 세제곱근 중 실수인 것은 \(3\)의 한 개였다.
+%\item
+%\(-1\)의 세제곱근 중 실수인 것은 \(-1\)의 한 개였다.
+%\end{enumerate}
+%이것을 정리하면
+%
+%\begin{mdframed}[skipbelow=10pt]
+%\(a\)의 세제곱근 중 실수인 것은 1개이다.
+%\end{mdframed}
+%
+%하나밖에 없는 이 세제곱근을 각각 \(\sqrt[3]a\)라고 쓴다.
+%그러므로
+%\begin{enumerate}
+%\item
+%\(8\)의 세제곱근이 \(2\)이므로 \(\sqrt[3]8=2\)이다.
+%\item
+%\(-8\)의 세제곱근이 \(-2\)이므로 \(\sqrt[3]{-8}=-2\)이다.
+%\item
+%\(1\)의 세제곱근이 \(1\)이므로 \(\sqrt[3]1=1\)이다.
+%\end{enumerate}
+%
+%또한
+%\[\sqrt[3]2\]
+%와 같은 표현도 쓸 수 있다.
+%이것은 `\(2\)의 세제곱근', `세제곱해서 2가 되는 수'라는 뜻이다.
+%
+%
+%%
+%\exam{네제곱근 중에 실수인 것의 개수}
+%아까 구한 예에서
+%\begin{enumerate}
+%\item
+%\(81\)의 네제곱근 중 실수인 것은 \(3\)과 \(-3\)의 두 개였다.
+%\item
+%\(16\)의 네제곱근 중 실수인 것은 \(2\)와 \(-2\)으 두 개였다.
+%\item
+%\(1\)의 네제곱근 중 실수인 것은 \(1\)와 \(-1\)의 두 개였다.
+%\end{enumerate}
+%또 조금 더 생각해보면, \(0\)의 네제곱근 중 실수인 것은 \(0\)의 한 개이고, 음수의 네제곱근 중 실수인 것은 없을 것이다.
+%이것을 정리하면
+%
+%\begin{mdframed}[skipbelow=10pt]
+%\(a\)의 제곱근 중 실수인 것은
+%\(
+%\begin{cases}
+%a>0\text{ 이면 2개}\\
+%a=0\text{ 이면 1개}\\
+%a<0\text{ 이면 0개}
+%\end{cases}
+%\)
+%이다.
+%\end{mdframed}
+%
+%\(a>0\)일때, 두 네제곱근을 각각 \(\sqrt[4]a\), \(-\sqrt[4]a\)라고 쓴다.
+%그러므로 \(81\)의 네제곱근이 \(3\)와 \(-3\)이므로 \(\sqrt[4]{81}=3\)이다.
+%
+%또한
+%\[\sqrt[4]2\]
+%와 같은 표현도 쓸 수 있다.
+%이것은 `\(2\)의 네제곱근 중 양수', `네제곱해서 2가 되는 양수'라는 뜻이다.
+
+\clearpage
+이번에는 \(\sqrt2\), \(\sqrt3\)에서 쓰이는 근호(루트)와 비슷한 기호를 알아보자.
+
+%이처럼 \(n\)이 짝수일 때와 홀수일 때, \(\sqrt[n]{~~}\)의 의미가 조금씩 다르다.
+\begin{mdframed}
+%
+\defi{}
+\(\sqrt[n]a=
+\begin{cases}
+\text{\(a\)의 \(n\)제곱근 중 양수}	&(n=짝수)\\
+\text{\(a\)의 \(n\)제곱근 중 실수}	&(n=홀수)
+\end{cases}\)
+\end{mdframed}
+
+%
+\exam{}
+\begin{enumerate}
+\item
+\(\sqrt4\)\는 `\(4\)의 제곱근 중 양수인 것'을 뜻한다.
+즉 \(x^2=4\)의 두 근 \(-2\), \(2\) 중 양수인 \(2\)를 뜻하므로
+\[\sqrt4=2\]
+\item
+\(\sqrt[3]8\)은 `\(8\)의 세제곱근 중 실수인 것'을 뜻한다.
+즉 \(x^3=8\)의 세 근 \(2\), \(1+\sqrt3i\), \(-1+\sqrt3i\) 중 실수인 \(2\)를 뜻하므로
+\[\sqrt[3]8=2\]
+\item
+\(\sqrt[4]{16}\)은  `\(16\)의 네제곱근 중 양수인 것'을 뜻한다.
+즉 \(x^4=16\)의 네 근 \(2\), \(-2\), \(2i\), \(-2i\) 중 양수인 \(2\)를 뜻하므로
+\[\sqrt[4]{16}=2\]
+\end{enumerate}
+
+%일반적으로
+%%
+%\begin{mdframed}
+%\defi{\(a\)의 \(n\)제곱근 중 실수인 것}
+%\begin{center}
+%\begin{tabu}{X[1,c]|X[1,c]|X[1,c]|X[1,c]}
+%\hline
+%				&\(a>0\)						&\(a=0\)	&\(a<0\)\\\hline
+%\(n\)이 홀수일 때	&\(\sqrt[n]a\)				&0		&\(\sqrt[n]a\)\\\hline
+%\(n\)이 짝수일 때	&\(\sqrt[n]a\), \(\sqrt[n]a\)	&0		&없다
+%\end{tabu}
+%\end{center}
+%\end{mdframed}
+
+\clearpage
+%
+\exam{}
+다음 값을 구하여라.
+\par\noindent
+(1)\:\:\(\sqrt[3]{-27}\)
+\tabto{.25\textwidth}
+(2)\:\:\(\sqrt[5]{100000}\)
+\tabto{.5\textwidth}
+(3)\:\:\(\sqrt[4]{\frac{16}{81}}\)
+\tabto{.75\textwidth}
+(4)\:\:\(-\sqrt[4]{0.0625}\)
+\begin{mdframed}
+\begin{enumerate}
+\item
+\(\sqrt[3]{-27}\)은 \(-27\)의 세제곱근 중 실수인 \(-3\)이다.
+\item
+\(\sqrt[5]{100000}\)은 \(100000\)의 다섯제곱근 중 실수인 \(10\)이다.
+\item
+\(\sqrt[4]{\frac{16}{81}}\)은 \(\frac{16}{81}\)의 네제곱근 중 양수인 \(\frac23\)이다.
+\item
+\(\sqrt[4]{0.0625}\)은 \(0.0625\)의 네제곱근 중 양수인 \(\frac12\)이다.
+따라서 \(-\sqrt[4]{0.0625}=-\frac12\)
+\end{enumerate}
+\end{mdframed}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\(\sqrt[3]{-27}=-3\)\quad(2)\:\:\(\sqrt[5]{100000}=10\)}\par}
+{\par\raggedleft\textbf{
+(3)\:\:\(\sqrt[4]{\frac{16}{81}}=\frac23\)\quad(4)\:\:\(-\sqrt[4]{0.0625}=-\frac12\)}\par}\bigskip
+
+%
+\prob{}
+다음 값을 구하여라.
+\par\noindent
+(1)\:\:\(\sqrt[5]{32}\)
+\tabto{.25\textwidth}
+(2)\:\:\(\sqrt[3]{0.008}\)
+\tabto{.5\textwidth}
+(3)\:\:\(\sqrt[3]{-8}\)
+\tabto{.75\textwidth}
+(4)\:\:\(-\sqrt[4]{0.0001}\)
+\procedure{0.4}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\qquad\qquad
+(2)\:\:\qquad\qquad\qquad}\par}
+{\par\raggedleft\textbf{
+(3)\:\:\qquad\qquad
+(4)\:\:\qquad\qquad\qquad}\par}\bigskip
+
+%%
+\section{지수의 확장과 지수법칙}
+
+\[a^x\]
+
+와 같이 생긴 것을 \emph{거듭제곱}이라고 부른다.
+이때 \(a\)를 \emph{밑}, \(x\)를 \emph{지수}라고 부른다.
+이러한 지수에 대해 다음 법칙이 항상 성립한다.
+
+%
+\begin{mdframed}
+\theo{지수법칙}
+다음이 성립한다.
+\begin{enumerate}
+\item
+\(a^x\times a^y=a^{x+y}\)
+\item
+\(a^x\div a^y=a^{x-y}\)
+\item
+\((a^x)^y=a^{xy}\)
+\item
+\((ab)^x=a^xb^y\)
+\item
+\(\left(\frac ab\right)^x=\frac{a^x}{b^x}\)
+\end{enumerate}
+\end{mdframed}
+
+%지금까지는 지수가 자연수였다.
+%\(x\)에 \(0\)이나 음의 정수, 유리수나 무리수를 넣을 수는 없었다.
+%이 단원에서는 지수의 범위를 자연수, 정수, 유리수, 실수 순으로 확장해나간다.
+
+%%
+\subsection{정수 지수}
+
+%
+\exam{}\label{infer}
+다음 나열된 수를 보고 빈칸에 들어갈 수를 유추해보자.
+\begin{align*}
+2^4		&=16,\\
+2^3		&=8,\\
+2^2		&=4,\\
+2^1		&=2,\\
+2^0		&=\fbox{?}\\
+2^{-1}	&=\fbox{?}\\
+2^{-2}	&=\fbox{?}
+\end{align*}
+\(16\), \(8\), \(4\), \(2\)는 공비가 \(\frac12\)인 등비수열을 이루고 있으므로 그 다음에 나올 수는 차례로 \(1\), \(\frac12\), \(\frac14\)가 되면 자연스러울 것임을 알 수 있다.
+\[2^0=1,\quad2^{-1}=\frac12,\quad2^{-2}=\frac14\]
+
+%
+\begin{mdframed}
+\defi{정수인 지수}
+\(a\neq0\)이고 \(n\)이 자연수이면
+\begin{enumerate}
+\item
+\(a^0=1\)
+\item
+\(a^{-n}=\frac1{a^n}\)
+\end{enumerate}
+\end{mdframed}
+
+%
+\exam{}
+\begin{enumerate}
+\item
+\(2^0=1\)
+\item
+\((-3)^0=1\)
+\item
+\(2^{-3}=\frac1{2^3}=\frac18\)
+\end{enumerate}
+
+%
+\prob{}
+다음 값을 구하여라.
+\par\noindent
+(1)\:\:\((\sqrt3)^2\)
+\tabto{.25\textwidth}
+(2)\:\:\(\left(\frac23\right)^0\)
+\tabto{.5\textwidth}
+(3)\:\:\((-2)^{-3}\)
+\tabto{.75\textwidth}
+(4)\:\:\(\left(\frac12\right)^{-1}\)
+\procedure{0.4}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\qquad\qquad
+(2)\:\:\qquad\qquad
+(3)\:\:\qquad\qquad
+(4)\:\:\qquad\qquad\qquad}\par}\bigskip
+
+%
+\exam{}
+\begin{enumerate}
+\item
+\(3^{-3}\div3^{-2}\times 9^2=3^{(-3)-(-2)}\times (3^2)^2=3^{-1}\times3^4=3^{-1+4}=3^3\)
+\item
+\((25^4\times125^{-3})^{-2}=\left((5^2)^4\times(5^3)^{-3}\right)^{-2}=(5^8\times5^{-9})^{-2}
+=(5^{-1})^{-2}=5^2=25\)
+\end{enumerate}
+
+%
+\prob{}
+다음을 간단히 하여라
+\par\noindent
+(1)\:\:\(2^4\times4^{-1}\div6^2\)
+\tabto{.5\textwidth}
+(2)\:\:\((3^3\times9^{-2})^{-1}\)
+\procedure{0.4}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\qquad\qquad
+(2)\:\:\qquad\qquad\qquad}\par}
+
+
+%%
+%\prob{}
+%다음 식을 전개하여라.
+%\par\noindent
+%(1)\:\:\((a+a^{-1})^2\)
+%\tabto{.5\textwidth}
+%(2)\:\:\((a+a^{-1})^3\)
+%\procedure{0.4}
+%{\par\raggedleft\textbf{답 :
+%(1)\:\:\((a+a^{-1})^2=\)\qquad\qquad
+%(2)\:\:\((a+a^{-1})^3=\)\qquad\qquad\qquad}\par}
+
+%%
+\subsection{유리수 지수}
+
+%
+\exam{}
+예시 \ref{infer}\과 같은 추론을 다시 해보자.
+\begin{align*}
+2^2		&=4,\\
+2^{1.5}	&=\fbox{?},\\
+2^1		&=2,\\
+2^{0.5}	&=\fbox{?},\\
+2^0		&=1
+\end{align*}
+
+\(2^0\), \(2^1\), \(2^2\)가 등비수열을 이루므로\(2^0\), \(2^0.5\), \(2^1\), \(2^{1.5}\), \(2^2\)도 등비수열을 이루어야 자연스러울 것이다.
+\(2^{0,5}\)는 \(2^0=1\)\과 \(2^1=2\)의 등비중항이므로 \(2^{0.5}=\sqrt{1\times 2}=\sqrt2\).
+\(0.5=\frac12\)이므로
+\[2^{\frac12}=\sqrt2\]
+이다.
+마찬가지로
+\[2^{\frac13}=\sqrt[3]2,\quad 2^{\frac14}=\sqrt[4]2,\quad\cdots\]
+등이다.
+
+%
+\begin{mdframed}
+\defi{유리수인 지수}
+\(a>0\)이고 \(m\)은 정수, \(n\)은 \(2\)이상의 정수일 때,
+\begin{enumerate}
+\item
+\(a^{\frac1n}=\sqrt[n]a\)
+\item
+\(a^{\frac mn}=\sqrt[n]{a^m}\)
+\end{enumerate}
+\end{mdframed}
+
+%
+\prob{}
+다음을 근호를 사용하여 나타내어라.
+\par\noindent
+(1)\:\:\(2^{\frac34}\)
+\tabto{.25\textwidth}
+(2)\:\:\(3^{0.5}\)
+\tabto{.5\textwidth}
+(3)\:\:\(5^{-\frac32}\)
+\tabto{.75\textwidth}
+(4)\:\:\(7^{-1.2}\)
+\procedure{0.33}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\qquad\qquad
+(2)\:\:\qquad\qquad
+(3)\:\:\qquad\qquad
+(4)\:\:\qquad\qquad\qquad}\par}\bigskip
+
+%
+\prob{}
+다음을 \(a^{\frac mn}\)의 꼴로 나타내어라.
+\par\noindent
+(1)\:\:\(\sqrt[3]{2^4}\)
+\tabto{.25\textwidth}
+(2)\:\:\(\sqrt{3^4}\)
+\tabto{.5\textwidth}
+(3)\:\:\(\sqrt[4]{5^{-3}}\)
+\tabto{.75\textwidth}
+(4)\:\:\(\frac1{\sqrt[5]{7^3}}\)
+\procedure{0.33}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\qquad\qquad
+(2)\:\:\qquad\qquad
+(3)\:\:\qquad\qquad
+(4)\:\:\qquad\qquad\qquad}\par}\bigskip
+
+%
+\prob{}
+다음을 간단히 하여라.
+\par\noindent
+(1)\:\:\(\sqrt[3]{2^4}\times2^{\frac23}\)
+\tabto{.5\textwidth}
+(2)\:\:\((\sqrt[3]3)^2\div3^{-\frac13}\)
+\par\noindent
+(3)\:\:\(12^{\frac13}\times\sqrt[3]9\times4^{-\frac13}\)
+\tabto{.5\textwidth}
+(4)\:\:\(\sqrt[3]2\div4^{\frac13}\times8^{\frac19}\)
+\procedure{0.2}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\qquad\qquad
+(2)\:\:\qquad\qquad
+(3)\:\:\qquad\qquad
+(4)\:\:\qquad\qquad\qquad}\par}\bigskip
+
+\vspace{-20pt}
+%
+\exam{}
+\(\sqrt[4]{a^3b}\times\sqrt{ab}\div\sqrt[4]{ab^3}\)을 간단히 하여라.
+(단, \(a>0\), \(b>0\))
+\begin{mdframed}
+\begin{align*}
+\sqrt[4]{a^3b}\times\sqrt{ab}\div\sqrt[4]{ab^3}
+&=(a^3b)^{\frac14}\times(ab)^{\frac12}\div(ab^3)^{\frac14}\\
+&=\left(a^{\frac34}b^{\frac14}\right)\times\left(a^{\frac12}b^{\frac12}\right)
+\div\left(a^{\frac14}b^{\frac34}\right)\\
+&=a^{\frac34+\frac12-\frac14}b^{\frac14+\frac12-\frac34}\\
+&=a^1b^0\\
+&=a
+\end{align*}
+\end{mdframed}
+{\par\raggedleft\textbf{답 : \(a\)}\par}\bigskip
+
+\vspace{-20pt}
+%
+\prob{}
+다음을 간단히 하여라.
+(단, \(a>0\))
+\par\noindent
+(1)\:\:\(a^{\frac12}\div\left(a^{-\frac12}\right)^4\)
+\tabto{.5\textwidth}
+(2)\:\:\(\sqrt{\sqrt[6]{a}\times\sqrt{a^5}}\)
+\par\noindent
+(3)\:\:\(\left(a^{\frac12}+a^{-\frac12}\right)\left(a^{\frac12}-a^{-\frac12}\right)\)
+\tabto{.5\textwidth}
+(4)\:\:\(\left(a^{\frac13}+a^{-\frac13}\right)
+\left(a^{\frac23}-a^{\frac13}a^{-\frac13}+a^{\frac23}\right)\)
+\procedure{0.23}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\qquad\qquad
+(2)\:\:\qquad\qquad
+(3)\:\:\qquad\qquad
+(4)\:\:\qquad\qquad\qquad}\par}\bigskip
+
+%%
+\subsection{실수인 지수}
+\vspace{-30pt}
+%
+\exam{}
+지수의 범위를 실수까지 확장시켜보자.
+
+예를 들어 \(3^{\sqrt2}\)에 대하여 알아보자.
+무리수 \(\sqrt2\)는 \(\sqrt2=1.414213\cdots\)이므로 \(\sqrt2\)에 가까워지는 유리수
+\[1,\quad1.4\quad1.41,\quad1.414,\quad1.4142,\quad1.41421,\quad\cdots\]
+을 지수로 하는 수들은 일정한 수에 가까워진다는 사실이 알려져있다.
+\begin{align*}
+3^1			&=3				\\
+3^{1.4}		&=4.65553\cdots	\\
+3^{1.41}		&=4.70696\cdots	\\
+3^{1.414}		&=4.72769\cdots	\\
+3^{1.4142}		&=4.72873\cdots	\\
+3^{1.41421}	&=4.72878\cdots	\\
+3^{1.414213}	&=4.72880\cdots
+\end{align*}
+이 일정한 수를 \(3^{\sqrt2}\)로 정한다.
+
+이러한 방식으로 무리수 \(x\)에 대해 \(3^x\)를 정할 수 있다.
+
+%
+\exam{}
+\begin{enumerate}
+\item
+\(2^{\sqrt2}\times2^{-\sqrt2}=2^{\sqrt2-\sqrt2}=2^0=1\)
+\item
+\(\left(2^{\sqrt8}\div2^{\sqrt2}\right)^{\sqrt2}=\left(2^{2\sqrt2-\sqrt2}\right)^{\sqrt2}
+=(2^{\sqrt2})^{\sqrt2}=2^2=4\)
+\end{enumerate}
+
+%
+\prob{}
+다음을 간단히 하여라.
+\par\noindent
+(1)\:\:\(2^{\sqrt2}\times4^{\sqrt2}\)
+\tabto{.5\textwidth}
+(2)\:\:\(\left(\sqrt2\right)^{3\sqrt2}\div2^{\sqrt2}\)
+\par\noindent
+(3)\:\:\(\left(3^{\sqrt2+1}\right)^{\sqrt2-1}\)
+\tabto{.5\textwidth}
+(4)\:\:\(\left(2^{\sqrt2}\div3^{\sqrt6}\right)^{\sqrt2}\times9^{\sqrt3}\)
+{\par\raggedleft\textbf{답 :
+(1)\:\:\qquad\qquad
+(2)\:\:\qquad\qquad
+(3)\:\:\qquad\qquad
+(4)\:\:\qquad\qquad\qquad}\par}\bigskip
+
+
+%%
+\section*{답}
+
+\begin{minipage}{0.33\textwidth}
+%
+\an{1}
+\(a^3+b^3\)
+
+%
+\an{2}
+(1) \((a-b)(a^2+ab+b^2)\)\\
+(2) \((x-3)(x^2+3x+9)\)\\
+(3) \((x+1)(x-1)\)\\
+(4) \((x+2)(x-2)(x^2+4)\)
+
+%
+\an{3}
+(1) \(x=-1\), \(2\)\\
+(2) \(x=\frac{1\pm\sqrt5}2\)\\
+(3) \(x=\frac{1\pm\sqrt7i}2\)\\
+(4) \(x=2\), \(-2\)\\
+(5) \(x=0\)\\
+(6) \(x=2i\), \(-2i\)
+
+%
+\an{6}
+(1) \(2\), \(-2\)\\
+(2) \(2\sqrt2\), \(-2\sqrt2\)\\
+(3) \(0\)\\
+(4) \(2i\), \(-2i\)\\
+
+%
+\an{8}
+(1) \(-2,1\pm\sqrt3i\)\\
+(2) \(3,\frac{-3\pm3\sqrt3i}2\)\\
+(3) \(-1,\frac{1\pm\sqrt3i}2\)
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+
+%
+\an{10}
+(1) \(\pm2\),\(\pm2i\)\\
+(2) \(\pm1\), \(\pm i\)
+
+%
+\an{14}
+(1) \(2\)\\
+(2) \(0.2\)\\
+(3) \(-2\)\\
+(4) \(-0.1\)
+
+%
+\an{19}
+(1) \(3\)\\
+(2) \(1\)\\
+(3) \(-\frac18\)\\
+(4) \(2\)
+
+%
+\an{21}
+(1) \(\frac19\)\\
+(2) \(3\)
+
+%
+\an{24}
+(1) \(\sqrt[4]{2^3}\)\\
+(2) \(\sqrt{3}\)\\
+(3) \(\frac1{\sqrt{5^3}}\)\\
+(4) \(\frac1{\sqrt[5]{7^6}}\)
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+
+%
+\an{25}
+(1) \(2^{\frac43}\)\\
+(2) \(3^2\)\\
+(3) \(5^{-\frac34}\)\\
+(4) \(7^{-\frac35}\)
+
+%
+\an{26}
+(1) \(4\)\\
+(2) \(3\)\\
+(3) \(3\)\\
+(4) \(1\)
+
+%
+\an{28}
+(1) \(a^{\frac52}\)\\
+(2) \(a^{\frac43}\)\\
+(3) \(a-a^{-1}\)\\
+(4) \(a+a^{-1}\)
+
+%
+\an{31}
+(1) \(2^{3\sqrt2}\)\\
+(2) \(2^{\frac{\sqrt2}2}\)\\
+(3) \(3\)\\
+(4) \(4\)
+\end{minipage}
+
+
+\end{document}

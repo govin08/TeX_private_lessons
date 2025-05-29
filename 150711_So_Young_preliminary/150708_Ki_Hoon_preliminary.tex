@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,mdframed,kotex,paralist}
+\usepackage{tabto}
+%\TabPositions{0.5\textwidth}
+\TabPositions{0.33\textwidth,0.66\textwidth}
+\newcommand\bp[1]{\begin{mdframed}[frametitle={#1},skipabove=10pt,skipbelow=20pt,innertopmargin=5pt,innerbottommargin=40pt]}
+\newcommand\ep{\end{mdframed}\par}
+\newcommand\ov[1]{\ensuremath{\overline{#1}}}
+\newcommand{\vs}{\vspace{0.05\textheight}}
+\newcommand{\vvs}{\vspace{0.1\textheight}}
+\newcommand{\vvvs}{\vspace{0.15\textheight}}
+
+\begin{document}
+\title{소영00 : 수1, 수2, 미적1 문제들}
+\author{}
+\date{\today}
+\maketitle
+
+\section{수학 1}
+\bp{01}
+이차방정식 \(x^2+px+q=0\)의 두 근을 \(\alpha\), \(\beta\)라고 할 때, \(|\alpha-\beta|=2\), \(\alpha^2+\beta^2=34\)을 만족시키는 상수 \(p\), \(q\)에 대하여 \(p^2+q^2\)의 값을 구하면?
+\vvs\ep
+
+\bp{02}
+\(x\)에 관한 이차방정식 \(x^2-2(a+k)x+k^2-4k+2b=0\)이 실수 \(k\)의 값에 관계없이 항상 중근을 가질 때, 살수 \(a\)와 \(b\)의 합을 구하면?
+\vvs\ep
+
+\bp{03}
+다음 함수의 그래프를 그리시오.\par
+(1) \(y=|x^2-2x-3|\).\par
+(2) \(|x|+2|y|=1\).\par
+\vvs\ep
+
+\bp{04}
+점 \((0,2)\)를 지나고, 원 \(x^2+y^2=1\)에 접하는 직선의 방정식을 구하여라.
+\vvs\ep
+
+\bp{05}
+두 직선 \(2x-y-1=0\), \(x+2y-1=0\)으로부터 같은 거리에 있는 점들의 자취의 방정식을 구하여라.
+\vvs\ep
+
+\bp{06}
+다음 식을 만족하는 실수 \(x\), \(y\)의 값을 구하여라.
+\[\frac{x}{1+i}+\frac{y}{1-i}=\frac{5}{2+i}\]
+\vvs\ep
+
+\bp{07}
+다음 부등식을 풀어라\par
+(1) \(|x+1|+|x-2|<5\)\par
+(2) \(2[x]^2-9[x]+4<0\) (단 \([x]\)는 \(x\)를 넘지 않는 최대의 정수)
+\vvs\ep
+
+\section{수학 2}
+
+\bp{08}
+\(\sqrt{2}\)가 무리수임을 증명하여라.
+\vs\ep
+
+\bp{09}
+\(a>0\), \(b>0\)일 때, \(\left(a+\frac1b\right)\left(b+\frac4a\right)\)의 최솟값을 구하여라.
+\vvs\ep
+
+\bp{10}
+\(3x+4y=5\)일 때, \(x^2+y^2\)의 최솟값을 구하여라.
+\vs\ep
+
+\bp{11}
+실수 전체의 집합에서 정의된 함수
+\[
+f(x)=\begin{cases}
+(x-1)^2+3	&(x\ge1)\\
+ax+b 		&(x<1)
+\end{cases}
+\]
+가 일대일 대응일 때, 상수 \(b\)의 범위를 구하여라.
+\vvs\ep
+
+\bp{12}
+두 함수 \(f(x)=3x-1\), \(g(x)=-2x+4\)에 대하여 \((g\circ f)^{-1}(2)\)의 값을 구하여라.
+\vvs\ep
+
+\bp{13}
+\[\frac{2b+c}{3a}=\frac{c+3a}{2b}=\frac{3a+2b}{c}=k\]
+일 때, \(k\)의 값을 구하여라.
+(단 \(k\neq0\))
+\vvs\ep
+
+\bp{14}
+무리함수 \(y=\sqrt{4-2x}\)의 그래프와 직선 \(y=-x+k\)가 서로 접할 때, \(k\)의 값을 구하시오.
+\vvs\ep
+
+\bp{15}
+\(S_n=2n^2+4n\)일 때, \(a_n\)을 구하시오.
+\vs\ep
+
+\bp{16}
+\(a_{n+1}=2a_n-3\)이고 \(a_1=5\)일 때, \(\displaystyle\sum_{k=1}^{20}a_k\)의 값을 구하시오.
+\vs\ep
+
+\section{미분과 적분 1}
+
+\bp{17}
+반지름의 길이가 \(1\)인 원에 내접하는 정삼각형을 \(A_1\)이라고 하고, \(A_1\)의 내접원에 내접하는 정삼각형을 \(A_2\)라고 하자.
+이와 같이 정삼각형 \(A_n\)의 내접원에 내접하는 정삼각형을 \(A_{n+1}\)(\(n=1,2,3,\cdots\)), \(A_n\)의 넓이를 \(a_n\)이라고 할 때, \(\displaystyle\sum_{n=1}^{\infty}a_n\)의 값을 구하여라.
+\vvs\ep
+
+\bp{18}
+정적분을 이용하여 다음 극한값을 구하여라.
+\[
+\lim_{n\to\infty}\sum_{k=1}^n\left(1+\frac2nk\right)^3\cdot\frac1n
+\]
+\vvs\ep
+
+\bp{19}
+(1) \(f(x)=(2x+1)^4\)일 때, \(f'(-1)\)을 구하시오.
+
+\noindent
+(2) \(f(x)=x^3-6x^2+5\)이고 \(0\le x\le 6\)일 때 \(f(x)\)의 최댓값을 구하시오.
+\vvs\ep
+
+\bp{20}
+다음 함수의 그래프를 그리시오.\par
+(1) \(y=x^3-3x+6\).\par
+(2) \(y=x^4-6x^2-8x+10\)
+\vvs\ep
+
+\bp{21}
+\(x\neq-1\)일 때,
+\[f(x)=\lim_{n\to\infty}\frac{x^{n+1}-1}{x^n+1}\]
+이고 \(f(-1)=-1\)일 때, 다음 물음에 답하시오.\\
+(1) 이 함수의 그래프를 그리시오.\\
+(2) 불연속점의 개수를 구하시오.\\
+(3) 미분불가능한 지점의 개수를 구하시오.
+\vvvs\ep
+
+\bp{22}
+(1)
+\(y=x^2\)에 접하고 \((-1,-3)\)을 지나는 두 접선을 구하시오.\\
+(2)
+(1)에서 구한 두 접선과, 원래의 곡선이 만드는 영역의 넓이를 구하시오.
+\vvvs\ep
+\end{document}

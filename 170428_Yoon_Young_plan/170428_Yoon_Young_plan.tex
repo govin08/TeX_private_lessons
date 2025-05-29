@@ -1,0 +1,28 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,tabu}
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+\usepackage{multirow}
+
+\begin{document}
+
+{\small \begin{center}
+\tabulinesep=0.5mm
+
+% DEMO from page 12/101 section 2.3 of tabu documentation
+%\begin{tabu}{|X|X|X[2]|} \tabucline-
+%   a & b & c \\ \tabucline-
+%   \multicolumn2{|c|}{Hello} & World \\ \tabucline-
+%   \tabuphantomline
+%\end{tabu}
+
+
+\begin{tabu} to \textwidth { | X[0.1,l,p] | X[0.8,l,p] |  X[0.5,l,p] | X[0.8,l,p] | X[0.8,l,p] |  X[0.8,l,p] | }\hline
+\textbf{회차} & \textbf{과목}  & \textbf{교재} & \textbf{단원} & \textbf{세부}&\textbf{문제수}     \\ \hline
+1	& \multirow{3}{*}{수학 1}  & \multirow{3}{*}{쎈} & \multirow{2}{*}{07 부등식} & B단계 유형 1-10&42  \\\cline{1-1} \cline{5-6}
+2	& & & & C단계 & 12  \\\cline{1-1}\cline{4-6}
+3	& & &\multirow2*{08 이차부등식}& B단계 유형 1-23&\\\cline{1-1}\cline{5-6}
+4	& & &	& C단계\\
+  \tabuphantomline
+\end{tabu}
+\end{center}
+\end{document}

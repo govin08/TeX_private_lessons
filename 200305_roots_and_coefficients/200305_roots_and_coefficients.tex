@@ -1,0 +1,146 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,multicol}
+
+\usepackage[skipabove=10pt,innertopmargin=10pt,nobreak=true]{mdframed}
+
+\newcounter{num}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num})} #1\par\noindent}
+\newcommand{\proo}
+{\bigskip\noindent\textsf{증명)}}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\renewcommand{\arraystretch}{1.5}
+
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textheight}\end{mdframed}}
+
+\title{이차방정식의 근과 계수와의 관계}
+\date{\today}
+\author{}
+
+\begin{document}
+\maketitle
+
+%%
+\section{이차방정식의 근과 계수와의 관계}
+%
+\prob{이차방정식 \(x^2-6x+5=0\)에 대하여 다음 물음에 답하여라.}
+\begin{enumerate}[(1)]
+\item
+이차방정식의 두 근을 구하여라.
+\item
+두 근의 합을 구하여라.
+\item
+두 근의 곱을 구하여라.
+\item
+\(a=1\), \(b=-6\), \(c=5\)라고 두었을 때, \(-\frac ba\)와 \(\frac ca\)의 값을 구하여라.
+\end{enumerate}
+
+%
+\prob{이차방정식 \(2x^2+5x+2=0\)에 대하여 다음 물음에 답하여라.}
+\begin{enumerate}[(1)]
+\item
+이차방정식의 두 근을 구하여라.
+\item
+두 근의 합을 구하여라.
+\item
+두 근의 곱을 구하여라.
+\item
+\(a=2\), \(b=5\), \(c=2\)라고 두었을 때, \(-\frac ba\)와 \(\frac ca\)의 값을 구하여라.
+\end{enumerate}
+
+\begin{mdframed}
+%
+\theo{이차방정식의 근과 계수와의 관계}
+이차방정식 \(ax^2+bx+c=0\) (\(a\neq0\))의 두 근을 \(\alpha\), \(\beta\)라고 할 때 다음 식이 성립한다.
+\[\alpha+\beta= -\frac ba,\qquad\alpha\beta=\frac ca.\]
+\end{mdframed}
+
+%%
+\section{증명}
+이차방정식 \(ax^2+bx+c=0\) (\(a\neq0\))의 근의 공식은
+\[x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\]
+이다.
+두 근 \(\alpha\), \(\beta\)를
+\[
+\alpha=\frac{-b+\sqrt{b^2-4ac}}{2a}
+\beta=\frac{-b-\sqrt{b^2-4ac}}{2a}
+\]
+로 둘 수 있다.
+그러면
+\begin{align*}
+\alpha+\beta
+&=\frac{-b+\sqrt{b^2-4ac}}{2a}+\frac{-b-\sqrt{b^2-4ac}}{2a}\\
+&=\frac{\pb{-b+\sqrt{b^2-4ac}-b-\sqrt{b^2-4ac}}}{2a}\\
+&=\frac{-2b}{2a}\\
+&=-\frac ba
+\end{align*}
+이다.
+또한, 합차공식 [\((X+Y)(X-Y)=X^2-Y^2\)]을 활용하면
+\begin{align*}
+\alpha\beta
+&=\frac{-b+\sqrt{b^2-4ac}}{2a}\times\frac{-b-\sqrt{b^2-4ac}}{2a}\\
+&=\frac{(-b+\sqrt{b^2-4ac})(-b-\sqrt{b^2-4ac})}{4a^2}\\
+&=\frac{\pb{(-b)}^2-\pb{(\sqrt{b^2-4ac})}^2}{4a^2}\\
+&=\frac{b^2-(b^2-4ac)}{4a^2}\\
+&=\frac{4ac}{4a^2}\\
+&=\frac ca
+\end{align*}
+을 얻는다.\footnote{이 증명을 세 번 정도 공책에 써보세요!}
+
+\newpage
+\begin{multicols}{2}
+%%
+\section*{답}
+\setcounter{num}0
+
+%
+\prob{}
+\begin{enumerate}[(1)]
+\item
+\(x=1\), \(x=5\)
+\item
+\(6\)
+\item
+\(5\)
+\item
+\(-\frac ba=6\), \(\frac ca=5\)
+\end{enumerate}
+
+%
+\prob{}
+\begin{enumerate}[(1)]
+\item
+\(x=-\frac12\), \(x=-2\)
+\item
+\(-\frac52\)
+\item
+\(1\)
+\item
+\(-\frac ba=-\frac52\), \(\frac ca=1\)
+\end{enumerate}
+\end{multicols}
+\begin{align*}
+\alpha+\beta
+&=\frac{-b+\sqrt{b^2-4ac}}{2a}+\frac{-b-\sqrt{b^2-4ac}}{2a}\\
+&=\frac{\fbox{$-b+\sqrt{b^2-4ac}-b-\sqrt{b^2-4ac}$}}{2a}\\
+&=\frac{-2b}{2a}\\
+&=-\frac ba
+\end{align*}
+이다.
+또한, 합차공식 [\((X+Y)(X-Y)=X^2-Y^2\)]을 활용하면
+\begin{align*}
+\alpha\beta
+&=\frac{-b+\sqrt{b^2-4ac}}{2a}\times\frac{-b-\sqrt{b^2-4ac}}{2a}\\
+&=\frac{(-b+\sqrt{b^2-4ac})(-b-\sqrt{b^2-4ac})}{4a^2}\\
+&=\frac{\fbox{$(-b)^2$}-\fbox{$\sqrt{b^2-4ac}^2$}}{4a^2}\\
+&=\frac{b^2-(b^2-4ac)}{4a^2}\\
+&=\frac{4ac}{4a^2}\\
+&=\frac ca
+\end{align*}
+
+\end{document}

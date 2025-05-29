@@ -1,0 +1,578 @@
+\documentclass[t,8pt]{beamer}
+%\usetheme{boxes}
+%\usecolortheme{default}
+
+%%% packages
+\geometry{paperwidth=140mm,paperheight=105mm}
+\usefonttheme[onlymath]{serif}
+
+\usepackage{kotex,amsmath,tabto,setspace}
+
+\usepackage{xcolor}
+
+%%% counters, commands, environments
+\newcounter{num}
+\resetcounteronoverlays{num}
+
+\newenvironment{defi}[1]{\refstepcounter{num}\begin{block}{정의 \arabic{num}#1}}{\end{block}}
+\newenvironment{theo}[1]{\refstepcounter{num}\begin{block}{정리 \arabic{num}#1}}{\end{block}}
+\newenvironment{prob}[1]{\refstepcounter{num}\begin{block}{문제 \arabic{num}#1}}{\end{block}}
+\newenvironment{exam}[1]{\refstepcounter{num}\begin{block}{예시 \arabic{num}#1}}{\end{block}}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+\newcommand{\rb}[2]%\Red+fBox
+{\fbox{\uncover<#1>{\red{\ensuremath{#2}}}}}
+\renewcommand{\arraystretch}{1.5}
+\newcommand{\red}[1]{\color{red}{#1}}
+\newcommand{\ivs}{\centering\strut\vspace*{-\baselineskip}\newline}%image vertical setting
+
+%%% title
+\title{수열}
+\institute[ibedu]{아이비에듀}
+\date{\today}
+
+%%% toc
+\AtBeginSection[]
+{\begin{frame}
+    \frametitle{목차}
+    \tableofcontents[currentsection]
+  \end{frame}}
+
+
+\begin{document}
+%%
+\frame{\titlepage}
+
+%%%%
+\section{등차수열과 등비수열}
+
+%%%
+\subsection{수열의 뜻}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{minipage}[t]{.5\textwidth}
+\begin{prob}{) 빈칸에 알맞은 숫자를 넣어라.}\par\:
+\begin{enumerate}[(1)]
+\setlength{\itemsep}{25pt}
+\item<1-5>
+3, 5, 7, 9, \rb{2-}{11}, \rb{2-}{13}, \(\cdots\)
+\item<1-3,6-9>
+5, 10, 15, 20, \rb{2-}{25}, \rb{2-}{30}, \(\cdots\)
+\item<1-3,10-13>
+2, 4, 8, 16, \rb{2-}{32}, \rb{2-}{64}, \(\cdots\)
+\item<1-3>
+2, 6, 18, 54, \rb{2-}{162}, \rb{2-}{486}, \(\cdots\)
+\item<1-3,14-17>
+1, 4, 9, 16, \rb{2-}{25}, \rb{2-}{36}, \(\cdots\)
+\item<1-3,18-21>
+\(1\), \(\frac12\), \(\frac13\), \(\frac14\), \rb{2-}{\frac15}, \rb{2-}{\frac16}, \(\cdots\)
+\end{enumerate}
+\end{prob}
+\end{minipage}
+\begin{minipage}[t]{.45\textwidth}
+\uncover<3->{
+%
+\begin{defi}{) 수열}
+숫자들의 나열을 \alert{수열}이라고 한다.
+그리고 수열의 각 숫자들을 \alert{항}이라고 한다.
+\end{defi}}
+
+\uncover<4-5>{
+%
+\begin{exam}{) }
+첫째항은 3이고 둘째항은 5이다.\\
+이것을 \(a_1=3\), \(a_2=5\) 등으로 표시한다.
+따라서 \(a_3=\rb{5}{7}\), \(a_4=\rb{5}{9}\) 등이다.
+\end{exam}}
+
+\uncover<6->{
+%
+\begin{prob}{) }
+\end{prob}}
+\uncover<6-9>{
+\(a_1=\rb{7-9}{5}\), \(a_2=\rb{7-9}{10}\), \(a_3=\rb{7-9}{15}\), \(a_4=\rb{7-9}{20}\).}
+\uncover<8-9>{
+따라서, 자연수 \(n\)에 대하여 \(a_n=\rb{9}{5n}\) 이다.}
+
+\vspace{-25pt}
+\uncover<10-13>{
+\(a_1=\rb{11-13}{2}\), \(a_2=\rb{11-13}{4}\), \(a_3=\rb{11-13}{8}\), \(a_4=\rb{11-13}{16}\).}
+\uncover<12-13>{
+따라서, 자연수 \(n\)에 대하여 \(a_n=\rb{13}{2^n}\) 이다.}
+
+\vspace{-25pt}
+\uncover<14-17>{
+\(a_1=\rb{15-17}{1}\), \(a_2=\rb{15-17}{4}\), \(a_3=\rb{15-17}{9}\), \(a_4=\rb{15-17}{16}\).}
+\uncover<16-17>{
+따라서, 자연수 \(n\)에 대하여 \(a_n=\rb{17}{n^2}\) 이다.}
+
+\vspace{-25pt}
+\uncover<18-21>{
+\(a_1=\rb{19-21}{1}\), \(a_2=\rb{19-21}{\frac12}\), \(a_3=\rb{19-21}{\frac13}\), \(a_4=\rb{19-21}{\frac14}\).}
+\uncover<20-21>{
+따라서, 자연수 \(n\)에 대하여 \(a_n=\rb{21}{\frac1n}\) 이다.}
+\end{minipage}
+
+\end{frame}
+
+%%%
+\subsection{등차수열}
+%%
+\begin{frame}[t]{\subsecname}
+\begin{minipage}[t]{.53\textwidth}
+%
+\begin{prob}{) 다음 수열의 일반항을 구하여라.}\:\par\vspace{-5pt}
+\begin{enumerate}[(1)]
+\setlength{\itemsep}{5pt}
+\item
+3, 5, 7, 9, 11, 13, 15, \(\cdots\)
+\item
+5, 10, 15, 20, 25, 30, 35, \(\cdots\)
+\end{enumerate}
+\end{prob}
+\end{minipage}
+\pause
+\begin{minipage}[t]{.45\textwidth}
+\vspace{18pt}
+\begin{enumerate}[(1)]
+\setlength{\itemsep}{5pt}
+\item
+\(\red{a_n=2n+1}\)
+\item
+\(\red{a_n=5n}\)
+\end{enumerate}
+\end{minipage}
+
+\pause\bigskip
+\begin{minipage}[t]{.53\textwidth}
+%
+\begin{theo}{) 등차수열의 일반항}\:\par\vspace{-5pt}
+첫항이 \(a\)이고 공차가 \(d\)인 수열 \(\{a_n\}\)의 일반항은\par\smallskip
+\(a_n=a+(n-1)d\)이다.
+\end{theo}
+\end{minipage}
+
+\pause\bigskip
+\begin{minipage}[t]{.53\textwidth}
+%
+\begin{prob}{) 다음 수열의 일반항을 구하여라.}\:\par\vspace{-5pt}
+\begin{enumerate}[(1)]
+\setcounter{enumi}{2}
+\setlength{\itemsep}{5pt}
+\item
+\(-2\), \(2\), \(6\), \(10\), \(14\), \(18\), \(22\), \(\cdots\)
+\item
+\(9\), \(7\), \(5\), \(3\), \(1\), \(-1\), \(-3\), \(-5\), \(\cdots\)
+\item
+\(1\), \(\frac32\), \(2\), \(\frac52\), \(3\), \(\frac72\), \(4\), \(\cdots\)
+\end{enumerate}
+\end{prob}
+\pause\bigskip
+\end{minipage}
+\pause
+\begin{minipage}[t]{.45\textwidth}
+\vspace{18pt}
+\begin{enumerate}[(1)]
+\setcounter{enumi}{2}
+\setlength{\itemsep}{5pt}
+\item
+\(\red{a_n=4n-6}\)
+\item
+\(\red{a_n=-2n+11}\)
+\item
+\(\red{a_n=\frac12n+\frac12}\)
+\end{enumerate}
+\end{minipage}
+
+\pause
+\begin{minipage}[t]{.53\textwidth}
+%
+\begin{theo}{) 등차중항}
+세 숫자 \(a\), \(b\), \(c\)가 차례대로 등차수열을 이룰 때, \(b\)를 \(a\)와 \(c\)의 \alert{등차중항}이라고 부른다.
+\[b=\frac{a+c}2\]
+\end{theo}
+\end{minipage}
+\end{frame}
+
+%%%
+\subsection{등차수열의 합}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{exam}{) \(3+5+7+9+\cdots+21\)을 계산하여라.}\:\par
+\begin{spacing}{1.3}
+\(a_1=3\), \(a_2=5\), \(a_3=7\), \(\cdots\)라고 하면, \(a=3\), \(d=2\)이다.
+따라서 \[a_n=3+(n-1)2=2n+1\]이다.
+\(2n+1=21\)로부터 \(n=10\).
+\(S=3+5+7+9+\cdots+21\)이라고 하면,
+\begin{align*}
+S&= 3+ 5 +\cdots+19+21\\
+S&=21+19+\cdots+ 5+ 3
+\end{align*}
+이다.
+두 식을 더하면
+\begin{align*}
+2S
+&=(3+21)+(5+19)+\cdots+(19+5)+(21+3)\\
+&=24+24+\cdots+24+24\\
+&=24\times 10\\
+&=240
+\end{align*}
+이다.
+따라서 \(S=120\)이다.
+\end{spacing}
+\end{exam}
+\end{frame}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{prob}{) \(5+10+15+20+\cdots+100\)을 계산하여라.}\:\par
+\begin{spacing}{1.3}
+\(a_1=\rb25\), \(a_2=\rb2{10}\), \(a_3=\rb2{15}\), \(\cdots\)라고 하면, \(a=\rb25\), \(d=\rb25\)이다.
+따라서 \[a_n=\rb2{5n}\]이다.
+\(a_n=100\)로부터 \(n=\rb2{20}\).
+\(S=5+10+15+20+\cdots+100\)이라고 하면,
+\begin{align*}
+S&= 5  +10+\cdots+95+100\\
+S&=100+95+\cdots+10+ 5
+\end{align*}
+이다.
+두 식을 더하면
+\begin{align*}
+2S=\rb2{2100}
+\end{align*}
+이다.
+따라서 \(S=\rb2{1050}\)이다.
+\end{spacing}
+\end{prob}
+\end{frame}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{theo}{) 등차수열의 합}
+첫항이 \(a\)이고 공차가 \(d\)인 수열의 \(n\)항까지의 합을 \(S\)라고 하면 (\(l=a_n\)),
+\[S=\frac{n\left[2a+(n-1)d\right]}2=\frac{n(a+l)}2\]
+\end{theo}
+%\begin{spacing}{1.3}
+%\(a_1=a\), \(a_2=a+d\), \(a_3=a+2d\), \(\cdots\), \(a_{n-1}=a+(n-2)d\), \(a_n=a+(n-1)d\)이므로,
+%\(S=a+(a+d)+(a+2d)+\cdots+a_{n-1}+a+(n-2)d+a_n+a+(n-1)d\)이다.
+%따라서
+%\begin{align*}
+%S&=a 		+&&a+d		+&&\cdots 	&&+a+(n-2)d 	+&&a+(n-1)d\\
+%S&=a+(n-1)d 	+&&a+(n-2)d	+&&\cdots 	&&+a+d 		+&&a
+%\end{align*}
+%이다.
+%두 식을 더하면
+%\begin{align*}
+%2S
+%&=(3+21)+(5+19)+\cdots+(19+5)+(21+3)\\
+%&=24+24+\cdots+24+24\\
+%&=24\times 10\\
+%&=240
+%\end{align*}
+%이다.
+%따라서 \(S=120\)이다.
+%\end{spacing}
+\pause
+%
+\begin{prob}{) 위의 공식을 활용하여 다음을 계산하여라.}\:\par
+\begin{enumerate}[(1)]\setlength{\itemsep}{25pt}
+\item
+\(3+5+7+\cdots+21\)
+\begin{itemize}\setlength{\itemsep}{10pt}
+\item
+\(a=\rb33\), \(d=\rb32\), \(n=\rb3{10}\), \(l=\rb3{21}\)
+\item
+\(S=\rb3{120}\)
+\end{itemize}
+\item
+\(5+10+15+\cdots+100\)
+\begin{itemize}\setlength{\itemsep}{10pt}
+\item
+\(a=\rb35\), \(d=\rb35\), \(n=\rb3{20}\), \(l=\rb3{100}\)
+\item
+\(S=\rb3{1050}\)
+\end{itemize}
+\end{enumerate}
+\end{prob}
+\end{frame}
+
+%%%
+\subsection{등비수열}
+%%
+\begin{frame}[t]{\subsecname}
+\begin{minipage}[t]{.53\textwidth}
+%
+\begin{prob}{) 다음 수열의 일반항을 구하여라.}\:\par\vspace{-5pt}
+\begin{enumerate}[(1)]
+\setlength{\itemsep}{5pt}
+\item
+2, 4, 8, 16, 32, 64, \(\cdots\)
+\item
+2, 6, 18, 54, 162, 486, \(\cdots\)
+\end{enumerate}
+\end{prob}
+\end{minipage}
+\pause
+\begin{minipage}[t]{.45\textwidth}
+\vspace{18pt}
+\begin{enumerate}[(1)]
+\setlength{\itemsep}{5pt}
+\item
+\(\red{a_n=2^n}\)
+\item
+\(\red{a_n=2\times3^{n-1}}\)
+\end{enumerate}
+\end{minipage}
+
+\pause\bigskip
+\begin{minipage}[t]{.53\textwidth}
+%
+\begin{theo}{) 등비수열의 일반항}\:\par\vspace{-5pt}
+첫항이 \(a\)이고 공비가 \(r\)인 수열 \(\{a_n\}\)의 일반항은\par\smallskip
+\(a_n=a\times r^{n-1}\)이다.
+\end{theo}
+\end{minipage}
+
+\pause\bigskip
+\begin{minipage}[t]{.53\textwidth}
+%
+\begin{prob}{) 다음 수열의 일반항을 구하여라.}\:\par\vspace{-5pt}
+\begin{enumerate}[(1)]
+\setcounter{enumi}{2}
+\setlength{\itemsep}{5pt}
+\item
+\(3\), \(6\). \(12\), \(24\), \(48\), \(\cdots\)
+\item
+\(2\), \(-2\), \(2\), \(-2\), \(2\), \(\cdots\)
+\item
+\(6\), \(3\), \(\frac32\), \(\frac34\), \(\frac38\), \(\cdots\)
+\end{enumerate}
+\end{prob}
+\pause\bigskip
+\end{minipage}
+\pause
+\begin{minipage}[t]{.45\textwidth}
+\vspace{18pt}
+\begin{enumerate}[(1)]
+\setcounter{enumi}{2}
+\setlength{\itemsep}{5pt}
+\item
+\(\red{a_n=3\times2^{n-1}}\)
+\item
+\(\red{a_n=2\times(-1)^{n-1}}\)
+\item
+\(\red{a_n=6\times\left(\frac12\right)^{n-1}}\)
+\end{enumerate}
+\end{minipage}
+
+\pause
+\begin{minipage}[t]{.53\textwidth}
+%
+\begin{theo}{) 등비중항}
+세 숫자 \(a\), \(b\), \(c\)가 차례대로 등비수열을 이룰 때, \(b\)를 \(a\)와 \(c\)의 \alert{등비중항}이라고 부른다.
+\[b=\sqrt{ac}\]
+\end{theo}
+\end{minipage}
+\end{frame}
+
+%%%
+\subsection{등비수열의 합}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{exam}{) \(2+6+18+54+\cdots+486\)을 계산하여라.}\:\par
+\begin{spacing}{1.3}
+\(a_1=2\), \(a_2=6\), \(a_3=18\), \(\cdots\)라고 하면, \(a=2\), \(r=3\)이다.
+따라서 \[a_n=2\times3^{n-1}\]이다.
+\(2\times3^{n-1}=486\)로부터 \(3^{n-1}=243\)이고, 따라서 \(n=6\) 이다.
+\(S=2+6+18+54+\cdots+486\)이라고 하면,
+\begin{align*}
+S 	&= 2+ 6 +\cdots+486\\
+3S 	&=\phantom{2+\;\;} 6+\cdots +486+1458
+\end{align*}
+이다.
+두 식을 빼면
+\begin{align*}
+2S
+&=1458-2\\
+&=1456
+\end{align*}
+이다.
+따라서 \(S=728\)이다.
+\end{spacing}
+\end{exam}
+\end{frame}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{prob}{) \(3+6+12+24+\cdots+384\)을 계산하여라.}\:\par
+\begin{spacing}{1.3}
+\(a_1=\rb23\), \(a_2=\rb26\), \(a_3=\rb2{12}\), \(\cdots\)라고 하면, \(a=\rb23\), \(r=\rb22\)이다.
+따라서 \[a_n=\rb2{3\times2^{n-1}}\]이다.
+\(a_n=384\)로부터 \(n=\rb2{8}\).
+\(S=3+6+12+24+\cdots+384\)이라고 하면,
+\begin{align*}
+S 		&= 3  +			6+\cdots+384\\
+\rb22S 	&=\phantom{3+\;}	6+\cdots+384+768
+\end{align*}
+이다.
+두 식을 빼면
+\begin{align*}
+S=\rb2{765}
+\end{align*}
+이다.
+\end{spacing}
+\end{prob}
+\end{frame}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{theo}{) 등비수열의 합}
+첫항이 \(a\)이고 공비가 \(r\)인 수열의 \(n\)항까지의 합을 \(S\)라고 하면(\(r\neq1\)),
+\[S=\frac{a(r^n-1)}{r-1}=\frac{a(1-r^n)}{1-r}\]
+\end{theo}
+\pause
+%
+\begin{prob}{) 위의 공식을 활용하여 다음을 계산하여라.}\:\par
+\begin{enumerate}[(1)]\setlength{\itemsep}{25pt}
+\item
+\(2+4+8+\cdots+128\)
+\begin{itemize}\setlength{\itemsep}{10pt}
+\item
+\(a=\rb32\), \(r=\rb32\), \(n=\rb37\)
+\item
+\(S=\rb3{254}\)
+\end{itemize}
+\item
+\(6+3+\frac32+\cdots+\frac3{64}\)
+\begin{itemize}\setlength{\itemsep}{10pt}
+\item
+\(a=\rb36\), \(r=\rb3{\frac12}\), \(n=\rb38\)
+\item
+\(S=\rb3{12\left(1-\left(\frac12\right)^8\right)}\)
+\end{itemize}
+\end{enumerate}
+\end{prob}
+\end{frame}
+
+%%%%
+\section{수열의 합}
+
+%%%
+\subsection{합의 기호}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{defi}{) 합의 기호}\:\par
+수열 \(\{a_n\}\)의 첫째항부터 \(n\)번째 항까지의 합은 다음과 같이 나타낸다.
+\[\sum_{k=1}^na_k=a_1+a_2+\cdots+a_n.\]
+\end{defi}
+\pause\par\bigskip
+%
+\begin{exam}{}%\vspace{-30pt}
+\begin{align*}
+(1)	\;\;&\sum_{k=1}^{10}(2k+1)=\rb33+\rb35+\rb37+\cdots+\rb3{21}\\
+(2)	\;\;&3+9+27+81+243=\sum_{\rb3{k=1}}^{\rb3{5}}\rb3{3^k}
+\end{align*}
+\end{exam}
+\end{frame}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{prob}{}\vspace{-30pt}
+\begin{align*}
+(1)	\;\;&\sum_{k=1}^{15}(3k)=\rb23+\rb26+\rb29+\cdots+\rb2{45}\\
+(2)	\;\;&\sum_{k=1}^{10}\frac1k=\rb21+\rb2{\frac12}+\rb2{\frac13}+\cdots+\rb2{\frac1{10}}\\
+(3)	\;\;&\sum_{i=1}^4{4^i}=\rb24+\rb2{16}+\rb2{64}+\rb2{256}\\[10pt]
+(4)	\;\;&3+7+11+\cdots+99=\sum_{\rb2{k=1}}^{\rb2{25}}\rb2{4k-1}\\[10pt]
+(5)	\;\;&1+5+25+\cdots+5^8=\sum_{\rb2{k=1}}^{\rb2{9}}\rb2{5^{k-1}}\\[10pt]
+(6)	\;\;&1+4+9+\cdots+100=\sum_{\rb2{k=1}}^{\rb2{10}}\rb2{k^2}
+\end{align*}
+\end{prob}
+\end{frame}
+
+%%%
+\subsection{자연수의 거듭제곱의 합}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{theo}{}\vspace{-30pt}
+\begin{align*}
+(1)\;\;&\sum_{k=1}^n k=\frac{n(n+1)}2\\
+(2)\;\;&\sum_{k=1}^n k^2=\frac{n(n+1)(2n+1)}6\\
+(3)\;\;&\sum_{k=1}^n k^3=\left\{\frac{n(n+1)}2\right\}^2
+\end{align*}
+\end{theo}
+\pause
+%
+\begin{exam}{}
+\begin{align*}
+(1)\;\;\sum_{k=1}^{10}(2k+1)
+&=2\sum_{k=1}^{10}k+\sum_{k=1}^{10}1\\
+&=2\cdot\frac{10\times11}2+10\cdot1=65\\
+(2)\;\;\sum_{k=1}^6k^2(k-1)
+&=\sum_{k=1}^6k^3-\sum_{k=1}^6k^2\\
+&=\left(\frac{6\times7}2\right)^2-\frac{6\times7\times13}6=350
+\end{align*}
+\end{exam}
+\end{frame}
+
+%%
+\begin{frame}[t]{\subsecname}
+%
+\begin{prob}{}
+\begin{align*}
+(1)\;\;	&\sum_{k=1}^{5}(4k+3)=\rb2{75}\\
+(2)\;\;	&\sum_{k=1}^{15}\left(\frac13k-2\right)=\rb2{10}\\
+(3)\;\;	&\sum_{k=1}^{10}k(k+1)=\rb2{440}
+\end{align*}
+\end{prob}
+\end{frame}
+
+%%%%
+\section{수학적 귀납법}
+
+%%%
+\subsection{수열의 귀납적 정의}
+
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+%%%
+\subsection{수학적 귀납법}
+
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+%%
+\begin{frame}[t]{\subsecname}
+\end{frame}
+
+\end{document}

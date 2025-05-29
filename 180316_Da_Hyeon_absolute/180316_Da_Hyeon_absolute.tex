@@ -1,0 +1,347 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist,graphicx}
+\usepackage{fapapersize}
+%\usefapapersize{210mm,297mm,10mm,*,10mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+%\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+\newcounter{type}
+
+%%% Commands
+\newcommand\type[1]
+{\clearpage\noindent\stepcounter{type} \textbf{유형 \thetype) #1}\par\noindent}
+
+\newcommand\prob[1]
+{\vs\par\noindent\stepcounter{num} \textbf{문제 \thetype-\thenum) #1}\par\noindent}
+
+\newenvironment{expl}{\begin{mdframed}[frametitle=풀이]}{\end{mdframed}}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\vs[1]{\vspace{30pt}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\title{다현, 서진 : 3-1 제곱근-절댓값 관련 문제들}
+\date{\today}
+\author{}
+\maketitle
+
+%%
+\bigskip\bigskip\noindent\stepcounter{type} \textbf{유형 \thetype)}\par\noindent
+\(a>0,\quad b<0\)일 때, \(\sqrt{a^2}+\sqrt{4b^2}\)을 간단히 하여라.
+\begin{expl}
+\begin{align*}
+\sqrt{a^2}+\sqrt{4b^2}
+&=\sqrt{a^2}+\sqrt{(2b)^2}\\
+&=|a|+|2b|\\
+&=a+(-2b)=a-2b
+\end{align*}
+\end{expl}
+
+%
+\prob{}
+\(a>0,\quad b>0\)일 때, \(\sqrt{a^2}+\sqrt{b^2}\)을 간단히 하여라.
+
+%
+\prob{}
+\(a<0,\quad b<0\)일 때, \(\sqrt{a^2}+\sqrt{(-b)^2}\)을 간단히 하여라.
+
+%
+\prob{}
+\(a<0,\quad b>0\)일 때, \(\sqrt{4a^2}+\sqrt{(9b)^2}\)을 간단히 하여라.
+
+%
+\prob{개념+유형, 유형편 p8 \#20}
+\(a>0,\quad b<0\)일 때, \(\sqrt{16a^2}-\sqrt{(-3b)^2}+\sqrt{b^2}\)을 간단히 하여라.
+%\begin{expl}
+%\begin{align*}
+%\sqrt{16a^2}-\sqrt{(-3b)^2}+\sqrt{b^2}
+%&=|4a|-|-3b|+|b|\\
+%&=4a-(-3b)+(-b)=4a+2b
+%\end{align*}
+%\end{expl}
+
+%%
+%\bigskip\bigskip\noindent\stepcounter{type} \textbf{유형 \thetype) {개념+유형, 개념편 p26 \#8}}\par\noindent
+\type{개념+유형, 개념편 p26 \#8}
+\(a>0,\quad ab<0\)일 때, \(\sqrt{(-a)^2}+\sqrt{9a^2}-\sqrt{4b^2}\)을 간단히 하여라.
+\begin{expl}
+\(a>0\)이고 \(b<0\)이다.
+따라서
+\begin{align*}
+\sqrt{(-a)^2}+\sqrt{9a^2}-\sqrt{4b^2}
+&=|-a|+|3a|-|2b|\\
+&=-(-a)+(3a)-(-2b)=4a+2b
+\end{align*}
+\end{expl}
+
+%
+\prob{}
+\(a>0,\quad ab>0\)일 때, \(\sqrt{4a^2}-\sqrt{9b^2}\)를 간단히 하여라.
+
+%
+\prob{}
+\(a<0<b\)일 때, \(\sqrt{(-3a)^2}+\sqrt{b^2}+(\sqrt a)^2\)를 간단히 하여라.
+
+%
+\prob{개념+유형, 유형편 p8 \#20}
+\(a>b,\quad ab<0\)일 때, \((-\sqrt{a})^2-\sqrt{(-a)^2}+\sqrt{9b^2}\)을 간단히 하면?
+
+%
+\prob{}
+\(a<b<0\)일 때, \(\sqrt{(-b)^2}+\sqrt{4a^2}\)를 간단히 하여라.
+
+%
+\prob{}
+\(a<b,\quad ab<0\)일 때, \(\sqrt{\frac14a^2}+\sqrt{(-b)^2}-\sqrt{4a^2}\)을 간단히 하면?
+
+%
+\type{개념+유형, 유형편 p9 \#24}
+\(a>b,\quad ab<0\)일 때, \(\sqrt{a^2}+\sqrt{(-2a)^2}+\sqrt{(b-a)^2}\)을 간단히 하여라.
+\begin{expl}
+\(a>0\), \(b<0\)이다.
+또 \(b-a<0\)이다.
+따라서
+\begin{align*}
+\sqrt{a^2}+\sqrt{(-2a)^2}+\sqrt{(b-a)^2}
+&=|a|+|-2a|+|b-a|\\
+&=a-(-2a)-(b-a)=4a-b
+\end{align*}
+\end{expl}
+
+%
+\prob{}
+\(a>b,\quad a>0\)일 때, \(\sqrt{(-a)^2}+\sqrt{(b-a)^2}\)을 간단히 하여라.
+
+
+%
+\prob{개념+유형, 유형편 p21 \#14}
+\(a-b>0,\quad ab<0\)일 때, \(\sqrt{(-2a)^2}-\sqrt{(b-a)^2}+\sqrt{9b^2}\)을 간단히 하여라.
+
+%
+\prob{}
+\(a<b,\quad ab<0\)일 때, \(\sqrt{(a-b)^2}+\sqrt{a^2}+(\sqrt b)^2\)을 간단히 하여라.
+
+%
+\prob{}
+\(a-b<0,\quad ab<0\)일 때, \(\sqrt{(a-b)^2}+\sqrt{(b-a)^2}+(-\sqrt b)^2\)을 간단히 하여라.
+
+%
+\type{개념+유형, 유형편 p9 \#25}
+\(a>b>c>0\)일 때,\\
+\(\sqrt{(a-b)^2}-\sqrt{(b-a)^2}-\sqrt{(c-a)^2}\)을 간단히 하면?
+\begin{expl}
+\(a-b>0\), \(b-a<0\), \(c-a<0\)이므로
+\begin{align*}
+\sqrt{(a-b)^2}-\sqrt{(b-a)^2}-\sqrt{(c-a)^2}
+&=|a-b|-|b-a|-|c-a|\\
+&=(a-b)-\{-(b-a)\}-\{-(c-a)\}\\
+&=a-b+b-a+c-a=c-a
+\end{align*}
+\end{expl}
+
+%
+\prob{}
+\(a>b>c>0\)일 때,\\
+\(\sqrt{(a-b)^2}+\sqrt{(b-c)^2}+\sqrt{(c-a)^2}\)을 간단히 하면?
+
+%
+\prob{}
+\(a<b<c\)일 때,\\
+\(\sqrt{(a-b)^2}+\sqrt{(b-c)^2}-\sqrt{(c-a)^2}\)을 간단히 하면?
+
+%
+\prob{}
+\(a<b<c<0\)일 때,\\
+\(\sqrt{a^2}+\sqrt{b^2}+\sqrt{(c-b)^2}\)을 간단히 하면?
+
+%
+\prob{}
+\(a<0<b<c\)일 때,\\
+\((-\sqrt{b})^2+\sqrt{(c-a)^2}-\sqrt{(b+c)^2}\)을 간단히 하면?
+
+%%
+\type{개념+유형, 개념편 p28 \#28}
+\(0<a<1\)일 때,\\
+\(\displaystyle\sqrt{\left(a+\frac1a\right)^2}-\sqrt{\left(a-\frac1a\right)^2}-\sqrt{(2a)^2}\)을 간단히 하여라.
+\begin{expl}
+\(a>0\)이므로
+\[a+\frac1a>0\tag{1}\]
+\(0<a<1\)이므로 \(\frac1a>1\)이고, 따라서\(\frac1a>a\).
+그러므로
+\[a-\frac1a<0\tag{2}\]
+또한
+\[2a>0\]
+그러므로
+\begin{align*}
+\sqrt{\left(a+\frac1a\right)^2}-\sqrt{\left(a-\frac1a\right)^2}-\sqrt{(2a)^2}
+&=\left|a+\frac1a\right|-\left|a-\frac1a\right|-|2a|\\
+&=\left(a+\frac1a\right)-\left\{-\left(a-\frac1a\right)\right\}-2a\\
+&=\left(a+\frac1a\right)+\left(a-\frac1a\right)-2a\\
+&=0
+\end{align*}
+\end{expl}
+
+%
+\prob{}
+\(0<a<1\)일 때,\\
+\(\displaystyle\sqrt{\left(\frac1a+a\right)^2}+\sqrt{\left(\frac1a-a\right)^2}\)을 간단히 하여라.
+
+%
+\prob{}
+\(a>1\)일 때,\\
+\(\displaystyle\sqrt{a^2}-\sqrt{\left(a-\frac1a\right)^2}\)\를 간단히 하여라.
+
+%%
+\type{개념+유형, 유형편 p21 \#21}
+\(a<0<b<1\)일 때,
+\(\displaystyle
+\sqrt{(a-b)^2}+\sqrt{\left(b-\frac1b\right)^2}-\sqrt{\left(b+\frac1b\right)^2}-\sqrt{(-a)^2}\)
+을 간단히 하여라.
+\begin{expl}
+\(a<b\)로부터
+\[a-b<0\tag{1}\]
+\(0<b<1\)로부터 \(\frac1b>1\).
+따라서 \(b<\frac1b\).
+그러므로
+\[b-\frac1b<0\tag{2}\]
+\(b>0\)으로부터
+\[b+\frac1b>0\tag{3}\]
+\(a<0\)으로부터
+\[-a>0\tag{4}\]
+따라서
+\begin{align*}
+\sqrt{(a-b)^2}+\sqrt{\left(b-\frac1b\right)^2}-\sqrt{\left(b+\frac1b\right)^2}-\sqrt{(-a)^2}
+&=|a-b|+\left|b-\frac1b\right|-\left|b+\frac1b\right|-|-a|\\
+&=-(a-b)-\left(b-\frac1b\right)-\left(b+\frac1b\right)-(-a)\\
+&=-a+b-b+\frac1b-b-\frac1b+a=-b
+\end{align*}
+\end{expl}
+
+%
+\prob{}
+\(a<0<b<1\)일 때,
+\(\displaystyle
+\sqrt{a^2}+\sqrt{\left(\frac1b-b\right)^2}+\sqrt{\left(\frac1b+b\right)^2}\)
+을 간단히 하여라.
+
+
+%
+\prob{}
+\(0<a<1<b\)일 때,
+\(\displaystyle
+\sqrt{b^2}-\sqrt{(a-b)^2}+\sqrt{\left(a-\frac1a\right)^2}\)
+을 간단히 하여라.
+
+
+\section*{답}
+\begin{minipage}{0.49\textwidth}
+%
+\an{1-1}
+\(a+b\)
+
+%
+\an{1-2}
+\(-a-b\)
+
+%
+\an{1-3}
+\(-2a+3b\)
+
+%
+\an{1-4}
+\(4a+2b\)
+
+%
+\an{2-5}
+\(2a-3b\)
+
+%
+\an{2-6}
+\(-2a+b\)
+
+%
+\an{2-7}
+\(-3b\)
+
+%
+\an{2-8}
+\(-2a-b\)
+
+%
+\an{2-9}
+\(\frac32a+b\)
+
+%
+\an{3-10}
+\(2a-b\)
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+
+%
+\an{3-11}
+\(a-2b\)
+
+%
+\an{3-12}
+\(-2a+2b\)
+
+%
+\an{3-13}
+\(-2a+3b\)
+
+%
+\an{4-14}
+\(2a-2c\)
+
+%
+\an{4-15}
+\(0\)
+
+%
+\an{4-16}
+\(-a-2b+c\)
+
+%
+\an{4-17}
+\(-a\)
+
+%
+\an{5-18}
+\(\frac2a\)
+
+%
+\an{5-19}
+\(\frac1a\)
+
+%
+\an{6-20}
+\(-a+\frac2b\)
+
+%
+\an{6-21}
+\(-a\)
+
+\end{minipage}
+
+
+\end{document}

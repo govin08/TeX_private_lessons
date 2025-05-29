@@ -1,0 +1,102 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig,tabu}
+
+\usepackage[skipabove=10pt,skipbelow=10pt,innertopmargin=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textwidth}\end{mdframed}}
+\newcommand{\ans}{
+{\par\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}\par}\bigskip\bigskip}
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\ba{\,|\,}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\newenvironment{talign}
+ {\let\displaystyle\textstyle\align}
+ {\endalign}
+\newenvironment{talign*}
+ {\let\displaystyle\textstyle\csname align*\endcsname}
+ {\endalign}
+
+\let\emph\textsf
+
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,15mm,15mm,15mm,15mm}
+%%%%
+\begin{document}
+
+\title{민형 : 05 기본 공식 테스트}
+\author{}
+\date{\today}
+\maketitle
+
+\prob{}
+다음 빈칸을 채우시오
+\begin{align*}
+(1)&\:\:
+\int\sin x\,dx=\pb{-\cos x}+C\\
+(2)&\:\:
+\int\cos x\,dx=\pb{-\sin x}+C\\
+(3)&\:\:
+\int\sec^2 x\,dx=\pb{-\tan x}+C\\
+(4)&\:\:
+\int\csc x\,dx=\pb{-\cot x}+C\\
+(5)&\:\:
+\int\tan x\sec x\,dx=\pb{-\sec x}+C\\
+(6)&\:\:
+\int\cot x\csc x\,dx=\pb{-\csc x}+C\\
+(7)&\:\:
+\int e^x\,dx=\pb{e^x}+C\\
+(8)&\:\:
+\int\frac1x\,dx=\pb{\ln x}+C\\
+(9)&\:\:
+\int\sqrt x\,dx=\pb{\frac3{2\sqrt x}}+C\\
+(10)&\:\:
+\int\cos^2 x\,dx=\pb{\frac{1+\cos2x}2}+C\\
+(11)&\:\:
+\int\sin^2 x\,dx=\pb{\frac{1-\cos2x}2}+C\\
+(12)&\:\:
+\int\ln x\,dx=\pb{x\ln x-x}+C\\
+(13)&\:\:
+\int xe^x\,dx=\pb{xe^x-e^x}+C\\
+(14)&\:\:
+\int_a^bf(x)\,dx
+=
+\lim_{n\to\infty}\sum_{k=1}^nf\left(\pb a+\frac{\pb{b-a}}nk\right)\frac{b-a}{\pb n}
+\end{align*}
+
+\prob{}
+다음 급수의 합을 정적분을 이용하여 구하여라.
+\[
+\lim_{n\to\infty}\frac1n\sum_{k=1}^n\ln\frac{n+k}n
+\]
+\end{document}

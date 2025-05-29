@@ -1,0 +1,211 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig}
+
+\usepackage[skipabove=10pt,skipbelow=10pt,innertopmargin=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\newcommand\tabfive[5]{\par\medskip\noindent
+\ding{172}\:\:{\ensuremath{#1}}\\
+\ding{173}\:\:{\ensuremath{#2}}\\
+\ding{174}\:\:{\ensuremath{#3}}\\
+\ding{175}\:\:{\ensuremath{#4}}\\
+\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textwidth}\end{mdframed}}
+\newcommand{\ans}{
+{\par\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}\par}\bigskip\bigskip}
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\ba{\,|\,}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+%%%%
+\begin{document}
+
+\title{01 다항식의 연산}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+\section{항등식과 미정계수}
+
+\begin{mdframed}
+%
+\defi{}
+주어진 식의 문자에 어떤 값을 대입하여도 항상 성립하는 등식을 그 문자에 관한 \emph{항등식}이라고 한다.
+\end{mdframed}
+
+%
+\exam{}
+\begin{enumerate}
+\item
+\(x^2+2x+1=(x+1)^2\)은 \(x\)에 어떤 값을 대입하여도 성립하는 등식이므로 \(x\)에 관한 항등식이다.
+\item
+\((2a+b)^2=4a^2+4ab+b^2\)은 \(a\)와 \(b\)에 어떤 값을 대입하여도 성립하는 등식이므로 \(a\)와 \(b\)에 관한 항등식이다.
+\item
+\(x^2-2x-3=0\)는 \(x\)에 \(-1\)과 \(2\)를 대입하면 성립하지만, \(x\)에 \(0\)이나 \(1\)을 대입하면 성립하지 않으므로 항등식이 아니다.
+몇몇 \(x\)에 대해서만 등식이 성립하는 이와 같은 등식을 \emph{방정식}이라고 한다.
+\item
+\(x^2-2x+3=0\)는 \(x\)에 어떤 값을 대입하여도 성립하지 않는다.
+따라서 항등식이 아니다.
+\end{enumerate}
+
+
+%
+\prob{}
+다음 등식 중에서 항등식인 것을 찾아라.
+\tabfive
+{\text{\(x^2-2=0\)}}
+{\text{\(x^3+2x^2+3x=x^3+2x^2+x+2\)}}
+{\text{\(xy=2x+2y-4\)}}
+{\text{\(\frac12\left\{(x-3)^2-(x-1)^2\right\}=-2x+4\)}}
+{\text{\(y=2x+1\)}}
+
+\clearpage
+
+\begin{mdframed}
+%
+\theo{}\label{identity}
+\begin{enumerate}
+\item
+\(ax+b=0\)이 \(x\)에 관한 항등식이면 \(a=0\)이고 \(b=0\)이다.
+\item
+\(ax+b=a'x+b'\)이 \(x\)에 관한 항등식이면 \(a=a'\)이고 \(b=b'\)이다.
+\item
+\(ax^2+bx+c=0\)가 \(x\)에 관한 항등식이면 \(a=0\), \(b=0\), \(c=0\)이다.
+\item
+\(ax^2+bx+c=a'x^2+b'x+c'\)가 \(x\)에 관한 항등식이면 \(a=a'\), \(b=b'\), \(c=c'\)이다.
+\item
+\(ax+by+c=0\)이 \(x\), \(y\)에 관한 항등식이면 \(a=0\), \(b=0\), \(c=0\)이다.
+\item
+\(ax+by+c=a'x+b'y+c'=0\)이 \(x\), \(y\)에 관한 항등식이면 \(a=a'\), \(b=b'\), \(c=c'\)이다.
+\end{enumerate}
+\end{mdframed}
+
+%
+\exam{미정계수법}
+\(x\)에 관한 등식
+\[a(x-1)+b(x-2)=2x-3\]
+이 항등식이 되도록 \(a\)와 \(b\)의 값을 정하여라.
+\begin{mdframed}
+\textbf{(계수비교법)}\par\noindent
+주어진 식을 정리하면
+\[(a+b)x+(-a-2b)=2x-3\]
+이다.
+여기에 정리 \ref{identity}의 (2)를 적용하면 \(a+b=2\), \(a+2b=3\)이다.
+두 식을 연립하면 \(a=1\), \(b=1\)이다.
+\par\bigskip\noindent
+\textbf{(수치대입법)}\par\noindent
+\(x\)에 관한 항등식이므로 \(x\)에 어떤 값을 대입하여도 성립하여야 한다.
+그중 \(x=1\)를 대입하면 \(-b=-1\)이 된다.
+따라서 \(b=1\)이다.
+또 \(x=2\)를 대입하면 \(a=1\)이 된다.
+따라서 \(a=1\)이다.
+\end{mdframed}
+{\par\raggedleft\textbf{답 : \(a=1\), \(b=1\)}\par}\bigskip
+
+%%
+\section{나머지정리와 인수정리}
+
+%
+\exam{}
+다항식 \(f(x)=x^3-2x+3\)을 일차식 \(x-2\)로 나누었을 때의 나머지를 구하여라.
+\begin{mdframed}
+나누는 수가 \(1\)차 다항식이므로 나머지는 상수항이어야 한다.
+몫을 \(Q(x)\)라고 하고, 나머지를 \(R\)이라고 하면
+\[f(x)=(x-2)Q(x)+R\]
+이다.
+이 식은 항등식이므로 여기에 \(x=2\)를 대입하여도 성립하여야 한다.
+따라서 \(f(2)=R\)이다.
+\(f(2)=2^3-2\cdot2+3=7\)이므로 \(R=7\)
+\end{mdframed}
+{\par\raggedleft\textbf{답 : \(7\)}\par}\bigskip
+
+\begin{mdframed}
+%
+\theo{나머지 정리}
+다항식 \(f(x)\)를 일차식 \(x-\alpha\)로 나눈 나머지는 \(f(\alpha)\)이다.
+\end{mdframed}
+
+%
+\prob{}
+다항식 \(f(x)=2x^3-4x^2+5x+8\)을 다음 일차식으로 나누었을 때의 나머지를 구하여라.
+\par\noindent
+(1)\:\:\(x+1\)
+\tabto{.5\textwidth}
+(2)\:\:\(x-3\)
+\procedure{0.3}
+{\par\raggedleft\textbf{답 :
+(1)\:\:\(-3\)\qquad
+(2)\:\:\(41\)\qquad\qquad}\par}
+
+\clearpage
+나머지 정리의 특별한 경우로, 다음과 같은 인수정리도 얻을 수 있다.
+\begin{mdframed}
+%
+\theo{인수정리}
+\[
+\text{다항식 \(f(x)\)가 일차식 \(x-\alpha\)로 나누어 떨어진다.}
+\iff
+f(\alpha)=0\text{이다}
+\]
+\end{mdframed}
+
+다음은 모두 같은 말들이다 ;
+
+\begin{align*}
+&\text{다항식 \(f(x)\)가 일차식 \(x-\alpha\)로 나누어 떨어진다.}\\
+&\iff R=0\\
+&\iff f(\alpha)=0\text{이다}\\
+&\iff\text{다항식 \(f(x)\)가 \(x-\alpha\)라는 인수를 가진다.}\\
+&\iff\text{다항식 \(f(x)\)를 \(x-\alpha\)로 묶을 수 있다.}
+\end{align*}
+
+%
+\exam{}
+\(x^3-7x-6\)을 인수분해하여라.
+\begin{mdframed}
+주어진 식을 \(f(x)=x^3-7x-6\)라고 하자.
+\(f(x)\)에 여러 값을 대입해서 \(f(a)=0\)이 되는 \(a\)의 값을 찾으면 \(f(-1)=0\)이다.
+따라서 \(f(x)\)는 \(x+1\)이라는 인수를 가진다.
+조립제법을 사용하여  \(x+1\)로 나눈 몫을 구하면 \(x^2-x-6\)이고,
+\[f(x)=(x+1)(x^2-x-6)\]
+이다.
+\(x^2-x-6\)도 인수분해하여 정리하면
+\[f(x)=(x+1)(x-3)(x+2)\]
+이다.
+\end{mdframed}
+{\par\raggedleft\textbf{답 : \(f(x)=(x+1)(x-3)(x+2)\)}\par}\bigskip
+\end{document}

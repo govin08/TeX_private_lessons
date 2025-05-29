@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,paralist}
+
+\begin{document}
+
+\title{현빈 18 : 숫자 \(e\)}
+\author{}
+\date{\today}
+\maketitle
+
+\newpage
+
+\section{\(e\)에 대한 두 가지 정의}
+숫자 \(e\)의 정의는 다음의 두 가지이다.\footnote{홍성대, ``수학의 정석, 미적분2'', 성지출판, 2014, p 139.}
+\begin{equation}e=\lim_{x\to0}\left(1+x\right)^{\frac1x}\end{equation}
+\begin{equation}e=\lim_{t\to\infty}\left(1+\frac1t\right)^t\end{equation}
+
+%(만약 \(e\)를 \[(\log_ax)'\bigg|_{x=1}=1\]인 \(a\)의 값으로 정의한다면 이것은 (1)의 정의와 같다.)
+두 정의는 동등한 정의일까?
+
+(1)을 다시 살펴보면, (1)은
+\[e=\lim_{x\to0+}\left(1+x\right)^{\frac1x}\tag{1-a}\]
+\[e=\lim_{x\to0-}\left(1+x\right)^{\frac1x}\tag{1-b}\]
+로 이루어져 있다.
+다시 말해
+\[(1)\iff (1-a)\wedge(1-b)\]
+이다.\footnote{\(\wedge\)는 \(and\)를 의미한다.}
+한편 \(x=\frac1t\)로 치환하면
+\[(1-a)\iff (2)\]
+임을 알 수 있다.
+다시 말해 두 정의가 동등하려면, 즉 \[(1)\iff(2)\]이려면,\[(1-a)\wedge(1-b)\iff(1-a)\]여야 하고,
+그러려면 \[(1-a)\Rightarrow(1-b)\]여야 한다.
+
+따라서 다음을 증명해보자.
+\begin{mdframed}[skipabove=3pt]
+\center\(\displaystyle e=\lim_{x\to0+}\left(1+x\right)^{\frac1x}\)이면 \(\displaystyle e=\lim_{x\to0-}\left(1+x\right)^{\frac1x}\)이다.
+\end{mdframed}
+
+\newpage
+
+\section{은행 예금}
+
+\paragraph{(1)}
+연이율이 6\%인 은행에 100만원을 예금한다고 하자.
+1년 후 돌려받는 금액은
+\[100\text{만원}\times\left(1+\frac6{100}\right)=106\text{만원}\]
+이다.
+
+\paragraph{(2)}
+이번에도 연이율 6\%과 원금 100만원을 예금하되, 이자를 6개월마다 한 번씩 받는 상황을 생각해보자.
+연이율이 6\%이므로, 6개월 동안의 이율은 연이율의 절반인 3\%로 생각하자.
+처음에 100만원이었던 원금은 6개월 후에
+\[100\text{만원}\times\left(1+\frac3{100}\right)=103\text{만원}\]
+이 되고 다시 6개월이 흐른 1년 후에는 
+\[103\text{만원}\times\left(1+\frac3{100}\right)=106\text{만 }900\text{원}\]
+이 된다.
+
+\paragraph{(3)}
+이번에는 이자를 4개월마다 한 번씩 받는 상황을 생각해보자.
+연이율이 6\%이므로, 4개월 동안의 이율은 연이율의 \(1/3\)인 \(2\%\)로 생각하자.
+같은 방식으로 계산하면 1년 후에
+\[100\text{만원}\times\left(1+\frac2{100}\right)^3=106\text{만 }1208\text{원}\]
+을 받을 수 있게 된다.
+
+\paragraph{(4)}
+100만원을 한 번에 걸쳐 이자를 붙이면 106만원이 되고, 두 번에 걸쳐 이자를 붙이면 106만 900원이 되며, 세 번에 걸쳐 이자를 붙이면 106만 1208원이 된다.
+따라서 여러 번에 걸쳐 이자를 붙일 수록 이익인 것 같다.
+
+그렇다면 한없이 여러 번에 걸쳐 이자를 붙인다면, 얼마까지 이익을 볼 수 있을까?
+예를 들어 한 만 번 정도에 걸쳐 이자를 붙이면 원금의 두 배인 200만원 정도를 받을 수 있을까?
+
+\end{document}

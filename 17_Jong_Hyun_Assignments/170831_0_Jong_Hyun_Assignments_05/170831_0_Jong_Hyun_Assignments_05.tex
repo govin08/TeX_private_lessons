@@ -1,0 +1,256 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist,tabu}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,40mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{graphicx}
+
+\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+\counterwithout{subsection}{section}
+
+%%% Commands
+\newcommand\prob[1]
+{\vs\bigskip\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{25pt}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE종현, 추가과제 05
+\end{center}
+\begin{flushright}
+날짜 : 2017년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%%
+\subsection{확률분포}
+\vspace{-30pt}
+% 확률분포 1
+\prob{}
+남학생 3명과 여학생 2명으로 이루어진 마술 동아리 회원 중 공연에 참가할 2명의 학생을 임의로 뽑을 때, 뽑힌 학생 중에서 여학생의 수를 확률변수 \(X\)라고 하자.
+\(P(0\le X\le 1)\)의 값은?
+\par\bigskip
+\tabb{\frac12}{\frac35}{\frac7{10}}{\frac45}{\frac9{10}}
+
+% 확률분포 2
+\prob{}
+확률변수 \(X\)가 가질 수 있는 값이 0, 1, 2, 3, 4이고, \(X\)의 확률질량함수가
+\[P(X=x)=ax+2a\]
+일 때,
+\(P(X\ge60a)\)의 값은?
+(단, \(a\)는 상수이다.)
+\par\bigskip
+\tabb{\frac25}{\frac9{20}}{\frac12}{\frac{11}{20}}{\frac35}
+
+% 확률분포 3
+\prob{}
+확률변수 \(X\)의 확률분포를 표로 나타내면 다음과 같다.
+\par\bigskip
+\begin{tabu}to0.8\textwidth{X[2,c]|X[c]X[c]X[c]X[c]|X[c]}
+\toprule
+\(X\)		&1		&3				&5		&7				&합계\\\hline
+\(P(X=x)\)	&\(a\)	&\(\frac29\)	&\(b\)	&\(\frac19\)	&\(1\)\\
+\bottomrule
+\end{tabu}
+\par\bigskip
+\(E(X)=\frac{13}3\)일 때, \(\frac ba\)의 값은?
+(단, \(a\), \(b\)는 상수이다.)
+\par\bigskip
+\tabb12345
+
+% 확률분포 4
+\prob{}
+확률변수 \(X\)의 확률분포를 표로 나타내면 다음과 같을 때, \(V(X)\)의 값은?
+\\(단, \(a\)는 상수이다.)
+\par\bigskip
+\begin{tabu}to0.8\textwidth{X[2,c]|X[c]X[c]X[c]|X[c]}
+\toprule
+\(X\)		&2				&4		&6				&합계\\\hline
+\(P(X=x)\)	&\(\frac14\)	&\(a\)	&\(a-\frac12\)	&\(1\)\\
+\bottomrule
+\end{tabu}
+\par\bigskip
+\tabb{\frac{19}{16}}{\frac{21}{16}}{\frac{23}{16}}{\frac{25}{16}}{\frac{27}{16}}
+
+\newpage
+% 확률분포 5
+\prob{}
+확률변수 \(X\)의 확률분포를 표로 나타내면 다음과 같을 때, \(E(3X+5)\)의 값은?
+\\(단, \(a\)는 상수이다.)
+\par\bigskip
+\begin{tabu}to0.8\textwidth{X[2,c]|X[c]X[c]X[c]|X[c]}
+\toprule
+\(X\)		&10					&20		&30				&합계\\\hline
+\(P(X=x)\)	&\(\frac1{10}\)	&\(a\)	&\(2a\)			&\(1\)\\
+\bottomrule
+\end{tabu}
+\par\bigskip
+\tabb{60}{65}{70}{75}{80}
+
+% 확률분포 6
+\prob{}
+확률변수 \(X\)가 이항분포 \(B\left(n,\frac14\right)\)을 따르고 \(E(X)=8\)일 때, \(V(-3X+7)\)의 값은?
+\\(단, \(n\)은 자연수이다.)
+\par\bigskip
+\tabb{30}{36}{42}{48}{54}
+
+% 확률분포 7
+\prob{}
+두 개의 주사위를 동시에 던지는 시행을 27번 반복할 때, 두 개의 주사위 모두 \(6\)의 약수가 나오는 횟수를 확률변수 \(X\)라고 하자.
+\(V(6X-4)\)의 값은?
+\par\bigskip
+\tabb{240}{252}{264}{276}{288}
+
+%%
+\vspace{20pt}
+\subsection{정규분포}
+\vspace{-30pt}
+
+% 정규분포 1
+\prob{}
+연속확률변수 \(X\)가 갖는 값의 범위가 \(0\le X\le 2\)이고, 확률변수 \(X\)의 확률밀도함수 \(f(x)\)가
+\[f(x)=\begin{cases}
+ax&(0\le x<1)\\a&(1\le x\le2)
+\end{cases}\]
+일 때, \(P\left(\frac12\le X\le \frac32\right)\)의 값은?
+(단, \(a\)는 상수이다.)
+\par\bigskip
+\tabb{\frac5{12}}{\frac12}{\frac7{12}}{\frac23}{\frac34}
+
+% 정규분포 2
+\prob{}
+두 확률변수 \(X\), \(Y\)가 각각 정규분포 \(N(65, 12^2)\), \(N(58,10^2)\)을 따를 때,\\
+\(P(65\le X\le k)=P(43\le Y\le 58)\)을 만족시키는 상수 \(k\)의 값은?
+\par\bigskip
+\tabb{74}{77}{80}{83}{86}
+
+\newpage
+% 정규분포 3
+\prob{}
+\begin{minipage}{0.6\textwidth}
+어느 공장에서 생산되는 과자 한 봉지의 무게는 평균이 120g, 표준편차가 8g인 정규분포를 따른다고 한다.
+이 공장에서 생산되는 과자 중에서 임의로 한 봉지를 선택할 때, 그 무게가 112g 이상이고 132g 이하일 확률을 오른쪽 표준정규분포표를 이용하여 구한 것은?
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\centering
+\begin{tabular}{c|c}
+\hline
+\(z\)	&\(P(0\le Z\le z)\)\\
+\hline
+0.5		&0.1915\\
+1.0		&0.3413\\
+1.5		&0.4332\\
+2.0		&0.4772\\
+\hline
+\end{tabular}
+\end{minipage}
+\par\bigskip
+\tabb{0.5328}{0.6826}{0.7745}{0.8185}{0.9332}
+
+% 정규분포 4
+\prob{}
+\begin{minipage}{0.6\textwidth}
+확률변수 \(X\)가 이항분포 \(B\left(n,\frac14\right)\)을 따르고 \\
+\(E(X)=48\)일 때, \(P(X\ge42)\)의 값을 오른쪽 표준정규분포표를 이용하여 구한것은?
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\centering
+\begin{tabular}{c|c}
+\hline
+\(z\)	&\(P(0\le Z\le z)\)\\
+\hline
+0.5		&0.1915\\
+1.0		&0.3413\\
+1.5		&0.4332\\
+2.0		&0.4772\\
+\hline
+\end{tabular}
+\end{minipage}
+\par\bigskip
+\tabb{0.5228}{0.6915}{0.7745}{0.8413}{0.9332}
+
+% 정규분포 5
+\prob{} 
+\begin{minipage}{0.6\textwidth}
+2, 3, 5, 7의 숫자가 각각 하나씩 적혀 있는 공 \(4\)개가 주머니에 들어있다.
+이 주머니에서 임의로 2개의 공을 동시에 꺼내어 적혀 있는 수를 확인하고 다시 주머니에 넣는다.
+이와 같은 시행을 144번 반복할 때, 공에 적힌 두 수의 곱이 홀수가 되는 횟수가 84번 이상일 확률을 오른쪽 표준정규분포표를 이용하여 구한 것은?
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\centering
+\begin{tabular}{c|c}
+\hline
+\(z\)	&\(P(0\le Z\le z)\)\\
+\hline
+0.5		&0.1915\\
+1.0		&0.3413\\
+1.5		&0.4332\\
+2.0		&0.4772\\
+\hline
+\end{tabular}
+\end{minipage}
+\par\bigskip
+\tabb{0.0228}{0.0456}{0.0668}{0.0826}{0.1587}
+
+\vspace{20pt}
+%%
+\subsection{통계적 추정}
+\vspace{-30pt}
+
+% 통계적 추정 1
+\prob{}
+주머니 속에 1, 2, 3, 4, 5의 숫자가 각각 하나씩 적혀 있는 5개의 공이 들어 있다.
+이 주머니에서 2개의 공을 임의로 복원추출할 때, 공에 적힌 숫자의 평균 \(\overline X\)에 대하여
+\(E(\overline X)+V(\overline X)\)의 값은?
+\par\bigskip
+\tabb12345
+
+% 통계적 추정 2
+\prob{}
+\begin{minipage}{0.6\textwidth}
+어느 공장에서 생산되는 음료수 1개의 용량은 평균이 \(180\)mL, 표준편차가 \(4\)mL인 정규분포를 따른다고 한다.
+이 음료수 중 25개를 임의추출하였을 때, 음료수의 용량의 평균이 \(182\)mL 이상일 확률을 오른쪽 표준정규분포표를 이용하여 구한 것은?
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\centering
+\begin{tabular}{c|c}
+\hline
+\(z\)	&\(P(0\le Z\le z)\)\\
+\hline
+1.5		&0.4332\\
+2.0		&0.4772\\
+2.5		&0.4938\\
+\hline
+\end{tabular}
+\end{minipage}
+\par\bigskip
+\tabb{0.0062}{0.0172}{0.0228}{0.0332}{0.0668}
+\end{document}

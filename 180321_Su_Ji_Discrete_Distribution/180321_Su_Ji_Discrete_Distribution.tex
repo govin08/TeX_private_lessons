@@ -1,0 +1,401 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,paralist,tabu}
+%\usefapapersize{210mm,297mm,20mm,*,20mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+%\pagestyle{empty}
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\defi[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정의 \thenum) #1}\par\noindent}
+\newcommand\theo[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{정리 \thenum) #1}\par\noindent}
+\newcommand\exam[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{예시 \thenum) #1}\par\noindent}
+\newcommand\prob[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand\pb[1]{\fbox{$\phantom{#1}$}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{60pt}}
+
+\newcommand\summ{\ensuremath{\sum_{i=1}^n}}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+\let\emph\textsf
+\tabulinesep=2pt
+
+\begin{document}
+
+\title{수지, 이산확률분포}
+\author{}
+\date{\today}
+\maketitle
+
+%
+\exam{중학교 통계 복습}
+다섯 개의 숫자 \(1\), \(2\), \(3\), \(4\), \(5\)의 평균 \(m\)은
+\[m=\frac{1+2+3+4+5}5=3\]
+이다.
+분산 \(V\)는 `편차의 제곱의 평균'이다.
+이때, 편차란 `\(변량-평균\)'이다.
+따라서
+\begin{center}
+\begin{tabu}to.6\textwidth{|X[2$c]|X[$c]|X[$c]|X[$c]|X[$c]|X[$c]|} 
+\hline
+변량	&1	&2	&3	&4	&5\\\hline
+편차	&-2	&-1	&3	&1	&2\\\hline
+편차^2	&4	&1	&0	&1	&4\\\hline
+\end{tabu}
+\end{center}
+이고
+\[V=\frac{4+1+0+1+4}5=\fbox{(1)}\]
+표준편차 \(\sigma\)는
+\(\sigma=\sqrt V=\fbox{(2)}\)
+이다.
+
+%
+\exam{확률질량함수}\label{stone}
+검은 바둑돌이 2개, 흰 바둑돌이 2개 들어있는 주머니에서 2개의 바둑돌을 동시에 꺼낼 때, 꺼낸 흰 바둑돌의 개수를 \(X\)라고 하자.
+그러면
+\begin{align*}
+P(X=0)&=\frac{_2C_2\times_2C_0}{_4C_2}	=\frac16\\
+P(X=1)&=\fbox{(3)}\\
+P(X=2)&=\fbox{(4)}
+\end{align*}
+이다.
+이 함수 \(P(X=x)\)를 \emph{확률질량함수}라고 부르고 다음과 같이 표로 표현한다.
+
+\begin{center}
+\begin{tabu}to.8\textwidth{X[1.5$c]|X[$c]X[$c]X[$c]|X[$c]}
+\hline
+X		&0			&1				&2				&합계\\\hline
+P(X=x)	&\frac16	&\fbox{(3)}	&\fbox{(4)}	&1\\\hline
+\end{tabu}
+\end{center}
+
+이때 \(X\)의 평균 \(E(X)\)는
+\[E(X)=0\times\frac16+1\times\fbox{(3)}+2\times\fbox{(4)}=1\]
+이고, \(X\)의 분산 \(V(X)\)는 편차 \(X-1\)의 제곱의 평균이므로
+
+\begin{center}
+\begin{tabu}to.8\textwidth{X[1.5$c]|X[$c]X[$c]X[$c]|X[$c]}
+\hline
+(X-1)^2	&1			&0				&1				&합계\\\hline
+P(X=x)	&\frac16	&\fbox{(3)}	&\fbox{(4)}	&1\\\hline
+\end{tabu}
+\end{center}
+\noindent에서
+\[V(X)=1\times\frac16+0\times\fbox{(3)}+1\times\fbox{(4)}=\fbox{(5)}\]
+이다.
+또 표준편차 \(\sigma(X)\)는
+\[\sigma(X)=\sqrt{V(X)}=\frac{\sqrt3}3.\]
+
+%
+\begin{mdframed}
+\defi{}
+확률변수 \(X\)의 확률질량함수가
+
+\begin{center}
+\begin{tabu}to.8\textwidth{X[3$c]|X[$c]X[$c]X[$c]X[$c]X[$c]|X[$c]}
+\hline
+X		&x_1	&x_2	&x_3	&\cdots		&x_n	&합계\\\hline
+P(X=x)	&p_1	&p_2	&p_3	&\cdots		&p_n	&1\\\hline
+\end{tabu}
+\end{center}
+로 주어질 때, \(X\)의 평균 \(E(X)\)는
+\begin{align*}
+E(X)
+&=x_1p_1+x_2p_2+\cdots+x_np_n\\
+&=\summ x_ip_i\
+\end{align*}
+이다.
+\(E(X)=m\)이라고 하면,
+\(X\)의 분산 \(V(X)\)는 편차 \(X-m\)의 제곱의 평균이므로
+%\begin{center}
+%\begin{tabu}{X[2.8$c]|X[$c]X[$c]X[$c]|X[$c0.5]}
+%\hline
+%(X-m)^2									&(x_1-m)^2	&\cdots		&(x_n-m)^2	&합계\\\hline
+%P\left((X-m)^2=(x-m)^2\right)		&p_1		&\cdots		&p_n		&1\\\hline
+%\end{tabu}
+%\end{center}
+%에서
+\begin{align*}
+V(X)
+&=\summ(x_i-m)^2p_i\
+\end{align*}
+이다.
+\(X\)의 표준편차 \(\sigma(X)\)는
+\[\sigma(X)=\sqrt{V(X)}\]
+이다.
+\end{mdframed}
+
+%
+\begin{mdframed}
+\theo{}\label{var}
+\[V(X)=E(X^2)-\{E(X)\}^2\]
+\end{mdframed}
+
+%
+\proo{}
+\begin{align*}
+V(X)
+&=\summ(x_i-m)^2p_i\\
+&=\summ({x_i}^2-2mx_i+m^2)p_i\\
+&=\summ({x_i}^2p_i-2mx_ip_i+m^2p_i)\\
+&=\summ{x_i}^2p_i-2m\summ x_ip_i+m^2\summ p_i
+\end{align*}
+이때,
+\[\summ{x_i}^2p_i=\fbox{(6)},\quad \summ x_ip_i=\fbox{(7)},\qquad \summ p_i=\fbox{(8)}\]
+이므로
+\[V(X)=E(X^2)-\{E(X)\}^2\]
+\qed
+
+%
+\exam{}
+예시 2)%\ref{stone}
+의 분산을 정리 4)%\ref{var}
+의 방법으로 구하자.
+먼저 \(E(X^2)\)를 구하면,
+\begin{center}\centering
+\begin{tabu}to.8\textwidth{X[2$c]|X[$c]X[$c]X[$c]|X[$c]}
+\hline
+X^2			&0			&1			&4			&합계\\\hline
+P(X^2=x^2)	&\frac16	&\frac23	&\frac16	&1\\\hline
+\end{tabu}
+\end{center}
+에서
+\[E(X^2)=0\times\frac16+1\times\frac23+4\times\frac16=\frac43\]
+따라서
+\[V(X)=E(X^2)-\{E(X)\}^2=\frac43-1^2=\frac13\]
+이다. 이것은 예시 2)%\ref{stone}
+의 결과와도 일치한다.
+
+%
+\begin{mdframed}
+\theo{}
+\(Y=aX+b\)일 때,
+\[E(Y)=aE(X)+b,\quad V(Y)=a^2V(X)\]
+이다.
+\end{mdframed}
+
+%
+\proo{}
+\(X=x_i\)이면 \(Y=ax_i+b\)이다.
+따라서 \(Y\)의 확률질량함수는
+
+\begin{center}
+\begin{tabu}{X[2$c]|X[$c]X[$c]X[$c]X[$c]X[$c]|X[$c]}
+\hline
+Y				&ax_1+b	&ax_2+b	&ax_3+b	&\cdots		&ax_n+b	&합계\\\hline
+P(Y=y)	&p_1	&p_2	&p_3	&\cdots		&p_n	&1\\\hline
+\end{tabu}
+\end{center}
+
+따라서
+\begin{align*}
+E(Y)
+&=\summ(ax_i+b)p_i\\
+&=\summ(ax_ip_i+bp_i)\\
+&=a\summ x_ip_i+b\summ p_i\\
+\end{align*}
+이때,
+\[\summ x_ip_i=\fbox{(7)},\qquad \summ p_i=\fbox{(8)}\]
+이므로
+\[E(Y)=aE(X)+b\]
+이다.
+
+\clearpage
+또
+\[V(Y)=E(Y^2)-\{E(Y)\}^2\]
+에서
+\begin{align*}
+E(Y^2)
+&=\summ(ax_i+b)^2p_i\\
+&=\summ(a^2{x_i}^2+2abx_i+b^2)p_i\\
+&=a^2\summ{x_i}^2p_i+2ab\summ x_ip_i+b^2\summ p_i\\
+&=\fbox{\qquad\qquad(9)\qquad\qquad}
+\end{align*}
+이고
+\begin{align*}
+\{E(Y)\}^2
+&=\{aE(X)+b\}^2\\
+&=(am+b)^2\\
+&=\fbox{\qquad\qquad(10)\qquad\qquad}
+\end{align*}
+이므로
+\begin{align*}
+V(Y)
+&=E(Y^2)-\{E(Y)\}^2\\
+&=\fbox{\qquad\qquad(9)\qquad\qquad}-\fbox{\qquad\qquad(10)\qquad\qquad}\\
+&=a^2E(X^2)-a^2m^2\\
+&=a^2\{E(X^2)-m^2\}\\
+&=a^2\left[E(X^2)-\{E(X)\}^2\right]\\
+&=a^2V(X)
+\end{align*}
+\qed
+
+\clearpage
+%
+\exam{}
+주사위를 90번 던져서 1의 눈이 나온 횟수를 \(X\)라고 하자.
+그러면
+\begin{align*}
+P(X=0)&=\left(\frac56\right)^{90}\\
+P(X=1)&=_{90}C_1\left(\frac16\right)^1\left(\frac56\right)^{89}\\
+P(X=2)&=_{90}C_2\left(\frac16\right)^2\left(\frac56\right)^{88}\\
+\vdots\\
+P(X=89)&=_{90}C_{89}\left(\frac16\right)^{89}\left(\frac56\right)^1\\
+P(X=90)&=\left(\frac16\right)^{90}\\
+\end{align*}
+즉
+\[P(X=x)=_{90}C_x\left(\frac16\right)^x\left(\frac56\right)^{90-x}\]
+이다.
+
+한 번 던질 때마다 1의 눈이 나올 확률은 \(\frac16\)이므로, 1의 눈이 나오는 횟수는 평균적으로 \(90\times\frac16=15\)번 임을 예상할 수 있다.
+즉 \[E(X)=15\]일 것이다.
+
+%
+\begin{mdframed}
+\defi{}
+일어날 확률이 \(p\)인 사건의 시행을 \(n\)회 반복할 때, 이 사건이 일어난 횟수를 \(X\)라고 하자.
+\(X\)의 확률질량함수는
+\[P(X=x)=_nC_xp^xq^{n-x}\]
+이다.
+이와 같은 \(X\)의 확률분포를 \emph{이항분포}라고 하며 기호로
+\[X\sim B(n,p)\]
+라고 쓴다.
+\end{mdframed}
+
+%
+\begin{mdframed}
+\theo{}
+\(X\sim B(n,p)\)이면 
+\[E(X)=np,\quad V(X)=npq\]
+이다.
+(\(q=1-p\))
+\end{mdframed}
+
+이 식의 증명에는 \(r\cdot_nC_r=n\cdot_{n-1}C_{r-1}\)이 필요하다.
+그리고 이 식은 쉽게 증명된다 ;
+\begin{align*}
+r\cdot_nC_r
+&=r\cdot\frac{n!}{r!(n-r)!}=\frac{n!}{(r-1)!(n-r)!}\\
+&=n\cdot\frac{\fbox{(11)}}{(r-1)!\{(n-1)-(r-1)\}!}\\
+&=n\cdot_{n-1}C_{r-1}
+\end{align*}
+
+\proo{}
+\(X\)의 확률질량함수는
+\begin{center}
+\begin{tabu}to.8\textwidth{X[3$c]|X[$c]X[$c]X[$c]X[$c]X[$c]|X[$c]}
+\hline
+X		&0		&1		&2		&\cdots		&n	&합계\\\hline
+P(X=x)	&p_0	&p_1	&p_2	&\cdots		&p_n	&1\\\hline
+\end{tabu}
+\end{center}
+이다.
+이때,
+\[p_r=P(X=r)=_nC_rp^rq^{n-r}\]이다.
+그러면
+\begin{align*}
+E(X)
+&=\sum_{r=0}^nr\cdot p_r=\sum_{r=0}^nr\cdot_nC_rp^rq^{n-r}\\
+&=\fbox{(12)}+\sum_{r=1}^nr\cdot_nC_rp^rq^{n-r}\\
+&=\sum_{r=1}^nn\cdot_{n-1}C_{r-1}p^rq^{n-r}\\
+&=np\sum_{r=1}^n{}_{n-1}C_{r-1}p^{r-1}q^{(n-1)-(r-1)}
+\end{align*}
+\(r-1=s\)로 치환하면 \(s=r+1\)이므로
+\begin{align*}
+E(X)
+&=np\sum_{s=0}^{n-1}{}_{n-1}C_sp^sq^{(n-1)-s}\\
+&=np(p+q)^{n-1}=\fbox{(13)}.
+\end{align*}
+
+한편,
+\begin{align*}
+E(X^2)
+&=\sum_{r=0}^nr^2\cdot p_r\\
+&=\sum_{r=0}^nr^2\cdot_nC_rp^rq^{n-r}\\
+&=\sum_{r=0}^n\{r(r-1)+r\}\cdot_nC_rp^rq^{n-r}\\
+&=\sum_{r=0}^nr(r-1)\cdot_nC_rp^rq^{n-r}+\sum_{r=0}^nr\cdot_nC_rp^rq^{n-r}\\
+&=\fbox{(12)}+\fbox{(12)}+\sum_{r=2}^nr(r-1)\cdot_nC_rp^rq^{n-r}+\fbox{(13)}
+\end{align*}
+이때,
+\begin{align*}
+r(r-1)\cdot_nC_r
+&=(r-1)\times n\cdot_{n-1}C_{r-1}=n(n-1)\cdot_{n-2}C_{r-2}
+\end{align*}
+이므로
+\begin{align*}
+E(X^2)
+&=\sum_{r=2}^nn(n-1)\cdot_{n-2}C_{r-2}p^rq^{n-r}+\fbox{(13)}\\
+&=n(n-1)p^2\sum_{r=2}^n\cdot_{n-2}C_{r-2}p^{r-2}q^{(n-2)-(r-2)}+\fbox{(13)}
+\end{align*}
+\(r-2=s\)로 치환하면 \(s=r+2\)이므로
+\begin{align*}
+E(X^2)
+&=n(n-1)p^2\sum_{s=0}^{n-2}{}_{n-2}C_sp^sq^{(n-2)-s}+\fbox{(13)}\\
+&=n(n-1)p^2(p+q)^{n-2}+\fbox{(13)}\\
+&=\fbox{(14)}+\fbox{(13)}.
+\end{align*}
+이다.
+
+따라서
+\begin{align*}
+V(X)
+&=E(X^2)-\{E(X)\}^2\\
+&=\left(\fbox{(14)}+\fbox{(13)}\right)-\fbox{(13)}^2\\
+&=npq.
+\end{align*}
+
+%
+\section*{답}
+\begin{enumerate}[(1)]
+\item
+\(2\)
+\item
+\(\sqrt2\)
+\item
+\(\frac23\)
+\item
+\(\frac16\)
+\item
+\(\frac13\)
+\item
+\(E(X^2)\)
+\item
+\(E(X\) 또는 \(m\)
+\item
+\(1\)
+\item
+\(a^2E(X^2)+2abm+b^2\)
+\item
+\(a^2m^2+2abm+b^2\)
+\item
+\((n-1)!\)
+\item
+\(0\)
+\item
+\(np\)
+\item
+\(n(n-1)p^2\)
+\end{enumerate}
+
+\end{document}

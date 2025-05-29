@@ -1,0 +1,115 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig,tabu}
+
+\usepackage[skipabove=10pt,skipbelow=10pt,innertopmargin=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textwidth}\end{mdframed}}
+\newcommand{\ans}{
+{\par\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}\par}\bigskip\bigskip}
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\ba{\,|\,}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\newenvironment{talign}
+ {\let\displaystyle\textstyle\align}
+ {\endalign}
+\newenvironment{talign*}
+ {\let\displaystyle\textstyle\csname align*\endcsname}
+ {\endalign}
+
+\let\emph\textsf
+
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,15mm,15mm,15mm,15mm}
+%%%%
+\begin{document}
+
+\title{민형 : 06 기본 공식 테스트(2)}
+\author{}
+\date{\today}
+\maketitle
+
+\begin{minipage}[t]{0.49\textwidth}
+\prob{}
+다음을 구하여라.
+\begin{enumerate}
+\item
+\(\displaystyle\int_0^{\frac\pi2}\sin x\,dx\)
+\item
+\(\displaystyle\int_0^{\frac\pi2}\sin^2 x\,dx\)
+\item
+\(\displaystyle\int_0^{\frac\pi2}\sin^3 x\,dx\)
+\item
+\(\displaystyle\int_0^{\frac\pi2}\sin^4 x\,dx\)
+\item
+\(\displaystyle\int_0^{\frac\pi2}\sin^5 x\,dx\)
+\end{enumerate}
+
+\prob{}
+다음을 구하여라.
+\begin{enumerate}
+\item
+\(\displaystyle\int_0^{\frac\pi4}\cot x\,dx\)
+\item
+\(\displaystyle\int_0^{\frac\pi4}\cot^2 x\,dx\)
+\item
+\(\displaystyle\int_0^{\frac\pi4}\sec x\,dx\)
+\item
+\(\displaystyle\int_0^{\frac\pi4}\sec^2 x\,dx\)
+\end{enumerate}
+
+\prob{}
+다음을 구하여라.
+\begin{enumerate}
+\item
+\(\displaystyle\int_0^1 e^{2x+1}\,dx\)
+\item
+\(\displaystyle\int_0^1\ln(x+1)\,dx\)
+\item
+\(\displaystyle\int_0^1\frac1{\sqrt{4-x^2}}\,dx\)
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+
+\prob{}
+다음을 구하여라.
+\begin{enumerate}
+\item
+\(\displaystyle\int\frac{\cos^2 x}{1+\sin x}\,dx\)
+\item
+\(\displaystyle\int\frac{\cos x}{1+\sin x}\,dx\)
+\item
+\(\displaystyle\int\frac{1}{1+\sin x}\,dx\)
+\end{enumerate}
+\end{minipage}
+\end{document}

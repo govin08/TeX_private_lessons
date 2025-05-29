@@ -1,0 +1,132 @@
+\documentclass[a4paper]{oblivoir}
+\usepackage{amsmath,amssymb,kotex,kswrapfig,mdframed,paralist}
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,10mm,*,10mm,*}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{graphicx}
+
+\pagestyle{empty}
+
+%%% Counters
+\newcounter{num}
+
+%%% Commands
+\newcommand\prob[1]
+{\bigskip\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\noindent}
+
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+
+\newcommand\ba{\ensuremath{\:|\:}}
+
+\newcommand\vs[1]{\vspace{25pt}}
+
+\newcommand\an[1]{\bigskip\par\noindent\textbf{문제 #1)}\par\noindent}
+
+%%% Meta Commands
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\begin{document}
+\begin{center}
+\LARGE수지, 추가과제 05
+\end{center}
+\begin{flushright}
+날짜 : 2017년 \(\pb3\)월 \(\pb{10}\)일 \(\pb{월}\)요일
+,\qquad
+제한시간 : \pb{17년}분
+,\qquad
+점수 : \pb{20} / \pb{20}
+\end{flushright}
+
+%%
+%\prob{}
+%함수 \(f(x)=\begin{cases}x^2-4x+3&(x\neq2)\\0&(x=2)\end{cases}\)에 대하여 다음 극한을 조사하여라.
+%\par\bigskip\noindent
+%(1) \(\displaystyle\lim_{x\to0}f(x)\)
+%\tabto{0.25\textwidth}
+%(2) \(\displaystyle\lim_{x\to1}f(x)\)
+%\tabto{0.5\textwidth}
+%(3) \(\displaystyle\lim_{x\to2}f(x)\)
+%\tabto{0.75\textwidth}
+%(4) \(\displaystyle\lim_{x\to\infty}f(x)\)
+%\par\bigskip
+
+%
+\prob{}
+다음 빈칸에 알맞은 것을 써넣어라
+(극한값이 존재하지 않으면 \(\times\) 표시 하여라).
+
+%
+\prob{}
+다음 극한값을 구하여라.
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle\lim_{x\to1}\frac{(x-1)(x^2+x+2)}{x^2-1}\)
+\item
+\(\displaystyle\lim_{x\to2}\frac{x^3-8}{x-2}\)
+\item
+\(\displaystyle\lim_{x\to9}\frac{\sqrt x-3}{x-9}\)
+\item
+\(\displaystyle\lim_{x\to3}\frac{2x-6}{\sqrt{x+1}-2}\)
+\end{enumerate}
+
+%
+\prob{}
+다음 극한을 조사하여라.
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle\lim_{x\to\infty}\frac{2x}{\sqrt{x^2+3}+4}\)
+\item
+\(\displaystyle\lim_{x\to\infty}\left(x^3+3x^2+2x-1\right)\)
+\item
+\(\displaystyle\lim_{x\to-\infty}\left(x^3+3x^2+2x-1\right)\)
+\item
+\(\displaystyle\lim_{x\to\infty}\left(\sqrt{x^2+1}-x\right)\)
+\item
+\(\displaystyle\lim_{x\to\infty}\left(\sqrt{x^2-3x}-\sqrt{x^2+3x}\right)\)
+\end{enumerate}
+
+%
+\prob{}
+다음 극한값을 구하여라.
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle\lim_{x\to0}\frac1x\left(\frac1{x+\sqrt2}-\frac1{\sqrt2}\right)\)
+\item
+\(\displaystyle\lim_{x\to2}\frac1{x-2}\left(2x-\frac{5x+2}{x+1}\right)\)
+\end{enumerate}
+
+%
+\prob{}
+다음 등식이 성립하도록 상수 \(a\)의 값을 정하여라.
+\begin{enumerate}[(1)]
+\item
+\(\displaystyle\lim_{x\to1}\frac{ax-2}{x-1}=2\)
+\item
+\(\displaystyle\lim_{x\to-1}\frac{x+1}{2x^2+3x+a}=-1\)
+\end{enumerate}
+
+%
+\prob{}
+다음 중 그 값이 가장 큰 것은? 
+(단, \([x]\)는 \(x\)보다 크지 않은 최대의 정수이다.)
+\tabb
+{\displaystyle\lim_{x\to0-}\frac{[x-2]}{x-2}}
+{\displaystyle\lim_{x\to0+}\frac{x}{[x-1]}}
+{\displaystyle\lim_{x\to-1+}\frac{[x]^2-1}{[x^2-1]}}
+{\displaystyle\lim_{x\to1-}\frac{[x-2]}{x+1}}
+{\displaystyle\lim_{x\to\infty}\left[\frac{2x+1}{x+1}\right]}
+
+
+\end{document}

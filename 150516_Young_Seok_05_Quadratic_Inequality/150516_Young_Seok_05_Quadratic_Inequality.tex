@@ -1,0 +1,583 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,mdframed,paralist,chngcntr}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par}
+\newcommand{\exam}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par}
+\newcommand{\howo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{숙제 \arabic{num}) #1}\par}
+
+
+\renewcommand{\proofname}{증명)}
+\newcommand{\mo}[1]{\ensuremath{\:(\text{mod}\:\:#1)}}
+\counterwithout{subsection}{section}
+
+
+%%%
+\begin{document}
+
+\title{영석 : 05 이차부등식}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+\subsection{연립 일차 부등식}
+
+%
+\prob{}
+\begin{gather}
+\begin{cases}
+x>2\\
+x<3
+\end{cases}\\
+\begin{cases}
+x\le2\\
+x\ge3
+\end{cases}\\
+\begin{cases}
+x\ge2\\
+x>3
+\end{cases}\\
+\begin{cases}
+x\le2\\
+x<3
+\end{cases}\\
+\begin{cases}
+x\ge2\\
+x<3
+\end{cases}
+\end{gather}
+
+%
+\prob{}
+\setcounter{equation}{0}
+\begin{gather}
+\begin{cases}
+x>-2\\
+x<5
+\end{cases}\\
+\begin{cases}
+x\le2\\
+x\ge5
+\end{cases}\\
+\begin{cases}
+x>2\\
+x>1\\
+x\le3
+\end{cases}
+\end{gather}
+
+%
+\howo{}
+\setcounter{equation}{0}
+\begin{gather}
+\begin{cases}
+x>1\\
+x<3
+\end{cases}\\
+\begin{cases}
+x\le-1\\
+x>3
+\end{cases}\\
+\begin{cases}
+x>1\\
+x\ge3\\
+x<5
+\end{cases}
+\end{gather}
+
+%%
+\subsection{절댓값이 포함된 부등식}
+
+%
+\defi{절댓값}
+실수 \(a\)에 대해 \(|a|\)를
+\[
+|a|=\left\{
+\begin{array}{cc}
+a&(a>0)\\
+-a&(a<0)
+\end{array}
+\right.
+\]
+로 정의하자.
+읽을 때에는 `\textbf{절댓값} \(\mathbf a\)'라고 읽는다.
+
+%
+\exam{}
+\(1\)은 \(1\ge0\)이므로 \(|1|=1\)이다.
+
+\(0\)도 \(0\ge0\)이므로 \(|0|=0\)이다.
+
+\(-1\)은 \(-1<0\)이므로 \(|-1|=-(-1)=1\)이다.
+
+마찬가지의 논리에 의해
+\begin{gather*}
+|12|=12\\
+|100|=100\\
+|\frac12|=\frac12\\
+|\sqrt 2|=\sqrt 2\\
+|-5|=5\\
+|-512|=512\\
+|-\pi|=\pi\\
+|-\frac4{2\sqrt 5}=\frac4{2\sqrt5}
+\end{gather*}
+등이 성립한다.
+
+%
+\prob{}
+\begin{gather}
+|-3|=\\
+|2.4|=\\
+\left|\frac{19}2\right|=\\
+|\sqrt2-1|=\\
+|\sqrt3-3|=\\
+\left|\frac{\sqrt5-2}2\right|=\\
+|-3|+|4|-|-2|=\\
+\frac{|2|-|-4|}{|-3|}=
+\end{gather}
+
+%
+\howo{}
+\begin{gather}
+\setcounter{equation}{0}
+|2|=\\
+|-2.14|=\\
+\left|-\frac{21}5\right|=\\
+|\sqrt2-\sqrt3|=\\
+|\sqrt{50}-7|=\\
+\left|\frac{\sqrt7-9}3\right|=\\
+-|-2|+|-3|-|1|=\\
+\frac{|3|+|-4|}{|-7|}=
+\end{gather}
+
+%
+\prob{}
+(1)
+\(a>3\)일 때, \(|a-3|=\)
+
+(2)
+\(a<-2\)일 때, \(|a+2|=\)
+
+%
+\prob{}
+(1)
+\(a\ge-1\)일 때, \(|a+1|=\)
+
+(2)
+\(a\le 4\)일 때, \(|a-4|=\)
+
+(3)
+\(a>1\)일 때, \(|a+2|=\)
+
+(4)
+\(a<-4\)일 때, \(|a|=\)
+
+%
+\howo{}
+(1)
+\(a\ge-2\)일 때, \(|a+2|=\)
+
+(2)
+\(a\le 3\)일 때, \(|a-3|=\)
+
+(3)
+\(a>5\)일 때, \(|a+1|=\)
+
+(4)
+\(a<-10\)일 때, \(|a+5|=\)
+
+%
+\prob{}
+(1)
+\(-3<a<2\)일 때
+\[|a+3|-|a-2|\]
+를 간단히하시오.
+
+(2)
+\(a>100\)일 때
+\[|a+10|+|a-10|\]
+을 간단히하시오.
+
+%
+\prob{}
+(1)
+\(2\le a\le 4\)일 때, \(|a-2|-|a-4|=\)
+
+(2)
+\(-4< a\le -2\)일 때, \(-|a+2|+2|a+4|=\)
+
+(3)
+\(a<-5\)일 때, \(|a+2|+|a-3|=\)
+
+%
+\howo{}
+(1)
+\(3<a<5\)일 때, \(|a-3|+|a-5|=\)
+
+(2)
+\(a>100\)일 때, \(|a+15|-2|a-25|=\)
+
+%
+\exam{}
+(1)
+\(|a|\)는 수직선 상에서 `원점(0)에서부터 \(a\)를 나타내는 점까지의 거리'와 같음을 알 수 있다.
+예를 들어 \(|2|\)은 \(0\)에서 \(1\)까지의 거리인 \(2\)이고 \(|-3|\)은 \(0\)에서 \(-3\)까지의 거리인 \(3\)이다.
+또 \(|0|\)은 \(0\)에서 \(0\)까지의 거리인 \(0\)이다.
+그렇기 때문에 부등식
+\[|x|<1\]
+은 원점에서부터의 거리가 \(1\)보다 작은 \(x\)의 범위를 나타낸다고 볼 수 있다.
+따라서
+\[-1<x<1\]
+이다.
+
+(2) 마찬가지로 부등식
+\[|x|>1\]
+은 원점으로부터의 거리가 \(1\)보다 큰 \(x\)의 범위를 나타낸다고 볼 수 있다.
+따라서
+\[x<-1\text{ 또는 }x>1\]
+이다.
+
+%
+\theo{}
+일반적으로 양의 실수 \(a\)(\(a>0\))에 대해
+\[|x|<a\]
+의 해는
+\[-a<x<a\]
+이다.
+또,
+\[|x|>a\]
+의 해는
+\[x<-a\text{ 또는 }x>a\]
+이다.
+
+%또
+%\(<\)이 \(\le\)로, \(>\)이 \(\ge\)로 바뀌어도 비슷한 결과가 성립한다.
+
+%
+\prob{}
+\begin{gather}
+\setcounter{equation}{0}
+|x|<2\\
+|x|\le\frac15\\
+|x|>1.2\\
+|x|\ge 5
+\end{gather}
+
+%
+\howo{}
+\begin{gather}
+\setcounter{equation}{0}
+|x|>10\\
+|x|<3.5\\
+|x|\le3\\
+|x|\ge 2
+\end{gather}
+
+%
+\prob{}
+\begin{gather}
+\setcounter{equation}{0}
+|-x|>3\\
+|2x|<4\\
+|-3x|\le-6\\
+\left|\frac12x\right|\ge3\\
+|x|<|2x|+3
+\end{gather}
+
+%
+\prob{}
+\begin{gather}
+\setcounter{equation}{0}
+|x+3x|<8\\
+2|x|\ge6\\
+-3|-x|\le-9\\
+\left|\frac13x\right|\ge1
+\end{gather}
+
+%
+\howo{}
+\begin{gather}
+\setcounter{equation}{0}
+|-x|<2\\
+|3x|>9\\
+|-2x|\ge-8\\
+\left|\frac23x\right|\le4\\
+|4x|>|2x|+2
+\end{gather}
+
+%
+\prob{}
+\begin{gather}
+\setcounter{equation}{0}
+|x-3|\le5\\
+|x-\frac12|<\frac12\\
+|2x-4|\ge6\\
+|x+5|>1
+\end{gather}
+
+%
+\prob{}
+\begin{gather}
+\setcounter{equation}{0}
+|x-1|\le\sqrt2\\
+|x-\frac32|<\frac12\\
+|4-2x|\ge3\\
+|1-\frac x2|>1
+\end{gather}
+
+%
+\howo{}
+\begin{gather}
+\setcounter{equation}{0}
+|x-1|<3\\
+|x-\sqrt2|<\sqrt2\\
+|3x-9|\ge15\\
+|x+2|\le4
+\end{gather}
+
+%%
+\subsection{이차부등식}
+
+%
+\defi{}
+이항했을 때
+\begin{gather*}
+ax^2+bx+c>0
+ax^2+bx+c<0
+ax^2+bx+c\ge0
+ax^2+bx+c\le0
+\end{gather*}
+꼴로 표시되는 부등식을 \textbf{이차부등식}이라고 한다.
+
+%
+\exam{}
+(1) \(x^2+2x+3>0\)은 이차부등식이다.
+(2) \(-3x+5<0\)은 이차부등식이 아니다.
+(3) \((x-3)^2\ge2(x-1)^2\)은 이차부등식이다.
+(4) \(\frac12x+3<x-7\)은 이차부등식이 아니다.
+
+%
+\prob{}
+다음 중 이차부등식을 고르시오.
+\begin{gather}
+2x+4>0\\
+-2x^2+5<0\\
+(x-4)^2<7\\
+(x+3)^2+(x-1)^2<2(x-4)^2
+\end{gather}
+
+%
+\howo{}
+다음 중 이차부등식을 고르시오.
+\begin{gather}
+x^2<0\\
+\frac1x>0\\
+x^3+7x<7\\
+2x^2+(x-1)^2<3(x-2)^2
+\end{gather}
+
+이차부등식을 푸는 방법은 인수분해를 사용한 방법과 그래프를 사용한 방법이 있으나 여기서는 인수분해를 사용한 방법을 소개하겠다.
+
+두 실수 \(A\), \(B\)에 대해 \(AB<0\)이기 위해서는 \(A\), \(B\)의 부호가 서로 달라야 한다.
+즉
+\[
+\begin{cases}
+A>0\\
+B<0
+\end{cases}
+\text{ 이거나 }
+\begin{cases}
+A<0\\
+B>0
+\end{cases}
+\]
+이어야 한다.
+
+한편 \(AB>0\)이기 위해서는 \(A\), \(B\)의 부호가 서로 같아야 한다.
+즉
+\[
+\begin{cases}
+A>0\\
+B>0
+\end{cases}
+\text{ 이거나 }
+\begin{cases}
+A<0\\
+B<0
+\end{cases}
+\]
+이어야 한다.
+
+이를 토대로 이차부등식을 풀 수 있다.
+
+%
+\exam{}
+이차부등식
+\[x^2-4x+3<0\]
+을 풀어보자.
+인수분해하면
+\[(x-1)(x-3)<0\]
+이 된다.
+따라서 \(x-1\)과 \(x-3\)의 부호는 서로 다르다.
+즉
+\[
+\begin{cases}
+x-1>0\\
+x-3<0
+\end{cases}
+\text{ 이거나 }
+\begin{cases}
+x-1<0\\
+x-3>0
+\end{cases}
+\]
+이어야 한다.
+조금 더 정리하면
+\[
+\begin{cases}
+x>1\\
+x<3
+\end{cases}
+\text{ 이거나 }
+\begin{cases}
+x<1\\
+x>3
+\end{cases}
+\]
+이어야 한다.
+앞의 것은 정리하면\(1<x<3\)이 되고, 뒤의 것은 발생할 수 없다.
+따라서 답은
+\[1<x<3\]
+이 된다.
+
+\exam{}
+이차부등식
+\[x^2-4x+3>0\]
+을 풀어보자.
+인수분해하면
+\[(x-1)(x-3)>0\]
+이 된다.
+따라서 \(x-1\)과 \(x-3\)의 부호는 서로 같다.
+즉
+\[
+\begin{cases}
+x-1>0\\
+x-3>0
+\end{cases}
+\text{ 이거나 }
+\begin{cases}
+x-1<0\\
+x-3<0
+\end{cases}
+\]
+이어야 한다.
+조금 더 정리하면
+\[
+\begin{cases}
+x>1\\
+x>3
+\end{cases}
+\text{ 이거나 }
+\begin{cases}
+x<1\\
+x<3
+\end{cases}
+\]
+이어야 한다.
+더 정리하면
+\[
+x>3
+\text{ 이거나 }
+x<1
+\]
+이 된다.
+
+같은 방법으로
+\begin{gather*}
+x^2-4x+3\ge0\\
+x^2-4x+3\le0
+\end{gather*}
+도 풀 수 있다.
+
+%
+\theo{}
+두 실수 \(\alpha\), \(\beta\)에 대해 \(\alpha<\beta\)가 성립할 때,\\
+(1) \((x-\alpha)(x-\beta)<0\)의 해는 \(\alpha<x<\beta\)이다.\\
+(2) \((x-\alpha)(x-\beta)\le0\)의 해는 \(\alpha\le x\le\beta\)이다.\\
+(3) \((x-\alpha)(x-\beta)>0\)의 해는 \(x<\alpha\) 혹은 \(x>\beta\)이다.\\
+(4) \((x-\alpha)(x-\beta)\ge0\)의 해는 \(x\le\alpha\) 혹은 \(x\ge\beta\)이다.
+
+%
+\prob{}
+다음 이차 부등식을 풀어라.
+\setcounter{equation}{0}
+\begin{gather}
+x^2+5x+6>0\\
+x^2+3x+4\ge0\\
+x^2-2x-3<0\\
+-2x^2-6x+8\le0
+\end{gather}
+
+%
+\prob{}
+다음 이차 부등식을 풀어라.
+\setcounter{equation}{0}
+\begin{gather}
+-x^2+x+2>0\\
+2x^2+x-1\ge0\\
+3x^2-x-4<0\\
+x^2-6x+8\le0\\
+x(x-2)<0
+\end{gather}
+
+%
+\howo{}
+다음 이차 부등식을 풀어라.
+\setcounter{equation}{0}
+\begin{gather}
+-x^2+2x>0\\
+x^2+3x-4\ge0\\
+2x^2-2x-4<0\\
+x^2-2x-8\le0
+\end{gather}
+
+%
+\prob{}
+다음 이차 연립 부등식을 풀어라.
+\setcounter{equation}{0}
+\begin{gather}
+\begin{cases}
+x^2+5x+6>0\\
+x^2+3x+4\ge0
+\end{cases}\\
+\begin{cases}
+x^2-2x-3<0\\
+-2x^2-6x+8\le0
+\end{cases}
+\end{gather}
+
+%
+\howo{}
+다음 이차 연립 부등식을 풀어라.
+\setcounter{equation}{0}
+\begin{gather}
+\begin{cases}
+x^2-3x-4<0\\
+x^2+2x-8>0
+\end{cases}\\
+\begin{cases}
+x^2-4x-5\le0\\
+x^2+x-6\ge0
+\end{cases}
+\end{gather}
+\end{document}

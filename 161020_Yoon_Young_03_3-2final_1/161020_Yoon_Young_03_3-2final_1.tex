@@ -1,0 +1,170 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig}
+
+\usepackage[skipabove=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+%\setlist{noitemsep}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+
+\newcommand{\ans}{
+{\par
+\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}
+\par}\bigskip\bigskip}
+
+\newcommand\ov[2]{\ensuremath{\overline{#1#2}}}
+
+%\newcommand{\pb}[1]%\Phantom + fBox
+%{\fbox{\phantom{\ensuremath{#1}}}}
+
+%%%%
+\begin{document}
+
+\title{윤영 : 04 쎈(1)}
+\author{}
+\date{\today}
+\maketitle
+
+\setcounter{section}{17}
+%%
+\section{삼각비의 활용}
+
+\kswrapfig[Pos=r,Width=4cm]{736a}{
+오른쪽 그림과 같이 반지름의 길이가 \(50\)cm인 물레방아가 시계 반대방향으로 1분에 1바퀴씩 돈다.
+현재 \ov OA와 수면이 평행하다고 할 때, 다음 물음에 답하여라.
+(문제 1--3)
+}
+
+%
+\prob{736}
+20초 후에 \(A\)지점의 수면으로부터의 높이는?
+\tabb{35}{60}{85}{60+25\sqrt3}{60-25\sqrt3}
+
+%
+\prob{736}
+25초 후에 \(A\)지점의 수면으로부터의 높이는?
+\tabb{35}{60}{85}{60+25\sqrt3}{60-25\sqrt3}
+
+%
+\prob{736}
+40초 후에 \(A\)지점의 수면으로부터의 높이는?
+\tabb{35}{60}{85}{60+25\sqrt3}{60-25\sqrt3}
+
+\clearpage
+%
+\prob{765}
+\kswrapfig[Pos=r,Width=4cm]{765}{
+오른쪽 그림의 평행사변형 \(ABCD\)에서 점 \(M\), \(N\)은 각각 \ov AB, \ov BC의 중점이다.
+이때 \(\triangle CMN\)의 넓이를 구하여라.
+}
+\tabb{\frac{81\sqrt2}4}{\frac{81\sqrt3}4}{\frac{81\sqrt2}2}{\frac{81\sqrt3}2}{\frac{27\sqrt2}4}
+
+%
+\prob{783, 795}
+\kswrapfig[Pos=r,Width=4cm]{783a}{
+오른쪽 그림과 같이 정삼각형 \(ABC\)에서 한 변의 길이를 10\% 늘려 새로운 정삼각형 \(AB'C'\)을 만들었을 때, 정삼각형의 넓이의 변화는?
+}
+\tabb{12\% 감소한다}{4\% 감소한다}{변화가 없다.}{17\% 증가한다}{21\% 증가한다}
+
+%
+\prob{783, 795}
+\kswrapfig[Pos=r,Width=4cm]{783b}{
+오른쪽 그림과 같이 직사각형 \(ABCD\)에서 \ov AB의 길이는 \(30\%\) 늘이고, \ov AD의 길이는 \(10\%\)줄여서 새로운 직사각형 \(AB'C'D'\)을 만들었을 때, 직사각형의 넓이의 변화는?
+}
+\tabb{12\% 감소한다}{4\% 감소한다}{변화가 없다.}{17\% 증가한다}{21\% 증가한다}
+
+\clearpage
+%
+\prob{783, 795}
+\kswrapfig[Pos=r,Width=4cm]{783c}{
+오른쪽 그림과 같이 평행사변형 \(ABCD\)에서 \ov AB의 길이는 \(20\%\) 줄이고, \ov AD의 길이는 \(20\%\)늘여서 새로운 평행사변형 \(AB'C'D'\)을 만들었을 때, 평행사변형의 넓이의 변화는?
+}
+\tabb{12\% 감소한다}{4\% 감소한다}{변화가 없다.}{17\% 증가한다}{21\% 증가한다}
+
+%
+\prob{783, 795}
+\kswrapfig[Pos=r,Width=4cm]{783d}{
+오른쪽 그림과 같이 삼각형 \(ABC\)에서 \ov AB의 길이는 \(20\%\) 줄이고, \ov BC의 길이는 \(10\%\)늘여서 새로운 삼각형 \(AB'C'\)을 만들었을 때, 삼각형의 넓이의 변화는?
+}
+\tabb{12\% 감소한다}{4\% 감소한다}{변화가 없다.}{17\% 증가한다}{21\% 증가한다}
+
+%
+\prob{788}
+\kswrapfig[Pos=r,Width=4cm]{788a}{
+오른쪽 그림과 같이 반지름의 길이가 \(6\)인 원 \(O\)에 크기가 같은 6개의 원이 내접하면서 서로 외접하고 있다.
+이때 색칠한 부분의 넓이는?
+}
+\tabb{12\pi}{\frac{27\pi}2}{15\pi}{\frac{33\pi}2}{18\pi}
+
+\clearpage
+%
+\prob{788}
+\kswrapfig[Pos=r,Width=4cm]{788b}{
+오른쪽 그림과 같이 중심각의 크기가 \(\angle AOB=90^\circ\)인 부채꼴 \(OAB\)에 원이 내접하고 있다.
+이때 색칠한 부분의 넓이는?
+}
+\tabb{(72\sqrt2-99)\pi}{(72\sqrt2+99)\pi}{(36\sqrt2-45)\pi}{(36\sqrt2-45)\pi}{36\pi}
+
+%
+\prob{792}
+\kswrapfig[Pos=r,Width=2.5cm]{792}{
+오른쪽 그림에서 \(\triangle ABC\)는 꼭지각의 크기가 \(30^\circ\)인 이등변삼각형이고 \ov BC=\ov BD=2일 때, \(\ov AB\)의 길이를 구하여라.
+}
+\tabb{\sqrt3-1}{\sqrt3+1}{\sqrt6-\sqrt2}{\sqrt6+\sqrt2}{\sqrt3+\sqrt2}
+
+%%
+%\prob{793}
+%오른쪽 그림의 \(\triangle ABC\)에서 \(\angle B=30^\circ\), \(\angle C=105^\circ\), \ov AB=10cm일 때, \(\triangle ABC\)의 넓이는?
+
+%
+\prob{796}
+\kswrapfig[Pos=r,Width=5cm]{796}{
+오른쪽 그림과 같이 \(\angle A=30^\circ\), \(\angle B=90^\circ\), \(\ov BC=3\sqrt3\)cm인 삼각형 \(ABC\)에서 변 \(AB\), \(AC\) 위의 점 \(D\), \(E\)에 대하여 \(\ov BD=3\)cm, \(\ov CE=4\sqrt3\)이다.
+\ov CE 위의 점 \(F\)에 대하여 \ov DF가 \(\square DBCE\)의 넓이를 이등분할 때, \ov EF의 길이를 구하여라.
+}
+\tabb{3\sqrt3}{\frac72\sqrt3}{4\sqrt3}{\frac92\sqrt3}{5\sqrt3}
+
+\clearpage
+%
+\prob{797}
+\kswrapfig[Pos=r,Width=3.5cm]{797a}{
+오른쪽 그림의 정사각형 \(ABCD\)에서 점 \(E\), \(F\)은 \ov BC의 삼등분점이고 \(G\), \(H\)는 \ov CD의 삼등분점들이다.
+\(\angle FAG=x\)라고 할 때, \(\sin x\)의 값을 구하여라.
+}
+\tabb{\frac4{13}}{\frac5{13}}{\frac6{13}}{\frac7{13}}{\frac8{13}}
+
+%
+\prob{797}
+\kswrapfig[Pos=r,Width=3.5cm]{797b}{
+오른쪽 그림과 같이, \(\angle B=90^\circ\), \(\angle ADB=45^\circ\)인 직각이등변삼각형 \(ABD\)에서 \(C\)는 \ov BD의 중점이다.
+\(\angle CAD=x\)라고 할 때, \(\sin x\)의 값을 구하여라.
+}
+\tabb{\frac{\sqrt6}6}{\frac{\sqrt7}7}{\frac{\sqrt2}4}{\frac13}{\frac{\sqrt{10}}{10}}
+
+%
+\prob{799}
+\kswrapfig[Pos=r,Width=3.5cm]{799}{
+오른쪽 그림과 같은 평행사변형 \(ABCD\)의 넓이가 \(24\sqrt3\)cm\(^2\)이고 \ov AB:\ov BC=3:4일 때, \(\square ABCD\)의 둘레의 길이는?
+}
+\tabb{24\sqrt2}{26\sqrt2}{28\sqrt2}{30\sqrt2}{32\sqrt2}
+
+%%
+%\prob{800}
+%오른쪽 그림과 같이 길이가 \(40\)cm인 괘종시계의 추가 좌우 \(30^\circ\)의 각도를 유지하면서 움직이고 있다.
+%추가 오른쪽으로 \(18^\circ\)만큼 움직였을 때, 추는 \(B\)지점을 기준으로 하여 \(a\) cm만큼 위에 있고, 오른쪽으로 \(b\) cm만큼 오른쪽에 있다.
+%이때 \(a+b\)의 값을 구하여라.
+%(단, \(\sin18^\circ=0.3\), \(\cos18^\circ=0.95\)로 계산한다.)
+\end{document}

@@ -1,0 +1,141 @@
+%%%Default packages
+\usepackage{amsmath,amssymb,amsthm,kotex,tabu,graphicx,pifont}
+
+%%%More packages
+\usepackage{caption,subcaption}
+\usepackage[perpage]{footmisc}
+
+\usepackage[skipabove=10pt,innertopmargin=10pt,nobreak=true]{mdframed}
+
+\usepackage[inline]{enumitem}
+\setlist[enumerate,1]{label=(\arabic*)}
+\setlist[enumerate,2]{label=(\alph*)}
+
+\usepackage{multicol}
+\setlength{\columnsep}{30pt}
+\setlength{\columnseprule}{1pt}
+
+\usepackage{forest}
+\usetikzlibrary{shapes.geometric,arrows.meta,calc}
+
+%%%defi theo exam prob rema proo
+%이 환경들 아래에 문단을 쓸 경우 살짝 들여쓰기가 되므로 \hspace{-.7em}가 필요할 수 있다.
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\revi}[1]
+{\noindent\refstepcounter{num}\textbf{복습 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num})} #1\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num})} #1\par\noindent}
+\newcommand{\rema}[1]
+{\bigskip\bigskip\noindent\refstepcounter{num}\textbf{참고 \arabic{num})} #1\par\noindent}
+\newcommand{\proo}
+{\bigskip\noindent\textsf{증명)}}
+
+\newenvironment{talign}
+ {\let\displaystyle\textstyle\align}
+ {\endalign}
+\newenvironment{talign*}
+ {\let\displaystyle\textstyle\csname align*\endcsname}
+ {\endalign}
+
+%%%Commands
+
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textheight}\end{mdframed}}
+
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 \ref{#1})}\par\noindent}
+
+\newcommand\ann[2]{\par\bigskip\noindent\textbf{문제 \ref{#1})}\:\:#2\par\medskip\noindent}
+
+\newcommand\ans[1]{\begin{flushright}\textbf{답 : }#1\end{flushright}}
+
+\newcommand\anssec[1]{\bigskip\bigskip\noindent{\large\bfseries#1}}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand\ba{\,|\,}
+
+\newcommand\ovv[1]{\ensuremath{\overline{#1}}}
+\newcommand\ov[2]{\ensuremath{\overline{#1#2}}}
+
+%%% Settings
+\let\oldsection\section
+
+\renewcommand\section{\clearpage\oldsection}
+
+\let\emph\textsf
+
+\renewcommand{\arraystretch}{1.5}
+
+%%% Footnotes
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or
+*\or **\or ***\or
+\star\or\star\star\or\star\star\star\or
+\dagger\or\dagger\dagger\or\dagger\dagger\dagger
+\else\@ctrerr\fi}}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\makeatother
+
+\makeatletter
+\AtBeginEnvironment{mdframed}{%
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or
+*\or **\or ***\or
+\star\or\star\star\or\star\star\star\or
+\dagger\or\dagger\dagger\or\dagger\dagger\dagger
+\else\@ctrerr\fi}}%
+}   
+\renewcommand\thempfootnote{\fnsymbol{mpfootnote}}
+\makeatother
+
+%%% 객관식 선지
+\newcommand\one{\ding{172}}
+\newcommand\two{\ding{173}}
+\newcommand\three{\ding{174}}
+\newcommand\four{\ding{175}}
+\newcommand\five{\ding{176}}
+\usepackage{tabto,pifont}
+%\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+
+\newcommand\taba[5]{\par\noindent
+\one\:{#1}
+\tabto{0.2\textwidth}\two\:\:{#2}
+\tabto{0.4\textwidth}\three\:\:{#3}
+\tabto{0.6\textwidth}\four\:\:{#4}
+\tabto{0.8\textwidth}\five\:\:{#5}}
+
+\newcommand\tabb[5]{\par\noindent
+\one\:{#1}
+\tabto{0.33\textwidth}\two\:\:{#2}
+\tabto{0.67\textwidth}\three\:\:{#3}\medskip\par\noindent
+\four\:\:{#4}
+\tabto{0.33\textwidth}\five\:\:{#5}}
+
+\newcommand\tabc[5]{\par\noindent
+\one\:{#1}
+\tabto{0.5\textwidth}\two\:\:{#2}\medskip\par\noindent
+\three\:\:{#3}
+\tabto{0.5\textwidth}\four\:\:{#4}\medskip\par\noindent
+\five\:\:{#5}}
+
+\newcommand\tabd[5]{\par\noindent
+\one\:{#1}\medskip\par\noindent
+\two\:\:{#2}\medskip\par\noindent
+\three\:\:{#3}\medskip\par\noindent
+\four\:\:{#4}\medskip\par\noindent
+\five\:\:{#5}}
+
+%%% fonts
+
+\usepackage{fontspec, xunicode, xltxtra}
+%\setmainfont[]{은 바탕}
+%\setsansfont[]{은 돋움}
+%\setmonofont[]{은 바탕}
+%\XeTeXlinebreaklocale "ko"

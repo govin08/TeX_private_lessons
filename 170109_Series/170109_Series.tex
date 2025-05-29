@@ -1,0 +1,427 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,kswrapfig}
+
+\usepackage[skipabove=10pt,skipbelow=10pt]{mdframed}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\bigskip\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\usepackage{enumitem}
+\setlist[enumerate]{label=(\arabic*)}
+
+\newcounter{num}
+\newcommand{\defi}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{num}) #1}\par\noindent}
+\newcommand{\theo}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{num}) #1}\par\noindent}
+\newcommand{\exam}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{예시 \arabic{num}) #1}\par\noindent}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1}\par\noindent}
+\newcommand{\proo}
+{\bigskip\textsf{증명)}\par}
+
+\newcommand{\ans}{
+{\par
+\raggedleft\textbf{답 : (\qquad\qquad\qquad\qquad\qquad\qquad)}
+\par}\bigskip\bigskip}
+\newcommand\an[1]{\par\bigskip\noindent\textbf{문제 #1)}\\}
+
+\newcommand{\pb}[1]%\Phantom + fBox
+{\fbox{\phantom{\ensuremath{#1}}}}
+
+\newcommand{\procedure}[1]{\begin{mdframed}\vspace{#1\textheight}\end{mdframed}}
+
+\let\oldsection\section
+\let\emph\textsf
+\renewcommand\section{\clearpage\oldsection}
+%%%%
+\begin{document}
+
+\title{미적분 1 : 02 급수}
+\author{}
+\date{\today}
+\maketitle
+\tableofcontents
+\newpage
+
+%%
+\section{부분합과 급수의 합}
+
+\begin{mdframed}[innertopmargin=-5pt]
+%
+\defi{부분합과 급수의 합}
+수열 \(\{a_n\}\)에서 첫항부터 제 \(n\)항까지의 합
+\[S_n=\sum_{k=1}^na_k=a_1+a_2+\cdots+a_n\]
+을 \emph{부분합}이라고 부른다.
+
+%또
+%\[S=\sum_{k=1}^\infty a_k=a_1+a_2+\cdots+a_n+\cdots\]
+%를 \emph{급수}라고 부른다.
+
+이때 수열 \(\{S_n\}\)이 수렴하면 그 극한값
+\begin{align*}
+\lim_{n\to\infty}S_n
+&=\lim_{n\to\infty}\sum_{k=1}^na_k=\sum_{n=1}^\infty a_n=a_1+a_2+\cdots+a_n+\cdots
+\end{align*}
+을 \emph{급수의 합}이라고 부른다.
+\end{mdframed}
+
+%
+\exam{}
+다음 수열의 부분합과 급수의 합을 구하여라.
+\begin{enumerate}
+\item
+\(\frac1{1\cdot2}\), \(\frac1{2\cdot3}\), \(\frac1{3\cdot4}\), \(\cdots\), \(\frac1{n(n+1)}\), \(\cdots\)
+\item
+\(\frac12\), \(\left(\frac12\right)^2\), \(\left(\frac12\right)^3\), \(\cdots\), \(\left(\frac12\right)^n\), \(\cdots\)
+\end{enumerate}
+
+\begin{mdframed}
+(1)
+부분합 \(S_n\)은
+\begin{align*}
+S_n
+&=\frac1{1\cdot2}+\frac1{2\cdot3}+\frac1{3\cdot4}+\cdots+\frac1{n(n+1)}\\
+&=\left(\frac11-\frac12\right)+\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)
++\cdots+\left(\frac1n-\frac1{n+1}\right)\\
+&=1-\frac1{n+1}=\frac n{n+1}
+\end{align*}
+이고, 급수의 합 \(S\)는
+\[S=\lim_{n\to\infty}S_n=\lim_{n\to\infty}\frac n{n+1}=1\]
+이다.
+\end{mdframed}
+
+\begin{mdframed}
+(2)
+부분합 \(S_n\)은
+\begin{align*}
+S_n
+&=\frac12+\left(\frac12\right)^2+\left(\frac12\right)^3+\cdots+\left(\frac12\right)^n\\
+&=\frac{\frac12\left\{1-\left(\frac12\right)^n\right\}}{1-\frac12}\\
+&=1-\left(\frac12\right)^n
+\end{align*}
+이고, 급수의 합 \(S\)는
+\[S=\lim_{n\to\infty}S_n=\lim_{n\to\infty}\left\{1-\left(\frac12\right)^n\right\}=1\]
+이다.
+\end{mdframed}
+{\par
+\raggedleft\textbf{답 : (1) 부분합=\(\frac n{n+1}\), 급수의 합=\(1\),\quad(2) 부분합=\(1-\left(\frac12\right)^n\), 급수의 합=\(1\)}
+\par}\bigskip\bigskip
+
+%
+\prob{}
+다음 수열의 부분합과 급수의 합을 구하여라.
+\begin{enumerate}
+\item
+\(\frac1{1\cdot3}\), \(\frac1{3\cdot5}\), \(\frac1{5\cdot7}\), \(\cdots\), \(\frac1{(2n-1)(2n+1)}\), \(\cdots\)
+\item
+\(\frac23\), \(\left(\frac23\right)^2\), \(\left(\frac23\right)^3\), \(\cdots\), \(\left(\frac23\right)^n\), \(\cdots\)
+\end{enumerate}
+\procedure{0.3}
+\procedure{0.2}
+{\par
+\raggedleft\textbf{답 : (1) \qquad\qquad\qquad\qquad\qquad\qquad(2) \qquad\qquad\qquad\qquad\qquad\qquad}
+\par}\bigskip\bigskip
+
+%
+\exam{}
+다음 급수의 합을 구하여라.
+\[1+\frac1{1+2}+\frac1{1+2+3}+\cdots\]
+
+\vspace{-10pt}
+\begin{mdframed}
+제 \(n\)항을 \(a_n\)이라고 하면
+\begin{align*}
+a_n
+&=\frac1{1+2+\cdots+n}\\
+&=\frac1{\frac12n(n+1)}=\frac2{n(n+1)}\\
+&=2\left(\frac1n-\frac1{n+1}\right)
+\end{align*}
+이다.
+부분합을 \(S_n\)이라고 하면,
+\begin{align*}
+S_n
+&=2\left(\frac11-\frac12\right)+2\left(\frac12-\frac13\right)
++\cdots+2\left(\frac1n-\frac1{n+1}\right)\\
+&=2\left(1-\frac1{n+1}\right)
+\end{align*}
+따라서 급수의 합 \(S\)는
+\[
+S=\lim_{n\to\infty}S_n=\lim_{n\to\infty}2\left(1-\frac1{n+1}\right)
+=2\lim_{n\to\infty}\left(1-\frac1{n+1}\right)=2
+\]
+\end{mdframed}
+{\par
+\raggedleft\textbf{답 : \(2\)}
+\par}\bigskip\bigskip
+
+\clearpage
+%
+\exam{}
+다음 급수의 합을 구하여라.
+\[\frac1{1^2+2}+\frac1{2^2+4}+\frac1{3^2+6}+\frac1{4^2+8}+\cdots\]
+\procedure{0.7}
+\ans
+
+%%
+\section{급수의 수렴과 발산}
+\begin{mdframed}[innertopmargin=-5pt]
+%
+\defi{급수의 수렴과 발산}
+부분합 \(\{S_n\}\)이 수렴하여 급수의 합
+\[\lim_{n\to\infty}S_n
+=\lim_{n\to\infty}\sum_{k=1}^na_k=\sum_{n=1}^\infty a_n=a_1+a_2+\cdots+a_n+\cdots\]
+이 존재하면
+\begin{center}
+급수 \(\displaystyle\sum_{n=1}^\infty a_n\)은 수렴한다
+\end{center}
+
+\vspace{10pt}
+\noindent라고 말한다.
+급수의 합이 존재하지 않으면
+\begin{center}
+급수 \(\displaystyle\sum_{n=1}^\infty a_n\)은 발산한다
+\end{center}
+라고 말한다.
+\end{mdframed}
+
+%
+\exam{}\label{harmonic_series_1}
+다음 급수의 수렴과 발산을 조사하여라.
+\begin{enumerate}
+\item
+\(\frac12+\frac23+\frac34+\frac45+\cdots\)
+\item
+\(1+\frac12+\frac13+\frac14+\cdots\)
+\end{enumerate}
+
+\begin{mdframed}
+\begin{enumerate}
+\item
+\(a_1=\frac12\), \(a_2=\frac23\), \(a_3=\frac34\), \(\cdots\)라고 하면 \(a_n=\frac n{n+1}\)이다.
+이때,
+\[\lim_{n\to\infty}a_n=1\]
+이므로 \(n\)이 충분히 크면 \(a_n\)은 \(1\)과 비슷한 값이다.
+따라서 주어진 급수
+\[a_1+a_2+a_3+\cdots\]
+는 \(1\)과 비슷한 값을 무한히 더하여 얻어진다.
+그러므로 주어진 급수 \(\displaystyle\sum_{n=1}^\infty a_n\)는 발산한다.
+\end{enumerate}
+\end{mdframed}
+
+\begin{mdframed}
+\begin{enumerate}
+\item[(2)]
+\begin{align*}
+&1+\frac12+\frac13+\cdots\\
+=&1+\frac12+\left(\frac13+\frac14\right)+\left(\frac15+\frac16+\frac17+\frac18\right)\\
+&+\left(\frac19+\frac1{10}+\frac1{11}+\frac1{12}+\frac1{13}+\frac1{14}+\frac1{15}+\frac1{16}\right)
++\cdots\\
+>&1+\frac12+\left(\frac14+\frac14\right)+\left(\frac18+\frac18+\frac18+\frac18\right)\\
+&+\left(\frac1{16}+\frac1{16}+\frac1{16}+\frac1{16}+\frac1{16}+\frac1{16}+\frac1{16}+\frac1{16}\right)
++\cdots\\
+=&1+\frac12+\frac12+\frac12+\frac12+\cdots=\infty
+\end{align*}
+따라서 주어진 급수는 발산한다.
+\end{enumerate}
+\end{mdframed}
+{\par
+\raggedleft\textbf{답 : (1) 발산(양의 무한대로 발산), (2) 발산(양의 무한대로 발산)}
+\par}\bigskip\bigskip
+
+%
+\prob{}\label{harmonic_series_2}
+다음 급수의 수렴과 발산을 조사하여라.
+\begin{enumerate}
+\item
+\(\frac21+\frac33+\frac45+\frac57+\frac69+\frac7{11}+\cdots\)
+\item
+\(1+\frac13+\frac15+\frac17+\frac19+\cdots\)
+\end{enumerate}
+\procedure{0.3}
+\procedure{0.4}
+{\par
+\raggedleft\textbf{답 : (1) \qquad\qquad\qquad\qquad (2) \qquad\qquad\qquad\qquad}
+\par}\bigskip\bigskip
+
+예시 \ref{harmonic_series_1}, \ref{harmonic_series_2}의 (1)로부터 다음과 같은 결과를 얻을 수 있다.
+\begin{mdframed}
+\center
+\(\displaystyle\lim_{n\to\infty}a_n\neq0\)이면
+급수 \(\displaystyle\sum_{n=1}^\infty a_n\)은 발산한다.
+\end{mdframed}
+또한 이 명제의 대우인 다음 명제도 성립한다.
+\begin{mdframed}
+\center
+급수 \(\displaystyle\sum_{n=1}^\infty a_n\)이 수렴하면
+\(\displaystyle\lim_{n\to\infty}a_n=0\)이다.
+\end{mdframed}
+하지만 
+\begin{mdframed}
+\center
+\(\displaystyle\lim_{n\to\infty}a_n=0\)이면 급수 \(\displaystyle\sum_{n=1}^\infty a_n\)이 수렴한다.
+\end{mdframed}
+는 성립하지 않는다.
+예시 \ref{harmonic_series_1}, \ref{harmonic_series_2}의 (2)가 그 반례이다.
+
+%%
+\section{등비급수의 수렴과 발산}
+
+\vspace{-10pt}
+%
+\exam{}\label{geometric_series_1}
+다음 급수의 수렴과 발산을 조사하고, 수렴하면 그 합을 구하여라.
+\begin{enumerate}[topsep=0pt,itemsep=0pt]
+\item
+\(3+\frac32+\frac34+\frac38+\cdots\)
+\item
+\(2+2+2+2+\cdots\)
+\item
+\(1+(-2)+(-2)^2+(-2)^3+\cdots\)
+\end{enumerate}
+
+\begin{mdframed}
+\begin{enumerate}
+\item
+\(a=3\), \(r=\frac12\)인 등비수열이므로 일반항은 \(a_n=ar^{n-1}=3\times\left(\frac12\right)^{n-1}\)이고 부분합은
+\[S_n=\frac{a(1-r^n)}{1-r}=\frac{3\left\{1-\left(\frac12\right)^n\right\}}{1-\frac12}
+=6\left\{1-\left(\frac12\right)^n\right\}\]
+이다.
+따라서 급수의 합은
+\[S=\lim_{n\to\infty}S_n
+=\lim_{n\to\infty}6\left\{1-\left(\frac12\right)^n\right\}
+=6\lim_{n\to\infty}\left\{1-\left(\frac12\right)^n\right\}=6\]
+\item
+\(a=2\), \(r=1\)인 등비수열로 일반항은 \(a_n=2\times1^{n-1}=2\)이고 부분합은
+\[S_n=2+2+2+\cdots+2=2n\]
+이다.
+따라서
+\[\lim_{n\to\infty}S_n
+=\lim_{n\to\infty}2n=\infty\]
+이고 이 급수는 발산한다.
+\item
+\(a=1\), \(r=-2\)인 등비수열이므로 일반항은 \(a_n=ar^{n-1}=(-2)^{n-1}\)이고 부분합은
+\[S_n=\frac{a(1-r^n)}{1-r}=\frac{1\times\left\{1-(-2)^n\right\}}{1-(-2)}
+=\frac{1-(-2)^n}3\]
+이다.
+따라서
+\[\lim_{n\to\infty}S_n
+=\lim_{n\to\infty}\frac{1-(-2)^n}3\]
+는 진동하고 이 급수는 발산한다.
+\end{enumerate}
+\end{mdframed}
+{\par
+\raggedleft\textbf{답 : (1) 수렴(6으로 수렴), (2) 발산(양의 무한대로 발산), (3) 발산(진동)}
+\par}\bigskip\bigskip
+
+%
+\prob{}\label{geometric_series_2}
+다음 급수의 수렴과 발산을 조사하고, 수렴하면 그 합을 구하여라.
+\begin{enumerate}
+\item
+\(4+(-2)+1+\left(-\frac12\right)+\frac14+\cdots\)
+\item
+\(1+(-1)+1+(-1)+1+\cdots\)
+\item
+\(2+6+18+54+\cdots\)
+\end{enumerate}
+\procedure{0.63}
+{\par
+\raggedleft\textbf{답 : (1) \qquad\qquad\qquad\qquad (2) \qquad\qquad\qquad\qquad (3) \qquad\qquad\qquad}
+\par}\bigskip\bigskip
+
+\clearpage
+\begin{mdframed}[innertopmargin=-5pt]
+%
+\defi{등비급수}
+등비수열의 급수를 \emph{등비급수}라고 부른다.
+\end{mdframed}
+따라서, 예시 \ref{geometric_series_1}\과 문제 \ref{geometric_series_2}에서 계산한 급수들이 모두 등비급수이다.
+이때 다음 정리가 성립한다.
+
+\begin{mdframed}[innertopmargin=-5pt]
+%
+\theo{등비급수의 수렴과 발산}
+첫째항이 \(a(\neq0)\)이고, 공비가 \(r\)인 등비수열 \(a_n=ar^{n-1}\)에 대해
+\begin{enumerate}
+\item
+\(|r|<1\)이면 등비급수가 수렴하고
+\[\sum_{n=1}^\infty a_n=\frac a{1-r}\]
+이다.
+\item
+\(|r|\ge1\)이면 등비급수는 발산한다.
+\end{enumerate}
+\end{mdframed}
+
+%%
+\section{급수의 성질}
+\begin{mdframed}[innertopmargin=-5pt]
+%
+\theo{급수의 성질}
+두 급수 \(\displaystyle\sum_{n=1}^\infty a_n\), \(\displaystyle\sum_{n=1}^\infty b_n\)이 수렴한다고 가정하면
+\begin{enumerate}
+\item
+\(\displaystyle\sum_{n=1}^\infty ca_n=c\sum_{n=1}^\infty a_n\)
+\item
+\(\displaystyle\sum_{n=1}^\infty(a_n+b_n)=\sum_{n=1}^\infty a_n+\sum_{n=1}^\infty b_n\)
+\item
+\(\displaystyle\sum_{n=1}^\infty(a_n-b_n)=\sum_{n=1}^\infty a_n-\sum_{n=1}^\infty b_n\)
+\end{enumerate}
+이다.
+\end{mdframed}
+
+\proo{}
+\begin{align*}
+(1)\qquad
+&\sum_{n=1}^\infty ca_n=\lim_{n\to\infty}\sum_{k=1}^nca_k=\lim_{n\to\infty}c\sum_{k=1}^na_k
+=c\lim_{n\to\infty}\sum_{k=1}^na_k=c\sum_{n=1}^\infty a_n\\
+(2), (3)\:\:
+&\sum_{n=1}^\infty(a_n\pm b_n)=\lim_{n\to\infty}\sum_{k=1}^n(a_n\pm b_n)
+=\lim_{n\to\infty}\left(\sum_{k=1}^na_n\pm\sum_{k=1}^nb_n\right)\\
+&=\lim_{n\to\infty}\sum_{k=1}^na_n\pm\lim_{n\to\infty}\sum_{k=1}^nb_n
+=\sum_{n=1}^\infty a_n\pm\sum_{n=1}^\infty b_n
+\end{align*}
+
+%%
+\section*{답}
+
+%
+\an{3}
+\begin{enumerate}[itemsep=0pt,topsep=0pt]
+\item
+\(\frac12\)
+\item
+\(2\)
+\end{enumerate}
+
+%
+\an{5}
+\(\frac34\)
+
+%
+\an{8}
+\begin{enumerate}[itemsep=0pt,topsep=0pt]
+\item
+발산
+\item
+발산
+\end{enumerate}
+
+%
+\an{10}
+\begin{enumerate}[itemsep=0pt,topsep=0pt]
+\item
+수렴, \(\frac83\)
+\item
+발산
+\item
+발산
+\end{enumerate}
+\end{document}

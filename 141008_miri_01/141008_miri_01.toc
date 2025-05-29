@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}가정}{2}
+\contentsline {section}{\numberline {2}삼각부등식}{2}
+\contentsline {section}{\numberline {3}피타고라스의 정리 외}{3}
+\contentsline {subsection}{\numberline {3.1}\ensuremath {\angle C}=90\ensuremath {{}^\circ }이면 \ensuremath {a^2+b^2=c^2}이다(피타고라스의 정리).}{3}
+\contentsline {subsection}{\numberline {3.2}\ensuremath {\angle C}<90\ensuremath {{}^\circ }이면 \ensuremath {a^2+b^2>c^2}이다.}{3}
+\contentsline {subsection}{\numberline {3.3}\ensuremath {\angle C}>90\ensuremath {{}^\circ }이면 \ensuremath {a^2+b^2<c^2}이다.}{5}
+\contentsline {subsection}{\numberline {3.4}\ensuremath {a^2+b^2=c^2}이면 \ensuremath {\angle C}=90\ensuremath {{}^\circ }이다(피타고라스의 정리의 역).}{6}
+\contentsline {subsection}{\numberline {3.5}\ensuremath {a^2+b^2>c^2}이면 \ensuremath {\angle C}<90\ensuremath {{}^\circ }이다.}{7}
+\contentsline {subsection}{\numberline {3.6}\ensuremath {a^2+b^2<c^2}이면 \ensuremath {\angle C}>90\ensuremath {{}^\circ }이다.}{7}
+\contentsline {section}{\numberline {4}정리}{7}

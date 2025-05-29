@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,mathrsfs,mdframed}
+
+%%%
+\begin{document}
+
+\title{현빈 : 04 p158의 예제14-14에 대한 다른 풀이}
+\author{}
+\date{\today}
+\maketitle
+
+\noindent
+\begin{mdframed}[frametitle={예제 14-14}]
+\(a\), \(b\), \(c\), \(d\)는 실수, \(a^2+b^2=1\), \(c^2+d^2=1\), \(ac+bd=0\)일 때 다음 식이 성립함을 증명하여라.
+\[a^2+c^2=1,\quad b^2+d^2=1,\quad ab+cd=0.\]
+\end{mdframed}
+먼저 다음이 성립한다.
+\[d=ak,\quad c=-bk\text{를 만족시키는 실수 \(k\)가 존재한다.}\tag{1}\]
+
+i)만약 \(a\neq0\), \(b\neq0\)이면 \(\frac da=-\frac cb\)이다.
+\(k\)를
+\[k=\frac da=-\frac cb\]
+로 잡으면 (1)이 성립한다.
+
+ii) \(a=0\)이면 첫 번째 가정에서 \(b=\pm1\)이다.
+따라서 어느 경우건 \(d=0\)이다(세 번째 가정).
+만약 \(b=1\)이면 \(k\)를 \(-c\)로, 만약 \(b=-1\)이면 \(k\)를 \(c\)로 택하면 된다.
+
+iii) \(b=0\)이면 첫 번째 가정에서 \(a=\pm1\)이다.
+따라서 어느 경우건 \(c=0\)이다(세 번째 가정).
+만약 \(a=1\)이면 \(k\)를 \(d\)로, 만약 \(a=-1\)이면 \(k\)를 \(-d\)로 택하면 된다.
+
+따라서 (1)이 증명되었다.
+(1)의 두 식을 두 번째 가정에 넣으면
+\(c^2+d^2=(a^2+b^2)k^2=k^2=1\).
+따라서 \(k=\pm1\).
+
+\(k=1\)이면 \(d=a\)이고 \(c=-b\)이다.
+따라서 세 식 모두 성립한다.
+마찬가지로 \(k=-1\)이면 \(d=-a\), \(c=b\)이다.
+따라서 세 식 모두 성립한다.
+\end{document}

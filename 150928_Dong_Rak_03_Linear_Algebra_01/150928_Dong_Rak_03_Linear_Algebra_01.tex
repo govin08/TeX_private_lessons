@@ -1,0 +1,634 @@
+\documentclass{oblivoir}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathrsfs,kotex,mdframed,paralist}
+
+\newcounter{num}
+\newcommand{\prob}[1]
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num}) #1 참조}\par}
+\newcommand{\probb}
+{\bigskip\noindent\refstepcounter{num}\textbf{문제 \arabic{num})}\par}
+
+\renewcommand{\figurename}{그림}
+\renewcommand{\proofname}{증명)}
+\newcommand{\sol}{\par\bigskip\noindent{\bfseries풀이)}\par}
+
+\newcommand{\uu}{\ensuremath{\boldsymbol{u}}}
+\newcommand{\xx}{\ensuremath{\boldsymbol{x}}}
+\newcommand{\vv}{\ensuremath{\boldsymbol{v}}}
+\newcommand{\ww}{\ensuremath{\boldsymbol{w}}}
+\newcommand{\zz}{\ensuremath{\boldsymbol{0}}}
+
+\newcommand{\sleb}{\begin{array}{r@{\;}r@{\;=\;}c}}
+\newcommand{\slec}{\begin{array}{r@{\;}r@{\;}r@{\;=\;}c}}
+\newcommand{\sled}{\begin{array}{r@{\;}r@{\;}r@{\;}r@{\;=\;}c}}
+
+%%%
+\begin{document}
+
+\title{동락 03 - Chapter 1 문제들}
+\author{}
+\date{\today}
+\maketitle
+\newpage
+
+\prob{(1,2) \#3}
+Describe the intersection of the three planes \(u+v+w+z=3\), \(u+v=2\), \(v+w=1\) (all in four-dimensional space).
+Is it a line or a point or an empty set?
+What is the intersection if the fourth plane \(w=-1\) is included?
+Find a fourth equation that leaves us with no solution.
+
+\prob{(1,2) \#3}
+Describe the intersection of the three planes \(u+2v+3w+4z=10\), \(2u+3w=5\), \(u-2v-4z=-5\) (all in four-dimensional space).
+Is it a line or a point or an empty set?
+What is the intersection if the fourth plane \(w=4\) is included?
+Find a fourth equation that leaves us with no solution.
+
+\prob{(1,2) \#3}
+Describe the intersection of the three planes \(u+v+w=1\), \(u+v+z=2\), \(u+w+z=3\) (all in four-dimensional space).
+Is it a line or a point or an empty set?
+What is the intersection if the fourth plane \(v+w+z=4\) is included?
+Find a fourth equation that leaves us with no solution.
+
+\prob{(1,2) \#11}
+Describe the column picture for the system
+\[
+\begin{array}{r@{\;}r@{\;}r@{\;=\;}c}
+u+&&w&b_1\\
+3u+&2v+&w&b_2\\
+-u+&v-&2w&b_3
+\end{array}
+\]
+
+Show that the three columns on the left lie in the same plane by expressing the third column as a combination of the first two.
+What all the solutions \((u,v,w)\) if \(b\) is the zero vector \((0,0,0)\)?
+
+\prob{(1,2) \#8}
+For which number \(a\) does elimination break down (a) permanently, and (b) temporarily?
+\[
+\begin{array}{r@{\;}r@{\;=\;}c}
+ax-&5y&-10\\
+x+&2y&5
+\end{array}
+\]
+
+\prob{(1,3) \#25}
+Solve the system and find the pivots when
+\[
+\begin{array}{r@{\;}r@{\;}r@{\;}r@{\;=\;}c}
+-3u+	&2v\phantom{+}	&	&	&0\\
+u- 	&3v+	&2w\phantom{+}	&	&0\\
+	&v- 	&3w+	&2z	&0\\
+	&	&w- 	&3z	&-31
+\end{array}
+\]
+You may carry the right-hand side as a fifth column (and omit writing \(u\), \(v\), \(w\), \(z\) until the solution at the end).
+
+\prob{(1,3) \#30}
+For which three numbers \(a\) will elimination fail to give three pivots?
+\[
+\begin{array}{r@{\;}r@{\;}r@{\;=\;}c}
+ax+	&3y+	&4z	&b_1\\
+ax+	&ay+	&z	&b_2\\
+ax+	&ay+	&az	&b_3
+\end{array}
+\]
+
+\prob{(1,3) \#30}
+For which three numbers \(a\) will elimination fail to give three pivots?
+\[
+\begin{array}{r@{\;}r@{\;}r@{\;=\;}c}
+ax+	&ay+	&az	&b_1\\
+ax+	&ay+	&2z	&b_2\\
+ax+	&3y+	&1z	&b_3
+\end{array}
+\]
+
+\prob{(1,3) \#30}
+For which three numbers \(a\) will elimination fail to give three pivots?
+\[
+\begin{array}{r@{\;}r@{\;}r@{\;=\;}c}
+ax+	&2y+	&z	&b_1\\
+2ax+	&ay+	&4z	&b_2\\
+4ax+	&2ay+&3az	&b_3
+\end{array}
+\]
+
+\prob{(1,3) \#32}
+Use elimination to solve 
+\[
+\slec
+2u+	&v+	&3w&1\\
+2u+	&6v+	&8w&3\\
+6u+	&8v+	&18w&5
+\end{array}
+\]
+
+\(답 : (\frac3{10},\frac25,0)\)
+
+\prob{(1,3) \#32}
+Use elimination to solve 
+\[
+\slec
+	&2v+	&w&-8\\
+u-	&2v-	&3w&0\\
+-u+	&v+	&2w&3
+\end{array}
+\]
+
+\(답 : (-4,-5,2)\)
+
+\prob{(1,3), \# 32}
+Use elimination to solve 
+\[
+\slec
+u\phantom{+}&+	&2w	&3\\
+4u+	&v+	&3w	&4\\
+3u+ 	&v+	&w	&5
+\end{array}
+\]
+
+\(답 : 해가 없다.\)
+
+\prob{(1,3), \# 32}
+Use elimination to solve 
+\[
+\slec
+u+	&v+	&w&0\\
+u-	&2v+	&2w&4\\
+	&v-	&2w&2
+\end{array}
+\]
+
+\(답 : (4,-2,-2)\)
+
+\prob{(1,3), \# 32}
+Use elimination to solve 
+\[
+\slec
+2u+	&4v+	&w&1\\
+u+	&2v+	&2w&0\\
+ 	&	&3w&-1
+\end{array}
+\]
+
+답 : 해가 무한히 많다.
+
+\prob{(1,3), \# 32}
+Use elimination to solve 
+\[
+\slec
+u-	&2v+	&3w&1\\
+-2u-	&4v+	&5w&-4\\
+3u+ 	&5v-	&6w&6
+\end{array}
+\]
+
+\(답 : (1,3,2)\)
+
+\prob{(1,3), \# 32}
+Use elimination to solve 
+\[
+\slec
+	&v-	&2w&-8\\
+-u+	&\phantom{+2v}	&3w&11\\
+2u- 	&3v	&&2
+\end{array}
+\]
+
+\(답 : (-2,-2,3)\)
+
+\prob{(1,3), \# 32}
+Use elimination to solve 
+\[
+\slec
+u+	&3v+	&2w	&3\\
+3u-	&2v+	&w	&4\\
+5u- 	&7v\phantom{+}	&&5
+\end{array}
+\]
+
+답 : 해가 무한히 많다.
+
+\prob{(1,4)}
+피보나치 수열 \(\{x_n\}\)은 다음과 같이 정의된다.
+\[x_0=0,\quad x_1=1,\quad x_n=x_{n-1}+x_{n-2},\quad n=2,3,\cdots\]
+
+(1)
+\[X_n=
+\begin{bmatrix}
+x_n\\x_{n-1}
+\end{bmatrix}
+,\quad A=
+\begin{bmatrix}
+1&1\\1&0
+\end{bmatrix}
+\]
+를 이용하여 피보나치 수열의 점화식을 간단히 하시오.
+
+(2)
+\[X_n=A^{n-1}X_1,\quad n=1,2,\cdots\]
+이 성립함을 확인하시오.
+
+\prob{(1,4)}
+\[
+B=
+\begin{bmatrix}
+1&-2\\3&2
+\end{bmatrix}
+\]
+일 때,
+\(AB=BA\)인 이차 정사각행렬 \(A\)를 모두 구하시오.
+
+\prob{(1,4)}
+다음 조건을 만족하는 이차 정사각행렬 \(A\)를 모두 구하시오.\\
+(1)
+\(
+A^2=
+\begin{bmatrix}
+x&0\\0&y
+\end{bmatrix}
+\) (\(x,y>0\))\\
+(2)
+\(
+A^2=
+\begin{bmatrix}
+x&x\\x&x
+\end{bmatrix}
+\) (\(x>0\))
+
+\prob{(1,4)}
+대각행렬은 \(a_{ij}=0(i\neq j)\)인 행렬 \(A=[a_{ij}]\)를 말한다.
+또 위삼각행렬은 \(a_{ij}=0(i>j)\)인 행렬 \(A=[a_{ij}]\)를 말한다.
+\(A\), \(B\)는 모두 정사각행렬일 때, 다음 명제의 참/거짓을 판별하시오.\\
+(1) \(B\)가 대각행렬이면 \(AB\)도 대각행렬이다.\\
+(2) \(AB\)가 대각행렬이면 \(A\) 혹은 \(B\)가 대각행렬이다.\\
+(3) \(A\)와 \(B\)가 모두 위삼각 행렬이면 \(AB\)도 위삼각행렬이다.\\
+(4) \(AB\)가 위삼각행렬이면 \(A\) 혹은 \(B\)가 위삼각행렬이다.\\
+(5) \(A\)의 열들이 일차독립이면 \(AB\)의 열들도 일차독립이다.
+
+\prob{(1,4)}\label{mul. el. matrix on the right}
+각각의 \(B\)와 \(M\)에 대해 \(B=AM\)이 성립할 때, \(A\)를 구하시오.
+
+(1)
+\[
+B=
+\begin{bmatrix}
+1&4&2\\
+2&0&1\\
+-2&1&3
+\end{bmatrix}
+,\quad
+M=
+\begin{bmatrix}
+1&0&0\\
+0&1&0\\
+2&0&1
+\end{bmatrix}
+\]
+
+(2)
+\[
+B=
+\begin{bmatrix}
+4&0\\
+1&-2\\
+0&6
+\end{bmatrix}
+,\quad
+M=
+\begin{bmatrix}
+1&-2\\
+0&1
+\end{bmatrix}
+\]
+
+(3)
+\[
+B=
+\begin{bmatrix}
+1&0&2\\
+2&-4&7
+\end{bmatrix}
+,\quad
+M=
+\begin{bmatrix}
+1&0&0\\
+0&0&1\\
+0&1&0
+\end{bmatrix}
+\]
+
+(4)
+\[
+B=
+\begin{bmatrix}
+2&3&1&0\\
+1&0&3&1\\
+1&1&-1&7
+\end{bmatrix}
+,\quad
+M=
+\begin{bmatrix}
+1&0&0&0\\
+0&1&0&0\\
+0&0&-\frac12&0\\
+0&0&0&1\\
+\end{bmatrix}
+\]
+
+\prob{(1,5)}
+정사각행렬 \(A\)를 \(A=LU\)꼴로 분해하시오.
+
+(1)
+\[A=
+\begin{bmatrix}
+1&3\\
+4&-2
+\end{bmatrix}
+\]
+
+(2)
+\[A=
+\begin{bmatrix}
+3&0\\
+-1&2
+\end{bmatrix}
+\]
+
+(3)
+\[A=
+\begin{bmatrix}
+1&-3&-2\\
+3&2&0\\
+-1&4&2
+\end{bmatrix}
+\]
+
+(4)
+\[A=
+\begin{bmatrix}
+2&0&4\\
+0&4&-8\\
+3&-1&2
+\end{bmatrix}
+\]
+
+(5)
+\[A=
+\begin{bmatrix}
+-1&2&-3&0\\
+0&-2&1&-1\\
+2&4&0&3\\
+0&0&0&5
+\end{bmatrix}
+\]
+
+(6)
+\[A=
+\begin{bmatrix}
+2&0&1&1\\
+-8&1&0&3\\
+6&3&1&10\\
+4&-2&-2&0
+\end{bmatrix}
+\]
+
+\prob{(1,5)}
+정사각행렬이 아닌 다음 행렬 \(A\)를 \(A=LU\)꼴로 분해하시오.
+
+(1)
+\[A=
+\begin{bmatrix}
+1&-1&-2&0\\
+2&0&3&-2\\
+0&1&1&-1
+\end{bmatrix}
+\]
+
+(2)
+\[A=
+\begin{bmatrix}
+0&-1&3&0&3\\
+0&1&1&2&0\\
+0&2&-1&0&-4
+\end{bmatrix}
+\]
+
+(3)
+\[A=
+\begin{bmatrix}
+1&0&1\\
+2&2&0\\
+3&4&-2\\
+1&-4&1
+\end{bmatrix}
+\]
+
+\prob{(1,5)}
+다음 행렬 \(A\)에 대해 \(PA=LU\)를 만족하는 \(P\), \(L\), \(U\)를 구하시오.
+
+(1)
+\[A=
+\begin{bmatrix}
+0&2\\
+2&-3
+\end{bmatrix}
+\]
+
+(2)
+\[A=
+\begin{bmatrix}
+0&2&1\\
+-1&-3&2\\
+1&1&-1
+\end{bmatrix}
+\]
+
+(3)
+\[A=
+\begin{bmatrix}
+1&-2&-3\\
+-1&2&5\\
+2&0&1
+\end{bmatrix}
+\]
+
+(4)
+\[A=
+\begin{bmatrix}
+0&1&3&4\\
+0&2&1&-1\\
+-1&4&1&5
+\end{bmatrix}
+\]
+
+(5)
+\[A=
+\begin{bmatrix}
+0&0&1&1\\
+1&2&-1&0\\
+1&-1&3&2\\
+0&3&1&-2
+\end{bmatrix}
+\]
+
+\prob{(1,5)}
+다음 명제의 참/거짓을 판별하시오.
+
+\(L=[l_{ij}]_{n\times n}\)이 아래삼각(=lower triangular)이고 \(i=j\)이면 \(l_{ij}\neq0\)일 때 \(L\)이 가역행렬이며 \(L^{-1}\)도 아래삼각이다.
+
+\prob{(1,6)}
+다음 행렬들 중 가역행렬인 것을 고르시오.
+
+(1)
+\[A=
+\begin{bmatrix}
+2&-6&6\\
+-5&13&1\\
+-2&4&10
+\end{bmatrix}
+\]
+
+(2)
+\[A=
+\begin{bmatrix}
+4&4&4\\
+3&4&2\\
+-6&1&7
+\end{bmatrix}
+\]
+
+(3)
+\[A=
+\begin{bmatrix}
+5&2&7\\
+2&1&0\\
+2&9&3
+\end{bmatrix}
+\]
+
+(4)
+\[A=
+\begin{bmatrix}
+2&1&5\\
+0&3&9\\
+4&-4&-8
+\end{bmatrix}
+\]
+
+\prob{(1,6)}
+다음 가역행렬들의 역행렬을 구하시오.
+
+(1)
+\[A=
+\begin{bmatrix}
+2&4\\
+3&4
+\end{bmatrix}
+\]
+
+(2)
+\[A=
+\begin{bmatrix}
+-1&1\\
+1&0
+\end{bmatrix}
+\]
+
+(3)
+\[A=
+\begin{bmatrix}
+3&4\\
+2&1
+\end{bmatrix}
+\]
+
+(4)
+\[A=
+\begin{bmatrix}
+0&3\\
+-2&6
+\end{bmatrix}
+\]
+
+(5)
+\[A=
+\begin{bmatrix}
+2&0&0\\
+0&-1&0\\
+0&0&3
+\end{bmatrix}
+\]
+
+(6)
+\[A=
+\begin{bmatrix}
+5&0&0&0\\
+0&-6&0&0\\
+0&0&3&0\\
+0&0&0&-4
+\end{bmatrix}
+\]
+
+\prob{(1,6)}
+다음 가역행렬들의 역행렬을 구하시오.
+
+(1)
+\[A=
+\begin{bmatrix}
+1&2&1\\
+1&0&1\\
+0&1&-1
+\end{bmatrix}
+\]
+
+(2)
+\[A=
+\begin{bmatrix}
+-4&-5&3\\
+3&3&-2\\
+-1&-1&1
+\end{bmatrix}
+\]
+
+(3)
+\[A=
+\begin{bmatrix}
+1&0&1\\
+1&1&2\\
+3&4&-2
+\end{bmatrix}
+\]
+
+(4)
+\[A=
+\begin{bmatrix}
+1&2&1\\
+-1&-1&1\\
+0&1&3
+\end{bmatrix}
+\]
+
+\prob{(1,6), \#11}
+대칭행렬(symmetric matrix)은 \(A^T=A\)인 행렬을 말한다.
+교대대칭행렬(skew-symmetric matrix)은 \(A^T=-A\)인 행렬을 말한다.
+이때, 다음 명제들의 참/거짓을 판별하시오\\
+(1) \(A\), \(B\)가 대칭행렬이면 \(AB\)도 대칭행렬이다.\\
+(2) \(A\), \(B\)가 대칭행렬이면 \(A+B\)도 대칭행렬이다.\\
+(3) \(A\), \(B\)가 교대대칭행렬이면 \(AB\)도 대칭행렬이다.\\
+(4) \(A\), \(B\)가 교대대칭행렬이면 \(A+B\)도 대칭행렬이다.\\
+(5) \(A\), \(B\)가 대칭행렬이면 \(AB=BA\)이다.\\
+(6) \(A=[a_{ij}]\)가 대칭행렬이면 \(a_{ii}=a_{jj}\)이다.(대각 성분들이 일정한 값을 가진다.)\\
+(7) \(A=[a_{ij}]\)가 교대대칭행렬이면 \(a_{ii}=a_{jj}\)이다.\\
+(8) \(AA^T=\boldsymbol0\)이면 \(A=\boldsymbol0\)이다.\\
+(9) \(A\)가 대칭행렬이면 \(A^k\)도 대칭행렬이다.(\(k\)는 자연수)\\
+(10) \(A\)가 대칭행렬이고, \(A^{-1}\)이 존재하면 \(A^{-1}\)도 대칭행렬이다.\\
+(11) \(A\)가 교대대칭행렬이고, \(A^{-1}\)이 존재하면 \(A^{-1}\)도 교대대칭행렬이다.\\
+(12) \(A=[a_{ij}]_{n\times n}\)이고 \(a_{ik}=a_{ij}+a_{jk}\)이면 \(A\)는 교대대칭행렬이다.
+
+\prob{(1,6) \#11}
+\(A\)가 정사각행렬이고 \(A=[a_{ij}]_{n\times n}\)일 때 다음 물음에 답하시오.\\
+(1) \(B=[b_{ij}]_{n\times n}\)이고 \(b_{ij}=a_{ij}+a_{ji}\)일 때 \(B\)는 무슨 행렬인가?\\
+(2) \(B=[b_{ij}]_{n\times n}\)이고 \(b_{ij}=a_{ij}-a_{ji}\)일 때 \(B\)는 무슨 행렬인가?\\
+(각각의 경우에 \(B\)는 대칭행렬이거나 교대대칭행렬이다.)
+
+\end{document}

@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}유클리드 호제법(Euclid Algorithm)}{2}
+\contentsline {section}{\numberline {2}Bezout의 정리(Bezout's Identity)}{5}
+\contentsline {section}{\numberline {3}수의 합동}{7}
+\contentsline {section}{\numberline {4}일차합동식(Linear Congruence)}{12}

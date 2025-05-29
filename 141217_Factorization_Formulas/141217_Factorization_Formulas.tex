@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,kotex,paralist,wasysym}
+%\newcounter{num}[section]
+%\newcommand{\defi}[1]
+%{\bigskip\noindent\refstepcounter{num}\textbf{정의 \arabic{section}. \arabic{num}) #1}\par}
+%\newcommand{\theo}[1]
+%{\bigskip\noindent\refstepcounter{num}\textbf{정리 \arabic{section}. \arabic{num}) #1}\par}
+%\newcommand{\axio}[1]
+%{\bigskip\noindent\refstepcounter{num}\textbf{공리 \arabic{section}. \arabic{num}) #1}\par}
+%
+%\newcommand{\notiff}{%
+%  \mathrel{{\ooalign{\hidewidth$\not\phantom{"}$\hidewidth\cr$\iff$}}}}
+%\newcommand{\LHS}{\text{LHS}}
+%\newcommand{\RHS}{\text{RHS}}
+%\newcommand{\irange}{\ensuremath{1\le i\le n}}
+%\newcommand{\jrange}{\ensuremath{1\le j\le n}}
+%\newcommand{\bb}[2]{\ensuremath{(^{#1}_{#2})}}
+%\newcommand{\cc}[2]{\ensuremath{_{#1}C_{#2}}}
+%
+%\renewcommand{\figurename}{그림.}
+%\renewcommand{\proofname}{증명.}
+%\renewcommand{\contentsname}{목차}
+%\renewcommand\emph{\textbf}
+
+%%%
+\begin{document}
+
+\title{인수분해 공식}
+\author{}
+\date{\today}
+\maketitle
+%\tableofcontents
+
+%%
+
+%
+실수 \(a\), \(b\), \(c\), \(d\), \(x\)에 대해 다음 식들이 성립한다.
+\begin{enumerate}[(1)]
+\item
+\((a+b)^2=a^2+2ab+b^2\)
+\item
+\((a-b)^2=a^2-2ab+b^2\)
+\item
+\(a^2+b^2=(a+b)^2-2ab=(a-b)^2+2ab\)
+\item
+\((a+b)^2=(a-b)^2+4ab\)
+\item
+\((x+\frac1x)^2=x^2+\frac1{x^2}+2\)
+\item
+\((x-\frac1x)^2=x^2+\frac1{x^2}-2\)
+\item
+\(x^2+\frac1{x^2}=(x+\frac1x)^2-2=(x-\frac1x)^2+2\)
+\item
+\((x+\frac1x)^2=(x-\frac1x)^2+4\)
+\item
+\((a-b)(a+b)=a^2-b^2\)
+\item
+\((x+\frac1x)(x-\frac1x)=x^2-\frac1{x^2}\)
+\item
+\((x+a)(x+b)=x^2+(a+b)x+ab\)
+\item
+\((ax+b)(cx+d)=acx^2+(ad+bc)x+bd\)
+\item
+\((x+a)(x+b)(x+c)=x^3+(a+b+c)x^2+(ab+bc+ca)x+abc\)
+\item
+\((x-a)(x-b)(x-c)=x^3-(a+b+c)x^2+(ab+bc+ca)x-abc\)
+\item
+\((a+b+c)^2=a^2+b^2+c^2+2(ab+bc+ca)\)
+\item
+\(a^2+b^2+c^2=(a+b+c)^2-2(ab+bc+ca)\)
+\item
+\((a+b)^3=a^3+3a^2b+3ab^2+b^3=a^3+b^3+3ab(a+b)\)
+\item
+\((a-b)^3=a^3-3a^2b+3ab^2-b^3=a^3-b^3-3ab(a-b)\)
+\item
+\(a^3+b^3=(a+b)^3-3ab(a+b)\)
+\item
+\(a^3-b^3=(a-b)^3+3ab(a-b)\)
+\item
+\(a^3+b^3=(a+b)(a^2-ab+b^2)\)
+\item
+\(a^3-b^3=(a-b)(a^2+ab+b^2)\)
+\item
+\((a+b+c)(a^2+b^2+c^2-ab-bc-ca)=a^3+b^3+c^3-3abc\)\\
+\(*\;a+b+c=0\)이면 \(a^3+b^3+c^3=3abc\)\\
+\(*\;a^2+b^2+c^2-ab-bc-ca=\frac12[(a-b)^2+(b-c)^2+(c-a)^2]\)
+\item
+\(a^4+a^2b^2+b^4=(a^2+ab+b^2)(a^2-ab+b^2)\).
+\item
+\((a+b)^4=a^4+4a^3b+6a^2b^2+4ab^3+b^4\).
+\item
+\((a-b)^4=a^4-4a^3b+6a^2b^2-4ab^3+b^4\).
+\end{enumerate}
+
+실수 \(a\), \(b\), \(x\), 자연수 \(n, k\)에 대해
+\begin{enumerate}
+\item[(27)]
+\(a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+a^{n-3}b^2+\cdots +a^2b^{n-3}+ab^{n-2}+b^{n-1})\)
+\item[(28)]
+\(x^n-1=(x-1)(x^{n-1}+x^{n-2}+x^{n-3}+\cdots+x^2+x+1)\)
+\item[(29)]
+\(a^{2k+1}+b^{2k+1}=(a+b)(a^{2k}-a^{2k-1}b+a^{2k-2}b^2-\cdots-ab^{2k-1}+b^{2k})\)
+\item[(30)]
+\(x^{2k+1}+1=(x+1)(x^{2k}-x^{2k-1}+x^{2k-2}-\cdots-x+1)\)
+\end{enumerate}
+
+\end{document}

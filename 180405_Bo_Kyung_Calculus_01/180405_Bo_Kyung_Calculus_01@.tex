@@ -1,0 +1,88 @@
+\documentclass[twocolumn]{article}
+\usepackage{amsmath,amssymb,kotex,mdframed,paralist}
+\usepackage{chngcntr}
+\usepackage{geometry}
+\geometry{a4paper,margin=1in}
+
+\usepackage{tabto,pifont}
+\TabPositions{0.2\textwidth,0.4\textwidth,0.6\textwidth,0.8\textwidth}
+\newcommand\tabb[5]{\par\noindent
+\ding{172}\:{\ensuremath{#1}}
+\tab\ding{173}\:\:{\ensuremath{#2}}
+\tab\ding{174}\:\:{\ensuremath{#3}}
+\tab\ding{175}\:\:{\ensuremath{#4}}
+\tab\ding{176}\:\:{\ensuremath{#5}}}
+
+\newcounter{num}
+\newcommand\pb[1]{\ensuremath{\fbox{\phantom{#1}}}}
+\newcommand\lin{\displaystyle\ensuremath{\lim_{n\to\infty}}}
+
+\pagestyle{empty}
+
+\newcommand\prob[1]
+{\vspace{40pt}\par\noindent\stepcounter{num} \textbf{문제 \thenum) #1}\par\medskip\noindent}
+
+\counterwithout{subsection}{section}
+
+\begin{document}
+\begin{center}
+\LARGE보경, 01 수열의 극한
+\end{center}
+\begin{flushright}
+\today
+\end{flushright}
+
+%%
+%\section{수열의 극한}
+
+%%%
+\subsection{극한값의 계산}
+
+\vspace{-20pt}
+
+%
+\prob{}
+\(\lin\frac1n=\)
+
+%
+\prob{}
+\(\lin\frac{5n+4}{2n^2+3n+1}=\)
+
+%
+\prob{}
+\(\lin\frac{n^2+5n+4}{2n^2+3n+1}=\)
+
+%
+\prob{}
+\(\lin\frac{-n^3+n^2+5n+4}{2n^2+3n+1}=\)
+
+%
+\prob{}
+\(\lin\frac{2n+7}{\sqrt{n^2+1}-1}=\)
+
+%
+\prob{}
+\(\lin\frac1{\sqrt{n^2+4n}-n}=\)
+
+%
+\prob{}
+\(\lin\frac{4^{n+2}}{2^{n+1}-4^n}=\)
+
+\newpage
+\subsection{극한의 성질}
+\vspace{-20pt}
+%
+\prob{}
+\(\lin a_n=2\), \(\lin(a_n-b_n)=3\)일 때,\\[10pt]
+\(\lin b_n=\)
+
+%
+\prob{}
+\(\lin(n+4)a_n=4\)일 때,\\[10pt]
+\(\lin(2n+5)a_n=\)
+
+%
+\prob{}
+\(\lin\frac{3a_n-2}{2a_n+1}=3\)일 때,\\[10pt]
+\(\lin a_n=\)
+\end{document}

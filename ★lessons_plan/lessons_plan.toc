@@ -1,0 +1,28 @@
+\contentsline {section}{차\nobreakspace {}례}{1}{section*.1}
+\contentsline {section}{\numberline {1}간단한 이력}{2}{section.0.1}
+\contentsline {section}{\numberline {2}인사말}{3}{section.0.2}
+\contentsline {section}{\numberline {3}프로그램}{4}{section.0.3}
+\contentsline {subsection}{\numberline {(1)}프로그램 A}{5}{subsection.0.3.1}
+\contentsline {paragraph}{선행학습}{5}{section*.2}
+\contentsline {paragraph}{유형문제}{5}{section*.3}
+\contentsline {paragraph}{심화문제}{5}{section*.4}
+\contentsline {paragraph}{내신대비}{5}{section*.5}
+\contentsline {subsection}{\numberline {(2)}프로그램 B}{6}{subsection.0.3.2}
+\contentsline {paragraph}{선행학습}{6}{section*.6}
+\contentsline {paragraph}{유형문제}{6}{section*.7}
+\contentsline {paragraph}{심화문제}{6}{section*.8}
+\contentsline {paragraph}{내신대비}{6}{section*.9}
+\contentsline {paragraph}{모의고사 대비}{6}{section*.10}
+\contentsline {section}{\numberline {4}참고사항}{7}{section.0.4}
+\contentsline {subsection}{\numberline {(1)}수업 노트}{7}{subsection.0.4.1}
+\contentsline {subsection}{\numberline {(2)}가능한 교습시간}{7}{subsection.0.4.2}
+\contentsline {subsection}{\numberline {(3)}교습비 납입}{7}{subsection.0.4.3}
+\contentsline {subsection}{\numberline {(4)}상담전화}{7}{subsection.0.4.4}
+\contentsline {subsection}{\numberline {(5)}단체교습(그룹과외)}{8}{subsection.0.4.5}
+\contentsline {subsection}{\numberline {(6)}환불규정}{8}{subsection.0.4.6}
+\contentsline {section}{\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}* 첨부문서}{9}{subsection.0.4.6}
+\contentsline {subsection}{(1) 교습비 등 영수증}{9}{subsection.0.4.6}
+\contentsline {subsection}{(2) 사업자등록증 사본}{10}{subsection.0.4.6}
+\contentsline {subsection}{(3) 졸업증명서}{11}{subsection.0.4.6}
+\contentsline {subsection}{(4) 성적증명서}{12}{subsection.0.4.6}
+\contentsline {subsection}{(5) 주민등록증 사본}{14}{subsection.0.4.6}
