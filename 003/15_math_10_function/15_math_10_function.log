@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.12.22)  3 APR 2022 00:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.12.22)  19 OCT 2025 12:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1804,13 +1804,13 @@ Package rerunfilecheck Info: File `15_math_10_function.out' has not changed.
 (rerunfilecheck)             Checksum: FC1171BA0C113433E4681DB9C442A90A;589.
  ) 
 Here is how much of TeX's memory you used:
- 19294 strings out of 478353
- 310353 string characters out of 5852100
+ 19301 strings out of 478353
+ 310481 string characters out of 5852100
  658755 words of memory out of 5000000
- 36734 multiletter control sequences out of 15000+600000
- 456989 words of font info for 214 fonts, out of 8000000 for 9000
+ 36738 multiletter control sequences out of 15000+600000
+ 457869 words of font info for 217 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 105i,14n,107p,485b,711s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 105i,18n,107p,485b,711s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
 live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-di
@@ -1882,7 +1882,7 @@ f-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb><c:/texlive/2021/texmf-dist
 /fonts/type1/public/nanumtype1/nanummjmd6.pfb><c:/texlive/2021/texmf-dist/fonts
 /type1/public/nanumtype1/nanummjmd7.pfb><c:/texlive/2021/texmf-dist/fonts/type1
 /public/cm-super/sfrm1000.pfb>
-Output written on 15_math_10_function.pdf (32 pages, 3538881 bytes).
+Output written on 15_math_10_function.pdf (32 pages, 3539113 bytes).
 PDF statistics:
  902 PDF objects out of 1000 (max. 8388607)
  552 compressed objects within 6 object streams
